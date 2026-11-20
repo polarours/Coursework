@@ -1,0 +1,5 @@
+/.quarto/
+**/*.quarto_ipynb
+_book/
+_site/
+*.log

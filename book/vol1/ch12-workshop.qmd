@@ -1,0 +1,75 @@
+---
+title: "第 12 章 · 作业工坊：从 starter 到 autograder"
+---
+
+# 12 · 作业工坊：从 starter 到 autograder / Assignment Workshop: From Starter to Autograder
+
+::: {.callout-note}
+## Purpose / 本章目标
+
+前面的章节从"解题者"视角拆透案例。本章换到"出题者"视角：一份可直接发放给学生的作业包应该包含什么？答案是 starter code、分步 handout、概念简答题、以及能自动判断对错的 autograder。
+
+Earlier chapters dissected cases from the solver's perspective. This chapter switches to the instructor's view: what should a ready-to-distribute assignment contain? Starter code, a step-by-step handout, conceptual questions, and an autograder.
+:::
+
+## 12.1 作业包的四个组件 / Four components of an assignment
+
+受 Stanford CS106L 作业仓库的启发，一道好的作业不只是题目描述，而是一个完整的教学单元：
+
+Inspired by the CS106L assignment repository, a good assignment is a complete teaching unit:
+
+| 组件 / Component | 作用 / Purpose | 对应文件 / File |
+|---|---|---|
+| Starter code | 学生从可编译的骨架出发，而非空白 | `starter/scoped_handle.h`（含 TODO） |
+| Handout | 把任务拆成 Part 0/1/2，降低起步难度 | `README.md` |
+| 简答题 | 强制学生用语言解释概念，而非只写代码 | `short_answer.md` |
+| Autograder | 学生可立即知道对错，教师可批量评分 | `tests/test_scoped_handle.cpp` |
+
+> **English:** The starter code is intentionally incomplete: compiling it produces warnings and the demo crashes. This is by design — the student's first job is to make it work.
+
+## 12.2 案例：ScopedHandle / Case study
+
+`problems/022-cs106l-scoped-handle/` 是一道原创题：实现简化版 `std::unique_ptr`，练习 RAII、Rule of Five 与移动语义。
+
+### 为什么这道题能锻炼思考 / Why it builds reasoning
+
+学生必须回答三个概念问题：为什么析构函数保证异常安全？为什么拷贝必须禁止？移动赋值中为什么要先 `delete` 旧资源？这些问题无法靠试错代码蒙混过关。
+
+Students must reason about exception safety, exclusive ownership, and resource management — questions that cannot be passed by trial-and-error coding.
+
+### 真实验收输出 / Real autograder output
+
+```text
+[PASS] construction/destruction
+[PASS] move construction
+[PASS] move assignment
+[PASS] copy disabled / move enabled
+[PASS] reset/release
+[PASS] empty handle
+ALL TESTS PASSED
+```
+
+## 12.3 Fallacies and Pitfalls / 常见误解
+
+::: {.callout-warning}
+## Fallacy：给了参考实现就等于给了作业
+只有答案没有 starter，学生要么抄答案，要么从零开始——两者都不利于学习。骨架代码定义了"从哪开始"，这是教学设计的核心。
+:::
+
+## 12.4 Self-Check / 自测题
+
+1. 为什么 starter code 要故意留 TODO 而不是给空白文件？
+2. autograder 中的 `static_assert(!is_copy_constructible_v<...>)` 检查什么？
+
+<details>
+<summary>答案 / Answers</summary>
+
+1. 骨架给出接口与结构，学生只需实现逻辑；空白文件会让初学者卡在"从哪开始"。
+2. 编译期确认拷贝构造被禁用——这是独占所有权语义的一部分，无法靠运行时测试覆盖。
+</details>
+
+## 12.5 Summary / 本章小结
+
+- 完整作业包 = starter + handout + 简答题 + autograder + 参考实现。
+- Starter 故意不完整，让学生有明确的起点。
+- Autograder 提供即时反馈，是大规模教学的关键。

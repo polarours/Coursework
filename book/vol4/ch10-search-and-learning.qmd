@@ -1,0 +1,62 @@
+---
+title: "第 10 章 · AI 搜索与强化学习"
+---
+
+# 第 10 章 · AI 搜索与强化学习
+::: {.callout-note}
+## Purpose / 本章目标
+
+理解 Pacman 项目中搜索、对抗搜索、值迭代与 Q-learning 的关系；通过真实学习曲线理解'从经验中改进'。
+
+> **English:** Understand the progression from search to RL in the Pacman projects; interpret a real learning curve.
+:::
+
+## 10.1 算法谱系 / Algorithm spectrum
+
+同一个网格世界承载四种方法：A*（已知地图找路）、Minimax（对抗）、值迭代（有模型规划）、Q-learning（无模型学习）。这种递进正是 AI 课程的缩影。
+
+> **English:** One grid world carries four methods: A*, adversarial search, model-based planning, and model-free learning — a microcosm of the AI curriculum.
+
+## 10.2 值迭代的自洽性 / Value iteration consistency
+
+终点价值 10，其相邻格 (4,4) 价值 19 = 10 + 0.9×10。这个数字关系验证了折扣因子 γ=0.9 的正确实现。
+
+> **English:** Goal value 10 and its neighbor 19 = 10 + 0.9×10 verify the γ=0.9 implementation.
+
+## 10.3 Q-learning 的证据 / Evidence of learning
+
+300 轮训练后，平均步数从前 10 轮的 25.6 降到后 10 轮的 9.6。这是强化学习'从交互中改进'的直接证据，固定随机种子 42 保证可复现。
+
+> **English:** After 300 episodes, average steps fell from 25.6 to 9.6 — direct evidence of learning, reproducible with seed 42.
+
+### 真实运行输出 / Real measured output
+
+```text
+[test_grid_and_astar] path from (0,0) to (5,4): 10 steps
+[test_minimax] depth=4 minimax value=-0.50
+[test_value_iteration] V[(4,4)]=19.000, V[(0,0)]=8.179, V[goal]=10.000
+[test_q_learning] Q entries=74, avg steps first 10=25.6, last 10=9.6
+[test_game_trace] Pacman 轨迹 13 步吃光 3 豆
+--- PASS: test_pacman
+```
+
+## Fallacies and Pitfalls / 常见误解
+
+::: {.callout-warning}
+## Fallacy：Q-learning 结果不需要固定种子
+随机探索会让每次结果不同。本项目要求实测纪律——固定种子是可复现的前提。
+:::
+
+## Self-Check / 自测题
+
+1. 为什么值迭代中 V(4,4)=19？
+2. Q-learning 步数下降说明什么？
+
+<details><summary>答案</summary>
+1. 10（终点奖励）+ 0.9×10（下一状态价值）。
+2. 策略在改进——从随机探索收敛到接近最优路径。
+</details>
+
+## Summary / 本章小结
+
+四种 AI 方法在同一场景中递进；自洽的数字验证实现；可复现的实验支撑结论。

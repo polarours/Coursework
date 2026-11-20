@@ -1,0 +1,121 @@
+---
+title: "第 1 章 · 内存与执行的基础"
+---
+
+# 1 · 内存与执行的基础 / Foundations of Memory and Execution
+
+::: {.callout-note}
+## Purpose / 本章目标
+
+读完本章，你应当能够：解释 `malloc` 返回的指针为什么必须对齐；推导隐式空闲链表的块布局；分析一个并发调度器里"等待时间"的正确计算方式；并理解为什么这些看似底层的问题会决定上层系统的正确性与性能。
+
+By the end of this chapter you should be able to explain why malloc'd pointers must be aligned, derive the block layout of an implicit free list, compute waiting time correctly in a scheduler, and understand how these low-level details determine correctness and performance.
+:::
+
+## 1.1 从一行 malloc 说起 / Starting from a single malloc
+
+考虑 CSAPP Malloc Lab 中的一行代码：
+
+```c
+void *a = mm_malloc(24);
+```
+
+程序员看到的是一个指针；系统看到的是一段需要被**管理**的内存。管理的核心是三个问题：从哪块内存里分配（placement）、如何避免碎片（coalescing）、以及在哪里记录这些信息（metadata）。
+
+The programmer sees a pointer; the system sees memory that must be *managed*. The three core questions are placement, coalescing, and metadata.
+
+### 1.1.1 边界标签 / Boundary tags
+
+CSAPP[@csapp] 的经典方案是把元数据嵌入块自身：
+
+```text
+[ 4B header | payload... | 4B footer ]
+   size|alloc              size|alloc
+```
+
+header 的低 3 位作 alloc 标志，因此 size 必须是 8 的倍数。footer 的价值在于：给定当前块指针 `bp`，前一个块的起始位置可以用 `PREV_BLKP(bp) = bp - GET_SIZE(bp - DSIZE)` 在 O(1) 时间内算出——这是向前合并的关键。
+
+The footer enables O(1) backward coalescing: reading the size at `bp - 8` tells us where the previous block begins.
+
+> **English:** Without footers, backward coalescing would require a linear scan from the heap start. Boundary tags trade 4 bytes per block for O(1) merging — a classic space-time trade-off.
+
+### 1.1.2 真实调试中的三个陷阱 / Three real debugging traps
+
+我们的参考实现（见 `problems/006-cmu-csapp-malloc-lab/solution/malloc.c`）在开发时真实遇到三个错误，都用 gdb 定位并修复：
+
+1. **首块 header 越界**：若第一个 payload 从 `base` 开始，`HDRP(bp) = bp - 4` 会写到堆外。修复：`heap_start = base + DSIZE`。
+   *First block header out of bounds: reserve padding words.*
+2. **边界块合并**：释放第一个块时 `PREV_BLKP` 回退到无效地址。修复：`is_first` / `at_end` 判断。
+   *Coalescing boundary blocks: check for first/last.*
+3. **8 字节对齐**：偏移 4 会让 16 字节对齐的 base 变成 4 模 8，测试输出 `aligned: 0`。修复：偏移 8，并把检查从打印升级为 `assert`。
+   *Alignment: offset by 8, and assert rather than print.*
+
+```text
+[malloc] a=0x...068 b=0x...088 c=0x...0a8 (8-byte aligned: 1)
+[malloc] free blocks after free(a): 2
+[malloc] free blocks after free(b): 2 (should coalesce)
+[malloc] free blocks after free(c): 1 (all coalesced)
+```
+
+> **English:** The last trap is a testing lesson: a print statement that shows a failure is useless unless it also fails the test. We upgraded it to an assert, which immediately exposed the alignment bug.
+
+## 1.2 调度器的等待时间 / Waiting time in a scheduler
+
+MIT 6.1810 的 xv6 实验让学生实现调度器。我们的模拟器（`problems/005-mit-6.1810-xv6/`）实现了 FCFS、Round Robin 与 MLFQ。这里讨论一个容易被忽略的细节：
+
+```python
+p.wait_time += t - p.last_run   # 从上次运行结束到现在的等待
+```
+
+初版用 `arrival` 字段同时承担"原始到达时间"和"上次运行结束时间"两种语义，虽然数值巧合正确，但代码难以维护。修复方式是拆成 `origin`（永不变）与 `last_run`（每次调度更新）。
+
+The first version reused `arrival` for two meanings. The numbers happened to be right, but the code was misleading — we split it into `origin` and `last_run`.
+
+实测结果（3 进程，arrival/burst = (0,5),(1,3),(2,7)）：
+
+| 算法 | 平均等待 | 平均周转 |
+|---|---|---|
+| FCFS | 3.33 | 8.33 |
+| Round Robin (q=2) | 6.00 | 11.00 |
+| MLFQ (q=2) | 5.33 | 10.33 |
+
+**为什么 RR 的平均等待比 FCFS 高？** 这不是 bug。SJF 才最小化平均等待；RR 用更多的上下文切换换取响应公平性。理解这一点，才能避免把正确的结果当成缺陷去"修"。
+
+*Why is RR's average wait higher? This is not a bug — SJF minimizes average wait; RR optimizes fairness.*
+
+## 1.3 Fallacies and Pitfalls / 常见误解
+
+::: {.callout-warning}
+## Fallacy 1：对齐只是性能问题
+实际上未对齐的指针会导致某些架构上的硬件异常，而且会破坏"size 低位作标志位"的设计——这是正确性问题。
+*Alignment is a correctness issue, not merely performance.*
+:::
+
+::: {.callout-warning}
+## Fallacy 2：平均等待时间越低越好
+不同算法优化不同目标。RR 的等待高于 FCFS，但它显著降低了响应时间方差。
+*Different algorithms optimize different objectives.*
+:::
+
+## 1.4 Self-Check / 自测题
+
+1. 若 header 的低 3 位作标志，为什么 size 必须是 8 的倍数？
+2. 在隐式空闲链表中，为什么 footer 能让向前合并变成 O(1)？
+3. 一个 3 进程 workload 中 RR 的平均等待高于 FCFS，这是否说明实现有误？
+
+<details>
+<summary>答案 / Answers</summary>
+
+1. 因为低 3 位被标志占用，size 的二进制表示末三位必须为 0，即 8 的倍数。
+   *The low 3 bits hold flags, so size must be a multiple of 8.*
+2. footer 存着前一块的大小，`bp - GET_SIZE(bp - DSIZE)` 直接给出前块起始地址，无需从头扫描。
+   *The footer stores the previous size, giving its start address in O(1).*
+3. 否。SJF 最小化平均等待，RR 优化响应公平性——这是真实的权衡。
+   *No. SJF minimizes average wait; RR optimizes fairness.*
+</details>
+
+## 1.5 Summary / 本章小结
+
+- 内存分配器的正确性依赖对齐、边界标签与合并条件的精确实现。
+- 调度器的指标需要明确定义；字段语义混淆会让正确的代码变得不可维护。
+- 实测纪律：打印失败不算测试，必须 assert；数字异常时先验证理论预期再改代码。

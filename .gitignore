@@ -1,0 +1,25 @@
+# Python / Python 缓存
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Go / Go 构建产物
+*.test
+*.out
+
+# C/C++ 构建产物
+*.o
+*.a
+*.so
+build/
+cmake-build-*/
+
+# 编辑器 / Editors
+.idea/
+.vscode/
+*.swp
+
+# 系统 / OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,61 @@
+---
+title: "第 3 章 · 进程接口与 Shell"
+---
+
+# 第 3 章 · 进程接口与 Shell
+::: {.callout-note}
+## Purpose / 本章目标
+
+理解 Shell 作为进程创建接口的角色；掌握管道、重定向、引号与变量展开的解析规则；认识到词法层面的歧义如何处理。
+
+> **English:** Understand the shell as a process-creation interface; master parsing rules for pipes, redirection, quoting, and variable expansion.
+:::
+
+## 3.1 Shell 在系统层次中的位置 / The shell in the system hierarchy
+
+MIT 6.858 的系统安全实验让学生从最底层理解进程。Shell 是用户与内核之间的解释器：它解析一行文本，把它变成一组 `fork`/`exec`/`pipe`/`dup2` 系统调用。本项目聚焦前半部分——解析。真正的执行留给练习。
+
+> **English:** A shell is an interpreter between user and kernel: it turns a line of text into fork/exec/pipe/dup2 calls. Our case study focuses on the parsing half.
+
+## 3.2 引号与分词 / Quoting and tokenization
+
+`shlex.split` 正确处理 `'hello world'` 为单个 token，而朴素的 `str.split()` 会拆成两个。这个差异看起来微小，但它体现了词法分析的核心原则：分隔符在引号内失效。
+
+> **English:** shlex.split keeps 'hello world' as one token; naive splitting breaks it. This illustrates the core lexical principle: delimiters lose meaning inside quotes.
+
+## 3.3 变量展开 / Variable expansion
+
+`$HOME` 在解析阶段展开为环境变量值。展开时机很重要：它在分词之后、执行之前进行，否则含空格的变量值会被错误拆分。
+
+> **English:** Variable expansion happens after tokenization but before execution — expanding earlier would incorrectly split values containing spaces.
+
+### 真实运行输出 / Real measured output
+
+```text
+[shell] [Command(['cat', 'input.txt'], ...), Command(['grep', 'hello'], ..., out=out.txt)]
+[shell] [Command(['echo', 'hello world'], ..., out=log.txt, append=True)]
+[shell] [Command(['echo', '/home/user'], ...)]
+[shell] pipeline of 3 commands: [['wc', '-l'], ['sort'], ['uniq']]
+--- PASS: test_shell
+```
+
+## Fallacies and Pitfalls / 常见误解
+
+::: {.callout-warning}
+## Fallacy：管道符可以按字符分割
+引号内的 `|` 不是管道符。教学版简化处理；工业级 shell 必须在词法层区分。
+:::
+
+## Self-Check / 自测题
+
+1. 为什么 `shlex.split` 优于 `str.split`？
+2. 变量展开应在分词之前还是之后？
+
+<details><summary>答案</summary>
+1. 它尊重引号与转义，避免把引号内空格当分隔符。
+2. 之后——否则含空格的变量值会被拆成多个参数。
+</details>
+
+## Summary / 本章小结
+
+Shell 是解析与进程创建的结合；词法规则决定语义正确性；真实系统需在词法层处理引号内的特殊字符。

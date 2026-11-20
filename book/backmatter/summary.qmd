@@ -1,0 +1,17 @@
+---
+title: "总结 / Summary"
+---
+
+# 全书总结 / Book Summary
+
+32 道大作业（22 道自主精解 + 10 道真实高校作业），五卷，一个共同主题：**优秀的系统设计来自对抽象、权衡与验证的持续追问**。
+
+> **English:** 32 assignments (22 original walkthroughs + 10 real university repos), five volumes, one theme: good system design comes from continually asking about abstractions, trade-offs, and verification.
+
+| 卷 | 案例数 | 核心能力 |
+|---|---|---|
+| 一 | 4 | 底层系统思维 |
+| 二 | 5 | 算法与复杂度 |
+| 三 | 2 | 可靠性与共识 |
+| 四 | 10 | 智能与密码学 |
+| 五 | 10 | 真实作业集成：甄别、引用、验证 |

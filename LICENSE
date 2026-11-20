@@ -1,0 +1,16 @@
+# 许可 / License
+
+本项目中的原创解析、文档与参考实现采用 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)。
+
+Original walkthroughs, docs, and reference implementations in this repository are licensed under CC BY-NC-SA 4.0.
+
+- 署名 / Attribution: 保留原作者与来源标注 / keep author and source attribution.
+- 非商业 / NonCommercial: 不得用于商业用途 / no commercial use.
+- 相同方式共享 / ShareAlike: 衍生作品须采用同一许可 / derivatives must use the same license.
+
+完整法律文本 / Full legal code: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+
+## 第三方材料 / Third-party material
+
+课程题目、讲义、框架代码归各课程或其所属机构所有。本项目仅引用链接与注明出处，不主张其版权，也不转载原文。
+Problem statements, lecture notes, and skeleton code belong to their respective courses or institutions. We only link and attribute them; we claim no ownership and do not reproduce them.

@@ -1,0 +1,28 @@
+---
+title: "卷一 · 系统基础"
+---
+
+# 卷一 · 系统基础 / Volume I: Systems Foundations
+
+> 本卷回答一个问题：程序如何在真实的机器上执行？
+> This volume asks: how does a program actually execute on real hardware?
+
+## 核心问题 / Central questions
+
+1. 内存是如何组织的？当程序员写下 `malloc(24)` 时，机器做了什么？
+   *How is memory organized? What happens when the programmer writes `malloc(24)`?*
+2. 进程是什么？操作系统如何在多个进程之间分配 CPU？
+   *What is a process? How does the OS allocate CPU among processes?*
+3. 缓存为什么存在？为什么顺序访问比跨步访问快？
+   *Why do caches exist? Why is sequential access faster than strided access?*
+
+## 本卷案例 / Case studies in this volume
+
+| 案例 / Case | 来源 / Source | 对应章节 / Chapter |
+|---|---|---|
+| Malloc Lab | CMU 15-213 | [第 1 章](ch01-foundations.qmd) |
+| xv6 调度与分配 | MIT 6.1810 | [第 1 章](ch01-foundations.qmd) |
+| CS61C Cache 模拟 | UC Berkeley CS61C | [第 2 章](ch02-memory.qmd) |
+| Shell 解析器 | MIT 6.858 | [第 3 章](ch03-processes.qmd) |
+
+> **English:** The four case studies are ordered by abstraction level: allocator (raw memory) → cache (memory hierarchy) → scheduler (CPU sharing) → shell (process interface).

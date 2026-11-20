@@ -1,0 +1,30 @@
+[submodule "problems/023-amirkabir-ap1400-hw1/upstream"]
+	path = problems/023-amirkabir-ap1400-hw1/upstream
+	url = https://github.com/polarours/Coursework.git
+[submodule "problems/024-fordham-cisc2200-alist/upstream"]
+	path = problems/024-fordham-cisc2200-alist/upstream
+	url = https://github.com/CISC2200-Fall-24-Fordham/Lab3.git
+[submodule "problems/025-uci-ecs36c-linkedlist/upstream"]
+	path = problems/025-uci-ecs36c-linkedlist/upstream
+	url = https://github.com/ecs36c-fq2023/hw1.git
+[submodule "problems/026-uci-ics46-bst-avl/upstream"]
+	path = problems/026-uci-ics46-bst-avl/upstream
+	url = https://github.com/klefstad-teaching/ICS-46-HW6.git
+[submodule "problems/027-ccny-csc212-backtracking/upstream"]
+	path = problems/027-ccny-csc212-backtracking/upstream
+	url = https://github.com/uricsc/212-Deliverables.git
+[submodule "problems/028-clemson-cpsc2121-liststack-queue/upstream"]
+	path = problems/028-clemson-cpsc2121-liststack-queue/upstream
+	url = https://github.com/russellocean/CPSC2121.git
+[submodule "problems/029-ucb-cs61b-deque61b/upstream"]
+	path = problems/029-ucb-cs61b-deque61b/upstream
+	url = https://github.com/Berkeley-CS61B/skeleton-sp25.git
+[submodule "problems/030-umd-cmsc132-submitserver/upstream"]
+	path = problems/030-umd-cmsc132-submitserver/upstream
+	url = https://github.com/a-blender/cmsc132.git
+[submodule "problems/031-ucsc-cse140-pacman-warmup/upstream"]
+	path = problems/031-ucsc-cse140-pacman-warmup/upstream
+	url = https://github.com/ucsc-cse-140/cse140-assignments-public.git
+[submodule "problems/032-ucsc-cse140-pacman-search/upstream"]
+	path = problems/032-ucsc-cse140-pacman-search/upstream
+	url = https://github.com/edulinq/pacai.git

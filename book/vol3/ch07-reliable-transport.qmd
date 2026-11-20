@@ -1,0 +1,61 @@
+---
+title: "第 7 章 · 可靠传输"
+---
+
+# 第 7 章 · 可靠传输
+::: {.callout-note}
+## Purpose / 本章目标
+
+理解 TCP 接收端的重组逻辑与 32 位序列号回绕；掌握发送端的滑动窗口与超时退避；通过端到端测试验证可靠性。
+
+> **English:** Understand TCP reassembly and 32-bit sequence wrapping; master sliding window and timeout backoff; verify reliability end-to-end.
+:::
+
+## 7.1 序列号与回绕 / Sequence numbers and wrapping
+
+TCP 序列号是 32 位无符号数，接近 2^32 时回绕。所有比较必须用模运算：`wrap_sub(a,b)` 给出从 b 到 a 的距离。ISN = 2^32−5 加 10 得 5，而不是 2^32+5。
+
+> **English:** TCP sequence numbers wrap at 2^32; all comparisons must use modular arithmetic. ISN 2^32-5 plus 10 is 5, not 2^32+5.
+
+## 7.2 重组 / Reassembly
+
+接收端把乱序子串存入字典，只从 `first_unassembled` 连续 drain。重复字节（index < first_unassembled）被忽略并计数——实测为 3。
+
+> **English:** The receiver stores out-of-order substrings in a dict and drains from first_unassembled. Duplicate bytes are counted and ignored.
+
+## 7.3 超时与退避 / Timeout and backoff
+
+虚拟时钟让重传测试确定且快速。RTO 每次超时翻倍：10→20→40。tick(9) 不触发、tick(11) 触发（累计 20ms），验证了边界。
+
+> **English:** A virtual clock makes retransmission tests deterministic. RTO doubles on each timeout: 10→20→40; the 9ms/11ms boundary test verifies this.
+
+### 真实运行输出 / Real measured output
+
+```text
+[test_receiver] after reassembly ackno=1011 stream=b'helloworld' eof=True
+[test_sender_retransmission] tick(10) -> timeouts=1, rto=20
+[test_sender_retransmission] tick(9) -> timeouts=0; tick(11) -> timeouts=1, rto=40
+[test_end_to_end] segments=4 result=b'the quick brown fox' eof=True
+--- PASS: test_tcp
+```
+
+## Fallacies and Pitfalls / 常见误解
+
+::: {.callout-warning}
+## Fallacy：SYN/FIN 不占序列号
+它们各占一个序列号但不带数据。FIN 段 seqno=11、payload 为空——这是最经典的 off-by-one 来源。
+:::
+
+## Self-Check / 自测题
+
+1. 为什么序列号比较必须用模运算？
+2. 为什么 ackno 要加 1？
+
+<details><summary>答案</summary>
+1. 因为 32 位回绕会让普通比较在边界处完全错误。
+2. SYN 消耗 ISN，第一个数据字节在 ISN+1。
+</details>
+
+## Summary / 本章小结
+
+可靠传输建立在序列号、重组、滑动窗口与重传之上；回绕与边界条件是正确性的关键。

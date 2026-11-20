@@ -1,0 +1,61 @@
+---
+title: "第 9 章 · 神经网络与梯度"
+---
+
+# 第 9 章 · 神经网络与梯度
+::: {.callout-note}
+## Purpose / 本章目标
+
+理解两层网络的前向与反向传播；用梯度检验证明实现正确；通过真实 loss 曲线理解训练动态。
+
+> **English:** Understand forward/backward propagation in a two-layer network; verify with gradient checking; interpret a real loss curve.
+:::
+
+## 9.1 梯度检验 / Gradient checking
+
+数值梯度 `(L(θ+h)−L(θ−h))/2h` 与解析梯度在 1e-6 内一致，是反向传播正确性的金标准。我们的实现中 W1/W2 的梯度都通过了检验。
+
+> **English:** Numerical gradients matching analytic ones to 1e-6 is the gold standard for backprop correctness.
+
+## 9.2 维度陷阱 / Dimension trap
+
+`dA1 = dS @ W2^T`：dS 是 N×C，必须乘 C×H 的转置矩阵。初版传了 H×C 导致 IndexError——这是纯手工实现最常犯的错。
+
+> **English:** dS (N×C) must be multiplied by W2 transposed (C×H). Passing H×C caused an IndexError in our implementation.
+
+## 9.3 训练动态 / Training dynamics
+
+loss 从 1.0865 降到 0.1248，准确率从 0.339 升到 0.967。但初始的陡峭螺旋数据在 lr=0.5 时震荡；梯度检验证明代码正确后，我们调整了数据难度与学习率。
+
+> **English:** Loss fell from 1.0865 to 0.1248 and accuracy rose to 0.967. Oscillation on harder data was a training-dynamics issue, not a code bug.
+
+### 真实运行输出 / Real measured output
+
+```text
+[nn] initial loss=1.0865 acc=0.339
+  epoch  100 loss=0.7960 acc=0.528
+  epoch  200 loss=0.4503 acc=0.911
+  epoch  599 loss=0.1248 acc=0.967
+--- PASS: test_nn
+```
+
+## Fallacies and Pitfalls / 常见误解
+
+::: {.callout-warning}
+## Fallacy：loss 震荡一定是代码 bug
+先用梯度检验证明代码，再调数据与超参。我们真实经历过这个区分过程。
+:::
+
+## Self-Check / 自测题
+
+1. 梯度检验为什么有效？
+2. dS 为什么必须乘 W2 的转置？
+
+<details><summary>答案</summary>
+1. 数值梯度不依赖反向传播公式，独立验证解析梯度。
+2. 维度匹配：N×C 乘 C×H 才得到 N×H。
+</details>
+
+## Summary / 本章小结
+
+手写反向传播必须用梯度检验；维度错误是常见 bug；训练动态问题要与代码错误区分。

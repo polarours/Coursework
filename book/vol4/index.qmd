@@ -1,0 +1,11 @@
+---
+title: "卷四 · 智能系统"
+---
+
+# 卷四 · 智能系统
+
+> 本卷回答：学习、搜索与密码学的系统视角是什么？
+
+本卷从神经网络的反向传播、Pacman 的 AI 算法，到 Enigma 与 RSA 的密码学构件，展示智能系统的数学基础与工程实现。
+
+> **English:** From backpropagation to AI search to cryptographic primitives, this volume connects mathematical foundations with engineering.

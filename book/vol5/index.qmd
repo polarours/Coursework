@@ -1,0 +1,48 @@
+---
+title: "卷五 · 真实作业集成"
+---
+
+# 卷五 · 真实作业集成 / Real Assignments
+
+::: {.callout-note}
+## Purpose / 本卷定位
+
+前四卷是我们对经典大作业的自主解析；本卷转向**真实高校作业仓库本身**——原样引用、本地验证、独立精解。每道题都满足三条底线：官方 starter（非学生答案集）、本地可跑的原始或自写测试、submodule 引用保留原貌。
+
+> **English:** Volumes I–IV are our own walkthroughs of classic projects; this volume integrates real course repos as-is — official starters, locally verified tests, submodules preserving the originals.
+:::
+
+## 5.0.1 方法论 / Methodology
+
+三步流水线：
+
+1. **甄别 / Vetting**：GitHub 搜索候选，逐个浅克隆验证。淘汰标准是硬的——学生答案集（外观像题库但实现已完整）、需 Vagrant/qemu 的环境、单文件小练习、starter 不公开。
+2. **引用 / Wiring**：`git submodule add` 原仓库到 `problems/NNN-*/upstream`，参考实现独立放 `solution/`，测试放 `tests/`。**不改动上游一个字节**；上游测试被注释时生成"激活副本"而非修改原文件。
+3. **验证 / Verification**：原始测试原样跑通；官方测试覆盖不到的分支（空容器、null、越界）补边界测试；发现上游真实缺陷时做修复版并在文档逐条记录。
+
+> **English:** Vet, wire as submodules, then verify — original tests first, boundary tests for uncovered branches, and a fixed version with a defect ledger when the upstream carry real bugs.
+
+## 5.0.2 三种形态 / Three integration shapes
+
+| 形态 | 代表 | 特征 |
+|---|---|---|
+| 原仓库 + 独立参考实现 | 023 矩阵库、025 链表、026 BST/AVL、027 回溯、029 Deque | 官方接口 + 自写测试按 javadoc/规格对齐 |
+| 测试即规格 | 030 SubmitServer | 官方 PublicTests 就是需求文档 |
+| 修复对照版 | 028 链表栈队列、（024 兼有 starter 笔误修复） | 官方样例全过仍有缺陷：diff 即教学 |
+
+> **English:** Three shapes: independent reference against official interfaces; tests-as-spec; and the fixed-diff edition where "all samples pass" hides real defects.
+
+## 5.0.3 收录清单 / The ledger
+
+| # | 作业 | 学校 | 语言 | 验证锚点 |
+|---|---|---|---|---|
+| 023 | AP1400-2 HW1 矩阵代数库 | Amirkabir | C++ | 原始 gtest 24/24 |
+| 024 | CISC2200 Lab3 AList | Fordham | C++ | 官方 doctest 全过 |
+| 025 | ECS36C HW1 LinkedList/Stack/Queue | UC Irvine | C++ | 官方用例（激活）+ 语义补全 |
+| 026 | ICS46 HW6 BST/AVL | UC Irvine | C++ | 自写 5 测试 + demo 高度对比 |
+| 027 | CSC212 Lab07 回溯三题 | CCNY | C++ | 三题全解 + 无解判定 |
+| 028 | CPSC2121 Lab1 链表栈队列 | Clemson | C++ | 官方 13 样例 + 边界 5 测试 |
+| 029 | CS61B proj1a+1b Deque61B | UC Berkeley | Java | 15/15 + demo 编译 |
+| 030 | CMSC132 P1 SubmitServer | U Maryland | Java | 官方 15 + 边界 4 |
+| 031 | CSE140 p0 Pacman warmup | UC Santa Cruz | Python | docstring 期望值 7/7 |
+| 032 | CSE140 p1 Pacman 搜索大作业 | UC Santa Cruz | Python | pacai v2.1.0 + 9 用例全过 |

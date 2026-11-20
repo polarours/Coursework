@@ -1,0 +1,36 @@
+---
+title: "前言 / Preface"
+---
+
+# 为什么有这本书 / Why This Book
+
+> 这本书不是题库解析，也不是答案集。它试图回答一个更根本的问题：**名校计算机课程的大作业，究竟在教什么？**
+>
+> This book is not a solution manual. It asks a more fundamental question: *what do the great capstone projects of famous CS courses actually teach?*
+
+## 定位 / Positioning
+
+参考 Harvard EDGE 的《Machine Learning Systems》[@cs249r] 的编写范式，本书把 21 道来自 Stanford、MIT、CMU、UC Berkeley、Princeton、Cornell、Georgia Tech 的经典大作业，按**主题**编排成四卷，每一章不止于「怎么做」，而是回答「为什么这样设计」「哪里会出错」「如何验证」。
+
+Following the model of Harvard EDGE's *Machine Learning Systems* [@cs249r], this book organizes 21 capstone projects from top universities into four thematic volumes. Each chapter answers not only *how*, but *why*, *where it breaks*, and *how to verify*.
+
+## 四卷结构 / Four Volumes
+
+| 卷 / Volume | 主题 / Theme | 核心问题 / Core question |
+|---|---|---|
+| 卷一 | 系统基础 | 程序如何在机器上运行？ |
+| 卷二 | 算法与数据结构 | 如何用正确的抽象降低复杂度？ |
+| 卷三 | 网络与分布式 | 不可靠的通信如何达成可靠？ |
+| 卷四 | 智能系统 | 学习、搜索与密码学的系统视角 |
+
+## 阅读约定 / Reading conventions
+
+- 每章以 **Purpose（本章目标）** 开篇 / Each chapter opens with **Purpose**.
+- 代码与真实运行输出并列，数字均来自实测 / Code and real output; all numbers are measured.
+- **Fallacies and Pitfalls** 汇总常见误解 / Common misconceptions are collected.
+- **Self-Check** 自测题附答案 / Self-check questions with answers.
+- 中英双语：中文段落紧跟英文引用块 / Bilingual: Chinese paragraphs followed by English blockquotes.
+
+## 版权与边界 / License and scope
+
+本书原创解析与实现采用 CC BY-NC-SA 4.0。题目归原课程所有，我们只引用链接，不转载原题全文，也不提供可直接提交的答案。

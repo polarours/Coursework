@@ -1,0 +1,62 @@
+---
+title: "第 8 章 · 分布式共识"
+---
+
+# 第 8 章 · 分布式共识
+::: {.callout-note}
+## Purpose / 本章目标
+
+理解 Raft 的强 leader 模型如何分解共识问题；掌握提交规则中 term 检查的安全性意义；通过分区实验验证状态机安全。
+
+> **English:** Understand how Raft's strong leader decomposes consensus; master the safety role of the term check in commits; verify state-machine safety via partition tests.
+:::
+
+## 8.1 强 Leader / Strong leadership
+
+Raft 把共识分解为 leader 选举与日志复制两个子问题。只有 leader 接受客户端命令，这大大简化了推理——这是 Raft 比 Paxos 更易教学的根本原因。
+
+> **English:** Raft decomposes consensus into leader election and log replication. Only the leader accepts commands, which is why it is more teachable than Paxos.
+
+## 8.2 提交规则 / Commit rule
+
+条目只有在多数派复制**且** `log[n].Term == currentTerm` 时才能提交。缺少 term 检查会违反 leader 完备性——这就是 Raft 论文 Figure 8 的陷阱。
+
+> **English:** An entry is committed only if a majority replicates it AND its term equals the current term. Omitting the term check violates leader completeness (Figure 8).
+
+## 8.3 分区安全 / Partition safety
+
+在 5 节点集群中把 leader 隔离到 2 节点少数派：它接受写入但 commitIndex 保持 0；多数派选出新 leader 并提交；网络恢复后日志收敛到多数派版本。
+
+> **English:** In a 5-node cluster, isolating the leader in a 2-node minority: it accepts a write but commitIndex stays 0; the majority elects a new leader and commits.
+
+### 真实运行输出 / Real measured output
+
+```text
+[TestElection] 选出 leader=node 1, term=1, RPC 总数=4
+[TestLogReplication] node 0/1/2 applied=[SET a=1 SET b=2 DEL a] commitIndex=3
+[TestLeaderFailover] 新 leader=node 0
+[TestPartitionSafety] 少数派 leader Start=true index=1 commitIndex=0
+[TestPartitionSafety] 日志已收敛：[{2 majority-write}]
+--- PASS: 4 tests, race detector clean
+```
+
+## Fallacies and Pitfalls / 常见误解
+
+::: {.callout-warning}
+## Fallacy：多数派复制即可提交
+错误。旧 term 的条目即使被多数派复制也不能提交，否则违反安全性。
+:::
+
+## Self-Check / 自测题
+
+1. 为什么提交规则要检查 term？
+2. 少数派 leader 为什么不能提交？
+
+<details><summary>答案</summary>
+1. 避免 Figure 8 场景：旧 term 条目可能在后续 leader 中缺失。
+2. 多数派确认数不足 3/5，commitIndex 无法推进。
+</details>
+
+## Summary / 本章小结
+
+强 leader 简化共识；term 检查保障安全；分区实验是验证状态机安全性的最佳手段。

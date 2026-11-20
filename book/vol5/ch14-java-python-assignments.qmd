@@ -1,0 +1,50 @@
+---
+title: "第 14 章 · Java 与 Python 真实作业"
+---
+
+# 第 14 章 · Java 与 Python 真实作业
+
+::: {.callout-note}
+## Purpose / 本章目标
+
+三道非 C++ 真实作业：Java 的泛型容器（CS61B）、"测试即规格"的 OOP（UMD）、Python 的 Pacman 热身（UCSC）。重点在接口设计的三种流派与官方资源的三种验证方式。
+
+> **English:** Three non-C++ assignments showcasing three interface-design schools and three ways to verify official material.
+:::
+
+## 14.1 CS61B proj1a+1b：两种 Deque 一把吉他 / UC Berkeley 029
+
+完整大作业四件套：链表 Deque（单哨兵成环 + 递归 get）、数组 Deque（环形下标 + 扩缩容）、Maximizer61B（自然序 + Comparator 双重载）、GuitarString（Karplus-Strong 弦仿真，**缓冲区就是自己的 Deque**）。
+
+最有价值的是官方 starter 的**暗设计**：`Maximizer61BTest` 直接把 `ArrayDeque61B` 传入 `max(Iterable,...)`，而 `Deque61B` 接口不 extends `Iterable`——两份官方文件互相不编译，学生必须自己发现并补 `iterator()`。
+
+```text
+proj1a  6/6  proj1b deque 6/6  GuitarString 3/3
+实测退化：sorted 数据 BST 高度 26 vs AVL 高度 5（026 同款对比）
+```
+
+> **English:** The two official files refuse to compile together — adding the iterator yourself is the intended lesson; the guitar's buffer is your own deque.
+
+## 14.2 UMD SubmitServer：测试即规格 / U Maryland 030
+
+官方不发文字题面，`PublicTests.java` 的 15 个断言就是需求文档。upstream 学生实现通过全部官方测试，我们补的边界测试把官方未定义的分支实测在案：`numSubmissions(null)` 返回 -1、非法分数静默忽略、`bestSubmissionNumber` 1-based。
+
+方法论收获：**把每个断言翻译成一句需求**——这是"测试即规格"课程想教的读法；没写的规格，延伸练习里请学生自己定义（并列最高分取第几次？）。
+
+> **English:** Translate each assertion into a requirement sentence; undefined behavior is yours to define — that's the trained skill.
+
+## 14.3 UCSC p0：Pacman 世界的入场券 / UC Santa Cruz 031
+
+CS188 风格热身：价目表归约 + 商店 argmin，期望输出写在 docstring 里天然可验证。两个 `None` 语义是 Python 接口设计的小课：`buyLotsOfFruit` 缺货返回 None（区分"算不出"与"价格 0"）；`shopSmart` 判断供货能力必须 `is not None`——`if price` 会误杀总价恰为 0.0 的合法订单。
+
+如实记录的一处**上游瑕疵**：docstring 写 `best shop is shop1.`，而 `shop.py` 的 main 实际打印 `the best shop is shop1.`——测试以代码为准，注释会漂移。
+
+## 14.4 UCSC p1：搜索大作业全景 / The full search assignment
+
+p1（032，pacai v2.1.0 以 submodule 引用）把 CS188 的 Q1–Q5 一次吃掉：DFS/BFS/UCS/A* 四求解器、Corners 状态设计、两个可采纳启发式、贪心与近似 agent。三个实测数字最有说服力：maze-tiny 上 **BFS/UCS/A* 的 cost 三者一致 = 8.00 而 DFS = 10**（最优性互证）；corners-tiny 上 null 启发式展开 **1449** 节点 vs corners 启发式 **1050**（启发式收益）；corners-medium 上 **845707 节点 5.24 s** 仍保持最优（max 启发式的可采纳性经受住 10^5 量级压力）。
+
+开发中的真实 bug 也值得记录：BFS 的 pop 侧与入队侧共用同一个 visited 集合，导致除起点外一个节点都没展开——DFS/UCS 全绿而 BFS 独家无解，用 maze-tiny 二分定位；board 与问题配对错误（search-* 板没有 search_target）会让游戏永不结束，这是本地验证矩阵的设计依据。
+
+> **English:** p1 completes the trilogy: three measured numbers (8.00×3 vs 10, 1449 vs 1050 expansions, 845k-node optimality) and one real bug — the double-dedup BFS that expanded nothing — caught by differential bisection on a known-good board.
+
+> **English:** Two None idioms teach interface design in miniature; and the upstream docstring drifts from its own main — trust what runs.

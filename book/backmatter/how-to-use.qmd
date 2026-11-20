@@ -1,0 +1,19 @@
+---
+title: "如何使用本书 / How to Use This Book"
+---
+
+# 如何使用本书
+
+## 三种读者 / Three audiences
+
+1. **学生**：先读 Purpose，自己做一遍，再读正文与自测。
+2. **教师**：每章 Self-Check 可作为课堂练习；Fallacies 可作为讨论题。
+3. **自学者**：按卷顺序读；每章的实测输出可在 `problems/` 下找到可运行代码。
+
+> **English:** Students should attempt the problem first; instructors can use Self-Check as exercises; self-learners can follow the volume order and run the code in `problems/`.
+
+## 构建 / Building
+
+```bash
+cd book && quarto render
+```

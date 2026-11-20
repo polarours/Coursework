@@ -1,0 +1,11 @@
+---
+title: "卷二 · 算法与数据结构"
+---
+
+# 卷二 · 算法与数据结构
+
+> 本卷回答：如何用正确的抽象降低问题复杂度？
+
+本卷收录 A* 搜索、回溯+Trie、并查集、LRU 缓存与布隆过滤器五个案例，贯穿一个主题：**数据结构的选择决定算法的复杂度**。
+
+> **English:** This volume collects five cases showing that the choice of data structure determines algorithmic complexity.

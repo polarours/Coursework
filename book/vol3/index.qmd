@@ -1,0 +1,11 @@
+---
+title: "卷三 · 网络与分布式"
+---
+
+# 卷三 · 网络与分布式
+
+> 本卷回答：不可靠的通信如何达成可靠？
+
+TCP 的滑动窗口与 Raft 的共识机制，分别解决字节流与状态机两个层面的可靠性问题。
+
+> **English:** TCP sliding window and Raft consensus solve reliability at the byte-stream and state-machine levels respectively.

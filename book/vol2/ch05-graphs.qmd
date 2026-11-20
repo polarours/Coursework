@@ -1,0 +1,61 @@
+---
+title: "第 5 章 · 图算法与贪心"
+---
+
+# 第 5 章 · 图算法与贪心
+::: {.callout-note}
+## Purpose / 本章目标
+
+理解 Kruskal 算法中并查集的作用；证明切割性质如何保证贪心正确；通过经典图的 MST=37 验证实现。
+
+> **English:** Understand union-find's role in Kruskal; see how the cut property guarantees greedy correctness; verify with MST=37 on the classic graph.
+:::
+
+## 5.1 并查集 / Union-Find
+
+路径压缩与按秩合并让 `find`/`union` 的均摊复杂度接近 O(1)（反 Ackermann 函数）。这是贪心算法能高效检测环的关键。
+
+> **English:** Path compression plus union by rank gives near-constant amortized operations, which is what makes cycle detection cheap in the greedy loop.
+
+## 5.2 切割性质 / Cut property
+
+对任意切割，跨越它的最小权重边属于某个 MST。Kruskal 反复选择这样的边，因此结果最小。这个论证是贪心正确性的标准范式。
+
+> **English:** For any cut, the minimum-weight crossing edge belongs to some MST. Kruskal repeatedly picks such edges, so the result is minimum.
+
+## 5.3 边界情况 / Edge cases
+
+不连通图的 MST 边数少于 n-1，这是生成森林而非错误。测试必须显式覆盖这种情况。
+
+> **English:** A disconnected graph yields fewer than n-1 edges — a spanning forest, not a bug.
+
+### 真实运行输出 / Real measured output
+
+```text
+[unionfind] components after unions: 3 (expect 3)
+[kruskal] MST edges=[(6,7,1), (2,8,2), (5,6,2), (0,1,4), (2,5,4), (2,3,7), (0,7,8), (3,4,9)]
+[kruskal] total weight=37 (classic answer: 37)
+[kruskal] disconnected graph: edges=[(0,1,1), (2,3,2)] weight=3
+--- PASS: test_kruskal
+```
+
+## Fallacies and Pitfalls / 常见误解
+
+::: {.callout-warning}
+## Fallacy：MST 边数必须 n-1
+只有连通图才如此。不连通图得到生成森林，边数 = n - 连通分量数。
+:::
+
+## Self-Check / 自测题
+
+1. 并查集为什么需要按秩合并？
+2. 不连通图的 Kruskal 结果是什么？
+
+<details><summary>答案</summary>
+1. 避免树退化成链，保证近常数均摊复杂度。
+2. 最小生成森林，边数为 n 减连通分量数。
+</details>
+
+## Summary / 本章小结
+
+并查集是图算法的基石；切割性质证明 Kruskal 的正确性；边界情况必须显式测试。

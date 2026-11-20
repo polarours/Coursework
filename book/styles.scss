@@ -1,0 +1,18 @@
+/*-- scss:defaults --*/
+
+/* 品牌配色 / Brand colors */
+$primary: #2b5d8a;
+$secondary: #d97706;
+$body-bg: #fdfdfc;
+
+/*-- scss:rules --*/
+
+/* 中文正文可读性 / Chinese readability */
+body {
+  line-height: 1.75;
+}
+
+/* 双语英文块 / bilingual English blocks */
+blockquote {
+  color: var(--quarto-color-muted, #555);
+}
