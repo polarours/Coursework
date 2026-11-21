@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 168" width="1100" height="168" role="img" aria-label="Five volumes">
+<rect width="1100" height="168" rx="10" fill="#0F1C2E"/>
+<rect x="40" y="36" width="22" height="100" rx="2" fill="#2DD4BF" opacity="0.9"/>
+<rect x="45" y="36" width="2" height="100" fill="#0F1C2E" opacity="0.35"/>
+<text x="78" y="66" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="11" fill="#2DD4BF" font-weight="700" text-anchor="start">VOL. I</text>
+<text x="78" y="94" font-family="'Noto Sans CJK SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="14" fill="#F7F5EF" font-weight="700" text-anchor="start">系统基础</text>
+<text x="78" y="118" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="11" fill="#8FA3BC" font-weight="400" text-anchor="start">4 cases</text>
+<rect x="254" y="36" width="22" height="100" rx="2" fill="#2DD4BF" opacity="0.9"/>
+<rect x="259" y="36" width="2" height="100" fill="#0F1C2E" opacity="0.35"/>
+<text x="292" y="66" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="11" fill="#2DD4BF" font-weight="700" text-anchor="start">VOL. II</text>
+<text x="292" y="94" font-family="'Noto Sans CJK SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="14" fill="#F7F5EF" font-weight="700" text-anchor="start">算法与数据结构</text>
+<text x="292" y="118" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="11" fill="#8FA3BC" font-weight="400" text-anchor="start">5 cases</text>
+<rect x="468" y="36" width="22" height="100" rx="2" fill="#2DD4BF" opacity="0.9"/>
+<rect x="473" y="36" width="2" height="100" fill="#0F1C2E" opacity="0.35"/>
+<text x="506" y="66" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="11" fill="#2DD4BF" font-weight="700" text-anchor="start">VOL. III</text>
+<text x="506" y="94" font-family="'Noto Sans CJK SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="14" fill="#F7F5EF" font-weight="700" text-anchor="start">网络与分布式</text>
+<text x="506" y="118" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="11" fill="#8FA3BC" font-weight="400" text-anchor="start">2 cases</text>
+<rect x="682" y="36" width="22" height="100" rx="2" fill="#2DD4BF" opacity="0.9"/>
+<rect x="687" y="36" width="2" height="100" fill="#0F1C2E" opacity="0.35"/>
+<text x="720" y="66" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="11" fill="#2DD4BF" font-weight="700" text-anchor="start">VOL. IV</text>
+<text x="720" y="94" font-family="'Noto Sans CJK SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="14" fill="#F7F5EF" font-weight="700" text-anchor="start">智能系统</text>
+<text x="720" y="118" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="11" fill="#8FA3BC" font-weight="400" text-anchor="start">10 cases</text>
+<rect x="896" y="36" width="22" height="100" rx="2" fill="#F2B544" opacity="0.9"/>
+<rect x="901" y="36" width="2" height="100" fill="#0F1C2E" opacity="0.35"/>
+<text x="934" y="66" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="11" fill="#F2B544" font-weight="700" text-anchor="start">VOL. V</text>
+<text x="934" y="94" font-family="'Noto Sans CJK SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="14" fill="#F7F5EF" font-weight="700" text-anchor="start">真实作业</text>
+<text x="934" y="118" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="11" fill="#8FA3BC" font-weight="400" text-anchor="start">10 cases</text>
+</svg>

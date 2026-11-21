@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 168" width="1100" height="168" role="img" aria-label="How to use">
+<defs><linearGradient id="wb" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0F1C2E"/><stop offset="1" stop-color="#16263D"/></linearGradient></defs>
+<rect width="1100" height="168" rx="10" fill="url(#wb)"/>
+<line x1="256" y1="80" x2="298" y2="80" stroke="#27405C" stroke-width="1.5"/>
+<path d="M298 80 l-7 -4 v8 z" fill="#2DD4BF" opacity="0.7"/>
+<text x="46" y="50" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="13" fill="#2DD4BF" font-weight="700" text-anchor="start">01</text>
+<text x="46" y="84" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="16" fill="#F7F5EF" font-weight="700" text-anchor="start">READ THE CARD</text>
+<text x="46" y="112" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="11.5" fill="#8FA3BC" font-weight="400" text-anchor="start">Prerequisites, scope, expected effort</text>
+<rect x="46" y="126" width="38" height="2" fill="#2DD4BF" opacity="0.8"/>
+<line x1="521" y1="80" x2="563" y2="80" stroke="#27405C" stroke-width="1.5"/>
+<path d="M563 80 l-7 -4 v8 z" fill="#2DD4BF" opacity="0.7"/>
+<text x="311" y="50" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="13" fill="#2DD4BF" font-weight="700" text-anchor="start">02</text>
+<text x="311" y="84" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="16" fill="#F7F5EF" font-weight="700" text-anchor="start">TRY IT YOURSELF</text>
+<text x="311" y="112" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="11.5" fill="#8FA3BC" font-weight="400" text-anchor="start">Design first — even a rough sketch</text>
+<rect x="311" y="126" width="38" height="2" fill="#2DD4BF" opacity="0.8"/>
+<line x1="786" y1="80" x2="828" y2="80" stroke="#27405C" stroke-width="1.5"/>
+<path d="M828 80 l-7 -4 v8 z" fill="#2DD4BF" opacity="0.7"/>
+<text x="576" y="50" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="13" fill="#2DD4BF" font-weight="700" text-anchor="start">03</text>
+<text x="576" y="84" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="16" fill="#F7F5EF" font-weight="700" text-anchor="start">STUDY 01 → 07</text>
+<text x="576" y="112" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="11.5" fill="#8FA3BC" font-weight="400" text-anchor="start">Compare reasoning with your attempt</text>
+<rect x="576" y="126" width="38" height="2" fill="#2DD4BF" opacity="0.8"/>
+<text x="841" y="50" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="13" fill="#F2B544" font-weight="700" text-anchor="start">04</text>
+<text x="841" y="84" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="16" fill="#F7F5EF" font-weight="700" text-anchor="start">RUN &amp; EXTEND</text>
+<text x="841" y="112" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="11.5" fill="#8FA3BC" font-weight="400" text-anchor="start">Run tests, then solve the exercises</text>
+<rect x="841" y="126" width="38" height="2" fill="#F2B544" opacity="0.8"/>
+</svg>

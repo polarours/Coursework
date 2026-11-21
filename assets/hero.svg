@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 372" width="1200" height="372" role="img" aria-label="Coursework workbook hero">
+<defs>
+      <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#0F1C2E"/><stop offset="1" stop-color="#16263D"/>
+      </linearGradient>
+      <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#2DD4BF"/><stop offset="1" stop-color="#F2B544"/>
+      </linearGradient>
+      <radialGradient id="glow"><stop offset="0" stop-color="#2DD4BF" stop-opacity="0.22"/>
+        <stop offset="1" stop-color="#2DD4BF" stop-opacity="0"/></radialGradient>
+      <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+        <path d="M28 0H0V28" fill="none" stroke="#27405C" stroke-width="0.5" opacity="0.45"/>
+      </pattern>
+    </defs>
+<rect width="1200" height="372" fill="url(#bg)"/>
+<rect width="1200" height="372" fill="url(#grid)"/>
+<ellipse cx="920" cy="160" rx="290" ry="180" fill="url(#glow)"/>
+<rect x="58" y="58" width="4" height="44" fill="#2DD4BF"/>
+<text x="80" y="76" font-family="'Avenir Next','Segoe UI',system-ui,sans-serif" font-size="27" fill="#F7F5EF" font-weight="700" text-anchor="start" letter-spacing="2">CS COURSE</text>
+<text x="80" y="108" font-family="'Avenir Next','Segoe UI',system-ui,sans-serif" font-size="27" fill="#F7F5EF" font-weight="700" text-anchor="start" letter-spacing="2">PROJECT WORKBOOK</text>
+<text x="60" y="158" font-family="'Avenir Next','Segoe UI',system-ui,sans-serif" font-size="15" fill="#8FA3BC" font-weight="400" text-anchor="start">Deep, runnable walkthroughs of outstanding CS course projects:</text>
+<text x="60" y="182" font-family="'Avenir Next','Segoe UI',system-ui,sans-serif" font-size="15" fill="#8FA3BC" font-weight="400" text-anchor="start">design reasoning, implementation, debugging, pitfalls, exercises.</text>
+<rect x="60" y="204" width="330" height="2" fill="url(#rule)"/>
+<text x="60" y="232" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="13" fill="#2DD4BF" font-weight="400" text-anchor="start" letter-spacing="1.2">32 ASSIGNMENTS  /  7 CHAPTERS EACH  /  VERIFIED BUILDS</text>
+<text x="60" y="254" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="12" fill="#8FA3BC" font-weight="400" text-anchor="start">22 ORIGINAL STUDIES  +  10 REAL UNIVERSITY ASSIGNMENTS</text>
+<path d="M690 88 Q709.9759750814842 87.84018897376029 729.9519501629683 111.6803779475206" fill="none" stroke="#2DD4BF" stroke-width="0.8" opacity="0.28"/>
+<path d="M690 88 Q689.1340247470797 98.73165252654132 688.2680494941594 133.46330505308265" fill="none" stroke="#2DD4BF" stroke-width="0.8" opacity="0.28"/>
+<path d="M690 88 Q656.7315190321146 93.66452186251522 623.4630380642293 123.32904372503043" fill="none" stroke="#2DD4BF" stroke-width="0.8" opacity="0.28"/>
+<path d="M690 88 Q665.7789415980574 71.62602513283319 641.5578831961149 79.25205026566638" fill="none" stroke="#2DD4BF" stroke-width="0.8" opacity="0.28"/>
+<path d="M690 88 Q676.53941130172 54.90224785903476 663.0788226034399 45.80449571806951" fill="none" stroke="#2DD4BF" stroke-width="0.8" opacity="0.28"/>
+<path d="M690 88 Q708.5500697274097 50.65446718958226 727.1001394548194 37.30893437916453" fill="none" stroke="#2DD4BF" stroke-width="0.8" opacity="0.28"/>
+<path d="M690 88 Q713.1013624922069 72.74527605551896 736.2027249844139 81.49055211103791" fill="none" stroke="#2DD4BF" stroke-width="0.8" opacity="0.28"/>
+<path d="M900 66 Q904.1081612478606 70.7612660293122 908.2163224957212 99.52253205862439" fill="none" stroke="#2DD4BF" stroke-width="0.8" opacity="0.28"/>
+<path d="M900 66 Q875.1785187779391 68.54565294394109 850.3570375558782 95.09130588788219" fill="none" stroke="#2DD4BF" stroke-width="0.8" opacity="0.28"/>
+<path d="M900 66 Q860.1093661197544 43.66397515385442 820.2187322395088 45.327950307708846" fill="none" stroke="#2DD4BF" stroke-width="0.8" opacity="0.28"/>
+<path d="M900 66 Q895.8734287964586 37.16362149429368 891.7468575929172 32.32724298858736" fill="none" stroke="#2DD4BF" stroke-width="0.8" opacity="0.28"/>
+<path d="M900 66 Q925.2711351662274 39.19084504511087 950.5422703324549 36.38169009022174" fill="none" stroke="#2DD4BF" stroke-width="0.8" opacity="0.28"/>
+<path d="M900 66 Q940.8581296611402 64.58671177330467 981.7162593222804 87.17342354660934" fill="none" stroke="#2DD4BF" stroke-width="0.8" opacity="0.28"/>
+<path d="M1090 98 Q1077.9966902779684 100.44268648151596 1065.9933805559367 126.88537296303193" fill="none" stroke="#2DD4BF" stroke-width="0.8" opacity="0.28"/>
+<path d="M1090 98 Q1107.580451092208 64.84675566920157 1125.1609021844158 55.69351133840313" fill="none" stroke="#2DD4BF" stroke-width="0.8" opacity="0.28"/>
+<path d="M712 226 Q688.8850556743992 219.78307381590506 665.7701113487983 237.5661476318101" fill="none" stroke="#2DD4BF" stroke-width="0.8" opacity="0.28"/>
+<path d="M712 226 Q684.1131954331295 201.8056470966281 656.2263908662591 201.61129419325616" fill="none" stroke="#2DD4BF" stroke-width="0.8" opacity="0.28"/>
+<path d="M712 226 Q707.2282580893941 185.47866703718785 702.4565161787883 168.95733407437567" fill="none" stroke="#2DD4BF" stroke-width="0.8" opacity="0.28"/>
+<path d="M712 226 Q729.7594245964639 201.37718994936267 747.5188491929277 200.75437989872535" fill="none" stroke="#2DD4BF" stroke-width="0.8" opacity="0.28"/>
+<path d="M712 226 Q744.7861010811482 216.48295124229335 777.5722021622963 230.9659024845867" fill="none" stroke="#2DD4BF" stroke-width="0.8" opacity="0.28"/>
+<path d="M712 226 Q735.3647263471564 239.87927877482346 758.7294526943128 277.7585575496469" fill="none" stroke="#2DD4BF" stroke-width="0.8" opacity="0.28"/>
+<path d="M712 226 Q703.9559405392065 230.44003849864046 695.9118810784131 258.8800769972809" fill="none" stroke="#2DD4BF" stroke-width="0.8" opacity="0.28"/>
+<path d="M982 238 Q957.7837063409643 219.61665031895444 933.5674126819285 225.2333006379089" fill="none" stroke="#F2B544" stroke-width="0.8" opacity="0.28"/>
+<path d="M982 238 Q963.3065714146143 206.09893963633561 944.6131428292285 198.19787927267126" fill="none" stroke="#F2B544" stroke-width="0.8" opacity="0.28"/>
+<path d="M982 238 Q983.7952306742911 197.46800807109128 985.5904613485823 180.93601614218252" fill="none" stroke="#F2B544" stroke-width="0.8" opacity="0.28"/>
+<path d="M982 238 Q996.7087555530264 213.00391484244113 1011.4175111060529 212.00782968488224" fill="none" stroke="#F2B544" stroke-width="0.8" opacity="0.28"/>
+<path d="M982 238 Q1014.5821846630154 219.65662530329553 1047.1643693260307 225.31325060659108" fill="none" stroke="#F2B544" stroke-width="0.8" opacity="0.28"/>
+<path d="M982 238 Q1020.344962010126 236.10762854396225 1058.689924020252 258.2152570879245" fill="none" stroke="#F2B544" stroke-width="0.8" opacity="0.28"/>
+<path d="M982 238 Q995.8092665282212 240.70137195543194 1009.6185330564424 267.4027439108639" fill="none" stroke="#F2B544" stroke-width="0.8" opacity="0.28"/>
+<path d="M982 238 Q980.4715901870127 250.29134989320346 978.9431803740255 286.582699786407" fill="none" stroke="#F2B544" stroke-width="0.8" opacity="0.28"/>
+<path d="M982 238 Q955.9893297245985 248.9820180698257 929.9786594491972 283.96403613965145" fill="none" stroke="#F2B544" stroke-width="0.8" opacity="0.28"/>
+<path d="M982 238 Q958.6652506838409 230.54300593704778 935.3305013676817 247.08601187409553" fill="none" stroke="#F2B544" stroke-width="0.8" opacity="0.28"/>
+<circle cx="690" cy="88" r="19" fill="#0F1C2E" stroke="#2DD4BF" stroke-width="1.4" opacity="0.95"/>
+<text x="690" y="92" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="12" fill="#2DD4BF" font-weight="700" text-anchor="middle">I</text>
+<rect x="636.0" y="44" width="108" height="17" rx="3" fill="#0F1C2E" opacity="0.92"/>
+<text x="690" y="56" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="10" fill="#8FA3BC" font-weight="500" text-anchor="middle" letter-spacing="0.5" opacity="0.95">SYSTEMS</text>
+<circle cx="900" cy="66" r="19" fill="#0F1C2E" stroke="#2DD4BF" stroke-width="1.4" opacity="0.95"/>
+<text x="900" y="70" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="12" fill="#2DD4BF" font-weight="700" text-anchor="middle">II</text>
+<rect x="846.0" y="22" width="108" height="17" rx="3" fill="#0F1C2E" opacity="0.92"/>
+<text x="900" y="34" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="10" fill="#8FA3BC" font-weight="500" text-anchor="middle" letter-spacing="0.5" opacity="0.95">ALGORITHMS</text>
+<circle cx="1090" cy="98" r="19" fill="#0F1C2E" stroke="#2DD4BF" stroke-width="1.4" opacity="0.95"/>
+<text x="1090" y="102" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="12" fill="#2DD4BF" font-weight="700" text-anchor="middle">III</text>
+<rect x="1036.0" y="54" width="108" height="17" rx="3" fill="#0F1C2E" opacity="0.92"/>
+<text x="1090" y="66" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="10" fill="#8FA3BC" font-weight="500" text-anchor="middle" letter-spacing="0.5" opacity="0.95">NETWORKS</text>
+<circle cx="712" cy="226" r="19" fill="#0F1C2E" stroke="#2DD4BF" stroke-width="1.4" opacity="0.95"/>
+<text x="712" y="230" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="12" fill="#2DD4BF" font-weight="700" text-anchor="middle">IV</text>
+<rect x="658.0" y="260" width="108" height="17" rx="3" fill="#0F1C2E" opacity="0.92"/>
+<text x="712" y="272" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="10" fill="#8FA3BC" font-weight="500" text-anchor="middle" letter-spacing="0.5" opacity="0.95">INTELLIGENCE</text>
+<circle cx="982" cy="238" r="19" fill="#0F1C2E" stroke="#F2B544" stroke-width="1.4" opacity="0.95"/>
+<text x="982" y="242" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="12" fill="#F2B544" font-weight="700" text-anchor="middle">V</text>
+<rect x="908.0" y="272" width="148" height="17" rx="3" fill="#0F1C2E" opacity="0.92"/>
+<text x="982" y="284" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="10" fill="#8FA3BC" font-weight="500" text-anchor="middle" letter-spacing="0.5" opacity="0.95">REAL ASSIGNMENTS</text>
+<circle cx="730.0" cy="111.7" r="5.2" fill="#2DD4BF" opacity="0.85"/>
+<text x="729.9519501629683" y="114.1803779475206" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">004</text>
+<circle cx="688.3" cy="133.5" r="5.2" fill="#2DD4BF" opacity="0.85"/>
+<text x="688.2680494941594" y="135.96330505308265" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">005</text>
+<circle cx="623.5" cy="123.3" r="5.2" fill="#2DD4BF" opacity="0.85"/>
+<text x="623.4630380642293" y="125.82904372503043" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">006</text>
+<circle cx="641.6" cy="79.3" r="5.2" fill="#2DD4BF" opacity="0.85"/>
+<text x="641.5578831961149" y="81.75205026566638" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">008</text>
+<circle cx="663.1" cy="45.8" r="5.2" fill="#2DD4BF" opacity="0.85"/>
+<text x="663.0788226034399" y="48.30449571806951" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">012</text>
+<circle cx="727.1" cy="37.3" r="5.2" fill="#2DD4BF" opacity="0.85"/>
+<text x="727.1001394548194" y="39.80893437916453" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">016</text>
+<circle cx="736.2" cy="81.5" r="5.2" fill="#2DD4BF" opacity="0.85"/>
+<text x="736.2027249844139" y="83.99055211103791" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">022</text>
+<circle cx="908.2" cy="99.5" r="5.2" fill="#2DD4BF" opacity="0.85"/>
+<text x="908.2163224957212" y="102.02253205862439" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">014</text>
+<circle cx="850.4" cy="95.1" r="5.2" fill="#2DD4BF" opacity="0.85"/>
+<text x="850.3570375558782" y="97.59130588788219" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">015</text>
+<circle cx="820.2" cy="45.3" r="5.2" fill="#2DD4BF" opacity="0.85"/>
+<text x="820.2187322395088" y="47.827950307708846" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">017</text>
+<circle cx="891.7" cy="32.3" r="5.2" fill="#2DD4BF" opacity="0.85"/>
+<text x="891.7468575929172" y="34.82724298858736" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">018</text>
+<circle cx="950.5" cy="36.4" r="5.2" fill="#2DD4BF" opacity="0.85"/>
+<text x="950.5422703324549" y="38.88169009022174" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">019</text>
+<circle cx="981.7" cy="87.2" r="5.2" fill="#2DD4BF" opacity="0.85"/>
+<text x="981.7162593222804" y="89.67342354660934" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">021</text>
+<circle cx="1066.0" cy="126.9" r="5.2" fill="#2DD4BF" opacity="0.85"/>
+<text x="1065.9933805559367" y="129.38537296303193" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">001</text>
+<circle cx="1125.2" cy="55.7" r="5.2" fill="#2DD4BF" opacity="0.85"/>
+<text x="1125.1609021844158" y="58.19351133840313" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">002</text>
+<circle cx="665.8" cy="237.6" r="5.2" fill="#2DD4BF" opacity="0.85"/>
+<text x="665.7701113487983" y="240.0661476318101" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">003</text>
+<circle cx="656.2" cy="201.6" r="5.2" fill="#2DD4BF" opacity="0.85"/>
+<text x="656.2263908662591" y="204.11129419325616" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">007</text>
+<circle cx="702.5" cy="169.0" r="5.2" fill="#2DD4BF" opacity="0.85"/>
+<text x="702.4565161787883" y="171.45733407437567" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">009</text>
+<circle cx="747.5" cy="200.8" r="5.2" fill="#2DD4BF" opacity="0.85"/>
+<text x="747.5188491929277" y="203.25437989872535" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">010</text>
+<circle cx="777.6" cy="231.0" r="5.2" fill="#2DD4BF" opacity="0.85"/>
+<text x="777.5722021622963" y="233.4659024845867" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">011</text>
+<circle cx="758.7" cy="277.8" r="5.2" fill="#2DD4BF" opacity="0.85"/>
+<text x="758.7294526943128" y="280.2585575496469" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">013</text>
+<circle cx="695.9" cy="258.9" r="5.2" fill="#2DD4BF" opacity="0.85"/>
+<text x="695.9118810784131" y="261.3800769972809" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">020</text>
+<circle cx="933.6" cy="225.2" r="5.2" fill="#F2B544" opacity="0.85"/>
+<text x="933.5674126819285" y="227.7333006379089" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">023</text>
+<circle cx="944.6" cy="198.2" r="5.2" fill="#F2B544" opacity="0.85"/>
+<text x="944.6131428292285" y="200.69787927267126" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">024</text>
+<circle cx="985.6" cy="180.9" r="5.2" fill="#F2B544" opacity="0.85"/>
+<text x="985.5904613485823" y="183.43601614218252" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">025</text>
+<circle cx="1011.4" cy="212.0" r="5.2" fill="#F2B544" opacity="0.85"/>
+<text x="1011.4175111060529" y="214.50782968488224" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">026</text>
+<circle cx="1047.2" cy="225.3" r="5.2" fill="#F2B544" opacity="0.85"/>
+<text x="1047.1643693260307" y="227.81325060659108" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">027</text>
+<circle cx="1058.7" cy="258.2" r="5.2" fill="#F2B544" opacity="0.85"/>
+<text x="1058.689924020252" y="260.7152570879245" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">028</text>
+<circle cx="1009.6" cy="267.4" r="5.2" fill="#F2B544" opacity="0.85"/>
+<text x="1009.6185330564424" y="269.9027439108639" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">029</text>
+<circle cx="978.9" cy="286.6" r="5.2" fill="#F2B544" opacity="0.85"/>
+<text x="978.9431803740255" y="289.082699786407" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">030</text>
+<circle cx="930.0" cy="284.0" r="5.2" fill="#F2B544" opacity="0.85"/>
+<text x="929.9786594491972" y="286.46403613965145" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">031</text>
+<circle cx="935.3" cy="247.1" r="5.2" fill="#F2B544" opacity="0.85"/>
+<text x="935.3305013676817" y="249.58601187409553" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="6.6" fill="#0F1C2E" font-weight="700" text-anchor="middle">032</text>
+<line x1="60" y1="292" x2="1140" y2="292" stroke="#27405C" stroke-width="1"/>
+<text x="60" y="326" font-family="'Avenir Next','Segoe UI',system-ui,sans-serif" font-size="27" fill="#2DD4BF" font-weight="700" text-anchor="start">32</text>
+<text x="60" y="348" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="10" fill="#8FA3BC" font-weight="400" text-anchor="start" letter-spacing="1">ASSIGNMENTS</text>
+<text x="278" y="326" font-family="'Avenir Next','Segoe UI',system-ui,sans-serif" font-size="27" fill="#2DD4BF" font-weight="700" text-anchor="start">22</text>
+<text x="278" y="348" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="10" fill="#8FA3BC" font-weight="400" text-anchor="start" letter-spacing="1">ORIGINAL</text>
+<text x="496" y="326" font-family="'Avenir Next','Segoe UI',system-ui,sans-serif" font-size="27" fill="#2DD4BF" font-weight="700" text-anchor="start">10</text>
+<text x="496" y="348" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="10" fill="#8FA3BC" font-weight="400" text-anchor="start" letter-spacing="1">REAL REPOS</text>
+<text x="714" y="326" font-family="'Avenir Next','Segoe UI',system-ui,sans-serif" font-size="27" fill="#2DD4BF" font-weight="700" text-anchor="start">7</text>
+<text x="714" y="348" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="10" fill="#8FA3BC" font-weight="400" text-anchor="start" letter-spacing="1">CHAPTERS</text>
+<text x="932" y="326" font-family="'Avenir Next','Segoe UI',system-ui,sans-serif" font-size="27" fill="#F2B544" font-weight="700" text-anchor="start">111</text>
+<text x="932" y="348" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="10" fill="#8FA3BC" font-weight="400" text-anchor="start" letter-spacing="1">PAGE BOOK</text>
+<circle cx="1140" cy="40" r="3" fill="#2DD4BF"/>
+<circle cx="1152" cy="40" r="3" fill="#F2B544" opacity="0.6"/>
+</svg>
