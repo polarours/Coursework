@@ -216,7 +216,56 @@ def divider():
             f'<circle cx="655" cy="9" r="2" fill="{AMBER}" opacity="0.7"/></svg>')
 
 
+def logo():
+    """Compact 128px mark: the five-volume lineage reduced to an icon."""
+    p = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Coursework mark">']
+    p.append(f'''<defs>
+      <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="{INK}"/><stop offset="1" stop-color="{INK2}"/>
+      </linearGradient>
+    </defs>''')
+    p.append('<rect x="2" y="2" width="124" height="124" rx="26" fill="url(#lg)" stroke="#27405C" stroke-width="1.5"/>')
+    # five volume anchors laid out as a constellation
+    anchors = [(64, 30), (98, 52), (88, 94), (40, 94), (30, 52)]
+    # connective spine
+    p.append(f'<path d="M{anchors[0][0]} {anchors[0][1]} L{anchors[1][0]} {anchors[1][1]} '
+             f'L{anchors[2][0]} {anchors[2][1]} L{anchors[3][0]} {anchors[3][1]} '
+             f'L{anchors[4][0]} {anchors[4][1]} Z" fill="none" stroke="{TEAL}" stroke-width="1.1" opacity="0.35"/>')
+    p.append(f'<line x1="64" y1="64" x2="64" y2="30" stroke="{TEAL}" stroke-width="1" opacity="0.3"/>')
+    p.append(f'<line x1="64" y1="64" x2="98" y2="52" stroke="{TEAL}" stroke-width="1" opacity="0.3"/>')
+    p.append(f'<line x1="64" y1="64" x2="88" y2="94" stroke="{AMBER}" stroke-width="1" opacity="0.4"/>')
+    p.append(f'<line x1="64" y1="64" x2="40" y2="94" stroke="{TEAL}" stroke-width="1" opacity="0.3"/>')
+    p.append(f'<line x1="64" y1="64" x2="30" y2="52" stroke="{TEAL}" stroke-width="1" opacity="0.3"/>')
+    for i, (x, y) in enumerate(anchors):
+        color = AMBER if i == 2 else TEAL
+        p.append(f'<circle cx="{x}" cy="{y}" r="6.5" fill="{INK}" stroke="{color}" stroke-width="2"/>')
+    # center core
+    p.append(f'<circle cx="64" cy="64" r="13" fill="{INK}"/>')
+    p.append(f'<circle cx="64" cy="64" r="11" fill="none" stroke="{PAPER}" stroke-width="1.6"/>')
+    p.append(txt(64, 69, "32", 13, PAPER, MONO, 700, "middle"))
+    p.append('</svg>')
+    return "\n".join(p)
+
+
+def catalog_strip():
+    """Small inline band used under the title: counts only, no prose."""
+    w, h = 520, 34
+    p = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="catalog counts">']
+    items = [("32", "problems"), ("22", "original"), ("10", "real repos"), ("7", "chapters")]
+    for i, (num, label) in enumerate(items):
+        x = 8 + i * 130
+        color = TEAL if i < 3 else AMBER
+        p.append(txt(x, 23, num, 16, color, MONO, 700))
+        p.append(txt(x + 30, 22, label, 10, SLATE, MONO))
+        if i < 3:
+            p.append(f'<line x1="{x+118}" y1="7" x2="{x+118}" y2="27" stroke="{LINE}" stroke-width="1"/>')
+    p.append('</svg>')
+    return "\n".join(p)
+
+
 for name, content in [
+    ("logo.svg", logo()),
+    ("catalog-strip.svg", catalog_strip()),
     ("hero.svg", hero(False)),
     ("hero-zh.svg", hero(True)),
     ("workflow.svg", workflow(False)),

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 34" width="520" height="34" role="img" aria-label="catalog counts">
+<text x="8" y="23" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="16" fill="#2DD4BF" font-weight="700" text-anchor="start">32</text>
+<text x="38" y="22" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="10" fill="#8FA3BC" font-weight="400" text-anchor="start">problems</text>
+<line x1="126" y1="7" x2="126" y2="27" stroke="#27405C" stroke-width="1"/>
+<text x="138" y="23" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="16" fill="#2DD4BF" font-weight="700" text-anchor="start">22</text>
+<text x="168" y="22" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="10" fill="#8FA3BC" font-weight="400" text-anchor="start">original</text>
+<line x1="256" y1="7" x2="256" y2="27" stroke="#27405C" stroke-width="1"/>
+<text x="268" y="23" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="16" fill="#2DD4BF" font-weight="700" text-anchor="start">10</text>
+<text x="298" y="22" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="10" fill="#8FA3BC" font-weight="400" text-anchor="start">real repos</text>
+<line x1="386" y1="7" x2="386" y2="27" stroke="#27405C" stroke-width="1"/>
+<text x="398" y="23" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="16" fill="#F2B544" font-weight="700" text-anchor="start">7</text>
+<text x="428" y="22" font-family="ui-monospace,'SF Mono','Cascadia Code',monospace" font-size="10" fill="#8FA3BC" font-weight="400" text-anchor="start">chapters</text>
+</svg>
