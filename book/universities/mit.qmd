@@ -1,0 +1,44 @@
+---
+title: "MIT <span class='zh-inline'>(麻省理工学院)</span>"
+---
+
+# MIT <span class='zh-inline'>(麻省理工学院)</span>
+
+<img src="logos/mit.svg" alt="MIT identifier" width="150" style="display:block;margin:0 0 1.4rem 0">
+
+The institute that turned engineering into a research discipline — and whose course numbering became a global shorthand for systems education.
+
+> 这所学校把工程变成一门研究学科，它的课程编号（6.824、6.006）已成为系统教育的全球通用语。
+
+## Background (背景)
+
+Chartered in 1861 on William Barton Rogers's vision of a polytechnic institute, MIT admitted its first students in 1865 after the Civil War. Its Department of Electrical Engineering and Computer Science grew out of the practical training that defined the school's early identity.
+
+> MIT 于 1861 年获特许成立，源于 William Barton Rogers 创办理工学院的构想；南北战争后于 1865 年招收首届学生。电气工程与计算机科学系（EECS）继承了学校早期的实践教育传统。
+
+## Notable people (名人)
+
+**Claude Shannon** — MIT professor (1958–78), 'father of information theory,' whose 1948 *A Mathematical Theory of Communication* founded the field. **Tim Berners-Lee** — MIT professor emeritus; invented the World Wide Web at CERN in 1989 and wrote the first browser and server. **Marvin Minsky** — co-founded the MIT AI Lab in 1959 and won the 1969 Turing Award.
+
+> **Claude Shannon** — MIT 教授（1958–78），“信息论之父”，1948 年的《通信的数学理论》开创了该领域。**Tim Berners-Lee** — MIT 荣休教授，1989 年在 CERN 发明万维网并写下第一个浏览器与服务器。**Marvin Minsky** — 1959 年共同创办 MIT 人工智能实验室，1969 年图灵奖得主。
+
+## Notable CS courses (著名计算机课程)
+
+6.001 Structure and Interpretation of Computer Programs · 6.006 Introduction to Algorithms · 6.828 Operating System Engineering · 6.824 Distributed Computer Systems Engineering · 6.036 Introduction to Machine Learning.
+
+> 6.001 计算机程序的构造与解释 · 6.006 算法导论 · 6.828 操作系统工程 · 6.824 分布式系统工程 · 6.036 机器学习导论。
+
+## In this book (本书收录)
+
+- [001](https://github.com/polarours/Coursework/tree/master/problems/001-mit-6.824-raft) — Raft consensus (6.824)
+- [005](https://github.com/polarours/Coursework/tree/master/problems/005-mit-6.1810-xv6) — xv6 operating systems
+- [016](https://github.com/polarours/Coursework/tree/master/problems/016-mit-shell) — Shell parser (6.858)
+- [018](https://github.com/polarours/Coursework/tree/master/problems/018-mit-6602-lru-cache) — LRU cache (6.006)
+
+## Sources (来源)
+
+- <https://engineering.mit.edu/about/history>
+- <https://news.mit.edu/2001/shannon>
+- <https://www.csail.mit.edu/person/tim-berners-lee>
+- <https://news.mit.edu/2016/marvin-minsky-obituary-0125>
+- <https://ocw.mit.edu/courses/6-824-distributed-computer-systems-engineering-spring-2006/>

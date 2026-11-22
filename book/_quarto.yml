@@ -44,6 +44,24 @@ book:
         - vol5/index.qmd
         - vol5/ch13-cxx-assignments.qmd
         - vol5/ch14-java-python-assignments.qmd
+    # 高校档案 / University profiles
+    - part: "Universities"
+      chapters:
+        - universities/index.qmd
+        - universities/mit.qmd
+        - universities/stanford.qmd
+        - universities/berkeley.qmd
+        - universities/cmu.qmd
+        - universities/princeton.qmd
+        - universities/gatech.qmd
+        - universities/cornell.qmd
+        - universities/umd.qmd
+        - universities/amirkabir.qmd
+        - universities/fordham.qmd
+        - universities/uci.qmd
+        - universities/ccny.qmd
+        - universities/clemson.qmd
+        - universities/ucsc.qmd
     # 附录 / Back matter
     - part: "Appendices"
       chapters:

@@ -1,0 +1,39 @@
+---
+title: "Georgia Institute of Technology <span class='zh-inline'>(佐治亚理工学院)</span>"
+---
+
+# Georgia Institute of Technology <span class='zh-inline'>(佐治亚理工学院)</span>
+
+<img src="logos/gatech.svg" alt="Georgia Institute of Technology identifier" width="150" style="display:block;margin:0 0 1.4rem 0">
+
+A technology institute whose computing college produced Google News, SQLite and the Pragmatic Programmer.
+
+> 这所理工学院的计算学院孕育了 Google News、SQLite 和《程序员修炼之道》。
+
+## Background (背景)
+
+Established in 1885 as the Georgia School of Technology and opened in 1888 to 84 students, it was renamed Georgia Institute of Technology in 1948.
+
+> 1885 年以“佐治亚技术学校”之名创立，1888 年招收 84 名学生，1948 年更名为佐治亚理工学院。
+
+## Notable people (名人)
+
+**Krishna Bharat** — created Google News during his MIT/Georgia Tech CS studies. **D. Richard Hipp** (1984) — architect and primary author of the SQLite database engine. **Andy Hunt** — co-author of *The Pragmatic Programmer* and an original signatory of the Agile Manifesto.
+
+> **Krishna Bharat** — 在开发 Google News 前于佐治亚理工取得计算机硕士与博士学位。**D. Richard Hipp**（1984 届）— SQLite 数据库引擎的架构师与主要作者。**Andy Hunt** — 《程序员修炼之道》合著者、敏捷宣言签署人。
+
+## Notable CS courses (著名计算机课程)
+
+CS 1301 Introduction to Computing · CS 1331 Object-Oriented Programming · CS 1332 Data Structures and Algorithms · CS 3510 Design and Analysis of Algorithms · CS 3600 Introduction to AI.
+
+> CS 1301 计算导论 · CS 1331 面向对象编程 · CS 1332 数据结构与算法 · CS 3510 算法设计与分析 · CS 3600 人工智能导论。
+
+## In this book (本书收录)
+
+- [019](https://github.com/polarours/Coursework/tree/master/problems/019-gatech-bloom-filter) — Bloom filter (CS 8803)
+
+## Sources (来源)
+
+- <https://www.gatech.edu/about/history-traditions>
+- <https://en.wikipedia.org/wiki/Georgia_Tech_College_of_Computing>
+- <https://catalog.gatech.edu/courses-undergrad/cs/>

@@ -96,8 +96,8 @@ table tbody tr:nth-child(2n) { background: rgba(15, 95, 99, 0.035); }
   font-size: 0.86rem;
   max-width: 300px;
 }
-.sidebar .sidebar-item-text,
-#TOC .nav-link { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.sidebar .sidebar-item-text { white-space: normal; overflow-wrap: break-word; }
+#TOC .nav-link { white-space: normal; overflow-wrap: break-word; line-height: 1.35; }
 .sidebar .sidebar-item-text { padding: 0.3rem 0.7rem; color: var(--cw-body); }
 .sidebar .sidebar-item-text.active { color: var(--cw-teal); font-weight: 650; background: rgba(15,95,99,0.08); }
 .sidebar .sidebar-item-section > .sidebar-item-text { font-size: 0.83rem; color: var(--cw-muted); text-transform: none; }

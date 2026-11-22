@@ -1,0 +1,39 @@
+---
+title: "City College of New York <span class='zh-inline'>(纽约城市学院)</span>"
+---
+
+# City College of New York <span class='zh-inline'>(纽约城市学院)</span>
+
+<img src="logos/ccny.svg" alt="City College of New York identifier" width="150" style="display:block;margin:0 0 1.4rem 0">
+
+The 'Free Academy' of 1847 — a public college whose alumni include the co-inventor of TCP/IP and Intel's CEO.
+
+> 1847 年的“免费学院”——这所公立学校的校友包括 TCP/IP 的共同发明者和 Intel 的 CEO。
+
+## Background (背景)
+
+Established in 1847 as the Free Academy, CCNY is the founding institution of the City University of New York. Its CS department was founded in 1968, the first CUNY college to offer a CS major.
+
+> 1847 年以“免费学院”之名创立，是纽约城市大学（CUNY）的发源校。计算机系成立于 1968 年，是 CUNY 首个开设计算机专业的高校。
+
+## Notable people (名人)
+
+**Robert E. Kahn** (class of 1960) — co-invented TCP/IP and shared the 2004 Turing Award. **Leonard Kleinrock** (1957) — Internet pioneer. **Andrew Grove** (1960) — became Intel's CEO.
+
+> **Robert E. Kahn**（1960 届）— TCP/IP 共同发明者，2004 年图灵奖得主。**Leonard Kleinrock**（1957 届）— 互联网先驱。**Andrew Grove**（1960 届）— 后任 Intel CEO。
+
+## Notable CS courses (著名计算机课程)
+
+CSC 212 Data Structures (Lab 07 is project 027) · BS/MS/PhD in Computer Science · BE in Computer Engineering · research through the Center for Algorithms and Interactive Scientific Software.
+
+> CSC 212 数据结构（Lab 07 即项目 027）· 计算机科学学士/硕士/博士 · 计算机工程学士 · 通过算法与交互科学软件中心开展研究。
+
+## In this book (本书收录)
+
+- [027](https://github.com/polarours/Coursework/tree/master/problems/027-ccny-csc212-backtracking) — Backtracking lab (CSC 212)
+
+## Sources (来源)
+
+- <https://www.ccny.cuny.edu/compsci/about-us>
+- <https://ccny-undergraduate.catalog.cuny.edu/programs/CMPSC-BS>
+- <https://en.wikipedia.org/wiki/List_of_City_College_of_New_York_alumni>

@@ -1,0 +1,41 @@
+---
+title: "UC Santa Cruz <span class='zh-inline'>(加州大学圣克鲁兹分校)</span>"
+---
+
+# UC Santa Cruz <span class='zh-inline'>(加州大学圣克鲁兹分校)</span>
+
+<img src="logos/ucsc.svg" alt="UC Santa Cruz identifier" width="150" style="display:block;margin:0 0 1.4rem 0">
+
+An experimental campus near Silicon Valley whose AI course's Pacman projects became classics — both our projects 031 and 032 come from here.
+
+> 硅谷附近的实验性校区，其人工智能课程的 Pacman 项目已成经典——我们的项目 031 与 032 都来自这里。
+
+## Background (背景)
+
+Founded in 1965 as an experimental public campus, its Information and Computer Science department formed in the late 1960s and the Baskin School of Engineering was named in 1997.
+
+> 1965 年作为实验性公立校区创办，信息与计算机科学系在 1960 年代末成立，1997 年工程学院以 Baskin 命名。
+
+## Notable people (名人)
+
+**Sage Weil** (CS PhD 2007) — created the Ceph distributed storage system. **Jay Kreps** — co-founder of Confluent and contributor to Apache Kafka. Faculty include **David Haussler** (UCSC Genome Browser) and **Ira Pohl** (ACM Fellow).
+
+> **Sage Weil**（2007 计算机博士）— 创建 Ceph 分布式存储系统。**Jay Kreps** — Confluent 联合创始人、Apache Kafka 贡献者。教师包括 **David Haussler**（UCSC 基因组浏览器）与 **Ira Pohl**（ACM 会士）。
+
+## Notable CS courses (著名计算机课程)
+
+CSE 140 Artificial Intelligence (p0/p1 are projects 031/032) · CSE 101 Data Structures and Algorithms · CSE 102 Analysis of Algorithms · CSE 120 Computer Architecture · CSE 130 Principles of System Design.
+
+> CSE 140 人工智能（p0/p1 即项目 031/032）· CSE 101 数据结构与算法 · CSE 102 算法分析 · CSE 120 计算机体系结构 · CSE 130 系统设计原理。
+
+## In this book (本书收录)
+
+- [031](https://github.com/polarours/Coursework/tree/master/problems/031-ucsc-cse140-pacman-warmup) — Pacman warmup (CSE 140 p0)
+- [032](https://github.com/polarours/Coursework/tree/master/problems/032-ucsc-cse140-pacman-search) — Pacman search (CSE 140 p1)
+
+## Sources (来源)
+
+- <https://strategicplan.ucsc.edu/overview/>
+- <https://engineering.ucsc.edu/about/be-history/>
+- <https://engineering.ucsc.edu/engage/spinoffs-and-startups/>
+- <https://catalog.ucsc.edu/en/2025-2026/general-catalog/academic-units/baskin-engineering/computer-science-and-engineering>

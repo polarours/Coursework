@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" width="320" height="120" role="img" aria-label="UC IRVINE wordmark">
+  <rect width="320" height="120" rx="8" fill="#FFCD00"/>
+  <rect x="10" y="10" width="300" height="100" rx="5" fill="none" stroke="#005B94" stroke-width="1.5" opacity="0.6"/>
+  <text x="26" y="70" font-family="Georgia,serif" font-size="52" font-weight="700" fill="#005B94">UCI</text>
+  <text x="156" y="62" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="1.6" fill="#FFFFFF">UC IRVINE</text>
+  <text x="156" y="84" font-family="Helvetica,Arial,sans-serif" font-size="9.5" letter-spacing="0.5" fill="#B9C4CC">typographic identifier · not an official crest</text>
+</svg>

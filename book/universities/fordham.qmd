@@ -1,0 +1,39 @@
+---
+title: "Fordham University <span class='zh-inline'>(福特汉姆大学)</span>"
+---
+
+# Fordham University <span class='zh-inline'>(福特汉姆大学)</span>
+
+<img src="logos/fordham.svg" alt="Fordham University identifier" width="150" style="display:block;margin:0 0 1.4rem 0">
+
+New York's oldest Catholic and Jesuit university — and the source of our dynamic-array list lab.
+
+> 纽约最古老的天主教耶稣会大学——我们的动态数组线性表实验就来自这里。
+
+## Background (背景)
+
+Founded in 1841 as St John's College by Bishop John Hughes, Fordham is the oldest Catholic and Jesuit university in the northeastern US, with campuses at Rose Hill and Lincoln Center.
+
+> 1841 年由 John Hughes 主教以“圣约翰学院”之名创办，是美国东北部最古老的天主教耶稣会大学，拥有 Rose Hill 与 Lincoln Center 两个校区。
+
+## Notable people (名人)
+
+**Anthony J. Ferrante** (BS/MS CS) — White House and National Security Council cybersecurity official who helped launch Fordham's MS in Cybersecurity. **Frank Hsu** — co-founded the MS in Cybersecurity and Data Analytics programmes and hosts the annual International Conference on Cyber Security.
+
+> **Anthony J. Ferrante**（计算机学士/硕士）— 白宫与国家安全委员会网络安全官员，协助创办福特汉姆网络安全硕士项目。**Frank Hsu** — 共同创办网络安全与数据分析硕士项目，主办年度国际网络安全会议。
+
+## Notable CS courses (著名计算机课程)
+
+CISC 2200 Data Structures (Lab 3 is project 024) · BS/BA in Computer Science · STEM MS in Computer Science with AI concentration · MS in Cybersecurity and MS in Data Analytics.
+
+> CISC 2200 数据结构（Lab 3 即项目 024）· 计算机科学学士 · 带 AI 方向的 STEM 计算机硕士 · 网络安全硕士与数据分析硕士。
+
+## In this book (本书收录)
+
+- [024](https://github.com/polarours/Coursework/tree/master/problems/024-fordham-cisc2200-alist) — AList (CISC 2200)
+
+## Sources (来源)
+
+- <https://www.fordham.edu/about/fordham-facts/>
+- <https://www.fordham.edu/undergraduate-admission/majors-and-minors/computer-science/>
+- <https://now.fordham.edu/fordham-magazine/fordham-alumni-recognized-among-top-50-cybersecurity-leaders/>

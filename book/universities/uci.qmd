@@ -1,0 +1,40 @@
+---
+title: "UC Irvine <span class='zh-inline'>(加州大学欧文分校)</span>"
+---
+
+# UC Irvine <span class='zh-inline'>(加州大学欧文分校)</span>
+
+<img src="logos/uci.svg" alt="UC Irvine identifier" width="150" style="display:block;margin:0 0 1.4rem 0">
+
+A young UC campus that grew into an ICS powerhouse — DNS and REST came out of its alumni body.
+
+> 一所年轻的加州大学分校，成长为信息计算机科学重镇——DNS 与 REST 都出自它的校友。
+
+## Background (背景)
+
+Opened in 1965 with 116 faculty and 1,589 students; its information and computer science department was founded in 1968 and became the UC system's first independent ICS school in 2002.
+
+> 1965 年开学，初始规模为 116 名教师、1,589 名学生；信息与计算机科学系成立于 1968 年，2002 年成为加州大学系统首个独立的 ICS 学院。
+
+## Notable people (名人)
+
+**Paul Mockapetris** (PhD '81) — invented the Domain Name System. **Roy Fielding** (BS '88, MS '93, PhD '00) — co-founded the Apache Group and authored the REST architectural style.
+
+> **Paul Mockapetris**（1981 博士）— 发明域名系统（DNS）。**Roy Fielding**（1988 学士、1993 硕士、2000 博士）— Apache Group 联合创始人，REST 架构风格的提出者。
+
+## Notable CS courses (著名计算机课程)
+
+ECS 36C (HW1 is project 025) · ICS 46 Data Structures (HW6 is project 026) · COMPSCI 161 Design and Analysis of Algorithms · COMPSCI 112 Computer Graphics · COMPSCI 131 Parallel and Distributed Computing.
+
+> ECS 36C（HW1 即项目 025）· ICS 46 数据结构（HW6 即项目 026）· COMPSCI 161 算法设计与分析 · COMPSCI 112 计算机图形学 · COMPSCI 131 并行与分布式计算。
+
+## In this book (本书收录)
+
+- [025](https://github.com/polarours/Coursework/tree/master/problems/025-uci-ecs36c-linkedlist) — Linked lists / stacks / queues (ECS 36C)
+- [026](https://github.com/polarours/Coursework/tree/master/problems/026-uci-ics46-bst-avl) — BST & AVL (ICS 46)
+
+## Sources (来源)
+
+- <https://ics.uci.edu/facts-figures/ics-mission-history/>
+- <https://catalogue.uci.edu/introduction/>
+- <https://catalogue.uci.edu/allcourses/compsci/>

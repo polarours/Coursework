@@ -1,0 +1,47 @@
+---
+title: "Stanford University <span class='zh-inline'>(斯坦福大学)</span>"
+---
+
+# Stanford University <span class='zh-inline'>(斯坦福大学)</span>
+
+<img src="logos/stanford.png" alt="Stanford University identifier" width="150" style="display:block;margin:0 0 1.4rem 0">
+
+A university whose CS department became the launching pad for Google and whose lecture notes trained a generation of AI researchers.
+
+> 这所学校的计算机系是 Google 的起跑线，它的讲义培训了一代又一代 AI 研究者。
+
+## Background (背景)
+
+Founded in 1885 by Leland and Jane Stanford as a memorial to their son, the university opened on 1 October 1891. Its location in Silicon Valley shaped a department closely tied to industry.
+
+> 斯坦福大学由 Leland 与 Jane Stanford 于 1885 年创办以纪念他们的儿子，1891 年 10 月 1 日开学。位于硅谷的地理位置塑造了它与产业界紧密相连的计算机系。
+
+## Notable people (名人)
+
+**Larry Page** and **Sergey Brin** — Stanford graduate students who co-developed PageRank and co-founded Google in 1998. **Fei-Fei Li** — Stanford professor and lead instructor of CS231n. **Andrew Ng** — Stanford adjunct professor and longtime instructor of CS229.
+
+> **Larry Page** 与 **Sergey Brin** — 斯坦福研究生，共同开发 PageRank 并于 1998 年创办 Google。**李飞飞** — 斯坦福教授，CS231n 主讲。**Andrew Ng** — 斯坦福兼职教授，长期主讲 CS229。
+
+## Notable CS courses (著名计算机课程)
+
+CS106A Programming Methodology · CS161 Design and Analysis of Algorithms · CS107 Programming Paradigms · CS229 Machine Learning · CS231n Deep Learning for Computer Vision.
+
+> CS106A 编程方法学 · CS161 算法设计与分析 · CS107 编程范式 · CS229 机器学习 · CS231n 计算机视觉深度学习。
+
+## In this book (本书收录)
+
+- [002](https://github.com/polarours/Coursework/tree/master/problems/002-stanford-cs144-tcp) — TCP (CS144)
+- [007](https://github.com/polarours/Coursework/tree/master/problems/007-stanford-cs143-compiler) — Compiler (CS143)
+- [009](https://github.com/polarours/Coursework/tree/master/problems/009-stanford-cs155-crypto) — Cryptography (CS155)
+- [010](https://github.com/polarours/Coursework/tree/master/problems/010-stanford-cs248-raytracer) — Raytracer (CS248)
+- [011](https://github.com/polarours/Coursework/tree/master/problems/011-stanford-cs231n-neuralnet) — Neural networks (CS231n)
+- [015](https://github.com/polarours/Coursework/tree/master/problems/015-stanford-cs106b-boggle) — Boggle (CS106B)
+- [021](https://github.com/polarours/Coursework/tree/master/problems/021-stanford-kruskal) — Kruskal MST
+- [022](https://github.com/polarours/Coursework/tree/master/problems/022-cs106l-scoped-handle) — CS106L-style workshop
+
+## Sources (来源)
+
+- <https://www.stanford.edu/about/history>
+- <https://engineering.stanford.edu/about/history/heroes/2014-heroes/larry-page>
+- <https://cs231n.stanford.edu/>
+- <https://cs229.stanford.edu/>

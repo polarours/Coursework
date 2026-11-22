@@ -1,0 +1,39 @@
+---
+title: "Clemson University <span class='zh-inline'>(克莱姆森大学)</span>"
+---
+
+# Clemson University <span class='zh-inline'>(克莱姆森大学)</span>
+
+<img src="logos/clemson.svg" alt="Clemson University identifier" width="150" style="display:block;margin:0 0 1.4rem 0">
+
+A South Carolina land-grant university whose computing school grew from a 1978 department — source of our list/stack/queue lab.
+
+> 南卡罗来纳州的赠地大学，其计算学院从 1978 年的一个系发展而来——我们的链表/栈/队列实验就来自这里。
+
+## Background (背景)
+
+Founded in 1889 through Thomas Green Clemson's bequest, it opened in 1893 as Clemson Agricultural College, became coeducational in 1955 and took its present name in 1964.
+
+> 1889 年根据 Thomas Green Clemson 的遗赠创办，1893 年以克莱姆森农业学院之名开学，1955 年实行男女同校，1964 年改用现名。
+
+## Notable people (名人)
+
+**Daniel C. Stanzione Sr.** (BS 1967, MS 1968, PhD 1972) — served as president of Bell Laboratories. **Josiah Hester** — CS assistant professor at Northwestern, working on sustainable computing.
+
+> **Daniel C. Stanzione Sr.**（1967 学士、1968 硕士、1972 博士）— 曾任贝尔实验室总裁。**Josiah Hester** — 西北大学计算机助理教授，研究可持续计算。
+
+## Notable CS courses (著名计算机课程)
+
+CPSC 2121 Data Structures and Algorithms (Lab 1 is project 028) · BS/BA in CS · MS/PhD · Human-Centered Computing PhD · Biomedical Data Science & Informatics.
+
+> CPSC 2121 数据结构与算法（Lab 1 即项目 028）· 计算机科学学士 · 硕士/博士 · 以人为中心的计算博士 · 生物医学数据科学与信息学。
+
+## In this book (本书收录)
+
+- [028](https://github.com/polarours/Coursework/tree/master/problems/028-clemson-cpsc2121-liststack-queue) — List stack & queue (CPSC 2121)
+
+## Sources (来源)
+
+- <https://www.clemson.edu/about/history/>
+- <https://www.clemson.edu/cecas/departments/computing/>
+- <https://alumni.clemson.edu/daniel-c-stanzione-sr-68/>

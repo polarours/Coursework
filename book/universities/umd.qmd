@@ -1,0 +1,40 @@
+---
+title: "University of Maryland <span class='zh-inline'>(马里兰大学)</span>"
+---
+
+# University of Maryland <span class='zh-inline'>(马里兰大学)</span>
+
+<img src="logos/umd.svg" alt="University of Maryland identifier" width="150" style="display:block;margin:0 0 1.4rem 0">
+
+A land-grant university near Washington DC whose CS alumni include a Google co-founder and whose courses shaped OO education.
+
+> 这所位于华盛顿特区附近的赠地大学，校友中有 Google 联合创始人，其课程塑造了面向对象教育。
+
+## Background (背景)
+
+Chartered in 1856 as the Maryland Agricultural College and opened in 1859 with 34 students, it became a land-grant college in 1864.
+
+> 1856 年以“马里兰农业学院”之名获特许成立，1859 年招收 34 名学生，1864 年成为赠地学院。
+
+## Notable people (名人)
+
+**Sergey Brin** — BS with honors in mathematics and CS (1993), co-founder of Google. **Ben Shneiderman** — Distinguished Professor in HCI, ACM Fellow and NAE member. **Victor Basili** — founder of NASA Goddard's Software Engineering Laboratory. **Hanan Samet** — quadtree pioneer and 2012 ACM Paris Kanellakis Award winner.
+
+> **Sergey Brin** — 1993 年数学与计算机荣誉学士，Google 联合创始人。**Ben Shneiderman** — 人机交互杰出教授、ACM 会士、美国工程院院士。**Victor Basili** — NASA Goddard 软件工程实验室创始人。**Hanan Samet** — 四叉树先驱、2012 年 ACM Paris Kanellakis 奖得主。
+
+## Notable CS courses (著名计算机课程)
+
+CMSC 132 Object-Oriented Programming II · CMSC 216 Introduction to Computer Systems · CMSC 330 Organization of Programming Languages · CMSC 351 Algorithms · CMSC 451 Design and Analysis of Algorithms.
+
+> CMSC 132 面向对象编程 II · CMSC 216 计算机系统导论 · CMSC 330 编程语言结构 · CMSC 351 算法 · CMSC 451 算法设计与分析。
+
+## In this book (本书收录)
+
+- [030](https://github.com/polarours/Coursework/tree/master/problems/030-umd-cmsc132-submitserver) — SubmitServer (CMSC 132)
+
+## Sources (来源)
+
+- <https://umd.edu/about/history>
+- <https://www.cs.umd.edu/community/alumnus/sergey-brin>
+- <https://www.cs.umd.edu/people/bshneide>
+- <https://undergrad.cs.umd.edu/degree-requirements-cs-major>
