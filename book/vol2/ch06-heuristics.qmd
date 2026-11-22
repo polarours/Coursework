@@ -1,35 +1,35 @@
 ---
-title: "第 6 章 · 概率结构与缓存抽象"
+title: "Chapter 6 · Probabilistic Structures and Caches <span class='zh-inline'>(第 6 章 · 概率结构与缓存抽象)</span>"
 ---
 
-# 第 6 章 · 概率结构与缓存抽象
+# Chapter 6 · Probabilistic Structures and Caches <span class='zh-inline'>(第 6 章 · 概率结构与缓存抽象)</span>
 ::: {.callout-note}
-## Purpose / 本章目标
+## Purpose (本章目标)
 
 理解布隆过滤器以假阳性换空间的权衡；理解 LRU 缓存中哈希表与双向链表的配合；通过真实命中/淘汰数字建立直觉。
 
 > **English:** Understand Bloom filter's space/false-positive trade-off; understand how hash maps and doubly linked lists combine in LRU caches.
 :::
 
-## 6.1 布隆过滤器 / Bloom filters
+## Bloom filters (6.1 布隆过滤器)
 
 布隆过滤器用 k 个哈希函数把元素映射到位数组。查询时若任一位为 0，元素一定不存在；全为 1 则可能存在。假阴性不可能，假阳性可控。
 
 > **English:** A Bloom filter maps elements to a bit array with k hashes. Any zero bit proves absence; all ones suggest possible presence. False negatives are impossible.
 
-## 6.2 LRU 缓存 / LRU cache
+## LRU cache (6.2 LRU 缓存)
 
 哈希表提供 O(1) 定位，双向链表提供 O(1) 移动；哨兵节点消除边界判断。get 命中后必须移到 MRU 端，否则淘汰顺序错误。
 
 > **English:** A hash map gives O(1) lookup and a doubly linked list gives O(1) reordering; sentinels remove boundary cases.
 
-## 6.3 实测 / Measurements
+## Measurements (6.3 实测)
 
 256 位、3 哈希的过滤器对 1000 个不存在项的假阳性为 0；LRU 经典序列命中 3 次、淘汰 2 次。
 
 > **English:** A 256-bit, 3-hash filter had 0 false positives on 1000 absent items; the classic LRU sequence yielded 3 hits and 2 evictions.
 
-### 真实运行输出 / Real measured output
+### Real measured output (真实运行输出)
 
 ```text
 [bloom] bit_count=9/256
@@ -40,14 +40,14 @@ title: "第 6 章 · 概率结构与缓存抽象"
 --- PASS: test_bloom / test_lru
 ```
 
-## Fallacies and Pitfalls / 常见误解
+## Fallacies and Pitfalls (常见误解)
 
 ::: {.callout-warning}
 ## Fallacy：布隆过滤器会漏报
 已插入元素必然命中（无假阴性）；只有未插入元素可能被误判为存在。
 :::
 
-## Self-Check / 自测题
+## Self-Check (自测题)
 
 1. 布隆过滤器为什么没有假阴性？
 2. LRU 命中后为什么必须移动节点？
@@ -57,6 +57,6 @@ title: "第 6 章 · 概率结构与缓存抽象"
 2. 否则 MRU 信息失效，淘汰的将不是最久未使用项。
 </details>
 
-## Summary / 本章小结
+## Summary (本章小结)
 
 概率结构用可控误差换空间；组合数据结构能获得单一结构不具备的复杂度；实测数字支撑设计判断。

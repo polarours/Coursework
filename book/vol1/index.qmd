@@ -1,13 +1,13 @@
 ---
-title: "卷一 · 系统基础"
+title: "Volume I · Systems Foundations <span class='zh-inline'>(卷一 · 系统基础)</span>"
 ---
 
-# 卷一 · 系统基础 / Volume I: Systems Foundations
+# Volume I · Systems Foundations <span class='zh-inline'>(卷一 · 系统基础)</span>
 
 > 本卷回答一个问题：程序如何在真实的机器上执行？
 > This volume asks: how does a program actually execute on real hardware?
 
-## 核心问题 / Central questions
+## Central questions (核心问题)
 
 1. 内存是如何组织的？当程序员写下 `malloc(24)` 时，机器做了什么？
    *How is memory organized? What happens when the programmer writes `malloc(24)`?*
@@ -16,7 +16,7 @@ title: "卷一 · 系统基础"
 3. 缓存为什么存在？为什么顺序访问比跨步访问快？
    *Why do caches exist? Why is sequential access faster than strided access?*
 
-## 本卷案例 / Case studies in this volume
+## Case studies in this volume (本卷案例)
 
 | 案例 / Case | 来源 / Source | 对应章节 / Chapter |
 |---|---|---|

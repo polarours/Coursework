@@ -1,8 +1,8 @@
 ---
-title: "总结 / Summary"
+title: "Summary <span class='zh-inline'>(总结)</span>"
 ---
 
-# 全书总结 / Book Summary
+# Summary <span class='zh-inline'>(总结)</span>
 
 32 道大作业（22 道自主精解 + 10 道真实高校作业），五卷，一个共同主题：**优秀的系统设计来自对抽象、权衡与验证的持续追问**。
 

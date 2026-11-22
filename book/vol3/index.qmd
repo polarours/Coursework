@@ -1,8 +1,8 @@
 ---
-title: "卷三 · 网络与分布式"
+title: "Volume III · Networks and Distributed Systems <span class='zh-inline'>(卷三 · 网络与分布式)</span>"
 ---
 
-# 卷三 · 网络与分布式
+# Volume III · Networks and Distributed Systems <span class='zh-inline'>(卷三 · 网络与分布式)</span>
 
 > 本卷回答：不可靠的通信如何达成可靠？
 

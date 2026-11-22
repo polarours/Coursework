@@ -1,18 +1,18 @@
 ---
-title: "第 1 章 · 内存与执行的基础"
+title: "Chapter 1 · Foundations of Memory and Execution <span class='zh-inline'>(第 1 章 · 内存与执行的基础)</span>"
 ---
 
-# 1 · 内存与执行的基础 / Foundations of Memory and Execution
+# Chapter 1 · Foundations of Memory and Execution <span class='zh-inline'>(第 1 章 · 内存与执行的基础)</span>
 
 ::: {.callout-note}
-## Purpose / 本章目标
+## Purpose (本章目标)
 
 读完本章，你应当能够：解释 `malloc` 返回的指针为什么必须对齐；推导隐式空闲链表的块布局；分析一个并发调度器里"等待时间"的正确计算方式；并理解为什么这些看似底层的问题会决定上层系统的正确性与性能。
 
 By the end of this chapter you should be able to explain why malloc'd pointers must be aligned, derive the block layout of an implicit free list, compute waiting time correctly in a scheduler, and understand how these low-level details determine correctness and performance.
 :::
 
-## 1.1 从一行 malloc 说起 / Starting from a single malloc
+## Starting from a single malloc (1.1 从一行 malloc 说起)
 
 考虑 CSAPP Malloc Lab 中的一行代码：
 
@@ -24,7 +24,7 @@ void *a = mm_malloc(24);
 
 The programmer sees a pointer; the system sees memory that must be *managed*. The three core questions are placement, coalescing, and metadata.
 
-### 1.1.1 边界标签 / Boundary tags
+### Boundary tags (1.1.1 边界标签)
 
 CSAPP[@csapp] 的经典方案是把元数据嵌入块自身：
 
@@ -39,7 +39,7 @@ The footer enables O(1) backward coalescing: reading the size at `bp - 8` tells 
 
 > **English:** Without footers, backward coalescing would require a linear scan from the heap start. Boundary tags trade 4 bytes per block for O(1) merging — a classic space-time trade-off.
 
-### 1.1.2 真实调试中的三个陷阱 / Three real debugging traps
+### Three real debugging traps (1.1.2 真实调试中的三个陷阱)
 
 我们的参考实现（见 `problems/006-cmu-csapp-malloc-lab/solution/malloc.c`）在开发时真实遇到三个错误，都用 gdb 定位并修复：
 
@@ -59,7 +59,7 @@ The footer enables O(1) backward coalescing: reading the size at `bp - 8` tells 
 
 > **English:** The last trap is a testing lesson: a print statement that shows a failure is useless unless it also fails the test. We upgraded it to an assert, which immediately exposed the alignment bug.
 
-## 1.2 调度器的等待时间 / Waiting time in a scheduler
+## Waiting time in a scheduler (1.2 调度器的等待时间)
 
 MIT 6.1810 的 xv6 实验让学生实现调度器。我们的模拟器（`problems/005-mit-6.1810-xv6/`）实现了 FCFS、Round Robin 与 MLFQ。这里讨论一个容易被忽略的细节：
 
@@ -83,7 +83,7 @@ The first version reused `arrival` for two meanings. The numbers happened to be 
 
 *Why is RR's average wait higher? This is not a bug — SJF minimizes average wait; RR optimizes fairness.*
 
-## 1.3 Fallacies and Pitfalls / 常见误解
+## 1.3 Fallacies and Pitfalls (常见误解)
 
 ::: {.callout-warning}
 ## Fallacy 1：对齐只是性能问题
@@ -97,7 +97,7 @@ The first version reused `arrival` for two meanings. The numbers happened to be 
 *Different algorithms optimize different objectives.*
 :::
 
-## 1.4 Self-Check / 自测题
+## 1.4 Self-Check (自测题)
 
 1. 若 header 的低 3 位作标志，为什么 size 必须是 8 的倍数？
 2. 在隐式空闲链表中，为什么 footer 能让向前合并变成 O(1)？
@@ -114,7 +114,7 @@ The first version reused `arrival` for two meanings. The numbers happened to be 
    *No. SJF minimizes average wait; RR optimizes fairness.*
 </details>
 
-## 1.5 Summary / 本章小结
+## 1.5 Summary (本章小结)
 
 - 内存分配器的正确性依赖对齐、边界标签与合并条件的精确实现。
 - 调度器的指标需要明确定义；字段语义混淆会让正确的代码变得不可维护。

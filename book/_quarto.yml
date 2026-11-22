@@ -2,8 +2,8 @@ project:
   type: book
 
 book:
-  title: "计算机课程大作业精解"
-  subtitle: "从知名高校期末项目中学习系统思维 / Learning Systems Thinking through Capstone Projects"
+  title: "Coursework · A Capstone Atlas"
+  subtitle: "Learning Systems Thinking through Capstone Projects"
   author:
     - "Coursework Contributors"
   date: "2026-11-18"
@@ -11,7 +11,7 @@ book:
   chapters:
     - index.qmd
     # 卷一：系统基础 / Volume I: Systems Foundations
-    - part: "卷一 · 系统基础 / Systems Foundations"
+    - part: "Volume I · Systems Foundations"
       chapters:
         - vol1/index.qmd
         - vol1/ch01-foundations.qmd
@@ -19,33 +19,33 @@ book:
         - vol1/ch03-processes.qmd
         - vol1/ch12-workshop.qmd
     # 卷二：算法与数据结构 / Volume II: Algorithms & Data Structures
-    - part: "卷二 · 算法与数据结构 / Algorithms and Data Structures"
+    - part: "Volume II · Algorithms and Data Structures"
       chapters:
         - vol2/index.qmd
         - vol2/ch04-search.qmd
         - vol2/ch05-graphs.qmd
         - vol2/ch06-heuristics.qmd
     # 卷三：网络与分布式 / Volume III: Networks & Distributed Systems
-    - part: "卷三 · 网络与分布式 / Networks and Distributed Systems"
+    - part: "Volume III · Networks and Distributed Systems"
       chapters:
         - vol3/index.qmd
         - vol3/ch07-reliable-transport.qmd
         - vol3/ch08-consensus.qmd
     # 卷四：智能系统 / Volume IV: Intelligent Systems
-    - part: "卷四 · 智能系统 / Intelligent Systems"
+    - part: "Volume IV · Intelligent Systems"
       chapters:
         - vol4/index.qmd
         - vol4/ch09-learning.qmd
         - vol4/ch10-search-and-learning.qmd
         - vol4/ch11-crypto.qmd
     # 卷五：真实作业集成 / Volume V: Real Assignments
-    - part: "卷五 · 真实作业集成 / Real Assignments"
+    - part: "Volume V · Real Assignments"
       chapters:
         - vol5/index.qmd
         - vol5/ch13-cxx-assignments.qmd
         - vol5/ch14-java-python-assignments.qmd
     # 附录 / Back matter
-    - part: "附录 / Appendices"
+    - part: "Appendices"
       chapters:
         - backmatter/summary.qmd
         - backmatter/how-to-use.qmd

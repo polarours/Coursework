@@ -34,6 +34,9 @@ jobs:
           path: book
           to: html
 
+      - name: Inject English-first language switch
+        run: python3 scripts/inject-lang-switch.py book/_book
+
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:

@@ -1,8 +1,8 @@
 ---
-title: "卷四 · 智能系统"
+title: "Volume IV · Intelligent Systems <span class='zh-inline'>(卷四 · 智能系统)</span>"
 ---
 
-# 卷四 · 智能系统
+# Volume IV · Intelligent Systems <span class='zh-inline'>(卷四 · 智能系统)</span>
 
 > 本卷回答：学习、搜索与密码学的系统视角是什么？
 

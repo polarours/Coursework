@@ -1,18 +1,142 @@
 /*-- scss:defaults --*/
 
-/* 品牌配色 / Brand colors */
-$primary: #2b5d8a;
-$secondary: #d97706;
-$body-bg: #fdfdfc;
+// Coursework book — a considered reading surface.
+// Palette derived from the atlas identity: deep marine ink, paper white,
+// one teal accent plus a warm amber for genuine state. WCAG AA contrast.
+$primary: #0f5f63;
+$secondary: #a8631a;
+$body-bg: #fcfcfa;
+$body-color: #1c2733;
+$headings-color: #101b26;
+$link-color: #0f5f63;
+$border-color: #e0e6e4;
+$font-family-sans-serif: "Inter", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+$font-family-monospace: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
 
 /*-- scss:rules --*/
 
-/* 中文正文可读性 / Chinese readability */
-body {
-  line-height: 1.75;
+:root {
+  --cw-ink: #101b26;
+  --cw-body: #1c2733;
+  --cw-muted: #5b6b73;
+  --cw-paper: #fcfcfa;
+  --cw-surface: #f4f6f4;
+  --cw-line: #dfe6e3;
+  --cw-teal: #0f5f63;
+  --cw-amber: #a8631a;
 }
 
-/* 双语英文块 / bilingual English blocks */
+html { font-size: 17px; }
+
+body {
+  line-height: 1.68;
+  color: var(--cw-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+// Three body sizes only: 1rem body, 0.88rem small labels, 1.5rem local heads.
+#quarto-document-content p,
+#quarto-document-content li { font-size: 1rem; }
+#quarto-document-content figcaption,
+#quarto-document-content .quarto-title-meta-heading { font-size: 0.88rem; color: var(--cw-muted); }
+#quarto-document-content h2,
+#quarto-document-content h3 { color: var(--cw-ink); letter-spacing: -0.015em; font-weight: 650; }
+#quarto-document-content h2 { margin-top: 2.2rem; border-bottom: 1px solid var(--cw-line); padding-bottom: 0.4rem; }
+#quarto-document-content h3 { margin-top: 1.6rem; }
+
+// Body prose readable measure.
+#quarto-document-content > section > p { max-width: 68ch; }
+
+// Chapter masthead: no decorative chrome, just type and a hairline.
+.quarto-title-block {
+  border-bottom: 1px solid var(--cw-line);
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.6rem;
+}
+.quarto-title-block h1.title {
+  font-size: clamp(1.9rem, 3.6vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--cw-ink);
+  text-wrap: balance;
+}
+.quarto-title-block .quarto-title-meta { font-size: 0.88rem; color: var(--cw-muted); }
+.zh-inline { color: var(--cw-muted); font-size: 0.82em; font-weight: 400; }
+
+// Bilingual English summaries: quiet surface with a left rule, no italics
+// in long passages (italic harms sustained reading).
 blockquote {
-  color: var(--quarto-color-muted, #555);
+  color: #3c4d57;
+  border-left: 3px solid var(--cw-teal);
+  background: var(--cw-surface);
+  padding: 0.7rem 1.1rem;
+  border-radius: 0 4px 4px 0;
+}
+
+// Tables: clean rules, no heavy grid.
+table {
+  font-size: 0.94rem;
+  border-collapse: collapse;
+  width: 100%;
+}
+table thead th { background: transparent; border-bottom: 2px solid var(--cw-teal); font-weight: 650; }
+table td, table th { border-left: 0; border-right: 0; border-bottom: 1px solid var(--cw-line); }
+table tbody tr:nth-child(2n) { background: rgba(15, 95, 99, 0.035); }
+
+// Callouts: surface tint, not loud boxes.
+.callout { border-left-width: 3px; }
+.callout-note { border-left-color: var(--cw-teal); }
+
+// Sidebar: tighter, quieter, single-line items.
+.sidebar {
+  background: var(--cw-surface);
+  border-right: 1px solid var(--cw-line);
+  font-size: 0.86rem;
+  max-width: 300px;
+}
+.sidebar .sidebar-item-text,
+#TOC .nav-link { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.sidebar .sidebar-item-text { padding: 0.3rem 0.7rem; color: var(--cw-body); }
+.sidebar .sidebar-item-text.active { color: var(--cw-teal); font-weight: 650; background: rgba(15,95,99,0.08); }
+.sidebar .sidebar-item-section > .sidebar-item-text { font-size: 0.83rem; color: var(--cw-muted); text-transform: none; }
+.sidebar-header { border-bottom: 1px solid var(--cw-line); padding-bottom: 0.8rem; margin-bottom: 0.6rem; }
+.sidebar-header .navbar-brand { font-weight: 700; color: var(--cw-ink); letter-spacing: -0.02em; }
+
+// Right TOC.
+#TOC { font-size: 0.88rem; }
+#TOC .nav-link { color: var(--cw-muted); padding: 0.18rem 0.6rem; }
+#TOC .nav-link.active { color: var(--cw-teal); border-left: 2px solid var(--cw-teal); }
+
+// Code: quiet surface.
+pre {
+  background: #f5f7f6 !important;
+  border: 1px solid var(--cw-line);
+  font-size: 0.88rem;
+  border-radius: 6px;
+}
+code { color: var(--cw-amber); }
+
+// Page navigation.
+.page-navigation .nav-page-text { font-size: 0.88rem; color: var(--cw-teal); }
+
+// Language toggle (injected by JS into the secondary nav).
+.cw-lang { display: inline-flex; border: 1px solid var(--cw-line); border-radius: 6px; overflow: hidden; }
+.cw-lang button {
+  border: 0; background: transparent; color: var(--cw-muted);
+  padding: 0.2rem 0.55rem; font-size: 0.82rem; cursor: pointer;
+  transition: background 160ms cubic-bezier(0.22,1,0.36,1), color 160ms cubic-bezier(0.22,1,0.36,1);
+}
+.cw-lang button[aria-pressed="true"] { background: var(--cw-teal); color: #fff; }
+
+// Chinese-only blocks: hidden by default (English-first), shown when toggled.
+body.cw-zh .zh-only { display: block !important; }
+body:not(.cw-zh) .zh-only { display: none !important; }
+.zh-only { color: var(--cw-body); }
+.en-only { color: var(--cw-body); }
+body.cw-zh .en-only { display: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: 0.01ms !important; }
 }

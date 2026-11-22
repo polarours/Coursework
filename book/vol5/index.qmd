@@ -1,18 +1,18 @@
 ---
-title: "卷五 · 真实作业集成"
+title: "Volume V · Real Assignments <span class='zh-inline'>(卷五 · 真实作业集成)</span>"
 ---
 
-# 卷五 · 真实作业集成 / Real Assignments
+# Volume V · Real Assignments <span class='zh-inline'>(卷五 · 真实作业集成)</span>
 
 ::: {.callout-note}
-## Purpose / 本卷定位
+## Purpose (本卷定位)
 
 前四卷是我们对经典大作业的自主解析；本卷转向**真实高校作业仓库本身**——原样引用、本地验证、独立精解。每道题都满足三条底线：官方 starter（非学生答案集）、本地可跑的原始或自写测试、submodule 引用保留原貌。
 
 > **English:** Volumes I–IV are our own walkthroughs of classic projects; this volume integrates real course repos as-is — official starters, locally verified tests, submodules preserving the originals.
 :::
 
-## 5.0.1 方法论 / Methodology
+## Methodology (5.0.1 方法论)
 
 三步流水线：
 
@@ -22,7 +22,7 @@ title: "卷五 · 真实作业集成"
 
 > **English:** Vet, wire as submodules, then verify — original tests first, boundary tests for uncovered branches, and a fixed version with a defect ledger when the upstream carry real bugs.
 
-## 5.0.2 三种形态 / Three integration shapes
+## Three integration shapes (5.0.2 三种形态)
 
 | 形态 | 代表 | 特征 |
 |---|---|---|
@@ -32,7 +32,7 @@ title: "卷五 · 真实作业集成"
 
 > **English:** Three shapes: independent reference against official interfaces; tests-as-spec; and the fixed-diff edition where "all samples pass" hides real defects.
 
-## 5.0.3 收录清单 / The ledger
+## The ledger (5.0.3 收录清单)
 
 | # | 作业 | 学校 | 语言 | 验证锚点 |
 |---|---|---|---|---|

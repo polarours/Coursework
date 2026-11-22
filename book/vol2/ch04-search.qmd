@@ -1,35 +1,35 @@
 ---
-title: "第 4 章 · 启发式搜索"
+title: "Chapter 4 · Heuristic Search <span class='zh-inline'>(第 4 章 · 启发式搜索)</span>"
 ---
 
-# 第 4 章 · 启发式搜索
+# Chapter 4 · Heuristic Search <span class='zh-inline'>(第 4 章 · 启发式搜索)</span>
 ::: {.callout-note}
-## Purpose / 本章目标
+## Purpose (本章目标)
 
 理解 A* 搜索的可采纳性条件；用曼哈顿距离分析 8-Puzzle；通过真实展开节点数理解启发式如何剪枝。
 
 > **English:** Understand A* admissibility; analyze 8-puzzle with Manhattan distance; see heuristics prune the search from measured node counts.
 :::
 
-## 4.1 可采纳性 / Admissibility
+## Admissibility (4.1 可采纳性)
 
 A* 保证最优解的前提是启发式不高估剩余代价。曼哈顿距离对 8-Puzzle 是可采纳的：每步只能把一个方块移动一格，而它到目标位置的距离最多减少 1。
 
 > **English:** A* guarantees optimality when the heuristic never overestimates. Manhattan distance is admissible because a move reduces a tile's distance by at most one.
 
-## 4.2 回溯与 Trie / Backtracking and Tries
+## Backtracking and Tries (4.2 回溯与 Trie)
 
 Boggle 展示了另一种搜索：在字母网格中穷举路径。Trie 的前缀剪枝让无效前缀在常数时间内被识别，把最坏 O(16·8^L) 的搜索压缩到实际路径数量级。
 
 > **English:** Boggle exhausts paths in a letter grid. Trie prefix pruning rejects invalid prefixes in constant time, collapsing the worst case dramatically.
 
-## 4.3 实测对比 / Measured comparison
+## Measured comparison (4.3 实测对比)
 
 A* 解一个 h=4 的打乱局面只展开 5 个节点；Boggle 在 2×2 网格中找到全部 6 个可达词，3×3 中对角链 aei 被正确识别。这些数字说明剪枝的有效性。
 
 > **English:** A* expanded only 5 nodes on an h=4 scramble; Boggle found all 6 reachable words in 2×2 and the diagonal chain aei in 3×3.
 
-### 真实运行输出 / Real measured output
+### Real measured output (真实运行输出)
 
 ```text
 [puzzle] scrambled start h=4: moves=4, expanded=5
@@ -39,14 +39,14 @@ A* 解一个 h=4 的打乱局面只展开 5 个节点；Boggle 在 2×2 网格�
 --- PASS: test_puzzle / test_boggle
 ```
 
-## Fallacies and Pitfalls / 常见误解
+## Fallacies and Pitfalls (常见误解)
 
 ::: {.callout-warning}
 ## Fallacy：经典例子一定可解
 教科书常用的 (2,8,3,1,6,4,7,0,5) 逆序数 11（奇数），实际不可解。搜索前必须做可解性判定。
 :::
 
-## Self-Check / 自测题
+## Self-Check (自测题)
 
 1. 为什么曼哈顿距离是可采纳的？
 2. Trie 剪枝为什么有效？
@@ -56,6 +56,6 @@ A* 解一个 h=4 的打乱局面只展开 5 个节点；Boggle 在 2×2 网格�
 2. 无效前缀在 O(长度) 内被识别，避免深入递归。
 </details>
 
-## Summary / 本章小结
+## Summary (本章小结)
 
 可采纳启发式保证 A* 最优；Trie 让回溯搜索高效；可解性判定避免搜索无解状态。

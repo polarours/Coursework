@@ -1,8 +1,8 @@
 ---
-title: "卷二 · 算法与数据结构"
+title: "Volume II · Algorithms and Data Structures <span class='zh-inline'>(卷二 · 算法与数据结构)</span>"
 ---
 
-# 卷二 · 算法与数据结构
+# Volume II · Algorithms and Data Structures <span class='zh-inline'>(卷二 · 算法与数据结构)</span>
 
 > 本卷回答：如何用正确的抽象降低问题复杂度？
 

@@ -1,10 +1,10 @@
 ---
-title: "如何使用本书 / How to Use This Book"
+title: "How to Use This Book <span class='zh-inline'>(如何使用本书)</span>"
 ---
 
-# 如何使用本书
+# How to Use This Book <span class='zh-inline'>(如何使用本书)</span>
 
-## 三种读者 / Three audiences
+## Three audiences (三种读者)
 
 1. **学生**：先读 Purpose，自己做一遍，再读正文与自测。
 2. **教师**：每章 Self-Check 可作为课堂练习；Fallacies 可作为讨论题。
@@ -12,7 +12,7 @@ title: "如何使用本书 / How to Use This Book"
 
 > **English:** Students should attempt the problem first; instructors can use Self-Check as exercises; self-learners can follow the volume order and run the code in `problems/`.
 
-## 构建 / Building
+## Building (构建)
 
 ```bash
 cd book && quarto render

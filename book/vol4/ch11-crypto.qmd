@@ -1,35 +1,35 @@
 ---
-title: "第 11 章 · 密码学构件"
+title: "Chapter 11 · Cryptographic Primitives <span class='zh-inline'>(第 11 章 · 密码学构件)</span>"
 ---
 
-# 第 11 章 · 密码学构件
+# Chapter 11 · Cryptographic Primitives <span class='zh-inline'>(第 11 章 · 密码学构件)</span>
 ::: {.callout-note}
-## Purpose / 本章目标
+## Purpose (本章目标)
 
 理解 Miller-Rabin 素性测试、RSA 加解密与 Merkle 树的原理；通过真实 bug（固定种子死锁）理解随机数在密码学中的角色。
 
 > **English:** Understand Miller-Rabin, RSA, and Merkle trees; learn about randomness from a real fixed-seed deadlock.
 :::
 
-## 11.1 快速模幂 / Fast modular exponentiation
+## Fast modular exponentiation (11.1 快速模幂)
 
 RSA 的核心是平方-乘算法：`while d: if d&1: res=res*a%n; a=a*a%n; d>>=1`。复杂度 O(log d)，而非朴素的 O(d)。
 
 > **English:** RSA relies on square-and-multiply exponentiation: O(log d) instead of naive O(d).
 
-## 11.2 对称性与签名 / Symmetry and signatures
+## Symmetry and signatures (11.2 对称性与签名)
 
 RSA 加密用 (n,e)，解密用 (n,d)；签名则反过来。验证签名只需用公钥：verify(m, sign(m)) = True。
 
 > **English:** RSA encrypts with (n,e) and decrypts with (n,d); signing reverses the roles and verification uses the public key.
 
-## 11.3 随机数的陷阱 / The randomness trap
+## The randomness trap (11.3 随机数的陷阱)
 
 开发中真实遇到：固定种子让两次 gen_prime 返回同一个素数，`while p == q` 死循环，测试超时 180 秒。修复：给每个素数不同种子。这是'可复现'与'随机性'的张力。
 
 > **English:** A fixed seed made two gen_prime calls return the same prime, causing an infinite `while p==q` loop and a 180s test timeout.
 
-### 真实运行输出 / Real measured output
+### Real measured output (真实运行输出)
 
 ```text
 [crypto] primes under 200 (count=46)
@@ -40,14 +40,14 @@ RSA 加密用 (n,e)，解密用 (n,d)；签名则反过来。验证签名只需�
 --- PASS: test_crypto
 ```
 
-## Fallacies and Pitfalls / 常见误解
+## Fallacies and Pitfalls (常见误解)
 
 ::: {.callout-warning}
 ## Fallacy：固定种子总是好的
 对可复现性是的，但同一生成器被多次调用期望不同结果时会死循环。密码学尤其需要真正的随机性。
 :::
 
-## Self-Check / 自测题
+## Self-Check (自测题)
 
 1. 为什么 Miller-Rabin 要先试除小素数？
 2. Merkle 树如何检测篡改？
@@ -57,6 +57,6 @@ RSA 加密用 (n,e)，解密用 (n,d)；签名则反过来。验证签名只需�
 2. 叶子哈希两两配对至根；任一叶子变化都会改变根哈希。
 </details>
 
-## Summary / 本章小结
+## Summary (本章小结)
 
 密码学原语依赖数论与哈希；固定种子的双刃剑在真实 bug 中体现；可复现性与随机性需权衡。
