@@ -1,21 +1,14 @@
-<p align="center">
-  <img src="assets/logo.svg" alt="Coursework" width="112">
-</p>
-
-<h1 align="center">Coursework</h1>
+<a href="#catalog"><img src="assets/banner.svg" alt="Coursework — a capstone atlas of university CS projects" width="100%"></a>
 
 <p align="center">
-  Deep, runnable walkthroughs of university CS capstones.
-  <br>
-  <a href="#catalog">**Start reading →**</a> ·
+  <a href="#catalog"><strong>Start reading →</strong></a> ·
   <a href="README.zh-CN.md">中文</a> ·
   <a href="book/README.md">The Book</a> ·
-  <a href="CONTRIBUTING.md">Contributing</a>
+  <a href="CONTRIBUTING.md">Contributing</a> ·
+  <a href="docs/selection-criteria.md">Selection criteria</a>
 </p>
 
-<p align="center">
-  <img src="assets/catalog-strip.svg" alt="32 problems, 22 original, 10 real, 7 chapters each" width="470">
-</p>
+<p align="center"><img src="assets/rule.svg" alt="" width="100%"></p>
 
 ---
 

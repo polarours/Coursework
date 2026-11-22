@@ -1,21 +1,14 @@
-<p align="center">
-  <img src="assets/logo.svg" alt="Coursework" width="112">
-</p>
-
-<h1 align="center">Coursework</h1>
+<a href="#catalog"><img src="assets/banner-zh.svg" alt="计算机课程大作业精解库" width="100%"></a>
 
 <p align="center">
-  把名校计算机课程的大作业拆透：可运行、可复现的逐章精解。
-  <br>
-  <a href="#catalog">**开始阅读 →**</a> ·
+  <a href="#catalog"><strong>开始阅读 →</strong></a> ·
   <a href="README.md">English</a>（默认版本） ·
   <a href="book/README.md">正式成书</a> ·
-  <a href="CONTRIBUTING.md">贡献指南</a>
+  <a href="CONTRIBUTING.md">贡献指南</a> ·
+  <a href="docs/selection-criteria.md">选题标准</a>
 </p>
 
-<p align="center">
-  <img src="assets/catalog-strip.svg" alt="32 道题目，22 道原创，10 道真实作业，每题七章" width="470">
-</p>
+<p align="center"><img src="assets/rule.svg" alt="" width="100%"></p>
 
 ---
 
