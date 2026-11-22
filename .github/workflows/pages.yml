@@ -1,0 +1,50 @@
+name: Pages
+
+# Build the Quarto book as a static site and publish it with GitHub Pages.
+# Same shape as the Cppuccino Pages workflow: build on push to master,
+# upload the artifact, deploy to the github-pages environment.
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Render book as HTML
+        uses: quarto-dev/quarto-actions/render@v2
+        with:
+          path: book
+          to: html
+
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: book/_book
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
