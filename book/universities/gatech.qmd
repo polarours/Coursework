@@ -45,7 +45,7 @@ Established in 1885 as the Georgia School of Technology and opened in 1888 to 84
 
 ## In this book (本书收录)
 
-- [019](https://github.com/polarours/Coursework/tree/master/problems/019-gatech-bloom-filter) — Bloom filter (CS 8803)
+- [019 · Bloom filter (CS 8803)](https://github.com/polarours/Coursework/tree/master/problems/019-gatech-bloom-filter)
 
 **The Bloom filter assignment reflects Georgia Tech's systems-minded pragmatism: a probabilistic structure you can reason about and measure.**
 

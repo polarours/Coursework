@@ -1,4 +1,5 @@
 # 029 · UC Berkeley CS61B proj1a+1b — Deque61B 完整大作业（真实高校作业，Java）
+- 来源高校 / University profile: [UC Berkeley](https://polarours.github.io/Coursework/universities/berkeley.html)
 
 - 学校 / University: UC Berkeley
 - 课程 / Course: CS 61B Data Structures (sp25, Josh Hug)

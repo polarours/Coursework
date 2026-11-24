@@ -1,4 +1,5 @@
 # 032 · UCSC CSE140 p1 — Pacman 搜索大作业（真实高校作业，Python）
+- 来源高校 / University profile: [UC Santa Cruz](https://polarours.github.io/Coursework/universities/ucsc.html)
 
 - 学校 / University: UC Santa Cruz
 - 课程 / Course: CSE 140 Artificial Intelligence（题面在 031 upstream 的 `p1/README.md`）

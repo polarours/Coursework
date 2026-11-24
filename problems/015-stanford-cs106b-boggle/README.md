@@ -1,4 +1,5 @@
 # 015 · Stanford CS106B — Boggle 回溯求解
+- 来源高校 / University profile: [Stanford University](https://polarours.github.io/Coursework/universities/stanford.html)
 
 - 课程 / Course: Stanford CS106B Programming Abstractions
 - 官方 / Official: https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1212/assignments/4-backtracking/boggle

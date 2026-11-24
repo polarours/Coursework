@@ -1,4 +1,5 @@
 # 022 · Assignment: ScopedHandle（RAII 与移动语义）
+- 来源高校 / University profile: [Stanford University](https://polarours.github.io/Coursework/universities/stanford.html)
 
 > 原创题目，模仿 Stanford CS106L 作业的结构与教学意图（starter code + handout + 简答 + autograder）。
 > 不是 CS106L 的原题或原代码，不复制其内容。

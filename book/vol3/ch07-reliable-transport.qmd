@@ -10,6 +10,12 @@ title: "Chapter 7 · Reliable Transport <span class='zh-inline'>(第 7 章 · �
 > **English:** Understand TCP reassembly and 32-bit sequence wrapping; master sliding window and timeout backoff; verify reliability end-to-end.
 :::
 
+::: {.callout-tip}
+## Projects in this chapter (本章项目与来源高校)
+
+[002 Stanford](../universities/stanford.qmd)
+:::
+
 ## Sequence numbers and wrapping (7.1 序列号与回绕)
 
 TCP 序列号是 32 位无符号数，接近 2^32 时回绕。所有比较必须用模运算：`wrap_sub(a,b)` 给出从 b 到 a 的距离。ISN = 2^32−5 加 10 得 5，而不是 2^32+5。

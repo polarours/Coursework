@@ -1,4 +1,5 @@
 # 013 · UC Berkeley CS61A — Scheme 解释器
+- 来源高校 / University profile: [UC Berkeley](https://polarours.github.io/Coursework/universities/berkeley.html)
 
 - 课程 / Course: UC Berkeley CS61A Structure and Interpretation of Computer Programs
 - 官方 / Official: https://cs61a.org/

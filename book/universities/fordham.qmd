@@ -43,7 +43,7 @@ Founded in 1841 as St John's College by Bishop John Hughes, Fordham is the oldes
 
 ## In this book (本书收录)
 
-- [024](https://github.com/polarours/Coursework/tree/master/problems/024-fordham-cisc2200-alist) — AList (CISC 2200)
+- [024 · AList (CISC 2200)](https://github.com/polarours/Coursework/tree/master/problems/024-fordham-cisc2200-alist)
 
 **AList is Lab 3 in its original form — fill five TODOs in a template list and make the provided doctest suite pass.**
 

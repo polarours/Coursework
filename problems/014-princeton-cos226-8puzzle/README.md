@@ -1,4 +1,5 @@
 # 014 · Princeton COS226 — 8-Puzzle
+- 来源高校 / University profile: [Princeton University](https://polarours.github.io/Coursework/universities/princeton.html)
 
 - 课程 / Course: Princeton COS 226 Algorithms and Data Structures
 - 官方 / Official: https://algs4.cs.princeton.edu/

@@ -1,4 +1,5 @@
 # 002 · Stanford CS144 — 手写 TCP / Build a TCP
+- 来源高校 / University profile: [Stanford University](https://polarours.github.io/Coursework/universities/stanford.html)
 
 - 课程 / Course: Stanford CS144 Introduction to Computer Networking
 - 官方 / Official: https://cs144.github.io/

@@ -10,6 +10,12 @@ title: "Chapter 1 · Foundations of Memory and Execution <span class='zh-inline'
 By the end of this chapter you should be able to explain why malloc'd pointers must be aligned, derive the block layout of an implicit free list, compute waiting time correctly in a scheduler, and understand how these low-level details determine correctness and performance.
 :::
 
+::: {.callout-tip}
+## Projects in this chapter (本章项目与来源高校)
+
+[005 MIT](../universities/mit.qmd) · [006 CMU](../universities/cmu.qmd)
+:::
+
 ## Starting from a single malloc (1.1 从一行 malloc 说起)
 
 考虑 CSAPP Malloc Lab 中的一行代码：

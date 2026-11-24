@@ -1,4 +1,5 @@
 # 009 · Stanford CS155 — 密码学构件
+- 来源高校 / University profile: [Stanford University](https://polarours.github.io/Coursework/universities/stanford.html)
 
 - 课程 / Course: Stanford CS155 Cryptography and Security
 - 官方 / Official: https://crypto.stanford.edu/cs155/

@@ -1,4 +1,5 @@
 # 027 · CCNY CSC212 Lab 07 — 回溯三题（真实高校作业）
+- 来源高校 / University profile: [City College of New York](https://polarours.github.io/Coursework/universities/ccny.html)
 
 - 学校 / University: City College of New York (CUNY)
 - 课程 / Course: CSC 212 Data Structures

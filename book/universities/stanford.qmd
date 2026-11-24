@@ -46,14 +46,14 @@ Founded in 1885 by Leland and Jane Stanford as a memorial to their son, the univ
 
 ## In this book (本书收录)
 
-- [002](https://github.com/polarours/Coursework/tree/master/problems/002-stanford-cs144-tcp) — TCP (CS144)
-- [007](https://github.com/polarours/Coursework/tree/master/problems/007-stanford-cs143-compiler) — Compiler (CS143)
-- [009](https://github.com/polarours/Coursework/tree/master/problems/009-stanford-cs155-crypto) — Cryptography (CS155)
-- [010](https://github.com/polarours/Coursework/tree/master/problems/010-stanford-cs248-raytracer) — Raytracer (CS248)
-- [011](https://github.com/polarours/Coursework/tree/master/problems/011-stanford-cs231n-neuralnet) — Neural networks (CS231n)
-- [015](https://github.com/polarours/Coursework/tree/master/problems/015-stanford-cs106b-boggle) — Boggle (CS106B)
-- [021](https://github.com/polarours/Coursework/tree/master/problems/021-stanford-kruskal) — Kruskal MST
-- [022](https://github.com/polarours/Coursework/tree/master/problems/022-cs106l-scoped-handle) — CS106L-style workshop
+- [002 · TCP (CS144)](https://github.com/polarours/Coursework/tree/master/problems/002-stanford-cs144-tcp)
+- [007 · Compiler (CS143)](https://github.com/polarours/Coursework/tree/master/problems/007-stanford-cs143-compiler)
+- [009 · Cryptography (CS155)](https://github.com/polarours/Coursework/tree/master/problems/009-stanford-cs155-crypto)
+- [010 · Raytracer (CS248)](https://github.com/polarours/Coursework/tree/master/problems/010-stanford-cs248-raytracer)
+- [011 · Neural networks (CS231n)](https://github.com/polarours/Coursework/tree/master/problems/011-stanford-cs231n-neuralnet)
+- [015 · Boggle (CS106B)](https://github.com/polarours/Coursework/tree/master/problems/015-stanford-cs106b-boggle)
+- [021 · Kruskal MST](https://github.com/polarours/Coursework/tree/master/problems/021-stanford-kruskal)
+- [022 · CS106L-style workshop](https://github.com/polarours/Coursework/tree/master/problems/022-cs106l-scoped-handle)
 
 **From CS144's TCP to CS231n's neural networks, the Stanford projects here trace the path from networks to AI that the department itself helped define.**
 

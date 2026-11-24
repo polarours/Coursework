@@ -44,8 +44,8 @@ Opened in 1965 with 116 faculty and 1,589 students; its information and computer
 
 ## In this book (本书收录)
 
-- [025](https://github.com/polarours/Coursework/tree/master/problems/025-uci-ecs36c-linkedlist) — Linked lists / stacks / queues (ECS 36C)
-- [026](https://github.com/polarours/Coursework/tree/master/problems/026-uci-ics46-bst-avl) — BST & AVL (ICS 46)
+- [025 · Linked lists / stacks / queues (ECS 36C)](https://github.com/polarours/Coursework/tree/master/problems/025-uci-ecs36c-linkedlist)
+- [026 · BST & AVL (ICS 46)](https://github.com/polarours/Coursework/tree/master/problems/026-uci-ics46-bst-avl)
 
 **ECS36C's linked structures and ICS46's AVL trees are the two halves of UCI's data-structure apprenticeship — implement it, then prove it balances.**
 

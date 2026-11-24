@@ -44,7 +44,7 @@ Founded in 1889 through Thomas Green Clemson's bequest, it opened in 1893 as Cle
 
 ## In this book (本书收录)
 
-- [028](https://github.com/polarours/Coursework/tree/master/problems/028-clemson-cpsc2121-liststack-queue) — List stack & queue (CPSC 2121)
+- [028 · List stack & queue (CPSC 2121)](https://github.com/polarours/Coursework/tree/master/problems/028-clemson-cpsc2121-liststack-queue)
 
 **The list/stack/queue lab is CPSC 2121 at its most direct — and our fixed version shows why passing all 13 sample tests is not the same as being correct.**
 

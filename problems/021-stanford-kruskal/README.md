@@ -1,4 +1,5 @@
 # 021 · Stanford 算法 — Kruskal 最小生成树
+- 来源高校 / University profile: [Stanford University](https://polarours.github.io/Coursework/universities/stanford.html)
 
 - 课程 / Course: Stanford CS161 Design and Analysis of Algorithms
 - 官方 / Official: https://web.stanford.edu/class/cs161/

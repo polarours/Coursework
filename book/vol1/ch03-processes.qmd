@@ -10,6 +10,12 @@ title: "Chapter 3 · Processes and the Shell <span class='zh-inline'>(第 3 章 
 > **English:** Understand the shell as a process-creation interface; master parsing rules for pipes, redirection, quoting, and variable expansion.
 :::
 
+::: {.callout-tip}
+## Projects in this chapter (本章项目与来源高校)
+
+[016 MIT](../universities/mit.qmd)
+:::
+
 ## The shell in the system hierarchy (3.1 Shell 在系统层次中的位置)
 
 MIT 6.858 的系统安全实验让学生从最底层理解进程。Shell 是用户与内核之间的解释器：它解析一行文本，把它变成一组 `fork`/`exec`/`pipe`/`dup2` 系统调用。本项目聚焦前半部分——解析。真正的执行留给练习。

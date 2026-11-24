@@ -1,4 +1,5 @@
 # 010 · Stanford CS248 — 光线追踪器
+- 来源高校 / University profile: [Stanford University](https://polarours.github.io/Coursework/universities/stanford.html)
 
 - 课程 / Course: Stanford CS248 Computer Graphics
 - 官方 / Official: https://graphics.stanford.edu/courses/cs248-2/

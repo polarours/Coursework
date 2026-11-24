@@ -1,4 +1,5 @@
 # 006 · CMU 15-213 — CSAPP Malloc Lab
+- 来源高校 / University profile: [Carnegie Mellon University](https://polarours.github.io/Coursework/universities/cmu.html)
 
 - 课程 / Course: CMU 15-213 Introduction to Computer Systems (CSAPP)
 - 社区参考 / Community reference: https://github.com/kcxain/CSAPP-Lab

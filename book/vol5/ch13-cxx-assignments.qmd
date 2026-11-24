@@ -10,37 +10,37 @@ title: "Chapter 13 · Six Real C++ Assignments <span class='zh-inline'>(第 13 �
 > **English:** Six real C++ assignments under one discipline: original tests pass as-is, boundaries probed, defects logged first-hand.
 :::
 
-## Amirkabir 023 (13.1 矩阵代数库：测试先行的合同)
+## Amirkabir 023 (13.1 矩阵代数库：测试先行的合同) · [profile](../universities/amirkabir.qmd)
 
 17 函数的矩阵库，官方 24 用例 gtest 把每处边界语义钉死：`random(min>max)` 抛 `std::logic_error`、空矩阵相乘返回 `{}`、`determinant({}) = 1.0`（空积约定）、奇异矩阵 `inverse` 抛 `logic_error`。我们的第一版栽了六处——全部由"把测试当合同读"逐条修复。最微妙的是 `upper_triangular` **禁止选主元**：bonus 用例的首主元恰为 0，必须用行加法绕开而不是换行。
 
 > **English:** The 24-case suite is the contract; all six of our first-draft semantic errors were caught by reading it that way — including the no-pivoting rule for upper_triangular.
 
-## Fordham 024 (13.2 动态数组表：扩容参数的隐性缩容)
+## Fordham 024 (13.2 动态数组表：扩容参数的隐性缩容) · [profile](../universities/fordham.qmd)
 
 五个 TODO 里最容易埋雷的是 `resize` 调用：starter 用 `count * RFACTOR` 而不是 `maxCnt * RFACTOR`——元素数小于容量时"扩容"反而缩容，满表插入直接越界。另一个教学点是深拷贝三步走（抄形状 → 开新内存 → 搬内容），漏第二步就是析构期 double free。
 
 > **English:** The starter's own resize call shrinks capacity when count < maxCnt — a full-table insert then writes out of bounds.
 
-## UCI 025 (13.3 现代容器三件套：optional 语义)
+## UCI 025 (13.3 现代容器三件套：optional 语义) · [profile](../universities/uci.qmd)
 
 ECS36C 用 `std::optional<T>` 表达空栈 `pop`：返回 `nullopt` 而不是崩溃或哨兵值。移动构造"偷三根指针、源头置空"一行都不能省。测试编排上，官方用例以**注释态**发放——我们生成激活副本而不动上游原文件。
 
 > **English:** ECS36C encodes empty-pop as std::optional::nullopt; official tests ship commented-out, activated via copies, never by editing upstream.
 
-## UCI 026 (13.4 BST 与 AVL：把退化演给读者看)
+## UCI 026 (13.4 BST 与 AVL：把退化演给读者看) · [profile](../universities/uci.qmd)
 
 同批数据下两个数字最有说服力：顺序插入 1024 键，BST 高度 1024、AVL 高度 11；官方 demo 的 sorted 数据下 **BST 高度 26 vs AVL 高度 5**。开发中两个真实坑值得记：`Node` 是 bst.h 的全局 struct（不能写 `BSTree::Node`）；static 工具函数碰不了非静态 `count`——存在性与计数全部收进公共接口。
 
 > **English:** 26 vs 5 says more about AVL than any paragraph; the global-Node and static-boundary traps are the compile-time curriculum.
 
-## CCNY 027 (13.5 回溯三连：骨架相同、剪枝各异)
+## CCNY 027 (13.5 回溯三连：骨架相同、剪枝各异) · [profile](../universities/ccny.qmd)
 
 N-Queens、Sudoku、Sujiko 三个 solve 全空——一套 choose/recurse/unchoose 骨架打三个问题。Sujiko 的宫目标和剪枝有明确的正确性边界：**部分和已达目标可砍（必然失败），部分和未达不可砍（可能补上）**。测试用 `cout.rdbuf` 重定向捕获 `display_board()` 输出，不侵入私有棋盘完成验证。
 
 > **English:** One skeleton, three prunes; redirect the stream to verify the board without touching privates.
 
-## Clemson 028 (13.6 修复对照版：13 样例全过仍不正确)
+## Clemson 028 (13.6 修复对照版：13 样例全过仍不正确) · [profile](../universities/clemson.qmd)
 
 upstream 学生实现通过全部 13 个官方样例，但五处缺陷全部藏在样例覆盖之外：`size()` 缺 return（UB）、空栈 `pop` 与空队列 `dequeue` 解引用空指针、空表读访问崩溃（接口注释明文要求返回 `T()`）、空表 remove 崩溃。修复版只动边界路径，正常路径零改动——官方样例在两个版本上都过，**边界测试才把两者分开**。
 

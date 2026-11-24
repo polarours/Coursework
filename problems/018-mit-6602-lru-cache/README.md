@@ -1,4 +1,5 @@
 # 018 · MIT 6.006 — LRU 缓存
+- 来源高校 / University profile: [MIT](https://polarours.github.io/Coursework/universities/mit.html)
 
 - 课程 / Course: MIT 6.006 Introduction to Algorithms
 - 官方 / Official: https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/

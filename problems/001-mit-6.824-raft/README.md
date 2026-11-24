@@ -1,4 +1,5 @@
 # 001 · MIT 6.824 / 6.5840 — Raft
+- 来源高校 / University profile: [MIT](https://polarours.github.io/Coursework/universities/mit.html)
 
 - 课程 / Course: MIT 6.824 / 6.5840 Distributed Systems
 - 官方 / Official: https://pdos.csail.mit.edu/6.824/

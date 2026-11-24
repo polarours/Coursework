@@ -1,4 +1,5 @@
 # 030 · UMD CMSC132 Project1 — SubmitServer（真实高校作业，Java）
+- 来源高校 / University profile: [University of Maryland](https://polarours.github.io/Coursework/universities/umd.html)
 
 - 学校 / University: University of Maryland
 - 课程 / Course: CMSC 132 Object-Oriented Programming II

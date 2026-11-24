@@ -46,9 +46,9 @@ Founded in 1900 when Andrew Carnegie gave $1 million for the Carnegie Technical 
 
 ## In this book (本书收录)
 
-- [006](https://github.com/polarours/Coursework/tree/master/problems/006-cmu-csapp-malloc-lab) — Malloc Lab (CSAPP)
-- [008](https://github.com/polarours/Coursework/tree/master/problems/008-cmu-15445-buffer-pool) — Buffer pool (15-445)
-- [017](https://github.com/polarours/Coursework/tree/master/problems/017-cmu-geometry) — Computational geometry (15-112)
+- [006 · Malloc Lab (CSAPP)](https://github.com/polarours/Coursework/tree/master/problems/006-cmu-csapp-malloc-lab)
+- [008 · Buffer pool (15-445)](https://github.com/polarours/Coursework/tree/master/problems/008-cmu-15445-buffer-pool)
+- [017 · Computational geometry (15-112)](https://github.com/polarours/Coursework/tree/master/problems/017-cmu-geometry)
 
 **The Malloc Lab is CSAPP distilled: understand the allocator because you wrote one. Buffer pool and geometry continue that hands-on tradition.**
 

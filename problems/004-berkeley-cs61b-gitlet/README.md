@@ -1,4 +1,5 @@
 # 004 · UC Berkeley CS61B — Gitlet
+- 来源高校 / University profile: [UC Berkeley](https://polarours.github.io/Coursework/universities/berkeley.html)
 
 - 课程 / Course: UC Berkeley CS61B Data Structures
 - 课程组织 / Course org: https://github.com/Berkeley-CS61B

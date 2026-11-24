@@ -10,6 +10,12 @@ title: "Chapter 9 · Neural Networks and Gradients <span class='zh-inline'>(第 
 > **English:** Understand forward/backward propagation in a two-layer network; verify with gradient checking; interpret a real loss curve.
 :::
 
+::: {.callout-tip}
+## Projects in this chapter (本章项目与来源高校)
+
+[011 Stanford](../universities/stanford.qmd)
+:::
+
 ## Gradient checking (9.1 梯度检验)
 
 数值梯度 `(L(θ+h)−L(θ−h))/2h` 与解析梯度在 1e-6 内一致，是反向传播正确性的金标准。我们的实现中 W1/W2 的梯度都通过了检验。

@@ -10,6 +10,12 @@ title: "Chapter 12 · Assignment Workshop <span class='zh-inline'>(第 12 章 ·
 Earlier chapters dissected cases from the solver's perspective. This chapter switches to the instructor's view: what should a ready-to-distribute assignment contain? Starter code, a step-by-step handout, conceptual questions, and an autograder.
 :::
 
+::: {.callout-tip}
+## Projects in this chapter (本章项目与来源高校)
+
+[022 Stanford](../universities/stanford.qmd)
+:::
+
 ## Four components of an assignment (12.1 作业包的四个组件)
 
 受 Stanford CS106L 作业仓库的启发，一道好的作业不只是题目描述，而是一个完整的教学单元：

@@ -10,6 +10,12 @@ title: "Chapter 6 · Probabilistic Structures and Caches <span class='zh-inline'
 > **English:** Understand Bloom filter's space/false-positive trade-off; understand how hash maps and doubly linked lists combine in LRU caches.
 :::
 
+::: {.callout-tip}
+## Projects in this chapter (本章项目与来源高校)
+
+[019 Georgia Tech](../universities/gatech.qmd)
+:::
+
 ## Bloom filters (6.1 布隆过滤器)
 
 布隆过滤器用 k 个哈希函数把元素映射到位数组。查询时若任一位为 0，元素一定不存在；全为 1 则可能存在。假阴性不可能，假阳性可控。

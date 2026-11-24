@@ -41,7 +41,7 @@ A public technological university in Tehran, founded in 1958 as Tehran Polytechn
 
 ## In this book (本书收录)
 
-- [023](https://github.com/polarours/Coursework/tree/master/problems/023-amirkabir-ap1400-hw1) — Matrix library (AP1400-2 HW1)
+- [023 · Matrix library (AP1400-2 HW1)](https://github.com/polarours/Coursework/tree/master/problems/023-amirkabir-ap1400-hw1)
 
 **The matrix library is a pure AP1400-2 exercise: 17 functions, a pinned interface, and a 24-case test suite that decides correctness.**
 

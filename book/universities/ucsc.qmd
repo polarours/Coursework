@@ -44,8 +44,8 @@ Founded in 1965 as an experimental public campus, its Information and Computer S
 
 ## In this book (本书收录)
 
-- [031](https://github.com/polarours/Coursework/tree/master/problems/031-ucsc-cse140-pacman-warmup) — Pacman warmup (CSE 140 p0)
-- [032](https://github.com/polarours/Coursework/tree/master/problems/032-ucsc-cse140-pacman-search) — Pacman search (CSE 140 p1)
+- [031 · Pacman warmup (CSE 140 p0)](https://github.com/polarours/Coursework/tree/master/problems/031-ucsc-cse140-pacman-warmup)
+- [032 · Pacman search (CSE 140 p1)](https://github.com/polarours/Coursework/tree/master/problems/032-ucsc-cse140-pacman-search)
 
 **Both Pacman projects come straight from CSE 140: first build a shop argmin, then the full search stack — DFS, BFS, UCS, A* — on the same framework.**
 

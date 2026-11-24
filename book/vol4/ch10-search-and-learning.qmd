@@ -10,6 +10,12 @@ title: "Chapter 10 · AI Search and Reinforcement Learning <span class='zh-inlin
 > **English:** Understand the progression from search to RL in the Pacman projects; interpret a real learning curve.
 :::
 
+::: {.callout-tip}
+## Projects in this chapter (本章项目与来源高校)
+
+[003 UC Berkeley](../universities/berkeley.qmd)
+:::
+
 ## Algorithm spectrum (10.1 算法谱系)
 
 同一个网格世界承载四种方法：A*（已知地图找路）、Minimax（对抗）、值迭代（有模型规划）、Q-learning（无模型学习）。这种递进正是 AI 课程的缩影。

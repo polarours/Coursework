@@ -1,4 +1,5 @@
 # 026 · UCI ICS46 HW6 — BST 与 AVL 树（真实高校作业）
+- 来源高校 / University profile: [UC Irvine](https://polarours.github.io/Coursework/universities/uci.html)
 
 - 学校 / University: UC Irvine
 - 课程 / Course: ICS 46 Data Structures

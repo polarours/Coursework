@@ -1,4 +1,5 @@
 # 007 · Stanford CS143 — 迷你编译器
+- 来源高校 / University profile: [Stanford University](https://polarours.github.io/Coursework/universities/stanford.html)
 
 - 课程 / Course: Stanford CS143 Compilers
 - 官方 / Official: https://web.stanford.edu/class/cs143/

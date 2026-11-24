@@ -10,6 +10,12 @@ title: "Chapter 11 · Cryptographic Primitives <span class='zh-inline'>(第 11 �
 > **English:** Understand Miller-Rabin, RSA, and Merkle trees; learn about randomness from a real fixed-seed deadlock.
 :::
 
+::: {.callout-tip}
+## Projects in this chapter (本章项目与来源高校)
+
+[009 Stanford](../universities/stanford.qmd) · [020 Cornell](../universities/cornell.qmd)
+:::
+
 ## Fast modular exponentiation (11.1 快速模幂)
 
 RSA 的核心是平方-乘算法：`while d: if d&1: res=res*a%n; a=a*a%n; d>>=1`。复杂度 O(log d)，而非朴素的 O(d)。

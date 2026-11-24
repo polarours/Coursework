@@ -46,7 +46,7 @@ Founded in 1865 in Ithaca, New York, Cornell is private with a public mission; i
 
 ## In this book (本书收录)
 
-- [020](https://github.com/polarours/Coursework/tree/master/problems/020-cornell-enigma) — Enigma (CS 3110)
+- [020 · Enigma (CS 3110)](https://github.com/polarours/Coursework/tree/master/problems/020-cornell-enigma)
 
 **The Enigma project is functional-programming in the Cornell mould — types and pure functions first, a tradition Hartmanis and Hopcroft helped establish.**
 

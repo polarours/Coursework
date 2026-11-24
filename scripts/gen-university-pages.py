@@ -119,7 +119,7 @@ def render(u):
     sig_zh, tradition_zh = NARR.NARRATIVE_ZH[nid]
     bridge_en, bridge_zh = NARR.BRIDGE[nid]
     problems = "\n".join(
-        f"- [{p}](https://github.com/polarours/Coursework/tree/master/problems/{path}) — {title}"
+        f"- [{p} · {title}](https://github.com/polarours/Coursework/tree/master/problems/{path})"
         for p, path, title in u["problems"]
     ) or "_No projects from this school in this book._"
     sources = "\n".join(f"- <{url}>" for url in u["sources"])

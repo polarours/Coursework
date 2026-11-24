@@ -1,4 +1,5 @@
 # 003 · UC Berkeley CS188 — Pacman 项目
+- 来源高校 / University profile: [UC Berkeley](https://polarours.github.io/Coursework/universities/berkeley.html)
 
 - 课程 / Course: UC Berkeley CS188 Artificial Intelligence
 - 参考 / Reference: https://github.com/BigEggStudy/UC-Berkeley-CS-188-Artificial-Intelligence

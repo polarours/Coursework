@@ -46,7 +46,7 @@ Chartered in 1746 as the College of New Jersey, Princeton is the fourth-oldest c
 
 ## In this book (本书收录)
 
-- [014](https://github.com/polarours/Coursework/tree/master/problems/014-princeton-cos226-8puzzle) — 8-Puzzle (COS 226)
+- [014 · 8-Puzzle (COS 226)](https://github.com/polarours/Coursework/tree/master/problems/014-princeton-cos226-8puzzle)
 
 **8-Puzzle is COS 226 in miniature — a search problem where the algorithm matters more than the code, exactly as Tarjan's course would insist.**
 

@@ -1,4 +1,5 @@
 # 025 · UC Irvine ECS36C HW1（真实高校作业）
+- 来源高校 / University profile: [UC Irvine](https://polarours.github.io/Coursework/universities/uci.html)
 
 - 学校 / University: University of California, Irvine
 - 课程 / Course: ECS36C Fall 2023 — Templates, Linked Lists, Stacks, Queues

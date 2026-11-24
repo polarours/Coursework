@@ -1,4 +1,5 @@
 # 028 · Clemson CPSC2121 Lab 1 — 链表栈与队列（真实高校作业）
+- 来源高校 / University profile: [Clemson University](https://polarours.github.io/Coursework/universities/clemson.html)
 
 - 学校 / University: Clemson University
 - 课程 / Course: CPSC 2121 Data Structures and Algorithms

@@ -10,6 +10,12 @@ title: "Chapter 4 · Heuristic Search <span class='zh-inline'>(第 4 章 · 启�
 > **English:** Understand A* admissibility; analyze 8-puzzle with Manhattan distance; see heuristics prune the search from measured node counts.
 :::
 
+::: {.callout-tip}
+## Projects in this chapter (本章项目与来源高校)
+
+[014 Princeton](../universities/princeton.qmd) · [015 Stanford](../universities/stanford.qmd)
+:::
+
 ## Admissibility (4.1 可采纳性)
 
 A* 保证最优解的前提是启发式不高估剩余代价。曼哈顿距离对 8-Puzzle 是可采纳的：每步只能把一个方块移动一格，而它到目标位置的距离最多减少 1。

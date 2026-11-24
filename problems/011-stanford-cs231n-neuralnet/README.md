@@ -1,4 +1,5 @@
 # 011 · Stanford CS231n — 两层神经网络
+- 来源高校 / University profile: [Stanford University](https://polarours.github.io/Coursework/universities/stanford.html)
 
 - 课程 / Course: Stanford CS231n Convolutional Neural Networks
 - 官方 / Official: https://cs231n.github.io/

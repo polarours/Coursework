@@ -10,6 +10,12 @@ title: "Chapter 5 · Graph Algorithms and Greedy Methods <span class='zh-inline'
 > **English:** Understand union-find's role in Kruskal; see how the cut property guarantees greedy correctness; verify with MST=37 on the classic graph.
 :::
 
+::: {.callout-tip}
+## Projects in this chapter (本章项目与来源高校)
+
+[021 Stanford](../universities/stanford.qmd)
+:::
+
 ## Union-Find (5.1 并查集)
 
 路径压缩与按秩合并让 `find`/`union` 的均摊复杂度接近 O(1)（反 Ackermann 函数）。这是贪心算法能高效检测环的关键。

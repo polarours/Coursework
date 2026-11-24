@@ -47,7 +47,7 @@ Chartered in 1856 as the Maryland Agricultural College and opened in 1859 with 3
 
 ## In this book (本书收录)
 
-- [030](https://github.com/polarours/Coursework/tree/master/problems/030-umd-cmsc132-submitserver) — SubmitServer (CMSC 132)
+- [030 · SubmitServer (CMSC 132)](https://github.com/polarours/Coursework/tree/master/problems/030-umd-cmsc132-submitserver)
 
 **SubmitServer turns CMSC 132's 'tests as spec' habit into a lesson: the public tests ARE the requirements, and undefined corners are yours to decide.**
 

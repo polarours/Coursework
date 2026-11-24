@@ -10,6 +10,12 @@ title: "Chapter 2 · Memory Hierarchy and Caches <span class='zh-inline'>(第 2 
 > **English:** Understand address decomposition; explain conflict misses and how associativity helps; build intuition for locality from measured hit rates.
 :::
 
+::: {.callout-tip}
+## Projects in this chapter (本章项目与来源高校)
+
+[012 UC Berkeley](../universities/berkeley.qmd) · [018 MIT](../universities/mit.qmd)
+:::
+
 ## Three parts of an address (2.1 地址的三个部分)
 
 CS61C 的缓存实验从一个简单的除法开始：`offset = addr % block_size`，`block_addr = addr // block_size`，`set = block_addr % num_sets`，`tag = block_addr // num_sets`。这四个式子封装了整个缓存的映射逻辑。当 block_size 与 num_sets 都是 2 的幂时，它们对应于二进制位的切分。

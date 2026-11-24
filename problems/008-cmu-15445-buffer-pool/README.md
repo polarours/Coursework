@@ -1,4 +1,5 @@
 # 008 · CMU 15-445 — Buffer Pool Manager
+- 来源高校 / University profile: [Carnegie Mellon University](https://polarours.github.io/Coursework/universities/cmu.html)
 
 - 课程 / Course: CMU 15-445/645 Database Systems
 - 官方 / Official: https://15445.courses.cs.cmu.edu/

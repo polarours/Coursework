@@ -10,6 +10,12 @@ title: "Chapter 8 · Distributed Consensus <span class='zh-inline'>(第 8 章 ·
 > **English:** Understand how Raft's strong leader decomposes consensus; master the safety role of the term check in commits; verify state-machine safety via partition tests.
 :::
 
+::: {.callout-tip}
+## Projects in this chapter (本章项目与来源高校)
+
+[001 MIT](../universities/mit.qmd)
+:::
+
 ## Strong leadership (8.1 强 Leader)
 
 Raft 把共识分解为 leader 选举与日志复制两个子问题。只有 leader 接受客户端命令，这大大简化了推理——这是 Raft 比 Paxos 更易教学的根本原因。

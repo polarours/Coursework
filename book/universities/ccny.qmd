@@ -43,7 +43,7 @@ Established in 1847 as the Free Academy, CCNY is the founding institution of the
 
 ## In this book (本书收录)
 
-- [027](https://github.com/polarours/Coursework/tree/master/problems/027-ccny-csc212-backtracking) — Backtracking lab (CSC 212)
+- [027 · Backtracking lab (CSC 212)](https://github.com/polarours/Coursework/tree/master/problems/027-ccny-csc212-backtracking)
 
 **The backtracking lab asks for the same three recursions CSC 212 always taught: N-Queens, Sudoku and Sujiko, one choose-recurse-unchoose skeleton.**
 

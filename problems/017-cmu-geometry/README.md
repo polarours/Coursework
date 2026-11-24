@@ -1,4 +1,5 @@
 # 017 · CMU 15-112 — 计算几何基础
+- 来源高校 / University profile: [Carnegie Mellon University](https://polarours.github.io/Coursework/universities/cmu.html)
 
 - 课程 / Course: CMU 15-112 Fundamentals of Programming
 - 官方 / Official: https://www.cs.cmu.edu/~112/notes/project.html

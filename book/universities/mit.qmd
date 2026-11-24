@@ -46,10 +46,10 @@ Chartered in 1861 on William Barton Rogers's vision of a polytechnic institute, 
 
 ## In this book (本书收录)
 
-- [001](https://github.com/polarours/Coursework/tree/master/problems/001-mit-6.824-raft) — Raft consensus (6.824)
-- [005](https://github.com/polarours/Coursework/tree/master/problems/005-mit-6.1810-xv6) — xv6 operating systems
-- [016](https://github.com/polarours/Coursework/tree/master/problems/016-mit-shell) — Shell parser (6.858)
-- [018](https://github.com/polarours/Coursework/tree/master/problems/018-mit-6602-lru-cache) — LRU cache (6.006)
+- [001 · Raft consensus (6.824)](https://github.com/polarours/Coursework/tree/master/problems/001-mit-6.824-raft)
+- [005 · xv6 operating systems](https://github.com/polarours/Coursework/tree/master/problems/005-mit-6.1810-xv6)
+- [016 · Shell parser (6.858)](https://github.com/polarours/Coursework/tree/master/problems/016-mit-shell)
+- [018 · LRU cache (6.006)](https://github.com/polarours/Coursework/tree/master/problems/018-mit-6602-lru-cache)
 
 **The MIT projects in this book — Raft, xv6, a shell, an LRU cache — are all about looking under the abstraction: exactly what 6.824 and 6.828 teach.**
 

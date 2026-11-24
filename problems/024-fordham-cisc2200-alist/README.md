@@ -1,4 +1,5 @@
 # 024 · Fordham CISC2200 Lab3（真实高校作业）
+- 来源高校 / University profile: [Fordham University](https://polarours.github.io/Coursework/universities/fordham.html)
 
 - 学校 / University: Fordham University
 - 课程 / Course: CISC2200 Spring 2024

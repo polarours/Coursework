@@ -1,4 +1,5 @@
 # 031 · UCSC CSE140 p0 — CS188 风格 Pacman warmup（真实高校作业，Python）
+- 来源高校 / University profile: [UC Santa Cruz](https://polarours.github.io/Coursework/universities/ucsc.html)
 
 - 学校 / University: UC Santa Cruz
 - 课程 / Course: CSE 140 Artificial Intelligence（作业改编自 Berkeley CS188 Pacman 项目）
