@@ -2,13 +2,19 @@
 title: "Stanford University <span class='zh-inline'>(斯坦福大学)</span>"
 ---
 
-# Stanford University <span class='zh-inline'>(斯坦福大学)</span>
+<img src="logos/stanford.png" alt="Stanford University" width="420" class="uni-plate">
 
-<img src="logos/stanford.png" alt="Stanford University identifier" width="150" style="display:block;margin:0 0 1.4rem 0">
+<p class="uni-credit">Official mark, redistributed under an MIT-licensed open course-map project.</p>
 
-A university whose CS department became the launching pad for Google and whose lecture notes trained a generation of AI researchers.
+**From PageRank to the vision stack**
 
-> 这所学校的计算机系是 Google 的起跑线，它的讲义培训了一代又一代 AI 研究者。
+> 从 PageRank 到视觉栈
+
+## Why it matters (为何重要)
+
+Stanford's CS culture turns research directly into infrastructure and into the lecture notes the world learns from.
+
+> 斯坦福的 CS 文化把研究直接变成基础设施，也变成全世界学习的讲义。
 
 ## Background (背景)
 
@@ -16,15 +22,25 @@ Founded in 1885 by Leland and Jane Stanford as a memorial to their son, the univ
 
 > 斯坦福大学由 Leland 与 Jane Stanford 于 1885 年创办以纪念他们的儿子，1891 年 10 月 1 日开学。位于硅谷的地理位置塑造了它与产业界紧密相连的计算机系。
 
-## Notable people (名人)
+## People (人物)
 
-**Larry Page** and **Sergey Brin** — Stanford graduate students who co-developed PageRank and co-founded Google in 1998. **Fei-Fei Li** — Stanford professor and lead instructor of CS231n. **Andrew Ng** — Stanford adjunct professor and longtime instructor of CS229.
+| Person | Connection to computing |
+|:--|:--|
+| Sergey Brin | Stanford graduate students who co-developed PageRank and co-founded Google in 1998 |
+| Fei-Fei Li | Stanford professor and lead instructor of CS231n |
+| Andrew Ng | Stanford adjunct professor and longtime instructor of CS229 |
 
 > **Larry Page** 与 **Sergey Brin** — 斯坦福研究生，共同开发 PageRank 并于 1998 年创办 Google。**李飞飞** — 斯坦福教授，CS231n 主讲。**Andrew Ng** — 斯坦福兼职教授，长期主讲 CS229。
 
-## Notable CS courses (著名计算机课程)
+## Courses (课程)
 
-CS106A Programming Methodology · CS161 Design and Analysis of Algorithms · CS107 Programming Paradigms · CS229 Machine Learning · CS231n Deep Learning for Computer Vision.
+| Course | Title |
+|:--|:--|
+| CS106A | Programming Methodology |
+| CS161 | Design and Analysis of Algorithms |
+| CS107 | Programming Paradigms |
+| CS229 | Machine Learning |
+| CS231n | Deep Learning for Computer Vision |
 
 > CS106A 编程方法学 · CS161 算法设计与分析 · CS107 编程范式 · CS229 机器学习 · CS231n 计算机视觉深度学习。
 
@@ -39,9 +55,17 @@ CS106A Programming Methodology · CS161 Design and Analysis of Algorithms · CS1
 - [021](https://github.com/polarours/Coursework/tree/master/problems/021-stanford-kruskal) — Kruskal MST
 - [022](https://github.com/polarours/Coursework/tree/master/problems/022-cs106l-scoped-handle) — CS106L-style workshop
 
+**From CS144's TCP to CS231n's neural networks, the Stanford projects here trace the path from networks to AI that the department itself helped define.**
+
+> 从 CS144 的 TCP 到 CS231n 的神经网络，本书的斯坦福项目复刻了这条从网络到 AI 的路径——这条路径正是该系参与定义的。
+
 ## Sources (来源)
 
 - <https://www.stanford.edu/about/history>
 - <https://engineering.stanford.edu/about/history/heroes/2014-heroes/larry-page>
 - <https://cs231n.stanford.edu/>
 - <https://cs229.stanford.edu/>
+
+---
+
+*University identifiers are editorial nameplates, not official crests. Logos for MIT, Stanford, Berkeley and CMU are redistributed under an MIT-licensed open course-map project. All other institutions are represented by nameplates generated from `scripts/gen-university-wordmarks.py`.*

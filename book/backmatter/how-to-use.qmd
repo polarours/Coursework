@@ -2,8 +2,6 @@
 title: "How to Use This Book <span class='zh-inline'>(如何使用本书)</span>"
 ---
 
-# How to Use This Book <span class='zh-inline'>(如何使用本书)</span>
-
 ## Three audiences (三种读者)
 
 1. **学生**：先读 Purpose，自己做一遍，再读正文与自测。

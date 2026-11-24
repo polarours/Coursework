@@ -2,13 +2,19 @@
 title: "MIT <span class='zh-inline'>(麻省理工学院)</span>"
 ---
 
-# MIT <span class='zh-inline'>(麻省理工学院)</span>
+<img src="logos/mit.svg" alt="MIT" width="420" class="uni-plate">
 
-<img src="logos/mit.svg" alt="MIT identifier" width="150" style="display:block;margin:0 0 1.4rem 0">
+<p class="uni-credit">Official mark, redistributed under an MIT-licensed open course-map project.</p>
 
-The institute that turned engineering into a research discipline — and whose course numbering became a global shorthand for systems education.
+**The course number is the identity**
 
-> 这所学校把工程变成一门研究学科，它的课程编号（6.824、6.006）已成为系统教育的全球通用语。
+> 课程编号就是身份
+
+## Why it matters (为何重要)
+
+MIT packages hard systems knowledge into numbered courses — 6.001, 6.006, 6.824 — that students worldwide recognize on sight.
+
+> MIT 把最难的系统知识打包进编号课程——6.001、6.006、6.824——全世界的学生一眼就能认出。
 
 ## Background (背景)
 
@@ -16,15 +22,25 @@ Chartered in 1861 on William Barton Rogers's vision of a polytechnic institute, 
 
 > MIT 于 1861 年获特许成立，源于 William Barton Rogers 创办理工学院的构想；南北战争后于 1865 年招收首届学生。电气工程与计算机科学系（EECS）继承了学校早期的实践教育传统。
 
-## Notable people (名人)
+## People (人物)
 
-**Claude Shannon** — MIT professor (1958–78), 'father of information theory,' whose 1948 *A Mathematical Theory of Communication* founded the field. **Tim Berners-Lee** — MIT professor emeritus; invented the World Wide Web at CERN in 1989 and wrote the first browser and server. **Marvin Minsky** — co-founded the MIT AI Lab in 1959 and won the 1969 Turing Award.
+| Person | Connection to computing |
+|:--|:--|
+| Claude Shannon | MIT professor (1958–78), 'father of information theory,' whose 1948 *A Mathematical Theory of Communication* founded the field |
+| Tim Berners-Lee | MIT professor emeritus; invented the World Wide Web at CERN in 1989 and wrote the first browser and server |
+| Marvin Minsky | co-founded the MIT AI Lab in 1959 and won the 1969 Turing Award |
 
 > **Claude Shannon** — MIT 教授（1958–78），“信息论之父”，1948 年的《通信的数学理论》开创了该领域。**Tim Berners-Lee** — MIT 荣休教授，1989 年在 CERN 发明万维网并写下第一个浏览器与服务器。**Marvin Minsky** — 1959 年共同创办 MIT 人工智能实验室，1969 年图灵奖得主。
 
-## Notable CS courses (著名计算机课程)
+## Courses (课程)
 
-6.001 Structure and Interpretation of Computer Programs · 6.006 Introduction to Algorithms · 6.828 Operating System Engineering · 6.824 Distributed Computer Systems Engineering · 6.036 Introduction to Machine Learning.
+| Course | Title |
+|:--|:--|
+| 6.001 | Structure and Interpretation of Computer Programs |
+| 6.006 | Introduction to Algorithms |
+| 6.828 | Operating System Engineering |
+| 6.824 | Distributed Computer Systems Engineering |
+| 6.036 | Introduction to Machine Learning |
 
 > 6.001 计算机程序的构造与解释 · 6.006 算法导论 · 6.828 操作系统工程 · 6.824 分布式系统工程 · 6.036 机器学习导论。
 
@@ -35,6 +51,10 @@ Chartered in 1861 on William Barton Rogers's vision of a polytechnic institute, 
 - [016](https://github.com/polarours/Coursework/tree/master/problems/016-mit-shell) — Shell parser (6.858)
 - [018](https://github.com/polarours/Coursework/tree/master/problems/018-mit-6602-lru-cache) — LRU cache (6.006)
 
+**The MIT projects in this book — Raft, xv6, a shell, an LRU cache — are all about looking under the abstraction: exactly what 6.824 and 6.828 teach.**
+
+> 本书的 MIT 项目——Raft、xv6、Shell、LRU——都在做同一件事：掀开抽象看底下。这正是 6.824 与 6.828 的教学方式。
+
 ## Sources (来源)
 
 - <https://engineering.mit.edu/about/history>
@@ -42,3 +62,7 @@ Chartered in 1861 on William Barton Rogers's vision of a polytechnic institute, 
 - <https://www.csail.mit.edu/person/tim-berners-lee>
 - <https://news.mit.edu/2016/marvin-minsky-obituary-0125>
 - <https://ocw.mit.edu/courses/6-824-distributed-computer-systems-engineering-spring-2006/>
+
+---
+
+*University identifiers are editorial nameplates, not official crests. Logos for MIT, Stanford, Berkeley and CMU are redistributed under an MIT-licensed open course-map project. All other institutions are represented by nameplates generated from `scripts/gen-university-wordmarks.py`.*

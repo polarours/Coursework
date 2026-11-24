@@ -2,7 +2,6 @@
 title: "Chapter 6 · Probabilistic Structures and Caches <span class='zh-inline'>(第 6 章 · 概率结构与缓存抽象)</span>"
 ---
 
-# Chapter 6 · Probabilistic Structures and Caches <span class='zh-inline'>(第 6 章 · 概率结构与缓存抽象)</span>
 ::: {.callout-note}
 ## Purpose (本章目标)
 

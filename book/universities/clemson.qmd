@@ -2,13 +2,19 @@
 title: "Clemson University <span class='zh-inline'>(克莱姆森大学)</span>"
 ---
 
-# Clemson University <span class='zh-inline'>(克莱姆森大学)</span>
+<img src="logos/clemson.svg" alt="Clemson University" width="420" class="uni-plate">
 
-<img src="logos/clemson.svg" alt="Clemson University identifier" width="150" style="display:block;margin:0 0 1.4rem 0">
+<p class="uni-credit">Editorial nameplate — not an official crest. Generated from `scripts/gen-university-wordmarks.py`.</p>
 
-A South Carolina land-grant university whose computing school grew from a 1978 department — source of our list/stack/queue lab.
+**From agricultural college to computing school**
 
-> 南卡罗来纳州的赠地大学，其计算学院从 1978 年的一个系发展而来——我们的链表/栈/队列实验就来自这里。
+> 从农业学院到计算学院
+
+## Why it matters (为何重要)
+
+Clemson's 1978 CS department grew into a full School of Computing; its labs ask students to build ADTs from scratch.
+
+> 1978 年的 CS 系成长为完整的计算学院；实验要求学生从零构造 ADT。
 
 ## Background (背景)
 
@@ -16,15 +22,23 @@ Founded in 1889 through Thomas Green Clemson's bequest, it opened in 1893 as Cle
 
 > 1889 年根据 Thomas Green Clemson 的遗赠创办，1893 年以克莱姆森农业学院之名开学，1955 年实行男女同校，1964 年改用现名。
 
-## Notable people (名人)
+## People (人物)
 
-**Daniel C. Stanzione Sr.** (BS 1967, MS 1968, PhD 1972) — served as president of Bell Laboratories. **Josiah Hester** — CS assistant professor at Northwestern, working on sustainable computing.
+| Person | Connection to computing |
+|:--|:--|
+| Josiah Hester | CS assistant professor at Northwestern, working on sustainable computing |
 
 > **Daniel C. Stanzione Sr.**（1967 学士、1968 硕士、1972 博士）— 曾任贝尔实验室总裁。**Josiah Hester** — 西北大学计算机助理教授，研究可持续计算。
 
-## Notable CS courses (著名计算机课程)
+## Courses (课程)
 
-CPSC 2121 Data Structures and Algorithms (Lab 1 is project 028) · BS/BA in CS · MS/PhD · Human-Centered Computing PhD · Biomedical Data Science & Informatics.
+| Course | Title |
+|:--|:--|
+| CPSC 2121 | Data Structures and Algorithms (Lab 1 is project 028) |
+| — | BS/BA in CS |
+| — | MS/PhD |
+| — | Human-Centered Computing PhD |
+| — | Biomedical Data Science & Informatics |
 
 > CPSC 2121 数据结构与算法（Lab 1 即项目 028）· 计算机科学学士 · 硕士/博士 · 以人为中心的计算博士 · 生物医学数据科学与信息学。
 
@@ -32,8 +46,16 @@ CPSC 2121 Data Structures and Algorithms (Lab 1 is project 028) · BS/BA in CS �
 
 - [028](https://github.com/polarours/Coursework/tree/master/problems/028-clemson-cpsc2121-liststack-queue) — List stack & queue (CPSC 2121)
 
+**The list/stack/queue lab is CPSC 2121 at its most direct — and our fixed version shows why passing all 13 sample tests is not the same as being correct.**
+
+> 链表/栈/队列实验是 CPSC 2121 最直接的一面——我们的修复版说明：通过全部 13 个样例，并不等于正确。
+
 ## Sources (来源)
 
 - <https://www.clemson.edu/about/history/>
 - <https://www.clemson.edu/cecas/departments/computing/>
 - <https://alumni.clemson.edu/daniel-c-stanzione-sr-68/>
+
+---
+
+*University identifiers are editorial nameplates, not official crests. Logos for MIT, Stanford, Berkeley and CMU are redistributed under an MIT-licensed open course-map project. All other institutions are represented by nameplates generated from `scripts/gen-university-wordmarks.py`.*

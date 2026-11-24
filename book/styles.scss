@@ -65,6 +65,11 @@ body {
 .quarto-title-block .quarto-title-meta { font-size: 0.88rem; color: var(--cw-muted); }
 .zh-inline { color: var(--cw-muted); font-size: 0.82em; font-weight: 400; }
 
+// University nameplate — editorial, not a fake crest.
+img.uni-plate { display:block; margin:0 0 0.5rem 0; max-width:100%; height:auto; }
+p.uni-credit { font-size:0.82rem; color:var(--cw-muted); margin:0 0 1.6rem 0; font-style:italic; }
+#quarto-document-content > p > strong:first-child { color:var(--cw-teal); font-size:1.12rem; }
+
 // Bilingual English summaries: quiet surface with a left rule, no italics
 // in long passages (italic harms sustained reading).
 blockquote {

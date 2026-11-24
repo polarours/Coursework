@@ -2,8 +2,6 @@
 title: "Preface <span class='zh-inline'>(前言)</span>"
 ---
 
-# Preface <span class='zh-inline'>(前言)</span>
-
 > 这本书不是题库解析，也不是答案集。它试图回答一个更根本的问题：**名校计算机课程的大作业，究竟在教什么？**
 >
 > This book is not a solution manual. It asks a more fundamental question: *what do the great capstone projects of famous CS courses actually teach?*

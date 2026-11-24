@@ -2,7 +2,6 @@
 title: "Chapter 10 · AI Search and Reinforcement Learning <span class='zh-inline'>(第 10 章 · AI 搜索与强化学习)</span>"
 ---
 
-# Chapter 10 · AI Search and Reinforcement Learning <span class='zh-inline'>(第 10 章 · AI 搜索与强化学习)</span>
 ::: {.callout-note}
 ## Purpose (本章目标)
 

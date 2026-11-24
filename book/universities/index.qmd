@@ -2,8 +2,6 @@
 title: "University Profiles <span class='zh-inline'>(高校一览)</span>"
 ---
 
-# University Profiles <span class='zh-inline'>(高校一览)</span>
-
 Every project in this book comes from a real course at a real university. This section introduces the fourteen institutions behind the 32 projects — their background, the people associated with computing there, and the courses that shaped the assignments you will read.
 
 > 本书的每个项目都来自一所真实高校的真实课程。本节介绍 32 个项目背后的十四所学校：它们的背景、与计算机科学相关的人物，以及塑造了这些作业的课程。

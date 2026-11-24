@@ -2,13 +2,19 @@
 title: "Amirkabir University of Technology <span class='zh-inline'>(阿米尔卡比尔理工大学)</span>"
 ---
 
-# Amirkabir University of Technology <span class='zh-inline'>(阿米尔卡比尔理工大学)</span>
+<img src="logos/amirkabir.svg" alt="Amirkabir University of Technology" width="420" class="uni-plate">
 
-<img src="logos/amirkabir.svg" alt="Amirkabir University of Technology identifier" width="150" style="display:block;margin:0 0 1.4rem 0">
+<p class="uni-credit">Editorial nameplate — not an official crest. Generated from `scripts/gen-university-wordmarks.py`.</p>
 
-Tehran's oldest technical university, where our matrix-library assignment came from — an AP1400-2 homework from Spring 2022.
+**Iran's oldest technical university**
 
-> 德黑兰最古老的理工院校，我们的矩阵库作业就来自这里——2022 年春季的 AP1400-2 作业。
+> 伊朗最古老的理工院校
+
+## Why it matters (为何重要)
+
+Amirkabir built the country's first computer-engineering PhD programme; its AP1400 assignments carry that rigor forward.
+
+> Amirkabir 建立了伊朗首个计算机工程博士项目，AP1400 作业延续了这份严谨。
 
 ## Background (背景)
 
@@ -16,15 +22,20 @@ A public technological university in Tehran, founded in 1958 as Tehran Polytechn
 
 > 德黑兰的公立理工院校，1958 年以“德黑兰理工学院”之名成立（部分资料追溯到 1928 年的技术学校），1979 年以 Amir Kabir 命名。计算机工程系 1988 年开始招生授课。
 
-## Notable people (名人)
+## People (人物)
 
-**Jalal Al-e-Ahmad** — influential Iranian writer and intellectual among its alumni. **Mohammad Reza Meybodi** — Professor Emeritus of Computer Engineering. The department established Iran's first computer-engineering PhD programme in 2002.
+| Person | Connection to computing |
+|:--|:--|
+| Jalal Al-e-Ahmad | influential Iranian writer and intellectual among its alumni |
+| Mohammad Reza Meybodi | Professor Emeritus of Computer Engineering. The department established Iran's first computer-engineering PhD programme in 2002 |
 
 > **Jalal Al-e-Ahmad** — 该校校友，伊朗有影响力的作家与知识分子。**Mohammad Reza Meybodi** — 计算机工程荣休教授。该系于 2002 年设立伊朗首个计算机工程博士项目。
 
-## Notable CS courses (著名计算机课程)
+## Courses (课程)
 
-AP1400-2 Advanced Programming (the source of project 023). M.Sc. tracks include computer architecture/networks, software systems, artificial intelligence and robotics.
+| Course | Title |
+|:--|:--|
+| — | AP1400-2 Advanced Programming (the source of project 023). M.Sc. tracks include computer architecture/networks, software systems, artificial intelligence and robotics |
 
 > AP1400-2 高级编程（项目 023 的来源）。硕士方向包括计算机体系结构/网络、软件系统、人工智能与机器人。
 
@@ -32,7 +43,15 @@ AP1400-2 Advanced Programming (the source of project 023). M.Sc. tracks include 
 
 - [023](https://github.com/polarours/Coursework/tree/master/problems/023-amirkabir-ap1400-hw1) — Matrix library (AP1400-2 HW1)
 
+**The matrix library is a pure AP1400-2 exercise: 17 functions, a pinned interface, and a 24-case test suite that decides correctness.**
+
+> 矩阵库是一道纯粹的 AP1400-2 练习：17 个函数、固定的接口、由 24 个用例决定正确性。
+
 ## Sources (来源)
 
 - <https://www.timeshighereducation.com/world-university-rankings/amirkabir-university-technology>
 - <https://aut.ac.ir/content/193/Computer-Engineering>
+
+---
+
+*University identifiers are editorial nameplates, not official crests. Logos for MIT, Stanford, Berkeley and CMU are redistributed under an MIT-licensed open course-map project. All other institutions are represented by nameplates generated from `scripts/gen-university-wordmarks.py`.*

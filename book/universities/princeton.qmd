@@ -2,13 +2,19 @@
 title: "Princeton University <span class='zh-inline'>(普林斯顿大学)</span>"
 ---
 
-# Princeton University <span class='zh-inline'>(普林斯顿大学)</span>
+<img src="logos/princeton.svg" alt="Princeton University" width="420" class="uni-plate">
 
-<img src="logos/princeton.svg" alt="Princeton University identifier" width="150" style="display:block;margin:0 0 1.4rem 0">
+<p class="uni-credit">Editorial nameplate — not an official crest. Generated from `scripts/gen-university-wordmarks.py`.</p>
 
-The fourth-oldest US college, where Turing studied and lambda calculus was born — the theoretical root of functional programming.
+**Lambda calculus meets algorithms**
 
-> 美国第四古老的高等院校，图灵曾在此求学，λ 演算在此诞生——函数式编程的理论根源。
+> λ 演算遇上算法
+
+## Why it matters (为何重要)
+
+Princeton's theoretical line runs from Alonzo Church through Alan Turing to Robert Tarjan, and shows up in COS 226.
+
+> 普林斯顿的理论脉络从 Church、Turing 延伸到 Tarjan，最终落在 COS 226 上。
 
 ## Background (背景)
 
@@ -16,15 +22,25 @@ Chartered in 1746 as the College of New Jersey, Princeton is the fourth-oldest c
 
 > 1746 年以“新泽西学院”之名获特许成立，是美国第四古老的高等院校，1896 年更名为普林斯顿大学。
 
-## Notable people (名人)
+## People (人物)
 
-**Alan Turing** — earned a mathematics PhD in 1938 with a dissertation on ordinal logic, advised by Alonzo Church. **Alonzo Church** — Princeton faculty 1929–67, creator of lambda calculus. **Robert Tarjan** — professor since 1985 and 1986 Turing Award recipient for algorithms and data structures.
+| Person | Connection to computing |
+|:--|:--|
+| Alan Turing | earned a mathematics PhD in 1938 with a dissertation on ordinal logic, advised by Alonzo Church |
+| Alonzo Church | Princeton faculty 1929–67, creator of lambda calculus |
+| Robert Tarjan | professor since 1985 and 1986 Turing Award recipient for algorithms and data structures |
 
 > **Alan Turing** — 1938 年获数学博士学位，论文研究序数逻辑，导师为 Alonzo Church。**Alonzo Church** — 1929–67 年任教于普林斯顿，创立 λ 演算。**Robert Tarjan** — 1985 年起任教授，因算法与数据结构获 1986 年图灵奖。
 
-## Notable CS courses (著名计算机课程)
+## Courses (课程)
 
-COS 126 Computer Science: An Interdisciplinary Approach · COS 217 Programming Systems · COS 226 Algorithms and Data Structures · COS 418 Distributed Systems · COS 423 Theory of Algorithms.
+| Course | Title |
+|:--|:--|
+| COS 126 | Computer Science: An Interdisciplinary Approach |
+| COS 217 | Programming Systems |
+| COS 226 | Algorithms and Data Structures |
+| COS 418 | Distributed Systems |
+| COS 423 | Theory of Algorithms |
 
 > COS 126 计算机科学跨学科导论 · COS 217 编程系统 · COS 226 算法与数据结构 · COS 418 分布式系统 · COS 423 算法理论。
 
@@ -32,9 +48,17 @@ COS 126 Computer Science: An Interdisciplinary Approach · COS 217 Programming S
 
 - [014](https://github.com/polarours/Coursework/tree/master/problems/014-princeton-cos226-8puzzle) — 8-Puzzle (COS 226)
 
+**8-Puzzle is COS 226 in miniature — a search problem where the algorithm matters more than the code, exactly as Tarjan's course would insist.**
+
+> 8-Puzzle 是 COS 226 的缩影——一个算法比代码更重要的搜索问题，正如 Tarjan 的课程所坚持的。
+
 ## Sources (来源)
 
 - <https://gradschool.princeton.edu/deans-initiatives-awards-events/dean%E2%80%99s-initiatives/viget-honor-roll/alan-mathison-turing>
 - <https://www.princeton.edu/news/2003/05/06/library-acquires-papers-eminent-mathematician>
 - <https://www.cs.princeton.edu/people/profile/ret>
 - <https://www.princeton.edu/academics/area-of-study/computer-science>
+
+---
+
+*University identifiers are editorial nameplates, not official crests. Logos for MIT, Stanford, Berkeley and CMU are redistributed under an MIT-licensed open course-map project. All other institutions are represented by nameplates generated from `scripts/gen-university-wordmarks.py`.*

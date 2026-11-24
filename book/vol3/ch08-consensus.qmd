@@ -2,7 +2,6 @@
 title: "Chapter 8 · Distributed Consensus <span class='zh-inline'>(第 8 章 · 分布式共识)</span>"
 ---
 
-# Chapter 8 · Distributed Consensus <span class='zh-inline'>(第 8 章 · 分布式共识)</span>
 ::: {.callout-note}
 ## Purpose (本章目标)
 

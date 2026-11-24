@@ -2,7 +2,6 @@
 title: "Chapter 2 · Memory Hierarchy and Caches <span class='zh-inline'>(第 2 章 · 存储层次与缓存)</span>"
 ---
 
-# Chapter 2 · Memory Hierarchy and Caches <span class='zh-inline'>(第 2 章 · 存储层次与缓存)</span>
 ::: {.callout-note}
 ## Purpose (本章目标)
 

@@ -2,8 +2,6 @@
 title: "Chapter 1 · Foundations of Memory and Execution <span class='zh-inline'>(第 1 章 · 内存与执行的基础)</span>"
 ---
 
-# Chapter 1 · Foundations of Memory and Execution <span class='zh-inline'>(第 1 章 · 内存与执行的基础)</span>
-
 ::: {.callout-note}
 ## Purpose (本章目标)
 

@@ -2,8 +2,6 @@
 title: "Chapter 12 · Assignment Workshop <span class='zh-inline'>(第 12 章 · 作业工坊)</span>"
 ---
 
-# Chapter 12 · Assignment Workshop <span class='zh-inline'>(第 12 章 · 作业工坊)</span>
-
 ::: {.callout-note}
 ## Purpose (本章目标)
 

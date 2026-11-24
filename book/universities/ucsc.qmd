@@ -2,13 +2,19 @@
 title: "UC Santa Cruz <span class='zh-inline'>(加州大学圣克鲁兹分校)</span>"
 ---
 
-# UC Santa Cruz <span class='zh-inline'>(加州大学圣克鲁兹分校)</span>
+<img src="logos/ucsc.svg" alt="UC Santa Cruz" width="420" class="uni-plate">
 
-<img src="logos/ucsc.svg" alt="UC Santa Cruz identifier" width="150" style="display:block;margin:0 0 1.4rem 0">
+<p class="uni-credit">Editorial nameplate — not an official crest. Generated from `scripts/gen-university-wordmarks.py`.</p>
 
-An experimental campus near Silicon Valley whose AI course's Pacman projects became classics — both our projects 031 and 032 come from here.
+**A counterculture campus that built Ceph**
 
-> 硅谷附近的实验性校区，其人工智能课程的 Pacman 项目已成经典——我们的项目 031 与 032 都来自这里。
+> 反主流文化校园造出 Ceph
+
+## Why it matters (为何重要)
+
+UCSC pairs an experimental, interdisciplinary spirit with serious systems work — Ceph and the Pacman assignments both live here.
+
+> UCSC 把实验性的跨学科精神与扎实的系统工作结合——Ceph 与 Pacman 作业都诞生于此。
 
 ## Background (背景)
 
@@ -16,15 +22,23 @@ Founded in 1965 as an experimental public campus, its Information and Computer S
 
 > 1965 年作为实验性公立校区创办，信息与计算机科学系在 1960 年代末成立，1997 年工程学院以 Baskin 命名。
 
-## Notable people (名人)
+## People (人物)
 
-**Sage Weil** (CS PhD 2007) — created the Ceph distributed storage system. **Jay Kreps** — co-founder of Confluent and contributor to Apache Kafka. Faculty include **David Haussler** (UCSC Genome Browser) and **Ira Pohl** (ACM Fellow).
+| Person | Connection to computing |
+|:--|:--|
+| Jay Kreps | co-founder of Confluent and contributor to Apache Kafka. Faculty include **David Haussler** (UCSC Genome Browser) and **Ira Pohl** (ACM Fellow) |
 
 > **Sage Weil**（2007 计算机博士）— 创建 Ceph 分布式存储系统。**Jay Kreps** — Confluent 联合创始人、Apache Kafka 贡献者。教师包括 **David Haussler**（UCSC 基因组浏览器）与 **Ira Pohl**（ACM 会士）。
 
-## Notable CS courses (著名计算机课程)
+## Courses (课程)
 
-CSE 140 Artificial Intelligence (p0/p1 are projects 031/032) · CSE 101 Data Structures and Algorithms · CSE 102 Analysis of Algorithms · CSE 120 Computer Architecture · CSE 130 Principles of System Design.
+| Course | Title |
+|:--|:--|
+| CSE 140 | Artificial Intelligence (p0/p1 are projects 031/032) |
+| CSE 101 | Data Structures and Algorithms |
+| CSE 102 | Analysis of Algorithms |
+| CSE 120 | Computer Architecture |
+| CSE 130 | Principles of System Design |
 
 > CSE 140 人工智能（p0/p1 即项目 031/032）· CSE 101 数据结构与算法 · CSE 102 算法分析 · CSE 120 计算机体系结构 · CSE 130 系统设计原理。
 
@@ -33,9 +47,17 @@ CSE 140 Artificial Intelligence (p0/p1 are projects 031/032) · CSE 101 Data Str
 - [031](https://github.com/polarours/Coursework/tree/master/problems/031-ucsc-cse140-pacman-warmup) — Pacman warmup (CSE 140 p0)
 - [032](https://github.com/polarours/Coursework/tree/master/problems/032-ucsc-cse140-pacman-search) — Pacman search (CSE 140 p1)
 
+**Both Pacman projects come straight from CSE 140: first build a shop argmin, then the full search stack — DFS, BFS, UCS, A* — on the same framework.**
+
+> 两个 Pacman 项目都直接来自 CSE 140：先做商店取优，再在同一框架上完成 DFS、BFS、UCS、A* 全套搜索。
+
 ## Sources (来源)
 
 - <https://strategicplan.ucsc.edu/overview/>
 - <https://engineering.ucsc.edu/about/be-history/>
 - <https://engineering.ucsc.edu/engage/spinoffs-and-startups/>
 - <https://catalog.ucsc.edu/en/2025-2026/general-catalog/academic-units/baskin-engineering/computer-science-and-engineering>
+
+---
+
+*University identifiers are editorial nameplates, not official crests. Logos for MIT, Stanford, Berkeley and CMU are redistributed under an MIT-licensed open course-map project. All other institutions are represented by nameplates generated from `scripts/gen-university-wordmarks.py`.*

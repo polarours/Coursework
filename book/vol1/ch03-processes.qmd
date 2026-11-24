@@ -2,7 +2,6 @@
 title: "Chapter 3 · Processes and the Shell <span class='zh-inline'>(第 3 章 · 进程接口与 Shell)</span>"
 ---
 
-# Chapter 3 · Processes and the Shell <span class='zh-inline'>(第 3 章 · 进程接口与 Shell)</span>
 ::: {.callout-note}
 ## Purpose (本章目标)
 

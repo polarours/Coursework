@@ -2,8 +2,6 @@
 title: "Chapter 14 · Java and Python Assignments <span class='zh-inline'>(第 14 章 · Java 与 Python 真实作业)</span>"
 ---
 
-# Chapter 14 · Java and Python Assignments <span class='zh-inline'>(第 14 章 · Java 与 Python 真实作业)</span>
-
 ::: {.callout-note}
 ## Purpose (本章目标)
 

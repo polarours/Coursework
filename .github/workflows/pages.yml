@@ -25,6 +25,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Validate generated SVG assets
+        run: python3 scripts/validate-svgs.py
+
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 

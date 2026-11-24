@@ -2,8 +2,6 @@
 title: "Volume III · Networks and Distributed Systems <span class='zh-inline'>(卷三 · 网络与分布式)</span>"
 ---
 
-# Volume III · Networks and Distributed Systems <span class='zh-inline'>(卷三 · 网络与分布式)</span>
-
 > 本卷回答：不可靠的通信如何达成可靠？
 
 TCP 的滑动窗口与 Raft 的共识机制，分别解决字节流与状态机两个层面的可靠性问题。

@@ -2,7 +2,6 @@
 title: "Chapter 9 · Neural Networks and Gradients <span class='zh-inline'>(第 9 章 · 神经网络与梯度)</span>"
 ---
 
-# Chapter 9 · Neural Networks and Gradients <span class='zh-inline'>(第 9 章 · 神经网络与梯度)</span>
 ::: {.callout-note}
 ## Purpose (本章目标)
 

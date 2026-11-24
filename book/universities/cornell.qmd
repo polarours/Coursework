@@ -2,13 +2,19 @@
 title: "Cornell University <span class='zh-inline'>(康奈尔大学)</span>"
 ---
 
-# Cornell University <span class='zh-inline'>(康奈尔大学)</span>
+<img src="logos/cornell.svg" alt="Cornell University" width="420" class="uni-plate">
 
-<img src="logos/cornell.svg" alt="Cornell University identifier" width="150" style="display:block;margin:0 0 1.4rem 0">
+<p class="uni-credit">Editorial nameplate — not an official crest. Generated from `scripts/gen-university-wordmarks.py`.</p>
 
-Founded by Ezra Cornell on the idea of 'any person ... any study', home to an early CS department and two Turing Award founders.
+**Complexity theory as a foundation**
 
-> 由 Ezra Cornell 本着“任何人……任何学科”的理念创办，拥有早期计算机系和两位图灵奖得主奠基人。
+> 以复杂性理论为根基
+
+## Why it matters (为何重要)
+
+Cornell built one of the earliest CS departments and used it to establish the theory of computation as a discipline.
+
+> 康奈尔建立了最早的计算机系之一，并在此把计算复杂性确立为一门学科。
 
 ## Background (背景)
 
@@ -16,15 +22,25 @@ Founded in 1865 in Ithaca, New York, Cornell is private with a public mission; i
 
 > 1865 年创办于纽约州伊萨卡，是“私立而承担公共使命”的大学；计算机科学系成立于 1965 年。
 
-## Notable people (名人)
+## People (人物)
 
-**Juris Hartmanis** — founding CS chair (1965), co-recipient of the 1993 Turing Award for establishing computational complexity theory. **John Hopcroft** — 1986 Turing Award and co-author of the classic automata textbook. **Eva Tardos** — elected to the National Academy of Sciences in 2013 for network-flow and approximation algorithms.
+| Person | Connection to computing |
+|:--|:--|
+| Juris Hartmanis | founding CS chair (1965), co-recipient of the 1993 Turing Award for establishing computational complexity theory |
+| John Hopcroft | 1986 Turing Award and co-author of the classic automata textbook |
+| Eva Tardos | elected to the National Academy of Sciences in 2013 for network-flow and approximation algorithms |
 
 > **Juris Hartmanis** — 首任计算机系主任（1965），因奠定计算复杂性理论获 1993 年图灵奖。**John Hopcroft** — 1986 年图灵奖得主，经典自动机教材合著者。**Eva Tardos** — 因网络流与近似算法于 2013 年当选美国国家科学院院士。
 
-## Notable CS courses (著名计算机课程)
+## Courses (课程)
 
-CS 1110 Introduction to Computing · CS 2110 Object-Oriented Programming and Data Structures · CS 2800 Mathematical Foundations · CS 3410 Computer System Organization · CS 4820 Analysis of Algorithms.
+| Course | Title |
+|:--|:--|
+| CS 1110 | Introduction to Computing |
+| CS 2110 | Object-Oriented Programming and Data Structures |
+| CS 2800 | Mathematical Foundations |
+| CS 3410 | Computer System Organization |
+| CS 4820 | Analysis of Algorithms |
 
 > CS 1110 计算导论 · CS 2110 面向对象编程与数据结构 · CS 2800 计算数学基础 · CS 3410 计算机系统组织 · CS 4820 算法分析。
 
@@ -32,9 +48,17 @@ CS 1110 Introduction to Computing · CS 2110 Object-Oriented Programming and Dat
 
 - [020](https://github.com/polarours/Coursework/tree/master/problems/020-cornell-enigma) — Enigma (CS 3110)
 
+**The Enigma project is functional-programming in the Cornell mould — types and pure functions first, a tradition Hartmanis and Hopcroft helped establish.**
+
+> Enigma 项目是康奈尔式函数式编程：类型与纯函数先行，这一传统由 Hartmanis 与 Hopcroft 等人奠定。
+
 ## Sources (来源)
 
 - <https://www.cornell.edu/about/index.cfm>
 - <https://www.cs.cornell.edu/timeline>
 - <https://amturing.acm.org/award_winners/hartmanis_1059260.cfm>
 - <https://catalog.cornell.edu/courses/cs/>
+
+---
+
+*University identifiers are editorial nameplates, not official crests. Logos for MIT, Stanford, Berkeley and CMU are redistributed under an MIT-licensed open course-map project. All other institutions are represented by nameplates generated from `scripts/gen-university-wordmarks.py`.*

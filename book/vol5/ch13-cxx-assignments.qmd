@@ -2,8 +2,6 @@
 title: "Chapter 13 · Six Real C++ Assignments <span class='zh-inline'>(第 13 章 · C++ 真实作业六题)</span>"
 ---
 
-# Chapter 13 · Six Real C++ Assignments <span class='zh-inline'>(第 13 章 · C++ 真实作业六题)</span>
-
 ::: {.callout-note}
 ## Purpose (本章目标)
 

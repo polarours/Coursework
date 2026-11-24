@@ -2,8 +2,6 @@
 title: "Volume I · Systems Foundations <span class='zh-inline'>(卷一 · 系统基础)</span>"
 ---
 
-# Volume I · Systems Foundations <span class='zh-inline'>(卷一 · 系统基础)</span>
-
 > 本卷回答一个问题：程序如何在真实的机器上执行？
 > This volume asks: how does a program actually execute on real hardware?
 
