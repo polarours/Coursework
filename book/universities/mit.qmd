@@ -2,27 +2,36 @@
 title: "MIT <span class='zh-inline'>(麻省理工学院)</span>"
 ---
 
-<img src="logos/mit.svg" alt="MIT" width="420" class="uni-plate">
+<div class="uni-head">
 
-<p class="uni-credit">Official mark, redistributed under an MIT-licensed open course-map project.</p>
+<img src="logos/mit.svg" alt="MIT" class="uni-plate">
 
-**The course number is the identity**
+<div class="uni-head-text">
 
-> 课程编号就是身份
+<p class="uni-signature">The course number is the identity</p>
 
-## Why it matters (为何重要)
+<p class="uni-signature-zh">课程编号就是身份</p>
+
+</div>
+</div>
+
+<p class="uni-intro">The institute that turned engineering into a research discipline — and whose course numbering became a global shorthand for systems education.</p>
+
+> 这所学校把工程变成一门研究学科，它的课程编号（6.824、6.006）已成为系统教育的全球通用语。
+
+## Why it matters <span class='zh-inline'>(为何重要)</span>
 
 MIT packages hard systems knowledge into numbered courses — 6.001, 6.006, 6.824 — that students worldwide recognize on sight.
 
 > MIT 把最难的系统知识打包进编号课程——6.001、6.006、6.824——全世界的学生一眼就能认出。
 
-## Background (背景)
+## Background <span class='zh-inline'>(背景)</span>
 
 Chartered in 1861 on William Barton Rogers's vision of a polytechnic institute, MIT admitted its first students in 1865 after the Civil War. Its Department of Electrical Engineering and Computer Science grew out of the practical training that defined the school's early identity.
 
 > MIT 于 1861 年获特许成立，源于 William Barton Rogers 创办理工学院的构想；南北战争后于 1865 年招收首届学生。电气工程与计算机科学系（EECS）继承了学校早期的实践教育传统。
 
-## People (人物)
+## People <span class='zh-inline'>(人物)</span>
 
 | Person | Connection to computing |
 |:--|:--|
@@ -32,7 +41,7 @@ Chartered in 1861 on William Barton Rogers's vision of a polytechnic institute, 
 
 > **Claude Shannon** — MIT 教授（1958–78），“信息论之父”，1948 年的《通信的数学理论》开创了该领域。**Tim Berners-Lee** — MIT 荣休教授，1989 年在 CERN 发明万维网并写下第一个浏览器与服务器。**Marvin Minsky** — 1959 年共同创办 MIT 人工智能实验室，1969 年图灵奖得主。
 
-## Courses (课程)
+## Courses <span class='zh-inline'>(课程)</span>
 
 | Course | Title |
 |:--|:--|
@@ -44,7 +53,7 @@ Chartered in 1861 on William Barton Rogers's vision of a polytechnic institute, 
 
 > 6.001 计算机程序的构造与解释 · 6.006 算法导论 · 6.828 操作系统工程 · 6.824 分布式系统工程 · 6.036 机器学习导论。
 
-## In this book (本书收录)
+## In this book <span class='zh-inline'>(本书收录)</span>
 
 - [001 · Raft consensus (6.824)](https://github.com/polarours/Coursework/tree/master/problems/001-mit-6.824-raft)
 - [005 · xv6 operating systems](https://github.com/polarours/Coursework/tree/master/problems/005-mit-6.1810-xv6)
@@ -55,7 +64,7 @@ Chartered in 1861 on William Barton Rogers's vision of a polytechnic institute, 
 
 > 本书的 MIT 项目——Raft、xv6、Shell、LRU——都在做同一件事：掀开抽象看底下。这正是 6.824 与 6.828 的教学方式。
 
-## Sources (来源)
+## Sources <span class='zh-inline'>(来源)</span>
 
 - <https://engineering.mit.edu/about/history>
 - <https://news.mit.edu/2001/shannon>

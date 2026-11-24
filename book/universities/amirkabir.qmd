@@ -2,27 +2,36 @@
 title: "Amirkabir University of Technology <span class='zh-inline'>(阿米尔卡比尔理工大学)</span>"
 ---
 
-<img src="logos/amirkabir.svg" alt="Amirkabir University of Technology" width="420" class="uni-plate">
+<div class="uni-head">
 
-<p class="uni-credit">Editorial nameplate — not an official crest. Generated from `scripts/gen-university-wordmarks.py`.</p>
+<img src="logos/amirkabir.svg" alt="Amirkabir University of Technology" class="uni-plate">
 
-**Iran's oldest technical university**
+<div class="uni-head-text">
 
-> 伊朗最古老的理工院校
+<p class="uni-signature">Iran's oldest technical university</p>
 
-## Why it matters (为何重要)
+<p class="uni-signature-zh">伊朗最古老的理工院校</p>
+
+</div>
+</div>
+
+<p class="uni-intro">Tehran's oldest technical university, where our matrix-library assignment came from — an AP1400-2 homework from Spring 2022.</p>
+
+> 德黑兰最古老的理工院校，我们的矩阵库作业就来自这里——2022 年春季的 AP1400-2 作业。
+
+## Why it matters <span class='zh-inline'>(为何重要)</span>
 
 Amirkabir built the country's first computer-engineering PhD programme; its AP1400 assignments carry that rigor forward.
 
 > Amirkabir 建立了伊朗首个计算机工程博士项目，AP1400 作业延续了这份严谨。
 
-## Background (背景)
+## Background <span class='zh-inline'>(背景)</span>
 
 A public technological university in Tehran, founded in 1958 as Tehran Polytechnic (some sources trace roots to a 1928 academy), renamed after Amir Kabir in 1979. Its Computer Engineering Department began teaching in 1988.
 
 > 德黑兰的公立理工院校，1958 年以“德黑兰理工学院”之名成立（部分资料追溯到 1928 年的技术学校），1979 年以 Amir Kabir 命名。计算机工程系 1988 年开始招生授课。
 
-## People (人物)
+## People <span class='zh-inline'>(人物)</span>
 
 | Person | Connection to computing |
 |:--|:--|
@@ -31,7 +40,7 @@ A public technological university in Tehran, founded in 1958 as Tehran Polytechn
 
 > **Jalal Al-e-Ahmad** — 该校校友，伊朗有影响力的作家与知识分子。**Mohammad Reza Meybodi** — 计算机工程荣休教授。该系于 2002 年设立伊朗首个计算机工程博士项目。
 
-## Courses (课程)
+## Courses <span class='zh-inline'>(课程)</span>
 
 | Course | Title |
 |:--|:--|
@@ -39,7 +48,7 @@ A public technological university in Tehran, founded in 1958 as Tehran Polytechn
 
 > AP1400-2 高级编程（项目 023 的来源）。硕士方向包括计算机体系结构/网络、软件系统、人工智能与机器人。
 
-## In this book (本书收录)
+## In this book <span class='zh-inline'>(本书收录)</span>
 
 - [023 · Matrix library (AP1400-2 HW1)](https://github.com/polarours/Coursework/tree/master/problems/023-amirkabir-ap1400-hw1)
 
@@ -47,7 +56,7 @@ A public technological university in Tehran, founded in 1958 as Tehran Polytechn
 
 > 矩阵库是一道纯粹的 AP1400-2 练习：17 个函数、固定的接口、由 24 个用例决定正确性。
 
-## Sources (来源)
+## Sources <span class='zh-inline'>(来源)</span>
 
 - <https://www.timeshighereducation.com/world-university-rankings/amirkabir-university-technology>
 - <https://aut.ac.ir/content/193/Computer-Engineering>

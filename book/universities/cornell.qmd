@@ -2,27 +2,36 @@
 title: "Cornell University <span class='zh-inline'>(康奈尔大学)</span>"
 ---
 
-<img src="logos/cornell.svg" alt="Cornell University" width="420" class="uni-plate">
+<div class="uni-head">
 
-<p class="uni-credit">Editorial nameplate — not an official crest. Generated from `scripts/gen-university-wordmarks.py`.</p>
+<img src="logos/cornell.svg" alt="Cornell University" class="uni-plate">
 
-**Complexity theory as a foundation**
+<div class="uni-head-text">
 
-> 以复杂性理论为根基
+<p class="uni-signature">Complexity theory as a foundation</p>
 
-## Why it matters (为何重要)
+<p class="uni-signature-zh">以复杂性理论为根基</p>
+
+</div>
+</div>
+
+<p class="uni-intro">Founded by Ezra Cornell on the idea of 'any person ... any study', home to an early CS department and two Turing Award founders.</p>
+
+> 由 Ezra Cornell 本着“任何人……任何学科”的理念创办，拥有早期计算机系和两位图灵奖得主奠基人。
+
+## Why it matters <span class='zh-inline'>(为何重要)</span>
 
 Cornell built one of the earliest CS departments and used it to establish the theory of computation as a discipline.
 
 > 康奈尔建立了最早的计算机系之一，并在此把计算复杂性确立为一门学科。
 
-## Background (背景)
+## Background <span class='zh-inline'>(背景)</span>
 
 Founded in 1865 in Ithaca, New York, Cornell is private with a public mission; its Computer Science department was established in 1965.
 
 > 1865 年创办于纽约州伊萨卡，是“私立而承担公共使命”的大学；计算机科学系成立于 1965 年。
 
-## People (人物)
+## People <span class='zh-inline'>(人物)</span>
 
 | Person | Connection to computing |
 |:--|:--|
@@ -32,7 +41,7 @@ Founded in 1865 in Ithaca, New York, Cornell is private with a public mission; i
 
 > **Juris Hartmanis** — 首任计算机系主任（1965），因奠定计算复杂性理论获 1993 年图灵奖。**John Hopcroft** — 1986 年图灵奖得主，经典自动机教材合著者。**Eva Tardos** — 因网络流与近似算法于 2013 年当选美国国家科学院院士。
 
-## Courses (课程)
+## Courses <span class='zh-inline'>(课程)</span>
 
 | Course | Title |
 |:--|:--|
@@ -44,7 +53,7 @@ Founded in 1865 in Ithaca, New York, Cornell is private with a public mission; i
 
 > CS 1110 计算导论 · CS 2110 面向对象编程与数据结构 · CS 2800 计算数学基础 · CS 3410 计算机系统组织 · CS 4820 算法分析。
 
-## In this book (本书收录)
+## In this book <span class='zh-inline'>(本书收录)</span>
 
 - [020 · Enigma (CS 3110)](https://github.com/polarours/Coursework/tree/master/problems/020-cornell-enigma)
 
@@ -52,7 +61,7 @@ Founded in 1865 in Ithaca, New York, Cornell is private with a public mission; i
 
 > Enigma 项目是康奈尔式函数式编程：类型与纯函数先行，这一传统由 Hartmanis 与 Hopcroft 等人奠定。
 
-## Sources (来源)
+## Sources <span class='zh-inline'>(来源)</span>
 
 - <https://www.cornell.edu/about/index.cfm>
 - <https://www.cs.cornell.edu/timeline>

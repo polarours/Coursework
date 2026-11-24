@@ -63,12 +63,18 @@ body {
   text-wrap: balance;
 }
 .quarto-title-block .quarto-title-meta { font-size: 0.88rem; color: var(--cw-muted); }
+.quarto-title-block h1.title .chapter-number { font-size: 0.44em; font-weight: 500; color: var(--cw-muted); vertical-align: 0.42em; margin-right: 0.35em; letter-spacing: 0; }
+.quarto-title-block h1.title .zh-inline { display: block; font-size: 0.42em; margin-top: 0.25rem; letter-spacing: 0; }
 .zh-inline { color: var(--cw-muted); font-size: 0.82em; font-weight: 400; }
 
-// University nameplate — editorial, not a fake crest.
-img.uni-plate { display:block; margin:0 0 0.5rem 0; max-width:100%; height:auto; }
-p.uni-credit { font-size:0.82rem; color:var(--cw-muted); margin:0 0 1.6rem 0; font-style:italic; }
-#quarto-document-content > p > strong:first-child { color:var(--cw-teal); font-size:1.12rem; }
+// University header: nameplate and signature form one lockup.
+.uni-head { display:flex; align-items:center; gap:1.2rem; flex-wrap:wrap; margin:0 0 1.5rem 0; }
+img.uni-plate { display:block; width:200px; max-width:100%; height:auto; flex:0 0 auto; }
+.uni-head-text { flex:1 1 220px; min-width:180px; }
+p.uni-signature { font-size:1.28rem; font-weight:650; color:var(--cw-teal); line-height:1.3; margin:0 0 .35rem 0; letter-spacing:-0.01em; }
+p.uni-signature-zh { font-size:1rem; color:var(--cw-muted); margin:0; }
+p.uni-intro { font-size:1.02rem; color:var(--cw-body); margin:0 0 .2rem 0; }
+@media (max-width: 640px) { .uni-head { gap:.9rem; } img.uni-plate { width:150px; } }
 
 // Bilingual English summaries: quiet surface with a left rule, no italics
 // in long passages (italic harms sustained reading).
@@ -99,8 +105,12 @@ table tbody tr:nth-child(2n) { background: rgba(15, 95, 99, 0.035); }
   background: var(--cw-surface);
   border-right: 1px solid var(--cw-line);
   font-size: 0.86rem;
-  max-width: 300px;
 }
+// Only the navigation rail gets a wider column; the margin TOC must never
+// be pushed past the viewport.
+.sidebar.sidebar-navigation { width: 290px; max-width: 290px; }
+.sidebar.margin-sidebar { width: auto; max-width: 240px; }
+.sidebar .sidebar-item-text, #TOC .nav-link { word-break: keep-all; overflow-wrap: anywhere; }
 .sidebar .sidebar-item-text { white-space: normal; overflow-wrap: break-word; }
 #TOC .nav-link { white-space: normal; overflow-wrap: break-word; line-height: 1.35; }
 .sidebar .sidebar-item-text { padding: 0.3rem 0.7rem; color: var(--cw-body); }
@@ -110,8 +120,8 @@ table tbody tr:nth-child(2n) { background: rgba(15, 95, 99, 0.035); }
 .sidebar-header .navbar-brand { font-weight: 700; color: var(--cw-ink); letter-spacing: -0.02em; }
 
 // Right TOC.
-#TOC { font-size: 0.88rem; }
-#TOC .nav-link { color: var(--cw-muted); padding: 0.18rem 0.6rem; }
+#TOC { font-size: 0.82rem; --bs-nav-link-font-size: 0.82rem; }
+#TOC .nav-link { color: var(--cw-muted); padding: 0.16rem 0.3rem 0.16rem 0.55rem; }
 #TOC .nav-link.active { color: var(--cw-teal); border-left: 2px solid var(--cw-teal); }
 
 // Code: quiet surface.
@@ -133,7 +143,7 @@ code { color: var(--cw-amber); }
   padding: 0.2rem 0.55rem; font-size: 0.82rem; cursor: pointer;
   transition: background 160ms cubic-bezier(0.22,1,0.36,1), color 160ms cubic-bezier(0.22,1,0.36,1);
 }
-.cw-lang button[aria-pressed="true"] { background: var(--cw-teal); color: #fff; }
+.cw-lang button[aria-pressed="true"] { background: var(--cw-ink); color: #fff; }
 
 // Chinese-only blocks: hidden by default (English-first), shown when toggled.
 body.cw-zh .zh-only { display: block !important; }

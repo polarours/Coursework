@@ -2,27 +2,36 @@
 title: "Stanford University <span class='zh-inline'>(斯坦福大学)</span>"
 ---
 
-<img src="logos/stanford.png" alt="Stanford University" width="420" class="uni-plate">
+<div class="uni-head">
 
-<p class="uni-credit">Official mark, redistributed under an MIT-licensed open course-map project.</p>
+<img src="logos/stanford.png" alt="Stanford University" class="uni-plate">
 
-**From PageRank to the vision stack**
+<div class="uni-head-text">
 
-> 从 PageRank 到视觉栈
+<p class="uni-signature">From PageRank to the vision stack</p>
 
-## Why it matters (为何重要)
+<p class="uni-signature-zh">从 PageRank 到视觉栈</p>
+
+</div>
+</div>
+
+<p class="uni-intro">A university whose CS department became the launching pad for Google and whose lecture notes trained a generation of AI researchers.</p>
+
+> 这所学校的计算机系是 Google 的起跑线，它的讲义培训了一代又一代 AI 研究者。
+
+## Why it matters <span class='zh-inline'>(为何重要)</span>
 
 Stanford's CS culture turns research directly into infrastructure and into the lecture notes the world learns from.
 
 > 斯坦福的 CS 文化把研究直接变成基础设施，也变成全世界学习的讲义。
 
-## Background (背景)
+## Background <span class='zh-inline'>(背景)</span>
 
 Founded in 1885 by Leland and Jane Stanford as a memorial to their son, the university opened on 1 October 1891. Its location in Silicon Valley shaped a department closely tied to industry.
 
 > 斯坦福大学由 Leland 与 Jane Stanford 于 1885 年创办以纪念他们的儿子，1891 年 10 月 1 日开学。位于硅谷的地理位置塑造了它与产业界紧密相连的计算机系。
 
-## People (人物)
+## People <span class='zh-inline'>(人物)</span>
 
 | Person | Connection to computing |
 |:--|:--|
@@ -32,7 +41,7 @@ Founded in 1885 by Leland and Jane Stanford as a memorial to their son, the univ
 
 > **Larry Page** 与 **Sergey Brin** — 斯坦福研究生，共同开发 PageRank 并于 1998 年创办 Google。**李飞飞** — 斯坦福教授，CS231n 主讲。**Andrew Ng** — 斯坦福兼职教授，长期主讲 CS229。
 
-## Courses (课程)
+## Courses <span class='zh-inline'>(课程)</span>
 
 | Course | Title |
 |:--|:--|
@@ -44,7 +53,7 @@ Founded in 1885 by Leland and Jane Stanford as a memorial to their son, the univ
 
 > CS106A 编程方法学 · CS161 算法设计与分析 · CS107 编程范式 · CS229 机器学习 · CS231n 计算机视觉深度学习。
 
-## In this book (本书收录)
+## In this book <span class='zh-inline'>(本书收录)</span>
 
 - [002 · TCP (CS144)](https://github.com/polarours/Coursework/tree/master/problems/002-stanford-cs144-tcp)
 - [007 · Compiler (CS143)](https://github.com/polarours/Coursework/tree/master/problems/007-stanford-cs143-compiler)
@@ -59,7 +68,7 @@ Founded in 1885 by Leland and Jane Stanford as a memorial to their son, the univ
 
 > 从 CS144 的 TCP 到 CS231n 的神经网络，本书的斯坦福项目复刻了这条从网络到 AI 的路径——这条路径正是该系参与定义的。
 
-## Sources (来源)
+## Sources <span class='zh-inline'>(来源)</span>
 
 - <https://www.stanford.edu/about/history>
 - <https://engineering.stanford.edu/about/history/heroes/2014-heroes/larry-page>

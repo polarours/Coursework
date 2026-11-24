@@ -2,27 +2,36 @@
 title: "University of Maryland <span class='zh-inline'>(马里兰大学)</span>"
 ---
 
-<img src="logos/umd.svg" alt="University of Maryland" width="420" class="uni-plate">
+<div class="uni-head">
 
-<p class="uni-credit">Editorial nameplate — not an official crest. Generated from `scripts/gen-university-wordmarks.py`.</p>
+<img src="logos/umd.svg" alt="University of Maryland" class="uni-plate">
 
-**The systems school next to the capital**
+<div class="uni-head-text">
 
-> 首都旁的系统学派
+<p class="uni-signature">The systems school next to the capital</p>
 
-## Why it matters (为何重要)
+<p class="uni-signature-zh">首都旁的系统学派</p>
+
+</div>
+</div>
+
+<p class="uni-intro">A land-grant university near Washington DC whose CS alumni include a Google co-founder and whose courses shaped OO education.</p>
+
+> 这所位于华盛顿特区附近的赠地大学，校友中有 Google 联合创始人，其课程塑造了面向对象教育。
+
+## Why it matters <span class='zh-inline'>(为何重要)</span>
 
 Maryland's CS department spans human-computer interaction, graphics and programming languages — CMSC 132 is its OO gateway.
 
 > 马里兰的 CS 横跨人机交互、图形学与编程语言，CMSC 132 是它的面向对象入口。
 
-## Background (背景)
+## Background <span class='zh-inline'>(背景)</span>
 
 Chartered in 1856 as the Maryland Agricultural College and opened in 1859 with 34 students, it became a land-grant college in 1864.
 
 > 1856 年以“马里兰农业学院”之名获特许成立，1859 年招收 34 名学生，1864 年成为赠地学院。
 
-## People (人物)
+## People <span class='zh-inline'>(人物)</span>
 
 | Person | Connection to computing |
 |:--|:--|
@@ -33,7 +42,7 @@ Chartered in 1856 as the Maryland Agricultural College and opened in 1859 with 3
 
 > **Sergey Brin** — 1993 年数学与计算机荣誉学士，Google 联合创始人。**Ben Shneiderman** — 人机交互杰出教授、ACM 会士、美国工程院院士。**Victor Basili** — NASA Goddard 软件工程实验室创始人。**Hanan Samet** — 四叉树先驱、2012 年 ACM Paris Kanellakis 奖得主。
 
-## Courses (课程)
+## Courses <span class='zh-inline'>(课程)</span>
 
 | Course | Title |
 |:--|:--|
@@ -45,7 +54,7 @@ Chartered in 1856 as the Maryland Agricultural College and opened in 1859 with 3
 
 > CMSC 132 面向对象编程 II · CMSC 216 计算机系统导论 · CMSC 330 编程语言结构 · CMSC 351 算法 · CMSC 451 算法设计与分析。
 
-## In this book (本书收录)
+## In this book <span class='zh-inline'>(本书收录)</span>
 
 - [030 · SubmitServer (CMSC 132)](https://github.com/polarours/Coursework/tree/master/problems/030-umd-cmsc132-submitserver)
 
@@ -53,7 +62,7 @@ Chartered in 1856 as the Maryland Agricultural College and opened in 1859 with 3
 
 > SubmitServer 把 CMSC 132 的“测试即规格”变成一课：公开测试就是需求，未定义的边界由你自己定。
 
-## Sources (来源)
+## Sources <span class='zh-inline'>(来源)</span>
 
 - <https://umd.edu/about/history>
 - <https://www.cs.umd.edu/community/alumnus/sergey-brin>

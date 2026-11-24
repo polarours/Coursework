@@ -8,6 +8,7 @@ lets readers choose English (default) or Chinese. The choice persists in
 localStorage and is restored on navigation.
 """
 import glob
+import re
 import os
 import sys
 
@@ -15,7 +16,7 @@ BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Allow CI to pass book/_book as the render output directory.
 SITE = os.path.abspath(sys.argv[1]) if len(sys.argv) > 1 else os.path.join(BASE, "book", "_site")
 
-INJECT = r"""
+INJECT = r"""<!-- cw-lang-switch:begin -->
 <style>
 /* Language switch — segmented control, one primary interaction. */
 .cw-lang-switch { display:inline-flex; margin-left:.6rem; vertical-align:middle; }
@@ -27,13 +28,17 @@ INJECT = r"""
 .cw-lang-switch button:first-child { border-radius:5px 0 0 5px; }
 .cw-lang-switch button:last-child { border-radius:0 5px 5px 0; border-left:0; }
 .cw-lang-switch button[aria-pressed="true"] {
-  background:var(--cw-teal,#0f5f63); color:#fff; border-color:var(--cw-teal,#0f5f63);
+  background:var(--cw-ink,#101b26); color:#fff; border-color:var(--cw-ink,#101b26);
 }
 /* Hide Chinese blocks in English mode; hide Latin blocks in Chinese mode. */
 body.cw-en .zh-block, body.cw-en .cjk { display:none !important; }
 body.cw-zh .en-block { display:none !important; }
 body.cw-zh .zh-inline { color:var(--cw-body,#1c2733); font-size:1em; }
-body.cw-en .zh-inline { color:var(--cw-muted,#5b6b73); }
+/* English mode is English-only: bilingual parentheticals would otherwise
+   clutter every heading and TOC entry. */
+body.cw-en .zh-inline { display:none !important; }
+/* Keep the short Chinese gloss on one line instead of orphaning '要)' */
+h1 .zh-inline, h2 .zh-inline, h3 .zh-inline { white-space:nowrap; }
 </style>
 <script>
 (function(){
@@ -46,11 +51,44 @@ body.cw-en .zh-inline { color:var(--cw-muted,#5b6b73); }
     document.querySelectorAll('.cw-lang-switch button').forEach(function(b){
       b.setAttribute('aria-pressed', String(b.dataset.lang===m));
     });
+    collapseEmptyQuotes();
+  }
+  // Quarto builds the TOC from plain heading text, dropping our zh-inline
+  // spans. Re-split 'Section (中文)' so English mode can drop the Chinese half.
+  function splitToc(){
+    var re = /^(.*?)\s*(\([\u4e00-\u9fff][^)]*\))\s*$/;
+    document.querySelectorAll('#TOC a.nav-link, .sidebar .sidebar-item-text').forEach(function(a){
+      if(a.querySelector('.zh-inline')) return;
+      var m = a.textContent.match(re);
+      if(!m) return;
+      var first = document.createElement('span');
+      first.textContent = m[1] + ' ';
+      var zh = document.createElement('span');
+      zh.className = 'zh-inline';
+      zh.textContent = m[2];
+      a.textContent = '';
+      a.appendChild(first);
+      a.appendChild(zh);
+    });
+  }
+  // A blockquote whose only paragraph is hidden in the current mode leaves an
+  // empty grey bar behind. Hide the wrapper as well.
+  function collapseEmptyQuotes(){
+    document.querySelectorAll('#quarto-document-content blockquote').forEach(function(bq){
+      var hasVisible=[].some.call(bq.querySelectorAll('p,li,pre,table'),function(el){
+        return getComputedStyle(el).display!=='none';
+      });
+      bq.style.display = hasVisible ? '' : 'none';
+    });
   }
   function classify(){
     var cjk=/[\u3400-\u9fff]/;
     var blocks=document.querySelectorAll('#quarto-document-content p, #quarto-document-content li, #quarto-document-content figcaption');
     blocks.forEach(function(el){
+      // Media-bearing paragraphs are language-neutral. Quarto wraps a lone
+      // <img> in a <p>, so classifying it would hide the nameplate entirely
+      // in the other language mode.
+      if(el.querySelector('img, svg, video, iframe, table')) return;
       if(el.dataset.cwClass) { el.className += ' ' + el.dataset.cwClass; return; }
       var text=el.textContent||'';
       var hasCjk=cjk.test(text);
@@ -63,7 +101,10 @@ body.cw-en .zh-inline { color:var(--cw-muted,#5b6b73); }
       // from a genuinely bilingual heading. A true bilingual line has CJK but
       // no Chinese grammar markers.
       var zhFunction=/(的|是|在|把|而|我们|这|那|为|从|中|对|与|并|也|都|将)/.test(text);
-      if(hasCjk && !zhFunction){ el.classList.add('bilingual'); }
+      // A long run of Chinese is prose, not a bilingual label — even when it
+      // happens to contain no function words (e.g. a list of names and dates).
+      var cjkChars=(text.match(/[\u3400-\u9fff]/g)||[]).length;
+      if(hasCjk && !zhFunction && cjkChars < 12){ el.classList.add('bilingual'); }
     });
     // bilingual blocks stay visible: override hide with a later rule
     var s=document.createElement('style');
@@ -95,17 +136,24 @@ body.cw-en .zh-inline { color:var(--cw-muted,#5b6b73); }
   }
   if(document.readyState==='loading'){
     document.addEventListener('DOMContentLoaded',function(){classify();mount();});
-  }else{ classify(); mount(); }
+  }else{ classify(); splitToc(); mount(); }
 })();
 </script>
+<!-- cw-lang-switch:end -->
 """
 
+BLOCK = re.compile(r"<!-- cw-lang-switch:begin -->.*?<!-- cw-lang-switch:end -->\n?", re.S)
+# Blocks injected before the begin/end markers existed have no sentinel; the
+# switch stylesheet starts with a distinctive selector, so anchor on that.
+LEGACY = re.compile(r"<style>\s*\.cw-lang-switch\s*\{.*?</script>\n?", re.S)
 changed = 0
 for f in glob.glob(os.path.join(SITE, "**", "*.html"), recursive=True):
     with open(f, encoding="utf-8") as fh:
         html = fh.read()
-    if "cw-lang-switch" in html:
-        continue
+    # Re-running this script must refresh the injected block rather than skip
+    # the page, otherwise edits to the switch need a full rebuild to appear.
+    html = BLOCK.sub("", html)
+    html = LEGACY.sub("", html)
     if "</body>" in html:
         html = html.replace("</body>", INJECT + "\n</body>", 1)
     else:

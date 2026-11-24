@@ -2,27 +2,36 @@
 title: "Georgia Institute of Technology <span class='zh-inline'>(佐治亚理工学院)</span>"
 ---
 
-<img src="logos/gatech.svg" alt="Georgia Institute of Technology" width="420" class="uni-plate">
+<div class="uni-head">
 
-<p class="uni-credit">Editorial nameplate — not an official crest. Generated from `scripts/gen-university-wordmarks.py`.</p>
+<img src="logos/gatech.svg" alt="Georgia Institute of Technology" class="uni-plate">
 
-**A practical school of computing**
+<div class="uni-head-text">
 
-> 务实的计算学院
+<p class="uni-signature">A practical school of computing</p>
 
-## Why it matters (为何重要)
+<p class="uni-signature-zh">务实的计算学院</p>
+
+</div>
+</div>
+
+<p class="uni-intro">A technology institute whose computing college produced Google News, SQLite and the Pragmatic Programmer.</p>
+
+> 这所理工学院的计算学院孕育了 Google News、SQLite 和《程序员修炼之道》。
+
+## Why it matters <span class='zh-inline'>(为何重要)</span>
 
 Georgia Tech's computing tradition favors systems that ship — SQLite and Google News both trace back here.
 
 > 佐治亚理工的计算传统偏爱能落地的系统——SQLite 与 Google News 都源于此。
 
-## Background (背景)
+## Background <span class='zh-inline'>(背景)</span>
 
 Established in 1885 as the Georgia School of Technology and opened in 1888 to 84 students, it was renamed Georgia Institute of Technology in 1948.
 
 > 1885 年以“佐治亚技术学校”之名创立，1888 年招收 84 名学生，1948 年更名为佐治亚理工学院。
 
-## People (人物)
+## People <span class='zh-inline'>(人物)</span>
 
 | Person | Connection to computing |
 |:--|:--|
@@ -31,7 +40,7 @@ Established in 1885 as the Georgia School of Technology and opened in 1888 to 84
 
 > **Krishna Bharat** — 在开发 Google News 前于佐治亚理工取得计算机硕士与博士学位。**D. Richard Hipp**（1984 届）— SQLite 数据库引擎的架构师与主要作者。**Andy Hunt** — 《程序员修炼之道》合著者、敏捷宣言签署人。
 
-## Courses (课程)
+## Courses <span class='zh-inline'>(课程)</span>
 
 | Course | Title |
 |:--|:--|
@@ -43,7 +52,7 @@ Established in 1885 as the Georgia School of Technology and opened in 1888 to 84
 
 > CS 1301 计算导论 · CS 1331 面向对象编程 · CS 1332 数据结构与算法 · CS 3510 算法设计与分析 · CS 3600 人工智能导论。
 
-## In this book (本书收录)
+## In this book <span class='zh-inline'>(本书收录)</span>
 
 - [019 · Bloom filter (CS 8803)](https://github.com/polarours/Coursework/tree/master/problems/019-gatech-bloom-filter)
 
@@ -51,7 +60,7 @@ Established in 1885 as the Georgia School of Technology and opened in 1888 to 84
 
 > 布隆过滤器作业体现了佐治亚理工的系统务实主义：一个可以推理、可以测量的概率结构。
 
-## Sources (来源)
+## Sources <span class='zh-inline'>(来源)</span>
 
 - <https://www.gatech.edu/about/history-traditions>
 - <https://en.wikipedia.org/wiki/Georgia_Tech_College_of_Computing>

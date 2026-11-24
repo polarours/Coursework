@@ -2,27 +2,36 @@
 title: "UC Santa Cruz <span class='zh-inline'>(加州大学圣克鲁兹分校)</span>"
 ---
 
-<img src="logos/ucsc.svg" alt="UC Santa Cruz" width="420" class="uni-plate">
+<div class="uni-head">
 
-<p class="uni-credit">Editorial nameplate — not an official crest. Generated from `scripts/gen-university-wordmarks.py`.</p>
+<img src="logos/ucsc.svg" alt="UC Santa Cruz" class="uni-plate">
 
-**A counterculture campus that built Ceph**
+<div class="uni-head-text">
 
-> 反主流文化校园造出 Ceph
+<p class="uni-signature">A counterculture campus that built Ceph</p>
 
-## Why it matters (为何重要)
+<p class="uni-signature-zh">反主流文化校园造出 Ceph</p>
+
+</div>
+</div>
+
+<p class="uni-intro">An experimental campus near Silicon Valley whose AI course's Pacman projects became classics — both our projects 031 and 032 come from here.</p>
+
+> 硅谷附近的实验性校区，其人工智能课程的 Pacman 项目已成经典——我们的项目 031 与 032 都来自这里。
+
+## Why it matters <span class='zh-inline'>(为何重要)</span>
 
 UCSC pairs an experimental, interdisciplinary spirit with serious systems work — Ceph and the Pacman assignments both live here.
 
 > UCSC 把实验性的跨学科精神与扎实的系统工作结合——Ceph 与 Pacman 作业都诞生于此。
 
-## Background (背景)
+## Background <span class='zh-inline'>(背景)</span>
 
 Founded in 1965 as an experimental public campus, its Information and Computer Science department formed in the late 1960s and the Baskin School of Engineering was named in 1997.
 
 > 1965 年作为实验性公立校区创办，信息与计算机科学系在 1960 年代末成立，1997 年工程学院以 Baskin 命名。
 
-## People (人物)
+## People <span class='zh-inline'>(人物)</span>
 
 | Person | Connection to computing |
 |:--|:--|
@@ -30,7 +39,7 @@ Founded in 1965 as an experimental public campus, its Information and Computer S
 
 > **Sage Weil**（2007 计算机博士）— 创建 Ceph 分布式存储系统。**Jay Kreps** — Confluent 联合创始人、Apache Kafka 贡献者。教师包括 **David Haussler**（UCSC 基因组浏览器）与 **Ira Pohl**（ACM 会士）。
 
-## Courses (课程)
+## Courses <span class='zh-inline'>(课程)</span>
 
 | Course | Title |
 |:--|:--|
@@ -42,7 +51,7 @@ Founded in 1965 as an experimental public campus, its Information and Computer S
 
 > CSE 140 人工智能（p0/p1 即项目 031/032）· CSE 101 数据结构与算法 · CSE 102 算法分析 · CSE 120 计算机体系结构 · CSE 130 系统设计原理。
 
-## In this book (本书收录)
+## In this book <span class='zh-inline'>(本书收录)</span>
 
 - [031 · Pacman warmup (CSE 140 p0)](https://github.com/polarours/Coursework/tree/master/problems/031-ucsc-cse140-pacman-warmup)
 - [032 · Pacman search (CSE 140 p1)](https://github.com/polarours/Coursework/tree/master/problems/032-ucsc-cse140-pacman-search)
@@ -51,7 +60,7 @@ Founded in 1965 as an experimental public campus, its Information and Computer S
 
 > 两个 Pacman 项目都直接来自 CSE 140：先做商店取优，再在同一框架上完成 DFS、BFS、UCS、A* 全套搜索。
 
-## Sources (来源)
+## Sources <span class='zh-inline'>(来源)</span>
 
 - <https://strategicplan.ucsc.edu/overview/>
 - <https://engineering.ucsc.edu/about/be-history/>

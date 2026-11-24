@@ -31,27 +31,36 @@ TPL = '''---
 title: "{en} <span class='zh-inline'>({zh})</span>"
 ---
 
-<img src="logos/{logo}" alt="{en}" width="420" class="uni-plate">
+<div class="uni-head">
 
-<p class="uni-credit">{logo_credit}</p>
+<img src="logos/{logo}" alt="{en}" class="uni-plate">
 
-**{signature}**
+<div class="uni-head-text">
 
-> {signature_zh}
+<p class="uni-signature">{signature}</p>
 
-## Why it matters (为何重要)
+<p class="uni-signature-zh">{signature_zh}</p>
+
+</div>
+</div>
+
+<p class="uni-intro">{intro_en}</p>
+
+> {intro_zh}
+
+## Why it matters <span class='zh-inline'>(为何重要)</span>
 
 {tradition}
 
 > {tradition_zh}
 
-## Background (背景)
+## Background <span class='zh-inline'>(背景)</span>
 
 {bg_en}
 
 > {bg_zh}
 
-## People (人物)
+## People <span class='zh-inline'>(人物)</span>
 
 | Person | Connection to computing |
 |:--|:--|
@@ -59,7 +68,7 @@ title: "{en} <span class='zh-inline'>({zh})</span>"
 
 > {people_zh}
 
-## Courses (课程)
+## Courses <span class='zh-inline'>(课程)</span>
 
 | Course | Title |
 |:--|:--|
@@ -67,7 +76,7 @@ title: "{en} <span class='zh-inline'>({zh})</span>"
 
 > {courses_zh}
 
-## In this book (本书收录)
+## In this book <span class='zh-inline'>(本书收录)</span>
 
 {problem_rows}
 
@@ -75,7 +84,7 @@ title: "{en} <span class='zh-inline'>({zh})</span>"
 
 > {bridge_zh}
 
-## Sources (来源)
+## Sources <span class='zh-inline'>(来源)</span>
 
 {source_list}
 

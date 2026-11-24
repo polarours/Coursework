@@ -2,27 +2,36 @@
 title: "Carnegie Mellon University <span class='zh-inline'>(卡内基梅隆大学)</span>"
 ---
 
-<img src="logos/cmu.png" alt="Carnegie Mellon University" width="420" class="uni-plate">
+<div class="uni-head">
 
-<p class="uni-credit">Official mark, redistributed under an MIT-licensed open course-map project.</p>
+<img src="logos/cmu.png" alt="Carnegie Mellon University" class="uni-plate">
 
-**CSAPP as a way of thinking**
+<div class="uni-head-text">
 
-> CSAPP 是一种思维方式
+<p class="uni-signature">CSAPP as a way of thinking</p>
 
-## Why it matters (为何重要)
+<p class="uni-signature-zh">CSAPP 是一种思维方式</p>
+
+</div>
+</div>
+
+<p class="uni-intro">A school built by industrialists that turned computer science into a standalone discipline — and still owns CSAPP and 15-213.</p>
+
+> 这所由实业家创办的学校把计算机科学变成独立学科，至今仍拥有 CSAPP 和 15-213 这块招牌。
+
+## Why it matters <span class='zh-inline'>(为何重要)</span>
 
 Carnegie Mellon made the machine itself the subject: 15-213 teaches you to see what the hardware actually does.
 
 > 卡内基梅隆把机器本身作为主题：15-213 教你看见硬件到底在做什么。
 
-## Background (背景)
+## Background <span class='zh-inline'>(背景)</span>
 
 Founded in 1900 when Andrew Carnegie gave $1 million for the Carnegie Technical Schools, it became the Carnegie Institute of Technology in 1912 and merged with the Mellon Institute in 1967.
 
 > 1900 年 Andrew Carnegie 捐赠 100 万美元创办卡内基技术学校，1912 年更名为卡内基理工学院，1967 年与梅隆学院合并。
 
-## People (人物)
+## People <span class='zh-inline'>(人物)</span>
 
 | Person | Connection to computing |
 |:--|:--|
@@ -32,7 +41,7 @@ Founded in 1900 when Andrew Carnegie gave $1 million for the Carnegie Technical 
 
 > **Manuel Blum** — 因计算复杂性、密码学与程序检验获 1995 年图灵奖。**Allen Newell** 与 **Herbert A. Simon** — 因人工智能与人类认知共享 1975 年图灵奖。**Raj Reddy** — 因大规模 AI 系统获 1994 年图灵奖。
 
-## Courses (课程)
+## Courses <span class='zh-inline'>(课程)</span>
 
 | Course | Title |
 |:--|:--|
@@ -44,7 +53,7 @@ Founded in 1900 when Andrew Carnegie gave $1 million for the Carnegie Technical 
 
 > 15-112 编程基础 · 15-210 并行与顺序数据结构 · 15-213 计算机系统导论（CSAPP）· 15-410 操作系统设计 · 15-281 人工智能。
 
-## In this book (本书收录)
+## In this book <span class='zh-inline'>(本书收录)</span>
 
 - [006 · Malloc Lab (CSAPP)](https://github.com/polarours/Coursework/tree/master/problems/006-cmu-csapp-malloc-lab)
 - [008 · Buffer pool (15-445)](https://github.com/polarours/Coursework/tree/master/problems/008-cmu-15445-buffer-pool)
@@ -54,7 +63,7 @@ Founded in 1900 when Andrew Carnegie gave $1 million for the Carnegie Technical 
 
 > Malloc Lab 是 CSAPP 的浓缩：因为亲手写过分配器，所以真正理解它。缓冲池与几何作业延续了这种动手传统。
 
-## Sources (来源)
+## Sources <span class='zh-inline'>(来源)</span>
 
 - <https://www.cmu.edu/about/history>
 - <https://amturing.acm.org/award_winners/blum_4659082.cfm>
