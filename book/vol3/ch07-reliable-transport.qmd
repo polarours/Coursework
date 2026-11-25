@@ -5,9 +5,9 @@ title: "Reliable Transport <span class='zh-inline'>(可靠传输)</span>"
 ::: {.callout-note}
 ## Purpose (本章目标)
 
-理解 TCP 接收端的重组逻辑与 32 位序列号回绕；掌握发送端的滑动窗口与超时退避；通过端到端测试验证可靠性。
+把"在不可靠的信道上做可靠传输"拆成三个必须独立解决的问题——丢包、乱序、重复——然后看清每一个的解法与代价。重点在三处容易写错的地方：模运算的序列号比较、接收端的连续 drain 条件、以及为什么超时是唯一的真相来源。
 
-> **English:** Understand TCP reassembly and 32-bit sequence wrapping; master sliding window and timeout backoff; verify reliability end-to-end.
+> **English:** Split reliable transport into the three problems that must be solved independently — loss, reordering, duplication — and see the cost of each. The traps are modular sequence comparison, the receiver's contiguous-drain condition, and why a timeout is the only trustworthy signal.
 :::
 
 ::: {.callout-tip}
@@ -16,51 +16,184 @@ title: "Reliable Transport <span class='zh-inline'>(可靠传输)</span>"
 [002 Stanford](../universities/stanford.qmd)
 :::
 
-## Sequence numbers and wrapping (序列号与回绕)
+## 可靠传输是一组独立问题 / Reliability is a set of separate problems
 
-TCP 序列号是 32 位无符号数，接近 2^32 时回绕。所有比较必须用模运算：`wrap_sub(a,b)` 给出从 b 到 a 的距离。ISN = 2^32−5 加 10 得 5，而不是 2^32+5。
+底下的网络（IP）只承诺"尽力而为"：包可能丢、可能乱序、可能重复。上层要的是"一条有序、无重复、无丢失的字节流"。这两者之间的差距不能用一个机制填平，必须拆开：
 
-> **English:** TCP sequence numbers wrap at 2^32; all comparisons must use modular arithmetic. ISN 2^32-5 plus 10 is 5, not 2^32+5.
+| 问题 | 症状 | 机制 | 代价 |
+|---|---|---|---|
+| **丢包** | 数据永远不到 | 确认 + 超时重传 | 延迟；重传占用带宽 |
+| **乱序** | 到的顺序不对 | 序列号 + 接收端缓冲重组 | 内存；接收窗口受限 |
+| **重复** | 同一份数据到两次 | 序列号去重（`< first_unassembled` 直接丢弃） | 几乎为零 |
 
-## Reassembly (重组)
+关键在于**重复是乱序的副产品**：一旦允许重传，接收端就可能收到同一段数据的多个副本。所以去重不是可选项，而是重传机制的必要配套。
 
-接收端把乱序子串存入字典，只从 `first_unassembled` 连续 drain。重复字节（index < first_unassembled）被忽略并计数——实测为 3。
+> **English:** Retransmission creates duplicates; duplicates make deduplication mandatory. The three mechanisms are one design, not three features.
 
-> **English:** The receiver stores out-of-order substrings in a dict and drains from first_unassembled. Duplicate bytes are counted and ignored.
+## 序列号：一个会回绕的计数器 / A counter that wraps
 
-## Timeout and backoff (超时与退避)
+TCP 的序列号是 32 位无符号整数，从初始序列号（ISN）开始，每个字节加 1。它迟早会回绕到 0——在 1 Gbps 链路上，2^32 字节约 34 秒就跑完一轮。
 
-虚拟时钟让重传测试确定且快速。RTO 每次超时翻倍：10→20→40。tick(9) 不触发、tick(11) 触发（累计 20ms），验证了边界。
-
-> **English:** A virtual clock makes retransmission tests deterministic. RTO doubles on each timeout: 10→20→40; the 9ms/11ms boundary test verifies this.
-
-### Real measured output (真实运行输出)
+因此**所有序列号比较都必须用模运算**，不能用普通的 `<` / `>`：
 
 ```text
-[test_receiver] after reassembly ackno=1011 stream=b'helloworld' eof=True
-[test_sender_retransmission] tick(10) -> timeouts=1, rto=20
-[test_sender_retransmission] tick(9) -> timeouts=0; tick(11) -> timeouts=1, rto=40
-[test_end_to_end] segments=4 result=b'the quick brown fox' eof=True
---- PASS: test_tcp
+wrap_sub(a, b) = (a - b) mod 2^32     # 从 b 到 a 的距离（a 在 b 之后）
 ```
+
+实测（002 的用例）：
+
+```text
+[test_wraparound] ISN=4294967291 +10 -> 5, distance back = 10
+```
+
+`4294967291` 是 `2^32 − 5`，加 10 得 5——不是 `4294967301`。而"从 5 往回走 10 步"应该回到 `4294967291`，模运算给出的距离正是 10。
+
+如果实现里写了 `if (seq > first_unassembled)`，这个例子里 `5 > 4294967291` 为假，接收端会认为数据"已经收到过"而丢弃——**在回绕点附近，普通的整数比较会把顺序完全颠倒**。
+
+## 接收端：只在连续时交付 / Deliver only when contiguous
+
+接收端的职责不是"按序转发"，而是**保证交付给应用的字节流永远连续、无空洞**。实现上是一个缓冲窗口加一个游标：
+
+```text
+收到一个片段 [seq, seq+len)：
+  越界（超出接收窗口）     → 拒绝
+  完全在 first_unassembled 之前 → 重复，计数后丢弃
+  否则                    → 存入缓冲区（可能重叠，需裁剪）
+
+然后循环：
+  只要缓冲区里存在从 first_unassembled 开始的片段
+    → 交付它，推进 first_unassembled
+```
+
+实测：
+
+```text
+[test_reassembler] first_unassembled=7
+[test_reassembler] stream=b'abcdefg' eof=True duplicate_bytes=3
+[test_receiver] after reassembly ackno=1011 stream=b'helloworld' eof=True
+```
+
+第一组：乱序到达的片段最终拼成 `abcdefg`，游标停在 7，同时统计出 3 个重复字节。**这个 3 很重要**——它证明测试真的构造了重复，而不是恰好没有重复。
+
+第二组：ISN 是 1000，SYN 之后 `ackno=1001`，重组完 `helloworld`（10 字节）后 `ackno=1011`。**ackno 是"我期待的下一个字节"**，不是"我收到的最后一个字节"，这个 +1 是理解和实现中最常见的偏差。
+
+> **English:** ackno means "the next byte I expect", which is why it is 1011 after ten bytes starting at 1001. Off-by-one here silently breaks every retransmission decision.
+
+## 发送端：窗口决定能发多少 / The window bounds the flight
+
+发送端不能一次把数据全推出去，原因有两个：接收端缓冲有限（流量控制），网络也承受不了（拥塞控制）。窗口就是"允许同时未确认的字节数"。
+
+实测：
+
+```text
+[test_sender_window_and_ack] window=4 first flight payloads=[b'abc']
+```
+
+窗口是 4 字节，第一次只发出 `abc`（3 字节）——因为 SYN 占用了序列号空间里的一个位置，或者窗口被部分占用。**这个数字不是凑的**：它说明"窗口大小"与"实际可发字节数"之间隔着一个偏移量，实现里必须算清楚。
+
+收到 ACK 后窗口右移，才能继续发送。这个"右移"就是滑动窗口的全部含义：**窗口不是数据的属性，而是"已发送未确认"这段区间的边界**。
+
+## 超时：唯一的真相来源 / The only trustworthy signal
+
+TCP 的 ACK 是**累计确认**：收到 `ackno=1011` 意味着"1000 到 1010 全部收到"。这带来一个尴尬的事实：**丢失的 ACK 和丢失的数据无法区分**。
+
+- 数据到了、ACK 丢了 → 发送端会重传
+- 数据丢了 → 发送端也要重传
+
+发送端无法通过"没收到 ACK"判断属于哪种情况，所以它只能等——等一个超时。**超时是唯一不依赖对端诚实性的信号。**
+
+超时值不能太小（会误判丢包、造成无谓重传）也不能太大（恢复慢）。最基本的做法是**指数退避**：
+
+```text
+第一次超时  rto = 10
+第二次超时  rto = 20
+第三次超时  rto = 40
+```
+
+实测（虚拟时钟让边界可精确验证）：
+
+```text
+[test_sender_retransmission] tick(10) -> timeouts=1, rto=20, retransmit_events=1
+[test_sender_retransmission] tick(9)  -> timeouts=0 (should be 0)
+[test_sender_retransmission] tick(11) -> timeouts=1, rto=40
+```
+
+第二、三行是一组**边界测试**：累计等待 9 毫秒不触发（未到 10），11 毫秒触发（超过 10）。中间那个"恰好 10"的用例在第一行。三个数字合起来才证明 `>=` 与 `>` 的选择是正确的——只测 10 无法区分两者。
+
+第一次超时后 RTO 从 10 翻到 20，第二次再翻到 40。**为什么必须退避**：如果网络真的拥塞，固定间隔重传只会加重拥塞，形成正反馈。
+
+> **English:** A lost ACK and a lost segment look identical to the sender, so only a timer can decide. Exponential backoff exists because fixed-interval retransmission amplifies congestion instead of relieving it.
+
+## 端到端：四种机制同时在场 / All four mechanisms at once
+
+```text
+[test_end_to_end] segments=4 result=b'the quick brown fox' eof=True
+```
+
+一条 19 字节的消息被切成 4 段，经过（模拟的）不可靠信道后完整到达。这个用例的价值不在于"最终对了"，而在于它同时压到了序列号、重组、窗口、重传四条路径——**任何一条写错，这里都不会是 `the quick brown fox`**。
 
 ## Fallacies and Pitfalls (常见误解)
 
 ::: {.callout-warning}
-## Fallacy：SYN (FIN 不占序列号)
-它们各占一个序列号但不带数据。FIN 段 seqno=11、payload 为空——这是最经典的 off-by-one 来源。
+## Fallacy 1：SYN 和 FIN 不占序列号
+
+它们不带数据，但**各消耗一个序列号**。SYN 从 `ISN` 出发，第一个数据字节因此是 `ISN+1`；FIN 同理。这是 TCP 里最经典的 off-by-one 来源：漏掉这一点，`ackno` 会整体偏一，所有重传判断都建立在错误的边界上。
+
+> **English:** SYN and FIN carry no payload but each consumes a sequence number; the first data byte is ISN+1.
+:::
+
+::: {.callout-warning}
+## Fallacy 2：收到 ACK 就说明数据到了
+
+`ackno=1011` 只说明"对端期待 1011"，可能来自一次重传的旧 ACK，也可能是对端在重复确认。发送端必须用 `ackno` 推进窗口，同时用序列号判断这个 ACK 是否"过时"——不能无条件信任。
+
+> **English:** An ACK advances the window only if it is newer than what you already know; stale ACKs are legal and common.
+:::
+
+::: {.callout-warning}
+## Pitfall：用普通整数比较序列号
+
+`seq > first_unassembled` 在回绕点附近完全错误。必须写成模运算下的距离比较（`wrap_sub(seq, first) > 0`）。这个 bug 在小规模测试里永远不出现，只在序列号跨过 2^32 时爆发。
+
+> **English:** Plain integer comparison inverts near wrap; use modular distance, and test at the boundary explicitly.
+:::
+
+::: {.callout-warning}
+## Pitfall：重组时不做裁剪
+
+两个片段重叠时（`[0,5)` 与 `[3,8)`），直接拼接会产生重复字节。必须先裁剪到"未交付的部分"再合并。测试里统计的 `duplicate_bytes=3` 正是这类重叠的产物——它不是异常，而是必须被正确处理的正规情况。
+
+> **English:** Overlapping segments are normal; trim before merging or you deliver duplicate bytes to the application.
+:::
+
+::: {.callout-warning}
+## Pitfall：把"接收窗口"和"拥塞窗口"混为一谈
+
+前者由接收端告知（`window=64`），限制的是"对端能缓冲多少"；后者由发送端根据网络状况自己维护，限制的是"网络能承受多少"。实际可发字节数是两者的**较小值**。只实现其中一个，会在真实网络里表现异常而在本机测试里完全正常。
+
+> **English:** The receiver's window protects its buffer; the congestion window protects the network. The flight is bounded by the smaller.
 :::
 
 ## Self-Check (自测题)
 
-1. 为什么序列号比较必须用模运算？
-2. 为什么 ackno 要加 1？
+1. 为什么序列号比较必须用模运算？给一个普通比较会出错的例子。
+2. 为什么 `ackno` 是"期待的下一个字节"而不是"已收到的最后字节"？
+3. 接收端在什么条件下才能把数据交付给应用？
+4. 为什么 RTO 要指数退避？如果固定 10 ms 会怎样？
+5. 两个片段 `[0,5)` 和 `[3,8)` 先后到达，接收端应该交付什么？
 
 <details><summary>答案</summary>
-1. 因为 32 位回绕会让普通比较在边界处完全错误。
-2. SYN 消耗 ISN，第一个数据字节在 ISN+1。
+
+1. 32 位序列号会回绕。设 `first_unassembled = 4294967291`（`2^32−5`），新片段 `seq = 5` 实际在它之后 10 个字节。普通比较 `5 > 4294967291` 为假，会误判为"已收到"而丢弃。
+2. 因为 SYN 与 FIN 各占一个序列号，且字节区间是左闭右开的。`ackno = 已连续收到的最后一个字节 + 1` 使得"空区间"（`ackno == seq`）有明确含义，也让窗口计算不需要额外的 ±1。
+3. 只有当缓冲区中存在**从 `first_unassembled` 开始**、连续覆盖的片段时，才能交付；交付后推进游标，再检查是否有新的连续片段可以继续交付。
+4. 因为超时通常意味着拥塞。固定间隔会在拥塞时持续以同样速率重传，加重拥塞；指数退避让重传速率随失败次数下降，给网络恢复的时间。
+5. 交付 `abcde`（`[0,5)`），然后从 `[3,8)` 中裁剪掉 `[3,5)` 这两字节（重复），只保留 `[5,8)`，待 `first_unassembled` 推进到 5 后再交付 `fgh`。
+
 </details>
 
 ## Summary (本章小结)
 
-可靠传输建立在序列号、重组、滑动窗口与重传之上；回绕与边界条件是正确性的关键。
+可靠传输把三个独立问题分别解决：序列号处理乱序与重复，确认加超时处理丢包，窗口处理缓冲与拥塞。四处必须精确：模运算的序列号比较、`ackno = 最后连续字节 + 1`、重组时的裁剪、以及 `>=` 与 `>` 的边界选择。超时是唯一不依赖对端行为的信号，所以指数退避不是优化而是正确性的一部分。
+
+> **English:** Sequence numbers absorb reordering and duplication, ACK plus timer absorbs loss, windows bound both buffer and network. Four places demand exactness, and backoff is part of correctness rather than tuning.

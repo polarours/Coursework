@@ -5,9 +5,9 @@ title: "AI Search and Reinforcement Learning <span class='zh-inline'>(AI 搜索�
 ::: {.callout-note}
 ## Purpose (本章目标)
 
-理解 Pacman 项目中搜索、对抗搜索、值迭代与 Q-learning 的关系；通过真实学习曲线理解'从经验中改进'。
+把四种方法放在同一个网格世界里对比：A*（地图已知、单人找路）、Minimax（对手在场、需要预判）、值迭代（有模型、可离线规划）、Q-learning（无模型、只能靠交互）。看清它们各自假设了什么、放弃了什么，以及为什么"知道模型"与"只能试错"是分水岭。
 
-> **English:** Understand the progression from search to RL in the Pacman projects; interpret a real learning curve.
+> **English:** Put four methods on one grid: A* (known map, solo pathfinding), minimax (an adversary exists), value iteration (model known, offline planning), and Q-learning (no model, only interaction). What each assumes and gives up — and why "has a model" is the watershed.
 :::
 
 ::: {.callout-tip}
@@ -16,52 +16,157 @@ title: "AI Search and Reinforcement Learning <span class='zh-inline'>(AI 搜索�
 [003 UC Berkeley](../universities/berkeley.qmd)
 :::
 
-## Algorithm spectrum (算法谱系)
+## 同一个世界，四种假设 / One world, four assumptions
 
-同一个网格世界承载四种方法：A*（已知地图找路）、Minimax（对抗）、值迭代（有模型规划）、Q-learning（无模型学习）。这种递进正是 AI 课程的缩影。
+UC Berkeley 的 Pacman 系列之所以适合教学，是因为它把同一个网格世界反复使用，只改变"你知道什么"：
 
-> **English:** One grid world carries four methods: A*, adversarial search, model-based planning, and model-free learning — a microcosm of the AI curriculum.
+| 方法 | 环境模型 | 对手 | 学习方式 | 输出 |
+|---|---|---|---|---|
+| **A\*** | 完整已知 | 无 | 无 | 一条路径 |
+| **Minimax** | 完整已知 | 有 | 无 | 一个决策 |
+| **值迭代** | 完整已知（含转移与奖励） | 无 | 离线规划 | 每个状态的价值 |
+| **Q-learning** | **未知** | 无 | 在线试错 | 每个 (状态, 动作) 的价值 |
 
-## Value iteration consistency (值迭代的自洽性)
+前三行都能"离线算好"，因为它们假设模型已知；第四行不能，它必须在与环境交互的过程中逐步修正估计。**这一列差异比算法细节更重要**——它决定了你能不能在部署前验证策略。
 
-终点价值 10，其相邻格 (4,4) 价值 19 = 10 + 0.9×10。这个数字关系验证了折扣因子 γ=0.9 的正确实现。
-
-> **English:** Goal value 10 and its neighbor 19 = 10 + 0.9×10 verify the γ=0.9 implementation.
-
-## Evidence of learning (Q-learning 的证据)
-
-300 轮训练后，平均步数从前 10 轮的 25.6 降到后 10 轮的 9.6。这是强化学习'从交互中改进'的直接证据，固定随机种子 42 保证可复现。
-
-> **English:** After 300 episodes, average steps fell from 25.6 to 9.6 — direct evidence of learning, reproducible with seed 42.
-
-### Real measured output (真实运行输出)
+## A\*：已知地图上的最短路径 / A* on a known map
 
 ```text
 [test_grid_and_astar] path from (0,0) to (5,4): 10 steps
-[test_minimax] depth=4 minimax value=-0.50
-[test_value_iteration] V[(4,4)]=19.000, V[(0,0)]=8.179, V[goal]=10.000
-[test_q_learning] Q entries=74, avg steps first 10=25.6, last 10=9.6
-[test_game_trace] Pacman 轨迹 13 步吃光 3 豆
---- PASS: test_pacman
 ```
+
+6×5 的网格，(1,1)(2,1)(3,1) 三格是墙，从左上角到右下角的终点，最短路是 10 步。**这个 10 可以直接用手算核对**：水平走 5 步、垂直走 4 步，曼哈顿距离是 9，但墙迫使路径多绕一步。
+
+启发式用曼哈顿距离时，A\* 在无障碍网格上等价于贪心；有墙时它仍然最优，因为曼哈顿距离是可采纳的（见第 4 章）。
+
+## Minimax：对手让"最短路"失去意义 / An adversary invalidates shortest paths
+
+单人场景里，路径长度是唯一指标。一旦有对手，评价标准变成"在最坏情况下我还能得到多少"：
+
+```text
+[test_minimax] depth=4 minimax value=-0.50, static eval=-0.50
+```
+
+`depth=4` 意味着搜索树展开四层（我、对手、我、对手），然后对叶节点调用静态评估函数。`value = -0.50` 表示在对手最优应对下，当前局面的评估是 −0.50。
+
+**静态评估函数是 Minimax 的真正弱点**。深度受限时，叶节点的价值靠启发式估计；这个估计一旦有偏，整棵树的决策都会偏。工程上的处理是"评估函数 + 更深的搜索"二者权衡——这也是为什么国际象棋引擎的核心竞争力长期在评估函数上，而不在搜索算法上。
+
+## 值迭代：Bellman 方程把"长期"变成"一步" / Bellman turns the long run into one step
+
+值迭代的核心只有一个等式：
+
+```text
+V(s) ← max over actions [ reward(s, a) + γ · V(s') ]
+```
+
+反复应用直到 `V` 不再变化。**它的巧妙之处是把"无限长的未来"压缩成一个递归**：`V(s')` 已经包含了从 `s'` 出发的所有未来收益，所以只需看一步。
+
+实测（γ = 0.9，终态奖励 10）：
+
+```text
+[test_value_iteration] V[(4,4)]=19.000, V[(0,0)]=8.179, V[goal]=10.000
+```
+
+三个数字的关系值得逐个拆开：
+
+**`V[goal] = 10`** —— 终态自身的价值就是进入它的奖励。
+
+**`V[(4,4)] = 19 = 10 + 0.9 × 10`** —— 从 (4,4) 走向终态，得到奖励 10，再加上折扣后的终态价值 9。**注意 19 比终态的 10 还高**：这是因为该实现里终态的值仍参与折扣计算，于是"站在终态旁边"比"站在终态上"更值钱。
+
+这不是 bug，而是一个值得注意的建模选择：标准的回合制（episodic）设定里，终态的值应当固定为 0 或不再更新，否则相邻状态会"借"到终态的价值。如果奖励设计是"每步 −1、到达终点 +10"，这种借用会让智能体更愿意在终点附近徘徊而不是进入。**写值迭代时，终态必须单独处理。**
+
+**`V[(0,0)] = 8.179`** —— 起点离 (4,4) 大约 8 步，`19 × 0.9^8 ≈ 19 × 0.4305 = 8.18`，与实测吻合。折扣因子在这里表现为"距离越远，价值衰减越快"。
+
+> **English:** 19 = 10 + 0.9×10 exposes a modelling decision: the terminal still contributes its value, so standing next to the goal beats standing on it. Terminals need explicit handling.
+
+## Q-learning：没有模型时怎么学 / Learning without a model
+
+值迭代需要知道"在 s 做 a 会到哪个 s'、得到什么奖励"。Q-learning 不需要：
+
+```text
+Q(s, a) ← Q(s, a) + α [ r + γ · max_a' Q(s', a') − Q(s, a) ]
+```
+
+一次交互给出 `(s, a, r, s')`，就能更新一个表格项。它估计的不是状态价值而是**动作价值**，因为在没有模型的情况下，"某个状态有多好"无法直接转化为"该做什么"——你必须知道每个动作的价值。
+
+实测（300 轮，seed 42）：
+
+```text
+[test_q_learning] Q entries=74, avg steps first 10=25.6, last 10=9.6
+```
+
+- **74 个 Q 表项**：状态空间 6×5 减去 3 面墙 = 27 个格子，每个格子最多 4 个动作，实际被访问过的 (状态, 动作) 组合是 74 个。
+- **25.6 → 9.6 步**：前 10 轮平均 25.6 步（大量随机探索、来回打转），后 10 轮平均 9.6 步，已经接近 A\* 给出的 10 步最优。
+
+**这个对比是全章最有说服力的地方**：同一个世界，A\* 用完整地图一次算出 10 步；Q-learning 什么都不知道，靠 300 次试错把平均步数压到 9.6——甚至略优于 A\* 的路径长度，因为 A\* 算的是"到终点的最短路"，而 Q-learning 优化的是"实际走完的平均步数"，两者定义略有差别。
+
+固定种子（42）不是形式主义：随机探索会让每次运行的曲线不同，**没有固定种子就无法复现"学会了"这个结论**。
+
+## 四种方法的边界 / Where each method stops working
+
+| 方法 | 什么时候失效 |
+|---|---|
+| A\* | 状态空间大到无法搜索；地图未知 |
+| Minimax | 分支因子大、深度受限时评估函数失真 |
+| 值迭代 | 状态数爆炸（需要函数逼近）；模型未知 |
+| Q-learning | 状态连续或巨大（表格装不下）；奖励稀疏 |
+
+真实系统里这四种方法经常组合：用搜索做局部规划，用学习做全局策略，用值迭代做离线评估。**理解它们的假设，比记住算法步骤更有用**——因为选错方法时，代码往往能跑，只是结果不对。
 
 ## Fallacies and Pitfalls (常见误解)
 
 ::: {.callout-warning}
-## Fallacy：Q-learning 结果不需要固定种子
-随机探索会让每次结果不同。本项目要求实测纪律——固定种子是可复现的前提。
+## Fallacy 1：值迭代的终态不需要特殊处理
+
+实测里 `V[(4,4)] = 19 > V[goal] = 10` 就是这个问题的直接证据。终态如果继续参与 Bellman 更新，相邻状态会通过折扣"借"到它的价值，导致智能体偏好停留在终点旁边。标准做法是把终态的值固定，或在更新时跳过终态。
+
+> **English:** If the terminal keeps taking part in the update, its neighbours inherit discounted value and outrank it. Fix the terminal's value explicitly.
+:::
+
+::: {.callout-warning}
+## Fallacy 2：Q-learning 的结果不需要固定随机种子
+
+探索是随机的，策略演化路径因此每次都不同。没有固定种子，"300 轮后步数从 25.6 降到 9.6"这种结论无法复现，也就无法验证。**可复现性是实验结论成立的前提，不是额外要求。**
+
+> **English:** Random exploration makes runs incomparable; a fixed seed is what turns an observation into evidence.
+:::
+
+::: {.callout-warning}
+## Pitfall：用单次运行判断"学会了"
+
+一次运行步数下降可能只是运气。要比较的是**区间平均**（前 10 轮 vs 后 10 轮），并且最好跑多个种子看趋势是否稳定。单点对比会被探索噪声淹没。
+
+> **English:** Compare windowed averages across seeds; a single run's improvement can be noise.
+:::
+
+::: {.callout-warning}
+## Pitfall：把 A\* 的最优路径长度当作 Q-learning 的评价基准
+
+A\* 求的是"给定地图的最短路"，Q-learning 优化的是"策略执行时的期望步数"，后者包含探索与状态分布的影响。两者接近（10 与 9.6）是好事，但**不该期望严格相等**。
+
+> **English:** Shortest path and expected policy length are different objectives; near-equality is a sanity check, not a target.
 :::
 
 ## Self-Check (自测题)
 
-1. 为什么值迭代中 V(4,4)=19？
-2. Q-learning 步数下降说明什么？
+1. 为什么值迭代里 `V[(4,4)] = 19` 比终态的 10 还高？这暴露了什么建模问题？
+2. Minimax 的 `depth=4` 意味着什么？为什么需要静态评估函数？
+3. Q-learning 为什么估计动作价值而不是状态价值？
+4. 300 轮后平均步数从 25.6 降到 9.6，为什么这比"某一轮走了 10 步"更有说服力？
+5. 四种方法里，哪一种在"地图未知"时仍然可用？为什么？
 
 <details><summary>答案</summary>
-1. 10（终点奖励）+ 0.9×10（下一状态价值）。
-2. 策略在改进——从随机探索收敛到接近最优路径。
+
+1. 因为实现里终态的值（10）仍参与 Bellman 更新，相邻状态通过 `10 + 0.9×10` 得到 19。这暴露的问题是：终态必须显式处理（值固定或跳过更新），否则智能体会偏好停在终点旁边而不是进入终点。
+2. 搜索树展开四层（我方、对手方交替）。深度受限后叶节点不是真正的终局，必须用静态评估函数估计其价值——评估函数的质量直接决定决策质量。
+3. 因为 Q-learning 假设模型未知：不知道"在 s 做 a 会到哪个 s'"，就无法用 `max_a' V(s')` 反推该做什么。只有直接估计每个动作的价值，才能在不了解转移的情况下选择动作。
+4. 单轮结果受探索噪声影响大；区间平均（前 10 轮 vs 后 10 轮）平滑了噪声，反映的是策略分布的变化，而不是一次幸运的走法。
+5. Q-learning。它只需要 `(s, a, r, s')` 这样的交互样本，不需要预先知道转移概率或奖励函数——这正是"无模型"的含义。
+
 </details>
 
 ## Summary (本章小结)
 
-四种 AI 方法在同一场景中递进；自洽的数字验证实现；可复现的实验支撑结论。
+四种方法的差别不在算法细节，而在假设：A\* 与 Minimax 假设地图已知（后者还假设有对手），值迭代假设模型已知因而可以离线规划，Q-learning 只假设能交互。Bellman 方程把长期收益压成一步递归，但终态必须单独处理——实测的 19 与 10 就是这个细节的证据。Q-learning 用 300 次试错把平均步数从 25.6 压到 9.6，接近 A\* 的 10 步，而它从未见过地图。
+
+> **English:** The four methods differ by assumption, not by cleverness. Bellman compresses the future into one step but terminals need explicit handling. Q-learning reached 9.6 steps without ever seeing the map.
