@@ -82,11 +82,15 @@ format:
     number-sections: true
     margin-x: 2.5cm
     margin-y: 2.5cm
-    # 中文字形必须显式指定：typst 的默认字体链在没有 CJK 字体时会退化成
-    # 缺字，CI 环境尤其明显。
-    mainfont: "Noto Serif"
-    cjk-font: "Noto Serif CJK SC"
+    # typst 后端没有 cjk-font 参数（Quarto 的 cjkmainfont 只对 LaTeX 生效），
+    # 中文完全依赖字体回退。把 mainfont 直接设为 CJK 字体，中英文同族渲染；
+    # 不设的话 typst 可能选中系统里字符集极小的装饰字体（例如 WPS 手写体）。
+    mainfont: "Noto Serif CJK SC"
     monofont: "DejaVu Sans Mono"
+    include-in-header:
+      text: |
+        #set text(font: ("Noto Serif CJK SC", "Noto Serif", "DejaVu Sans Mono"))
+        #show heading: set text(font: ("Noto Serif CJK SC", "Noto Serif"))
 
 execute:
   enabled: false

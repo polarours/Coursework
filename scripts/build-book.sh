@@ -22,12 +22,25 @@ target="${1:-all}"
 # Quarto 以书名生成 PDF 文件名（含中文与中点），改成稳定的 ASCII 名，
 # 避开 URL 编码问题，也让下载链接可以写死。
 PDF_NAME="coursework-atlas.pdf"
+PDF_STASH=".pdf-stash.pdf"
 
 build_html() {
+  # HTML 构建会整体删除 _site，先把已构建的 PDF 存起来再放回去，
+  # 否则单独跑 html 会把站点上的下载链接打断。
+  local had_pdf=0
+  if [ -f "_site/$PDF_NAME" ]; then
+    cp "_site/$PDF_NAME" "$PDF_STASH"
+    had_pdf=1
+  fi
   "$E/bin/quarto" render --to html
   rm -rf _site
   mv _book _site
-  echo "HTML -> _site/"
+  if [ "$had_pdf" -eq 1 ]; then
+    mv "$PDF_STASH" "_site/$PDF_NAME"
+    echo "HTML -> _site/ (PDF preserved)"
+  else
+    echo "HTML -> _site/"
+  fi
 }
 
 build_pdf() {
