@@ -2,20 +2,19 @@
 title: "City College of New York <span class='zh-inline'>(纽约城市学院)</span>"
 ---
 
-<div class="uni-head">
+::: {.uni-head}
+![](logos/ccny.svg){.uni-plate width=210px}
 
-<img src="logos/ccny.svg" alt="City College of New York" class="uni-plate">
+::: {.uni-head-text}
+**The Free Academy that gave us TCP/IP**
 
-<div class="uni-head-text">
+孕育 TCP/IP 的免费学院
+:::
+:::
 
-<p class="uni-signature">The Free Academy that gave us TCP/IP</p>
-
-<p class="uni-signature-zh">孕育 TCP/IP 的免费学院</p>
-
-</div>
-</div>
-
-<p class="uni-intro">The 'Free Academy' of 1847 — a public college whose alumni include the co-inventor of TCP/IP and Intel's CEO.</p>
+::: {.uni-intro}
+The 'Free Academy' of 1847 — a public college whose alumni include the co-inventor of TCP/IP and Intel's CEO.
+:::
 
 > 1847 年的“免费学院”——这所公立学校的校友包括 TCP/IP 的共同发明者和 Intel 的 CEO。
 

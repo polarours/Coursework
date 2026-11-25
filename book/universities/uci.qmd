@@ -2,20 +2,19 @@
 title: "UC Irvine <span class='zh-inline'>(加州大学欧文分校)</span>"
 ---
 
-<div class="uni-head">
+::: {.uni-head}
+![](logos/uci.svg){.uni-plate width=210px}
 
-<img src="logos/uci.svg" alt="UC Irvine" class="uni-plate">
+::: {.uni-head-text}
+**DNS, REST and a young ICS school**
 
-<div class="uni-head-text">
+DNS、REST 与年轻的 ICS 学院
+:::
+:::
 
-<p class="uni-signature">DNS, REST and a young ICS school</p>
-
-<p class="uni-signature-zh">DNS、REST 与年轻的 ICS 学院</p>
-
-</div>
-</div>
-
-<p class="uni-intro">A young UC campus that grew into an ICS powerhouse — DNS and REST came out of its alumni body.</p>
+::: {.uni-intro}
+A young UC campus that grew into an ICS powerhouse — DNS and REST came out of its alumni body.
+:::
 
 > 一所年轻的加州大学分校，成长为信息计算机科学重镇——DNS 与 REST 都出自它的校友。
 

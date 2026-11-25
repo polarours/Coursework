@@ -2,20 +2,19 @@
 title: "Carnegie Mellon University <span class='zh-inline'>(卡内基梅隆大学)</span>"
 ---
 
-<div class="uni-head">
+::: {.uni-head}
+![](logos/cmu.png){.uni-plate width=210px}
 
-<img src="logos/cmu.png" alt="Carnegie Mellon University" class="uni-plate">
+::: {.uni-head-text}
+**CSAPP as a way of thinking**
 
-<div class="uni-head-text">
+CSAPP 是一种思维方式
+:::
+:::
 
-<p class="uni-signature">CSAPP as a way of thinking</p>
-
-<p class="uni-signature-zh">CSAPP 是一种思维方式</p>
-
-</div>
-</div>
-
-<p class="uni-intro">A school built by industrialists that turned computer science into a standalone discipline — and still owns CSAPP and 15-213.</p>
+::: {.uni-intro}
+A school built by industrialists that turned computer science into a standalone discipline — and still owns CSAPP and 15-213.
+:::
 
 > 这所由实业家创办的学校把计算机科学变成独立学科，至今仍拥有 CSAPP 和 15-213 这块招牌。
 

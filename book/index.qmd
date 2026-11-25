@@ -8,9 +8,14 @@ title: "Preface <span class='zh-inline'>(前言)</span>"
 
 ## Positioning (定位)
 
-参考 Harvard EDGE 的《Machine Learning Systems》[@cs249r] 的编写范式，本书把 21 道来自 Stanford、MIT、CMU、UC Berkeley、Princeton、Cornell、Georgia Tech 的经典大作业，按**主题**编排成四卷，每一章不止于「怎么做」，而是回答「为什么这样设计」「哪里会出错」「如何验证」。
+参考 Harvard EDGE 的《Machine Learning Systems》[@cs249r] 的编写范式，本书把 34 道来自 Stanford、MIT、CMU、UC Berkeley、Princeton、Cornell、Georgia Tech 等十四所高校的经典大作业，按**主题**编排成四卷，每一章不止于「怎么做」，而是回答「为什么这样设计」「哪里会出错」「如何验证」。
 
-Following the model of Harvard EDGE's *Machine Learning Systems* [@cs249r], this book organizes 21 capstone projects from top universities into four thematic volumes. Each chapter answers not only *how*, but *why*, *where it breaks*, and *how to verify*.
+Following the model of Harvard EDGE's *Machine Learning Systems* [@cs249r], this book organizes 34 capstone projects from fourteen universities into four thematic volumes. Each chapter answers not only *how*, but *why*, *where it breaks*, and *how to verify*.
+
+::: {.content-visible when-format="html"}
+[Download this book as PDF (.pdf, ~2 MB)](coursework-atlas.pdf){.btn .btn-outline-primary}
+:::
+
 
 ## Four Volumes (四卷结构)
 

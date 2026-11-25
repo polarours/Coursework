@@ -2,20 +2,19 @@
 title: "Fordham University <span class='zh-inline'>(福特汉姆大学)</span>"
 ---
 
-<div class="uni-head">
+::: {.uni-head}
+![](logos/fordham.svg){.uni-plate width=210px}
 
-<img src="logos/fordham.svg" alt="Fordham University" class="uni-plate">
+::: {.uni-head-text}
+**A liberal-arts campus with a CS backbone**
 
-<div class="uni-head-text">
+文科校园里的 CS 骨架
+:::
+:::
 
-<p class="uni-signature">A liberal-arts campus with a CS backbone</p>
-
-<p class="uni-signature-zh">文科校园里的 CS 骨架</p>
-
-</div>
-</div>
-
-<p class="uni-intro">New York's oldest Catholic and Jesuit university — and the source of our dynamic-array list lab.</p>
+::: {.uni-intro}
+New York's oldest Catholic and Jesuit university — and the source of our dynamic-array list lab.
+:::
 
 > 纽约最古老的天主教耶稣会大学——我们的动态数组线性表实验就来自这里。
 

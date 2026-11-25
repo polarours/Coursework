@@ -2,20 +2,19 @@
 title: "University of Maryland <span class='zh-inline'>(马里兰大学)</span>"
 ---
 
-<div class="uni-head">
+::: {.uni-head}
+![](logos/umd.svg){.uni-plate width=210px}
 
-<img src="logos/umd.svg" alt="University of Maryland" class="uni-plate">
+::: {.uni-head-text}
+**The systems school next to the capital**
 
-<div class="uni-head-text">
+首都旁的系统学派
+:::
+:::
 
-<p class="uni-signature">The systems school next to the capital</p>
-
-<p class="uni-signature-zh">首都旁的系统学派</p>
-
-</div>
-</div>
-
-<p class="uni-intro">A land-grant university near Washington DC whose CS alumni include a Google co-founder and whose courses shaped OO education.</p>
+::: {.uni-intro}
+A land-grant university near Washington DC whose CS alumni include a Google co-founder and whose courses shaped OO education.
+:::
 
 > 这所位于华盛顿特区附近的赠地大学，校友中有 Google 联合创始人，其课程塑造了面向对象教育。
 

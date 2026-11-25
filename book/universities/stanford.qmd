@@ -2,20 +2,19 @@
 title: "Stanford University <span class='zh-inline'>(斯坦福大学)</span>"
 ---
 
-<div class="uni-head">
+::: {.uni-head}
+![](logos/stanford.png){.uni-plate width=210px}
 
-<img src="logos/stanford.png" alt="Stanford University" class="uni-plate">
+::: {.uni-head-text}
+**From PageRank to the vision stack**
 
-<div class="uni-head-text">
+从 PageRank 到视觉栈
+:::
+:::
 
-<p class="uni-signature">From PageRank to the vision stack</p>
-
-<p class="uni-signature-zh">从 PageRank 到视觉栈</p>
-
-</div>
-</div>
-
-<p class="uni-intro">A university whose CS department became the launching pad for Google and whose lecture notes trained a generation of AI researchers.</p>
+::: {.uni-intro}
+A university whose CS department became the launching pad for Google and whose lecture notes trained a generation of AI researchers.
+:::
 
 > 这所学校的计算机系是 Google 的起跑线，它的讲义培训了一代又一代 AI 研究者。
 

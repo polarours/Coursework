@@ -31,20 +31,19 @@ TPL = '''---
 title: "{en} <span class='zh-inline'>({zh})</span>"
 ---
 
-<div class="uni-head">
+::: {{.uni-head}}
+![](logos/{logo}){{.uni-plate width=210px}}
 
-<img src="logos/{logo}" alt="{en}" class="uni-plate">
+::: {{.uni-head-text}}
+**{signature}**
 
-<div class="uni-head-text">
+{signature_zh}
+:::
+:::
 
-<p class="uni-signature">{signature}</p>
-
-<p class="uni-signature-zh">{signature_zh}</p>
-
-</div>
-</div>
-
-<p class="uni-intro">{intro_en}</p>
+::: {{.uni-intro}}
+{intro_en}
+:::
 
 > {intro_zh}
 

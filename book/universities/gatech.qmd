@@ -2,20 +2,19 @@
 title: "Georgia Institute of Technology <span class='zh-inline'>(佐治亚理工学院)</span>"
 ---
 
-<div class="uni-head">
+::: {.uni-head}
+![](logos/gatech.svg){.uni-plate width=210px}
 
-<img src="logos/gatech.svg" alt="Georgia Institute of Technology" class="uni-plate">
+::: {.uni-head-text}
+**A practical school of computing**
 
-<div class="uni-head-text">
+务实的计算学院
+:::
+:::
 
-<p class="uni-signature">A practical school of computing</p>
-
-<p class="uni-signature-zh">务实的计算学院</p>
-
-</div>
-</div>
-
-<p class="uni-intro">A technology institute whose computing college produced Google News, SQLite and the Pragmatic Programmer.</p>
+::: {.uni-intro}
+A technology institute whose computing college produced Google News, SQLite and the Pragmatic Programmer.
+:::
 
 > 这所理工学院的计算学院孕育了 Google News、SQLite 和《程序员修炼之道》。
 

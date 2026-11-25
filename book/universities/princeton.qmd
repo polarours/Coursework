@@ -2,20 +2,19 @@
 title: "Princeton University <span class='zh-inline'>(普林斯顿大学)</span>"
 ---
 
-<div class="uni-head">
+::: {.uni-head}
+![](logos/princeton.svg){.uni-plate width=210px}
 
-<img src="logos/princeton.svg" alt="Princeton University" class="uni-plate">
+::: {.uni-head-text}
+**Lambda calculus meets algorithms**
 
-<div class="uni-head-text">
+λ 演算遇上算法
+:::
+:::
 
-<p class="uni-signature">Lambda calculus meets algorithms</p>
-
-<p class="uni-signature-zh">λ 演算遇上算法</p>
-
-</div>
-</div>
-
-<p class="uni-intro">The fourth-oldest US college, where Turing studied and lambda calculus was born — the theoretical root of functional programming.</p>
+::: {.uni-intro}
+The fourth-oldest US college, where Turing studied and lambda calculus was born — the theoretical root of functional programming.
+:::
 
 > 美国第四古老的高等院校，图灵曾在此求学，λ 演算在此诞生——函数式编程的理论根源。
 

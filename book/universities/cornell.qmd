@@ -2,20 +2,19 @@
 title: "Cornell University <span class='zh-inline'>(康奈尔大学)</span>"
 ---
 
-<div class="uni-head">
+::: {.uni-head}
+![](logos/cornell.svg){.uni-plate width=210px}
 
-<img src="logos/cornell.svg" alt="Cornell University" class="uni-plate">
+::: {.uni-head-text}
+**Complexity theory as a foundation**
 
-<div class="uni-head-text">
+以复杂性理论为根基
+:::
+:::
 
-<p class="uni-signature">Complexity theory as a foundation</p>
-
-<p class="uni-signature-zh">以复杂性理论为根基</p>
-
-</div>
-</div>
-
-<p class="uni-intro">Founded by Ezra Cornell on the idea of 'any person ... any study', home to an early CS department and two Turing Award founders.</p>
+::: {.uni-intro}
+Founded by Ezra Cornell on the idea of 'any person ... any study', home to an early CS department and two Turing Award founders.
+:::
 
 > 由 Ezra Cornell 本着“任何人……任何学科”的理念创办，拥有早期计算机系和两位图灵奖得主奠基人。
 

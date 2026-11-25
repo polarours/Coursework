@@ -1,8 +1,9 @@
 name: Pages
 
 # Build the Quarto book as a static site and publish it with GitHub Pages.
-# Same shape as the Cppuccino Pages workflow: build on push to master,
-# upload the artifact, deploy to the github-pages environment.
+# Two formats ship together: the HTML site and a downloadable PDF. Quarto
+# wipes _book on every render, so the HTML output is moved aside before the
+# PDF render runs and the PDF is copied back in afterwards.
 
 on:
   push:
@@ -28,6 +29,9 @@ jobs:
       - name: Validate generated SVG assets
         run: python3 scripts/validate-svgs.py
 
+      - name: Install CJK fonts
+        run: sudo apt-get update && sudo apt-get install -y fonts-noto-cjk
+
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
@@ -37,13 +41,29 @@ jobs:
           path: book
           to: html
 
+      - name: Move HTML output aside
+        run: mv book/_book book/_site
+
+      - name: Render book as PDF
+        uses: quarto-dev/quarto-actions/render@v2
+        with:
+          path: book
+          to: typst
+
+      - name: Attach PDF to the site
+        run: |
+          pdf=$(find book/_book -maxdepth 1 -name '*.pdf' -print -quit)
+          test -n "$pdf" || { echo "no PDF produced" >&2; exit 1; }
+          cp "$pdf" book/_site/coursework-atlas.pdf
+          ls -lh book/_site/coursework-atlas.pdf
+
       - name: Inject English-first language switch
-        run: python3 scripts/inject-lang-switch.py book/_book
+        run: python3 scripts/inject-lang-switch.py book/_site
 
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: book/_book
+          path: book/_site
 
   deploy:
     needs: build

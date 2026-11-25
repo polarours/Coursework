@@ -2,20 +2,19 @@
 title: "UC Berkeley <span class='zh-inline'>(加州大学伯克利分校)</span>"
 ---
 
-<div class="uni-head">
+::: {.uni-head}
+![](logos/berkeley.png){.uni-plate width=210px}
 
-<img src="logos/berkeley.png" alt="UC Berkeley" class="uni-plate">
+::: {.uni-head-text}
+**Where UNIX was born, and CS61 was made**
 
-<div class="uni-head-text">
+UNIX 的诞生地，CS61 的故乡
+:::
+:::
 
-<p class="uni-signature">Where UNIX was born, and CS61 was made</p>
-
-<p class="uni-signature-zh">UNIX 的诞生地，CS61 的故乡</p>
-
-</div>
-</div>
-
-<p class="uni-intro">The public university where UNIX was born, and where the CS61 series became a model for teaching systems and data structures.</p>
+::: {.uni-intro}
+The public university where UNIX was born, and where the CS61 series became a model for teaching systems and data structures.
+:::
 
 > 这所公立大学是 UNIX 的诞生地，它的 CS61 系列课程成为系统和数据结构教学的典范。
 

@@ -2,20 +2,19 @@
 title: "UC Santa Cruz <span class='zh-inline'>(加州大学圣克鲁兹分校)</span>"
 ---
 
-<div class="uni-head">
+::: {.uni-head}
+![](logos/ucsc.svg){.uni-plate width=210px}
 
-<img src="logos/ucsc.svg" alt="UC Santa Cruz" class="uni-plate">
+::: {.uni-head-text}
+**A counterculture campus that built Ceph**
 
-<div class="uni-head-text">
+反主流文化校园造出 Ceph
+:::
+:::
 
-<p class="uni-signature">A counterculture campus that built Ceph</p>
-
-<p class="uni-signature-zh">反主流文化校园造出 Ceph</p>
-
-</div>
-</div>
-
-<p class="uni-intro">An experimental campus near Silicon Valley whose AI course's Pacman projects became classics — both our projects 031 and 032 come from here.</p>
+::: {.uni-intro}
+An experimental campus near Silicon Valley whose AI course's Pacman projects became classics — both our projects 031 and 032 come from here.
+:::
 
 > 硅谷附近的实验性校区，其人工智能课程的 Pacman 项目已成经典——我们的项目 031 与 032 都来自这里。
 

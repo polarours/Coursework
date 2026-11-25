@@ -2,20 +2,19 @@
 title: "Clemson University <span class='zh-inline'>(克莱姆森大学)</span>"
 ---
 
-<div class="uni-head">
+::: {.uni-head}
+![](logos/clemson.svg){.uni-plate width=210px}
 
-<img src="logos/clemson.svg" alt="Clemson University" class="uni-plate">
+::: {.uni-head-text}
+**From agricultural college to computing school**
 
-<div class="uni-head-text">
+从农业学院到计算学院
+:::
+:::
 
-<p class="uni-signature">From agricultural college to computing school</p>
-
-<p class="uni-signature-zh">从农业学院到计算学院</p>
-
-</div>
-</div>
-
-<p class="uni-intro">A South Carolina land-grant university whose computing school grew from a 1978 department — source of our list/stack/queue lab.</p>
+::: {.uni-intro}
+A South Carolina land-grant university whose computing school grew from a 1978 department — source of our list/stack/queue lab.
+:::
 
 > 南卡罗来纳州的赠地大学，其计算学院从 1978 年的一个系发展而来——我们的链表/栈/队列实验就来自这里。
 

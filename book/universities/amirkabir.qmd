@@ -2,20 +2,19 @@
 title: "Amirkabir University of Technology <span class='zh-inline'>(阿米尔卡比尔理工大学)</span>"
 ---
 
-<div class="uni-head">
+::: {.uni-head}
+![](logos/amirkabir.svg){.uni-plate width=210px}
 
-<img src="logos/amirkabir.svg" alt="Amirkabir University of Technology" class="uni-plate">
+::: {.uni-head-text}
+**Iran's oldest technical university**
 
-<div class="uni-head-text">
+伊朗最古老的理工院校
+:::
+:::
 
-<p class="uni-signature">Iran's oldest technical university</p>
-
-<p class="uni-signature-zh">伊朗最古老的理工院校</p>
-
-</div>
-</div>
-
-<p class="uni-intro">Tehran's oldest technical university, where our matrix-library assignment came from — an AP1400-2 homework from Spring 2022.</p>
+::: {.uni-intro}
+Tehran's oldest technical university, where our matrix-library assignment came from — an AP1400-2 homework from Spring 2022.
+:::
 
 > 德黑兰最古老的理工院校，我们的矩阵库作业就来自这里——2022 年春季的 AP1400-2 作业。
 

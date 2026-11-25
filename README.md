@@ -25,11 +25,13 @@ Coursework is a study workbook, not an answer dump. Each project is decomposed i
 
 ## The book
 
-The walkthroughs are also typeset as a Quarto book: five volumes, HTML and PDF (111 pages).
+The walkthroughs are also typeset as a Quarto book: five volumes with fourteen university profiles, published as an HTML site and a downloadable PDF.
+
+**[Read online](https://polarours.github.io/Coursework/) · [Download the PDF](https://polarours.github.io/Coursework/coursework-atlas.pdf)**
 
 ```bash
 bash scripts/build-book.sh all
-# HTML → book/_site/   ·   PDF → book/_book/
+# HTML → book/_site/                        ·   PDF → book/_site/coursework-atlas.pdf
 ```
 
 See [book/README.md](book/README.md) for the chapter map.

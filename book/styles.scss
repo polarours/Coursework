@@ -69,11 +69,14 @@ body {
 
 // University header: nameplate and signature form one lockup.
 .uni-head { display:flex; align-items:center; gap:1.2rem; flex-wrap:wrap; margin:0 0 1.5rem 0; }
-img.uni-plate { display:block; width:200px; max-width:100%; height:auto; flex:0 0 auto; }
+.uni-head > p:first-child { margin:0; flex:0 0 auto; }
+img.uni-plate { display:block; width:210px; max-width:100%; height:auto; }
 .uni-head-text { flex:1 1 220px; min-width:180px; }
-p.uni-signature { font-size:1.28rem; font-weight:650; color:var(--cw-teal); line-height:1.3; margin:0 0 .35rem 0; letter-spacing:-0.01em; }
-p.uni-signature-zh { font-size:1rem; color:var(--cw-muted); margin:0; }
-p.uni-intro { font-size:1.02rem; color:var(--cw-body); margin:0 0 .2rem 0; }
+.uni-head-text > p { margin:0; }
+.uni-head-text > p:first-child { font-size:1.28rem; color:var(--cw-teal); line-height:1.3; margin-bottom:.35rem; letter-spacing:-0.01em; }
+.uni-head-text > p:first-child > strong { font-weight:650; color:inherit; }
+.uni-head-text > p + p { font-size:1rem; color:var(--cw-muted); }
+.uni-intro > p { font-size:1.02rem; color:var(--cw-body); margin:0 0 .2rem 0; }
 @media (max-width: 640px) { .uni-head { gap:.9rem; } img.uni-plate { width:150px; } }
 
 // Bilingual English summaries: quiet surface with a left rule, no italics

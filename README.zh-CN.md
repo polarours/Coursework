@@ -25,11 +25,13 @@
 
 ## 正式成书
 
-所有精解也排成了一部 Quarto 书：五卷、HTML 与 PDF（111 页）。
+所有精解也排成了一部 Quarto 书：五卷、外加十四所高校档案，同时提供网页版与可下载 PDF。
+
+**[在线阅读](https://polarours.github.io/Coursework/) · [下载 PDF](https://polarours.github.io/Coursework/coursework-atlas.pdf)**
 
 ```bash
 bash scripts/build-book.sh all
-# HTML → book/_site/   ·   PDF → book/_book/
+# HTML → book/_site/                        ·   PDF → book/_site/coursework-atlas.pdf
 ```
 
 章节地图见 [book/README.md](book/README.md)。

@@ -2,20 +2,19 @@
 title: "MIT <span class='zh-inline'>(麻省理工学院)</span>"
 ---
 
-<div class="uni-head">
+::: {.uni-head}
+![](logos/mit.svg){.uni-plate width=210px}
 
-<img src="logos/mit.svg" alt="MIT" class="uni-plate">
+::: {.uni-head-text}
+**The course number is the identity**
 
-<div class="uni-head-text">
+课程编号就是身份
+:::
+:::
 
-<p class="uni-signature">The course number is the identity</p>
-
-<p class="uni-signature-zh">课程编号就是身份</p>
-
-</div>
-</div>
-
-<p class="uni-intro">The institute that turned engineering into a research discipline — and whose course numbering became a global shorthand for systems education.</p>
+::: {.uni-intro}
+The institute that turned engineering into a research discipline — and whose course numbering became a global shorthand for systems education.
+:::
 
 > 这所学校把工程变成一门研究学科，它的课程编号（6.824、6.006）已成为系统教育的全球通用语。
 

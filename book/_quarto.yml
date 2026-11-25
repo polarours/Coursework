@@ -82,6 +82,11 @@ format:
     number-sections: true
     margin-x: 2.5cm
     margin-y: 2.5cm
+    # 中文字形必须显式指定：typst 的默认字体链在没有 CJK 字体时会退化成
+    # 缺字，CI 环境尤其明显。
+    mainfont: "Noto Serif"
+    cjk-font: "Noto Serif CJK SC"
+    monofont: "DejaVu Sans Mono"
 
 execute:
   enabled: false
