@@ -1,5 +1,5 @@
 ---
-title: "Chapter 11 · Cryptographic Primitives <span class='zh-inline'>(第 11 章 · 密码学构件)</span>"
+title: "Cryptographic Primitives <span class='zh-inline'>(密码学构件)</span>"
 ---
 
 ::: {.callout-note}
@@ -16,19 +16,19 @@ title: "Chapter 11 · Cryptographic Primitives <span class='zh-inline'>(第 11 �
 [009 Stanford](../universities/stanford.qmd) · [020 Cornell](../universities/cornell.qmd)
 :::
 
-## Fast modular exponentiation (11.1 快速模幂)
+## Fast modular exponentiation (快速模幂)
 
 RSA 的核心是平方-乘算法：`while d: if d&1: res=res*a%n; a=a*a%n; d>>=1`。复杂度 O(log d)，而非朴素的 O(d)。
 
 > **English:** RSA relies on square-and-multiply exponentiation: O(log d) instead of naive O(d).
 
-## Symmetry and signatures (11.2 对称性与签名)
+## Symmetry and signatures (对称性与签名)
 
 RSA 加密用 (n,e)，解密用 (n,d)；签名则反过来。验证签名只需用公钥：verify(m, sign(m)) = True。
 
 > **English:** RSA encrypts with (n,e) and decrypts with (n,d); signing reverses the roles and verification uses the public key.
 
-## The randomness trap (11.3 随机数的陷阱)
+## The randomness trap (随机数的陷阱)
 
 开发中真实遇到：固定种子让两次 gen_prime 返回同一个素数，`while p == q` 死循环，测试超时 180 秒。修复：给每个素数不同种子。这是'可复现'与'随机性'的张力。
 

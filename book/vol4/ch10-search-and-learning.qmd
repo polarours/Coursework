@@ -1,5 +1,5 @@
 ---
-title: "Chapter 10 · AI Search and Reinforcement Learning <span class='zh-inline'>(第 10 章 · AI 搜索与强化学习)</span>"
+title: "AI Search and Reinforcement Learning <span class='zh-inline'>(AI 搜索与强化学习)</span>"
 ---
 
 ::: {.callout-note}
@@ -16,19 +16,19 @@ title: "Chapter 10 · AI Search and Reinforcement Learning <span class='zh-inlin
 [003 UC Berkeley](../universities/berkeley.qmd)
 :::
 
-## Algorithm spectrum (10.1 算法谱系)
+## Algorithm spectrum (算法谱系)
 
 同一个网格世界承载四种方法：A*（已知地图找路）、Minimax（对抗）、值迭代（有模型规划）、Q-learning（无模型学习）。这种递进正是 AI 课程的缩影。
 
 > **English:** One grid world carries four methods: A*, adversarial search, model-based planning, and model-free learning — a microcosm of the AI curriculum.
 
-## Value iteration consistency (10.2 值迭代的自洽性)
+## Value iteration consistency (值迭代的自洽性)
 
 终点价值 10，其相邻格 (4,4) 价值 19 = 10 + 0.9×10。这个数字关系验证了折扣因子 γ=0.9 的正确实现。
 
 > **English:** Goal value 10 and its neighbor 19 = 10 + 0.9×10 verify the γ=0.9 implementation.
 
-## Evidence of learning (10.3 Q-learning 的证据)
+## Evidence of learning (Q-learning 的证据)
 
 300 轮训练后，平均步数从前 10 轮的 25.6 降到后 10 轮的 9.6。这是强化学习'从交互中改进'的直接证据，固定随机种子 42 保证可复现。
 

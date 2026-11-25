@@ -1,5 +1,5 @@
 ---
-title: "Chapter 2 · Memory Hierarchy and Caches <span class='zh-inline'>(第 2 章 · 存储层次与缓存)</span>"
+title: "Memory Hierarchy and Caches <span class='zh-inline'>(存储层次与缓存)</span>"
 ---
 
 ::: {.callout-note}
@@ -16,19 +16,19 @@ title: "Chapter 2 · Memory Hierarchy and Caches <span class='zh-inline'>(第 2 
 [012 UC Berkeley](../universities/berkeley.qmd) · [018 MIT](../universities/mit.qmd)
 :::
 
-## Three parts of an address (2.1 地址的三个部分)
+## Three parts of an address (地址的三个部分)
 
 CS61C 的缓存实验从一个简单的除法开始：`offset = addr % block_size`，`block_addr = addr // block_size`，`set = block_addr % num_sets`，`tag = block_addr // num_sets`。这四个式子封装了整个缓存的映射逻辑。当 block_size 与 num_sets 都是 2 的幂时，它们对应于二进制位的切分。
 
 > **English:** When block size and set count are powers of two, the division/modulo operations correspond to slicing the address bits into tag, index, and offset fields.
 
-## Conflict misses (2.2 冲突缺失)
+## Conflict misses (冲突缺失)
 
 在 2 个组、块大小 4 的直接映射缓存中，地址 0（块地址 0，set 0）与地址 8（块地址 2，set 0）映射到同一组但 tag 不同，因此反复冲突，命中率为 0。改成 2 路组相联后，两者可以共存于同一组的两路，命中数从 0 升到 2。
 
 > **English:** In a 2-set direct-mapped cache, addresses 0 and 8 both map to set 0 with different tags, so every access misses. With 2-way associativity both coexist, yielding two hits.
 
-## Locality (2.3 局部性)
+## Locality (局部性)
 
 顺序遍历（步长 4）命中率 0.5，因为一个块内的 4 个字只需第一次访问时从内存装入；跨步 64 的命中率 0.0，因为每次访问都跳到不同的块。这个 0.5 与 0.0 的对比，是'局部性'最直观的量化证据。
 

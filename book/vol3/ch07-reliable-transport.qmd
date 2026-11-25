@@ -1,5 +1,5 @@
 ---
-title: "Chapter 7 · Reliable Transport <span class='zh-inline'>(第 7 章 · 可靠传输)</span>"
+title: "Reliable Transport <span class='zh-inline'>(可靠传输)</span>"
 ---
 
 ::: {.callout-note}
@@ -16,19 +16,19 @@ title: "Chapter 7 · Reliable Transport <span class='zh-inline'>(第 7 章 · �
 [002 Stanford](../universities/stanford.qmd)
 :::
 
-## Sequence numbers and wrapping (7.1 序列号与回绕)
+## Sequence numbers and wrapping (序列号与回绕)
 
 TCP 序列号是 32 位无符号数，接近 2^32 时回绕。所有比较必须用模运算：`wrap_sub(a,b)` 给出从 b 到 a 的距离。ISN = 2^32−5 加 10 得 5，而不是 2^32+5。
 
 > **English:** TCP sequence numbers wrap at 2^32; all comparisons must use modular arithmetic. ISN 2^32-5 plus 10 is 5, not 2^32+5.
 
-## Reassembly (7.2 重组)
+## Reassembly (重组)
 
 接收端把乱序子串存入字典，只从 `first_unassembled` 连续 drain。重复字节（index < first_unassembled）被忽略并计数——实测为 3。
 
 > **English:** The receiver stores out-of-order substrings in a dict and drains from first_unassembled. Duplicate bytes are counted and ignored.
 
-## Timeout and backoff (7.3 超时与退避)
+## Timeout and backoff (超时与退避)
 
 虚拟时钟让重传测试确定且快速。RTO 每次超时翻倍：10→20→40。tick(9) 不触发、tick(11) 触发（累计 20ms），验证了边界。
 

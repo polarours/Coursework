@@ -1,5 +1,5 @@
 ---
-title: "Chapter 3 · Processes and the Shell <span class='zh-inline'>(第 3 章 · 进程接口与 Shell)</span>"
+title: "Processes and the Shell <span class='zh-inline'>(进程接口与 Shell)</span>"
 ---
 
 ::: {.callout-note}
@@ -16,19 +16,19 @@ title: "Chapter 3 · Processes and the Shell <span class='zh-inline'>(第 3 章 
 [016 MIT](../universities/mit.qmd)
 :::
 
-## The shell in the system hierarchy (3.1 Shell 在系统层次中的位置)
+## The shell in the system hierarchy (Shell 在系统层次中的位置)
 
 MIT 6.858 的系统安全实验让学生从最底层理解进程。Shell 是用户与内核之间的解释器：它解析一行文本，把它变成一组 `fork`/`exec`/`pipe`/`dup2` 系统调用。本项目聚焦前半部分——解析。真正的执行留给练习。
 
 > **English:** A shell is an interpreter between user and kernel: it turns a line of text into fork/exec/pipe/dup2 calls. Our case study focuses on the parsing half.
 
-## Quoting and tokenization (3.2 引号与分词)
+## Quoting and tokenization (引号与分词)
 
 `shlex.split` 正确处理 `'hello world'` 为单个 token，而朴素的 `str.split()` 会拆成两个。这个差异看起来微小，但它体现了词法分析的核心原则：分隔符在引号内失效。
 
 > **English:** shlex.split keeps 'hello world' as one token; naive splitting breaks it. This illustrates the core lexical principle: delimiters lose meaning inside quotes.
 
-## Variable expansion (3.3 变量展开)
+## Variable expansion (变量展开)
 
 `$HOME` 在解析阶段展开为环境变量值。展开时机很重要：它在分词之后、执行之前进行，否则含空格的变量值会被错误拆分。
 

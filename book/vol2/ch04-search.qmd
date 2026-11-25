@@ -1,5 +1,5 @@
 ---
-title: "Chapter 4 · Heuristic Search <span class='zh-inline'>(第 4 章 · 启发式搜索)</span>"
+title: "Heuristic Search <span class='zh-inline'>(启发式搜索)</span>"
 ---
 
 ::: {.callout-note}
@@ -16,19 +16,19 @@ title: "Chapter 4 · Heuristic Search <span class='zh-inline'>(第 4 章 · 启�
 [014 Princeton](../universities/princeton.qmd) · [015 Stanford](../universities/stanford.qmd)
 :::
 
-## Admissibility (4.1 可采纳性)
+## Admissibility (可采纳性)
 
 A* 保证最优解的前提是启发式不高估剩余代价。曼哈顿距离对 8-Puzzle 是可采纳的：每步只能把一个方块移动一格，而它到目标位置的距离最多减少 1。
 
 > **English:** A* guarantees optimality when the heuristic never overestimates. Manhattan distance is admissible because a move reduces a tile's distance by at most one.
 
-## Backtracking and Tries (4.2 回溯与 Trie)
+## Backtracking and Tries (回溯与 Trie)
 
 Boggle 展示了另一种搜索：在字母网格中穷举路径。Trie 的前缀剪枝让无效前缀在常数时间内被识别，把最坏 O(16·8^L) 的搜索压缩到实际路径数量级。
 
 > **English:** Boggle exhausts paths in a letter grid. Trie prefix pruning rejects invalid prefixes in constant time, collapsing the worst case dramatically.
 
-## Measured comparison (4.3 实测对比)
+## Measured comparison (实测对比)
 
 A* 解一个 h=4 的打乱局面只展开 5 个节点；Boggle 在 2×2 网格中找到全部 6 个可达词，3×3 中对角链 aei 被正确识别。这些数字说明剪枝的有效性。
 

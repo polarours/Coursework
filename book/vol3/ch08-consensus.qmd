@@ -1,5 +1,5 @@
 ---
-title: "Chapter 8 · Distributed Consensus <span class='zh-inline'>(第 8 章 · 分布式共识)</span>"
+title: "Distributed Consensus <span class='zh-inline'>(分布式共识)</span>"
 ---
 
 ::: {.callout-note}
@@ -16,19 +16,19 @@ title: "Chapter 8 · Distributed Consensus <span class='zh-inline'>(第 8 章 ·
 [001 MIT](../universities/mit.qmd)
 :::
 
-## Strong leadership (8.1 强 Leader)
+## Strong leadership (强 Leader)
 
 Raft 把共识分解为 leader 选举与日志复制两个子问题。只有 leader 接受客户端命令，这大大简化了推理——这是 Raft 比 Paxos 更易教学的根本原因。
 
 > **English:** Raft decomposes consensus into leader election and log replication. Only the leader accepts commands, which is why it is more teachable than Paxos.
 
-## Commit rule (8.2 提交规则)
+## Commit rule (提交规则)
 
 条目只有在多数派复制**且** `log[n].Term == currentTerm` 时才能提交。缺少 term 检查会违反 leader 完备性——这就是 Raft 论文 Figure 8 的陷阱。
 
 > **English:** An entry is committed only if a majority replicates it AND its term equals the current term. Omitting the term check violates leader completeness (Figure 8).
 
-## Partition safety (8.3 分区安全)
+## Partition safety (分区安全)
 
 在 5 节点集群中把 leader 隔离到 2 节点少数派：它接受写入但 commitIndex 保持 0；多数派选出新 leader 并提交；网络恢复后日志收敛到多数派版本。
 

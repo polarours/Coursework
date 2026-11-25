@@ -1,5 +1,5 @@
 ---
-title: "Chapter 5 · Graph Algorithms and Greedy Methods <span class='zh-inline'>(第 5 章 · 图算法与贪心)</span>"
+title: "Graph Algorithms and Greedy Methods <span class='zh-inline'>(图算法与贪心)</span>"
 ---
 
 ::: {.callout-note}
@@ -16,19 +16,19 @@ title: "Chapter 5 · Graph Algorithms and Greedy Methods <span class='zh-inline'
 [021 Stanford](../universities/stanford.qmd)
 :::
 
-## Union-Find (5.1 并查集)
+## Union-Find (并查集)
 
 路径压缩与按秩合并让 `find`/`union` 的均摊复杂度接近 O(1)（反 Ackermann 函数）。这是贪心算法能高效检测环的关键。
 
 > **English:** Path compression plus union by rank gives near-constant amortized operations, which is what makes cycle detection cheap in the greedy loop.
 
-## Cut property (5.2 切割性质)
+## Cut property (切割性质)
 
 对任意切割，跨越它的最小权重边属于某个 MST。Kruskal 反复选择这样的边，因此结果最小。这个论证是贪心正确性的标准范式。
 
 > **English:** For any cut, the minimum-weight crossing edge belongs to some MST. Kruskal repeatedly picks such edges, so the result is minimum.
 
-## Edge cases (5.3 边界情况)
+## Edge cases (边界情况)
 
 不连通图的 MST 边数少于 n-1，这是生成森林而非错误。测试必须显式覆盖这种情况。
 

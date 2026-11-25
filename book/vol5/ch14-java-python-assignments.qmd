@@ -1,5 +1,5 @@
 ---
-title: "Chapter 14 · Java and Python Assignments <span class='zh-inline'>(第 14 章 · Java 与 Python 真实作业)</span>"
+title: "Java and Python Assignments <span class='zh-inline'>(Java 与 Python 真实作业)</span>"
 ---
 
 ::: {.callout-note}
@@ -10,7 +10,7 @@ title: "Chapter 14 · Java and Python Assignments <span class='zh-inline'>(第 1
 > **English:** Three non-C++ assignments showcasing three interface-design schools and three ways to verify official material.
 :::
 
-## UC Berkeley 029 (14.1 CS61B proj1a+1b：两种 Deque 一把吉他) · [profile](../universities/berkeley.qmd)
+## UC Berkeley 029 (CS61B proj1a+1b：两种 Deque 一把吉他) · [profile](../universities/berkeley.qmd)
 
 完整大作业四件套：链表 Deque（单哨兵成环 + 递归 get）、数组 Deque（环形下标 + 扩缩容）、Maximizer61B（自然序 + Comparator 双重载）、GuitarString（Karplus-Strong 弦仿真，**缓冲区就是自己的 Deque**）。
 
@@ -23,7 +23,7 @@ proj1a  6/6  proj1b deque 6/6  GuitarString 3/3
 
 > **English:** The two official files refuse to compile together — adding the iterator yourself is the intended lesson; the guitar's buffer is your own deque.
 
-## U Maryland 030 (14.2 UMD SubmitServer：测试即规格) · [profile](../universities/umd.qmd)
+## U Maryland 030 (UMD SubmitServer：测试即规格) · [profile](../universities/umd.qmd)
 
 官方不发文字题面，`PublicTests.java` 的 15 个断言就是需求文档。upstream 学生实现通过全部官方测试，我们补的边界测试把官方未定义的分支实测在案：`numSubmissions(null)` 返回 -1、非法分数静默忽略、`bestSubmissionNumber` 1-based。
 
@@ -31,13 +31,13 @@ proj1a  6/6  proj1b deque 6/6  GuitarString 3/3
 
 > **English:** Translate each assertion into a requirement sentence; undefined behavior is yours to define — that's the trained skill.
 
-## UC Santa Cruz 031 (14.3 UCSC p0：Pacman 世界的入场券) · [profile](../universities/ucsc.qmd)
+## UC Santa Cruz 031 (UCSC p0：Pacman 世界的入场券) · [profile](../universities/ucsc.qmd)
 
 CS188 风格热身：价目表归约 + 商店 argmin，期望输出写在 docstring 里天然可验证。两个 `None` 语义是 Python 接口设计的小课：`buyLotsOfFruit` 缺货返回 None（区分"算不出"与"价格 0"）；`shopSmart` 判断供货能力必须 `is not None`——`if price` 会误杀总价恰为 0.0 的合法订单。
 
 如实记录的一处**上游瑕疵**：docstring 写 `best shop is shop1.`，而 `shop.py` 的 main 实际打印 `the best shop is shop1.`——测试以代码为准，注释会漂移。
 
-## The full search assignment (14.4 UCSC p1：搜索大作业全景) · [profile](../universities/ucsc.qmd)
+## The full search assignment (UCSC p1：搜索大作业全景) · [profile](../universities/ucsc.qmd)
 
 p1（032，pacai v2.1.0 以 submodule 引用）把 CS188 的 Q1–Q5 一次吃掉：DFS/BFS/UCS/A* 四求解器、Corners 状态设计、两个可采纳启发式、贪心与近似 agent。三个实测数字最有说服力：maze-tiny 上 **BFS/UCS/A* 的 cost 三者一致 = 8.00 而 DFS = 10**（最优性互证）；corners-tiny 上 null 启发式展开 **1449** 节点 vs corners 启发式 **1050**（启发式收益）；corners-medium 上 **845707 节点 5.24 s** 仍保持最优（max 启发式的可采纳性经受住 10^5 量级压力）。
 

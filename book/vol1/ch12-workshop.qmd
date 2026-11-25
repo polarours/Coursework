@@ -1,5 +1,5 @@
 ---
-title: "Chapter 12 · Assignment Workshop <span class='zh-inline'>(第 12 章 · 作业工坊)</span>"
+title: "Assignment Workshop <span class='zh-inline'>(作业工坊)</span>"
 ---
 
 ::: {.callout-note}
@@ -16,7 +16,7 @@ Earlier chapters dissected cases from the solver's perspective. This chapter swi
 [022 Stanford](../universities/stanford.qmd)
 :::
 
-## Four components of an assignment (12.1 作业包的四个组件)
+## Four components of an assignment (作业包的四个组件)
 
 受 Stanford CS106L 作业仓库的启发，一道好的作业不只是题目描述，而是一个完整的教学单元：
 
@@ -31,7 +31,7 @@ Inspired by the CS106L assignment repository, a good assignment is a complete te
 
 > **English:** The starter code is intentionally incomplete: compiling it produces warnings and the demo crashes. This is by design — the student's first job is to make it work.
 
-## Case study (12.2 案例：ScopedHandle)
+## Case study (案例：ScopedHandle)
 
 `problems/022-cs106l-scoped-handle/` 是一道原创题：实现简化版 `std::unique_ptr`，练习 RAII、Rule of Five 与移动语义。
 

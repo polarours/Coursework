@@ -1,5 +1,5 @@
 ---
-title: "Chapter 6 · Probabilistic Structures and Caches <span class='zh-inline'>(第 6 章 · 概率结构与缓存抽象)</span>"
+title: "Probabilistic Structures and Caches <span class='zh-inline'>(概率结构与缓存抽象)</span>"
 ---
 
 ::: {.callout-note}
@@ -16,19 +16,19 @@ title: "Chapter 6 · Probabilistic Structures and Caches <span class='zh-inline'
 [019 Georgia Tech](../universities/gatech.qmd)
 :::
 
-## Bloom filters (6.1 布隆过滤器)
+## Bloom filters (布隆过滤器)
 
 布隆过滤器用 k 个哈希函数把元素映射到位数组。查询时若任一位为 0，元素一定不存在；全为 1 则可能存在。假阴性不可能，假阳性可控。
 
 > **English:** A Bloom filter maps elements to a bit array with k hashes. Any zero bit proves absence; all ones suggest possible presence. False negatives are impossible.
 
-## LRU cache (6.2 LRU 缓存)
+## LRU cache (LRU 缓存)
 
 哈希表提供 O(1) 定位，双向链表提供 O(1) 移动；哨兵节点消除边界判断。get 命中后必须移到 MRU 端，否则淘汰顺序错误。
 
 > **English:** A hash map gives O(1) lookup and a doubly linked list gives O(1) reordering; sentinels remove boundary cases.
 
-## Measurements (6.3 实测)
+## Measurements (实测)
 
 256 位、3 哈希的过滤器对 1000 个不存在项的假阳性为 0；LRU 经典序列命中 3 次、淘汰 2 次。
 

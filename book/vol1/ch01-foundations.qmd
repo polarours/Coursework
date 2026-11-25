@@ -1,5 +1,5 @@
 ---
-title: "Chapter 1 · Foundations of Memory and Execution <span class='zh-inline'>(第 1 章 · 内存与执行的基础)</span>"
+title: "Foundations of Memory and Execution <span class='zh-inline'>(内存与执行的基础)</span>"
 ---
 
 ::: {.callout-note}
@@ -16,7 +16,7 @@ By the end of this chapter you should be able to explain why malloc'd pointers m
 [005 MIT](../universities/mit.qmd) · [006 CMU](../universities/cmu.qmd)
 :::
 
-## Starting from a single malloc (1.1 从一行 malloc 说起)
+## Starting from a single malloc (从一行 malloc 说起)
 
 考虑 CSAPP Malloc Lab 中的一行代码：
 
@@ -63,7 +63,7 @@ The footer enables O(1) backward coalescing: reading the size at `bp - 8` tells 
 
 > **English:** The last trap is a testing lesson: a print statement that shows a failure is useless unless it also fails the test. We upgraded it to an assert, which immediately exposed the alignment bug.
 
-## Waiting time in a scheduler (1.2 调度器的等待时间)
+## Waiting time in a scheduler (调度器的等待时间)
 
 MIT 6.1810 的 xv6 实验让学生实现调度器。我们的模拟器（`problems/005-mit-6.1810-xv6/`）实现了 FCFS、Round Robin 与 MLFQ。这里讨论一个容易被忽略的细节：
 

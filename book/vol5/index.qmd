@@ -44,3 +44,5 @@ title: "Volume V · Real Assignments <span class='zh-inline'>(卷五 · 真实�
 | 030 | CMSC132 P1 SubmitServer | U Maryland | Java | 官方 15 + 边界 4 |
 | 031 | CSE140 p0 Pacman warmup | UC Santa Cruz | Python | docstring 期望值 7/7 |
 | 032 | CSE140 p1 Pacman 搜索大作业 | UC Santa Cruz | Python | pacai v2.1.0 + 9 用例全过 |
+| 033 | COS217 A1 Decomment | Princeton | C | 38 金标准 + 74 官方输入 |
+| 034 | CS61C Proj1 Snek | UC Berkeley | C | 21 集成 + 官方单测 + ASan |
