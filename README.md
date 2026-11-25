@@ -18,7 +18,7 @@ Most public course projects ship as scattered code. What's missing is the reason
 
 Coursework is a study workbook, not an answer dump. Each project is decomposed into the decisions a student actually makes, with every claim anchored to something runnable.
 
-- **32 projects** — 22 original walkthroughs and 10 real university assignments kept as git submodules, with original handouts preserved.
+- **34 projects** — 22 original walkthroughs and 12 real university assignments kept as git submodules, with original handouts preserved.
 - **Seven chapters each** — problem reading, design, implementation, correctness, debugging, pitfalls, extensions.
 - **Bilingual** — Chinese exposition with English summaries throughout.
 - **Verified** — implementations run against official or carefully reconstructed tests; numbers come from real runs.
@@ -79,6 +79,8 @@ Each entry keeps the upstream repository as a git submodule and preserves the or
 | [030](problems/030-umd-cmsc132-submitserver/README.md) | UMD CMSC132 Project1 | Maryland | Java / OOP |
 | [031](problems/031-ucsc-cse140-pacman-warmup/README.md) | UCSC CSE140 p0 | UC Santa Cruz | Python / Pacman warmup |
 | [032](problems/032-ucsc-cse140-pacman-search/README.md) | UCSC CSE140 p1 | UC Santa Cruz | Python / search |
+| [033](problems/033-princeton-cos217-decomment/README.md) | Princeton COS217 A1 | Princeton | C / DFA and lexical edges |
+| [034](problems/034-ucb-cs61c-snek/README.md) | Berkeley CS61C Proj1 | UC Berkeley | C / structs and memory |
 
 ## How to read
 
@@ -105,4 +107,4 @@ Artwork in `assets/` is generated from the catalog by `scripts/generate-readme-a
 
 Original walkthroughs, implementations, and artwork are [CC BY-NC-SA 4.0](LICENSE). Assignment texts belong to their respective courses — referenced, preserved for study, never presented as copy-paste-ready submissions. See [academic integrity](docs/academic-integrity.md).
 
-> 32/32 complete — 22 original walkthroughs + 10 real university assignments.
+> 34/34 complete — 22 original walkthroughs + 12 real university assignments.

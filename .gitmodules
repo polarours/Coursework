@@ -28,3 +28,9 @@
 [submodule "problems/032-ucsc-cse140-pacman-search/upstream"]
 	path = problems/032-ucsc-cse140-pacman-search/upstream
 	url = https://github.com/edulinq/pacai.git
+[submodule "problems/033-princeton-cos217-decomment/upstream"]
+	path = problems/033-princeton-cos217-decomment/upstream
+	url = https://github.com/COS217/Decomment.git
+[submodule "problems/034-ucb-cs61c-snek/upstream"]
+	path = problems/034-ucb-cs61c-snek/upstream
+	url = https://github.com/61c-teach/sp26-proj1-starter.git

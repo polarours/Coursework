@@ -55,6 +55,7 @@ Founded in 1868 by merging the College of California with the state's Agricultur
 ## In this book <span class='zh-inline'>(本书收录)</span>
 
 - [003 · Pacman (CS188)](https://github.com/polarours/Coursework/tree/master/problems/003-berkeley-cs188-pacman)
+- [034 · Snek (CS61C)](https://github.com/polarours/Coursework/tree/master/problems/034-ucb-cs61c-snek)
 - [004 · Gitlet (CS61B)](https://github.com/polarours/Coursework/tree/master/problems/004-berkeley-cs61b-gitlet)
 - [012 · Cache simulator (CS61C)](https://github.com/polarours/Coursework/tree/master/problems/012-ucb-cs61c-cache)
 - [013 · Scheme interpreter (CS61A)](https://github.com/polarours/Coursework/tree/master/problems/013-ucb-cs61a-scheme)

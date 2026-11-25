@@ -18,7 +18,7 @@
 
 本项目是学习解构库，不是答案搬运站。每道题拆成学生真正要做的决策，每个断言都锚定在能跑的东西上。
 
-- **32 个项目** — 22 道原创精解，10 道真实高校作业以 git submodule 保留原仓库，并保存原始题面。
+- **34 个项目** — 22 道原创精解，12 道真实高校作业以 git submodule 保留原仓库，并保存原始题面。
 - **每题七章** — 题目解读、设计、实现、正确性、调试、踩坑、延伸。
 - **中英双语** — 中文讲解配英文摘要。
 - **实测得出** — 参考实现跑官方或严格复原的测试，文档里的数字来自真实运行。
@@ -79,6 +79,8 @@ bash scripts/build-book.sh all
 | [030](problems/030-umd-cmsc132-submitserver/README.md) | UMD CMSC132 Project1 | Maryland | Java / OOP |
 | [031](problems/031-ucsc-cse140-pacman-warmup/README.md) | UCSC CSE140 p0 | UC Santa Cruz | Python / Pacman warmup |
 | [032](problems/032-ucsc-cse140-pacman-search/README.md) | UCSC CSE140 p1 | UC Santa Cruz | Python / 搜索 |
+| [033](problems/033-princeton-cos217-decomment/README.md) | Princeton COS217 A1 | Princeton | C / 状态机与词法边界 |
+| [034](problems/034-ucb-cs61c-snek/README.md) | Berkeley CS61C Proj1 | UC Berkeley | C / 结构体与内存 |
 
 ## 怎么读
 
@@ -105,4 +107,4 @@ problems/023-xxx/
 
 原创精解、实现与配图采用 [CC BY-NC-SA 4.0](LICENSE)。题目原文归各课程所有——引用、保留供学习，绝不包装成可直接提交的答案。详见[学术诚信](docs/academic-integrity.md)。
 
-> 32/32 完成——22 道原创精解 + 10 道真实高校作业。
+> 34/34 完成——22 道原创精解 + 12 道真实高校作业。

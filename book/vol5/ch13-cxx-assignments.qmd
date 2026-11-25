@@ -50,3 +50,30 @@ upstream 学生实现通过全部 13 个官方样例，但五处缺陷全部藏�
 ```
 
 > **English:** All five defects live outside sample coverage — "13/13 pass" was never proof; boundary tests are what separate the two versions.
+
+## Princeton 033 (13.7 去注释：六十行状态机与七十四个边界) · [profile](../universities/princeton.qmd)
+
+COS 217 的去注释题只要求一个过滤器，却把词法边界一次讲透：注释是 token 分隔符（`int/**/x;` 必须留一个空格），注释跨行要补回换行以保持行号，`/*` 在字符串与字符字面量里没有特殊含义，反斜杠会让下一个引号失去定界作用。八个状态的 DFA 覆盖全部情形，斜杠单独成状态以实现一格前瞻。
+
+测试分两层：题面表格里的例子逐字节抄成 38 条金标准；starter 自带的 74 个输入文件没有公布答案，用独立 Python oracle 交叉验证。oracle 自己先错了一次——空格写在换行之后，15 个用例同时红。而交叉验证抓到的真 bug 是文件以孤立 `/` 结尾时该字符被吞掉：状态机在 EOF 时仍停在"待定斜杠"，还欠一个输出。
+
+```text
+golden cases: 38/38 passed
+oracle cases: 74/74 passed
+```
+
+> **English:** A 60-line DFA, 38 spec-exact cases and 74 starter inputs cross-checked against an independently written oracle — which caught a trailing slash silently dropped at EOF.
+
+## Berkeley 034 (13.8 贪吃蛇：棋盘即状态) · [profile](../universities/berkeley.qmd)
+
+CS61C 的 proj1 用裸 C 写一个完整游戏引擎。设计上最值得记的一点是**棋盘自己就是状态**：每个蛇格是一个字符，同时编码"哪条蛇的哪个部位"、"朝向"和"下一步去哪"。因此不需要速度数组，`update_tail` 只要沿着尾字符的方向跟一格，O(1) 完成。
+
+二十多个函数、21 组官方输入/参考输出、1708 行官方单元测试。单测纠正了一处规格误读：`create_default_game` 必须自带那条蛇（`num_snakes == 1`），而不是留给 `initialize_snakes`——跟着改 `main`，否则重复初始化会泄漏。另一个真实缺陷是 `read_line` 不检查空文件指针，在 `fgets(NULL)` 上段错误。
+
+```text
+integration tests: 21 passed, 0 failed
+unit tests: PASS
+ASan (21 boards): clean, no leaks
+```
+
+> **English:** The board is the state — one character carries part, heading and next cell. 21 reference boards plus the official unit suite; the tests corrected the spec reading, not the other way round.

@@ -14,6 +14,7 @@ venv/
 *.so
 build/
 cmake-build-*/
+tests/.build/
 
 # 编辑器 / Editors
 .idea/

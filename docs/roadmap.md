@@ -62,6 +62,13 @@
 | 031 | CSE140 p0 Pacman warmup | UC Santa Cruz | submodule + docstring 期望值 | ✅ 完成 / Completed |
 | 032 | CSE140 p1 Pacman 搜索 | UC Santa Cruz | submodule(pacai v2.1.0) + 9 用例 | ✅ 完成 / Completed |
 
+## 第七批 / Batch 7 — 系统与内存的边界训练 / systems and memory
+
+| # | 题目 / Problem | 学校 / University | 形态 / Format | 状态 |
+|---|---|---|---|---|
+| 033 | COS217 A1 Decomment | Princeton | submodule + 38 金标准 + 74 官方输入 | ✅ 完成 / Completed |
+| 034 | CS61C Proj1 Snek | UC Berkeley | submodule + 21 集成 + 官方单测 | ✅ 完成 / Completed |
+
 ## 更新规则 / Update rule
 
 每完成一个阶段（解析、实现、测试）就更新本表并提交 / Update this table and commit after each completed stage.
