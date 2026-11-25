@@ -19,11 +19,13 @@ echo "1.11.9" > ~/Development_Tools/anaconda3/envs/quarto-book/share/version
 
 ```bash
 bash scripts/build-book.sh html   # HTML 网站 → book/_site/
-bash scripts/build-book.sh pdf    # PDF（typst 后端）→ book/_book/*.pdf
+bash scripts/build-book.sh pdf    # PDF（typst 后端）→ book/_site/coursework-atlas.pdf
 bash scripts/build-book.sh all    # 两者都构建
 ```
 
 > 注：PDF 用 typst 后端（`--to typst`），因为本机的 xelatex 字体配置不完整；内容完全相同。
+>
+> PDF 会被复制到 `_site/` 下并统一命名为 `coursework-atlas.pdf`（Quarto 默认用书名生成文件名，含中文与中点，URL 里不方便）。中文字形依赖 `_quarto.yml` 里指定的 `cjk-font`，CI 环境另装 `fonts-noto-cjk`。
 
 ## 结构 / Structure
 
@@ -45,4 +47,4 @@ book/
 
 ## 内容来源 / Content sources
 
-每章的深入解析与 21 道题的完整 7 章解析位于 `problems/`。书是这些内容的主题化提炼与编排。
+每章的深入解析与 34 道题的完整 7 章解析位于 `problems/`。书是这些内容的主题化提炼与编排。
