@@ -5,9 +5,9 @@ title: "Graph Algorithms and Greedy Methods <span class='zh-inline'>(图算法�
 ::: {.callout-note}
 ## Purpose (本章目标)
 
-理解 Kruskal 算法中并查集的作用；证明切割性质如何保证贪心正确；通过经典图的 MST=37 验证实现。
+用交换论证把"贪心为什么正确"讲成一个可检验的证明，而不是一句"直觉上显然"；看清并查集的两个优化各自解决什么问题（并实测它们在最坏链上的差距）；理解不连通图为什么输出生成森林而不是错误。
 
-> **English:** Understand union-find's role in Kruskal; see how the cut property guarantees greedy correctness; verify with MST=37 on the classic graph.
+> **English:** Make greedy correctness a proof by exchange rather than an appeal to intuition; separate what path compression and union-by-rank each fix, with a measured worst-case chain; and see why a disconnected graph yields a forest, not a failure.
 :::
 
 ::: {.callout-tip}
@@ -16,51 +16,167 @@ title: "Graph Algorithms and Greedy Methods <span class='zh-inline'>(图算法�
 [021 Stanford](../universities/stanford.qmd)
 :::
 
-## Union-Find (并查集)
+## 生成树与它的边数 / Spanning trees and their edge count
 
-路径压缩与按秩合并让 `find`/`union` 的均摊复杂度接近 O(1)（反 Ackermann 函数）。这是贪心算法能高效检测环的关键。
+连通图 `G = (V, E)` 的生成树是 `E` 的一个子集：包含所有顶点、连通、无环。这三个条件一起把边数钉死：
 
-> **English:** Path compression plus union by rank gives near-constant amortized operations, which is what makes cycle detection cheap in the greedy loop.
+- 连通且无环 ⇒ 恰好 `|V| − 1` 条边。
+- 证明很简单：从单点开始，每加一条不形成环的边就多连通一个顶点，而顶点总数为 `|V|`，因此恰好加 `|V| − 1` 次。
 
-## Cut property (切割性质)
+最优生成树（MST）是权重和最小的那棵。注意"最小"是对**总权重**而言，不是对每条边——牺牲一条大边换取三条小边可能是划算的。
 
-对任意切割，跨越它的最小权重边属于某个 MST。Kruskal 反复选择这样的边，因此结果最小。这个论证是贪心正确性的标准范式。
+## 切割性质：贪心正确性的全部来源 / The cut property
 
-> **English:** For any cut, the minimum-weight crossing edge belongs to some MST. Kruskal repeatedly picks such edges, so the result is minimum.
+对顶点集的任意划分 `(S, V−S)`，称跨越这个划分的边为**切割边**。
 
-## Edge cases (边界情况)
+> **切割性质**：对任意切割，权重最小的切割边一定属于**某个** MST（可能不唯一）。
 
-不连通图的 MST 边数少于 n-1，这是生成森林而非错误。测试必须显式覆盖这种情况。
+证明用交换论证：
 
-> **English:** A disconnected graph yields fewer than n-1 edges — a spanning forest, not a bug.
+设 `e` 是某个切割 `(S, V−S)` 的最小切割边，`T` 是一棵不含 `e` 的 MST。把 `e` 加入 `T` 会形成一个环，而这个环必然还包含另一条切割边 `f`（从 `S` 走到 `V−S` 再走回来，跨越两次）。于是 `T' = T − {f} + {e}` 也是一棵生成树，且因为 `w(e) ≤ w(f)`，有 `w(T') ≤ w(T)`。`T` 已是最小，故等号成立，`T'` 也是 MST，且包含 `e`。∎
 
-### Real measured output (真实运行输出)
+**这个证明的形状值得记住**：不是"贪心看起来对"，而是"任取一棵不含该边的最优解，把它换成含该边的解，结果不变差"。几乎所有贪心正确性证明都是这个模板。
+
+> **English:** Take any optimal tree missing the lightest crossing edge, add that edge, remove the heavier crossing edge on the resulting cycle. Weight cannot increase, so an optimal tree containing the edge exists.
+
+## 环性质：另一半保证 / The cycle property
+
+> **环性质**：对任意环，权重**最大**的边一定不属于**某个** MST。
+
+两条性质互为对偶：切割性质说"最轻的必选"，环性质说"最重的必弃"。Kruskal 同时用到两者——它按权重升序尝试加入，用并查集判断"加入后是否成环"，成环就跳过。跳过的那条边正是当前路径上最重的边之一，于是环性质保证这个选择不损害最优性。
+
+## Kruskal 的三段 / Kruskal in three parts
+
+```text
+1. 把所有边按权重升序排序              O(E log E)
+2. 依次考察每条边 (u, v, w)：
+     若 find(u) ≠ find(v)  →  加入答案，union(u, v)
+     否则                  →  跳过（成环）
+3. 结束条件：已选 |V| − 1 条边（连通图），或边已遍历完（可能是森林）
+```
+
+并查集在这里的角色不是"数据结构炫技"，而是**把"是否成环"从 O(V) 降到接近 O(1)**。若用 DFS 判断连通性，整个算法会变成 `O(E·V)`，在稠密图上直接不可用。
+
+## 并查集：两个优化各治一种病 / Two fixes for two different diseases
+
+朴素并查集就是每个节点存一个父指针，`find` 一路向上走到根。两种退化：
+
+**树太深（查询慢）。** 如果 union 总是把大树挂到小树上，n 次 union 可以造出一条长度 n 的链，此后每次 `find` 都是 O(n)。
+
+**路径重复走（查询慢的另一种形态）。** 即使树不深，同一条路径被反复走过也是浪费。
+
+对应两个优化：**按秩合并**（union by rank，把矮树挂到高树下，保证深度 O(log n)）与**路径压缩**（path compression，一次 `find` 之后把路径上所有节点直接指向根）。
+
+在最坏构造（5 万节点的链）上实测，构建完成后从最深节点连续查询 1000 次：
+
+| 变体 | 构建期父指针跳数 | 查询期父指针跳数 |
+|---|---:|---:|
+| 朴素（无优化） | 0 | **49,999,000** |
+| 只做按秩合并 | 49,997 | **1,000** |
+| 只做路径压缩 | 0 | **50,998** |
+| 两者都做 | 49,997 | **1,000** |
+
+读这张表要小心三件事：
+
+1. **朴素构建期是 0 跳**，因为在这个构造里每次 union 的两个端点恰好都是根，`find` 一步到位。最坏情况的代价被推迟到查询阶段——这正是"均摊"二字的含义：代价没有消失，只是换了地方。
+2. **只做路径压缩**把 4999 万压到 5.1 万：第一次查询走完 49999 步，之后每次 1 步（`49999 + 999 ≈ 50998`）。压缩的收益是**一次性的**，但足以把重复查询变成常数。
+3. **只做按秩合并**把查询压到 1000 跳（每次约 1 步），代价是构建期多花约 5 万跳（要比较 rank）。两者都做时，查询无法再改进——因为这个构造下 rank 已经把树压到很浅，压缩没有额外空间。
+
+> **English:** The naive build costs nothing because this construction happens to hit roots directly; the bill arrives at query time — 49,999,000 hops. Compression pays once and then charges one hop. Rank pays during the build so queries stay shallow. Neither alone is "the" optimization; they attack different phases.
+
+## 实测：教科书图与不连通图 / Measured: the textbook graph and a forest
+
+021 用的 9 顶点经典图，MST 权重应为 37：
 
 ```text
 [unionfind] components after unions: 3 (expect 3)
-[kruskal] MST edges=[(6,7,1), (2,8,2), (5,6,2), (0,1,4), (2,5,4), (2,3,7), (0,7,8), (3,4,9)]
+[kruskal] MST edges=[(6, 7, 1), (2, 8, 2), (5, 6, 2), (0, 1, 4), (2, 5, 4), (2, 3, 7), (0, 7, 8), (3, 4, 9)]
 [kruskal] total weight=37 (classic answer: 37)
-[kruskal] disconnected graph: edges=[(0,1,1), (2,3,2)] weight=3
---- PASS: test_kruskal
+[kruskal] disconnected graph: edges=[(0, 1, 1), (2, 3, 2)] weight=3
 ```
+
+三行输出分别验证了三件事：
+
+- **第一行**：并查集本身的正确性（union 之后连通分量数为 3），与图算法解耦。
+- **第二行**：8 条边、权重和 37，与教科书答案逐位一致。这是端到端的正确性证据。
+- **第三行**：4 个顶点、2 个连通分量的图，输出 2 条边而不是强行凑 3 条。**这是最关键的一条**——很多实现为了"凑够 n−1"会去选一条不存在的边，或者在遍历完时崩溃。
+
+## Kruskal 还是 Prim / Kruskal or Prim
+
+| | Kruskal | Prim |
+|---|---|---|
+| 依赖 | 边排序 + 并查集 | 优先队列 + 邻接表 |
+| 复杂度 | `O(E log E)` | `O(E + V log V)`（二叉堆） |
+| 适合 | 稀疏图、边已排序、需要森林 | 稠密图、邻接表已就绪 |
+| 便于并行 | 是（边独立判断） | 否（依赖当前树） |
+| 输出森林 | 天然支持 | 需要外层循环 |
+
+两者的正确性来自同一个切割性质，区别只在**如何选择下一条边**：Kruskal 全局按权重挑，Prim 从一个点向外长。
+
+一个实践判断：**如果图是稀疏的（`E ≈ V`），`E log E` 和 `E + V log V` 差别不大；如果图是稠密的（`E ≈ V²`），Kruskal 的 `log E` 项会明显吃亏**，Prim 更合适。
 
 ## Fallacies and Pitfalls (常见误解)
 
 ::: {.callout-warning}
-## Fallacy：MST 边数必须 n-1
-只有连通图才如此。不连通图得到生成森林，边数 = n - 连通分量数。
+## Fallacy 1：MST 的边数必须是 n−1
+
+只对连通图成立。不连通图得到的是最小生成**森林**，边数是 `n − 连通分量数`。21 的第三行输出就是这种情况：4 个顶点、2 个分量，2 条边。
+
+> **English:** |V|−1 only for connected graphs; otherwise it is a forest with |V| − components edges.
+:::
+
+::: {.callout-warning}
+## Fallacy 2：MST 唯一
+
+权重互不相同时 MST 唯一；一旦有等权边，最小生成树可能有多个。所以"和标准答案的边集完全一致"不是正确的判据，**权重和一致 + 边数正确 + 无环连通**才是。
+
+> **English:** Ties make the MST non-unique; compare total weight and structure, never the edge set.
+:::
+
+::: {.callout-warning}
+## Pitfall：用 DFS 判断成环
+
+每次加入边后跑一遍 DFS 检查连通性，复杂度变成 `O(E·V)`。并查集存在的意义就是把这一步压到近常数。写了 DFS 版本还能通过小数据测试，是因为数据太小暴露不出问题。
+
+> **English:** A DFS cycle check is O(E·V); it passes small tests and dies on real graphs.
+:::
+
+::: {.callout-warning}
+## Pitfall：忘记路径压缩后的父指针不指向根
+
+路径压缩只保证**根**稳定，不保证中间节点直接指向根（压缩只覆盖被访问过的路径）。任何依赖"`parent[x]` 就是根"的代码都必须调用 `find(x)`，不能直接读数组。
+
+> **English:** After compression only visited paths are flattened; always ask find().
+:::
+
+::: {.callout-warning}
+## Pitfall：排序时忽略权重相等的情况
+
+等权边的处理顺序会影响输出哪一棵 MST。测试要比较总权重与结构性质，而不是逐边比对——否则会在等权图上得到"偶尔通过"的测试。
+
+> **English:** Equal weights make the edge order observable; assert on weight and structure instead.
 :::
 
 ## Self-Check (自测题)
 
-1. 并查集为什么需要按秩合并？
-2. 不连通图的 Kruskal 结果是什么？
+1. 为什么切割性质能证明 Kruskal 的正确性？它保证了哪一步的选择是安全的？
+2. 环性质说的是"最重的边不属于某个 MST"，为什么是"某个"而不是"所有"？
+3. 上表里朴素并查集的构建期是 0 跳，为什么？这说明"最坏情况"的什么性质？
+4. 不连通图上，Kruskal 应该输出多少条边？
+5. 什么情况下应该选 Prim 而不是 Kruskal？
 
 <details><summary>答案</summary>
-1. 避免树退化成链，保证近常数均摊复杂度。
-2. 最小生成森林，边数为 n 减连通分量数。
+
+1. Kruskal 每次选的边 `e` 连接两个不同连通分量，把当前分量集合看作一个切割，`e` 是此刻跨越该切割的最小边（因为边是按权重升序处理的），切割性质保证存在包含 `e` 的 MST。逐次归纳即得整体正确。
+2. 因为等权时可能有多棵 MST。最重的边被排除在**至少一棵** MST 之外，但不是每一棵——换一条等重的边仍可构成 MST。
+3. 因为该构造中每次 `union(i+1, i)` 的两个端点恰好都是根，`find` 无需跳转。这说明最坏情况取决于**操作序列**，而不是数据结构本身；均摊分析必须把整个序列作为整体来算。
+4. `n − 连通分量数`。
+5. 稠密图（`E` 接近 `V²`）时，Kruskal 的 `O(E log E)` 中 `log E` 项显著；Prim 的 `O(E + V log V)` 更优。另外邻接表已就绪、只需从一个源点生长时，Prim 的实现也更短。
+
 </details>
 
 ## Summary (本章小结)
 
-并查集是图算法的基石；切割性质证明 Kruskal 的正确性；边界情况必须显式测试。
+贪心的正确性来自交换论证：任取一个不含贪心选择的最优解，把它换成含该选择的解，代价不变差。切割性质与环性质是这一论证在图上的两个具体形态。Kruskal 的骨架只有"排序 + 并查集判断成环"，复杂度 `O(E log E)`。并查集的两种优化针对不同阶段：路径压缩降低重复查询的代价，按秩合并降低树的深度；实测在最坏链上，naive 的 4999 万跳与优化后的 1000 跳之间差了四个数量级。不连通图输出森林，边数是 `n − 分量数`。
+
+> **English:** Greedy correctness is an exchange argument; cut and cycle properties are its two graph forms. Kruskal is sorting plus cycle checks. The two union-find optimizations fix different phases, and the measured gap is four orders of magnitude. A disconnected graph yields a forest.

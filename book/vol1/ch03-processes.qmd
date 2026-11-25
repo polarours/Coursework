@@ -5,9 +5,9 @@ title: "Processes and the Shell <span class='zh-inline'>(进程接口与 Shell)<
 ::: {.callout-note}
 ## Purpose (本章目标)
 
-理解 Shell 作为进程创建接口的角色；掌握管道、重定向、引号与变量展开的解析规则；认识到词法层面的歧义如何处理。
+把 shell 拆成两半看清楚：一半是文本到系统调用的翻译，一半是内核提供的进程原语。理解 `fork` 为什么返回两次、`exec` 为什么"成功时不返回"、`dup2` 的顺序为什么决定成败、管道为什么会因为一个没关的描述符而挂住；再回头看解析为什么也不简单。
 
-> **English:** Understand the shell as a process-creation interface; master parsing rules for pipes, redirection, quoting, and variable expansion.
+> **English:** Split the shell into two halves: text-to-syscall translation, and the process primitives the kernel provides. Why fork returns twice, why a successful exec never returns, why dup2 ordering decides correctness, and why an unclosed pipe descriptor hangs the reader.
 :::
 
 ::: {.callout-tip}
@@ -16,25 +16,149 @@ title: "Processes and the Shell <span class='zh-inline'>(进程接口与 Shell)<
 [016 MIT](../universities/mit.qmd)
 :::
 
-## The shell in the system hierarchy (Shell 在系统层次中的位置)
+## Shell 是一个程序，不是系统的一部分 / The shell is a program
 
-MIT 6.858 的系统安全实验让学生从最底层理解进程。Shell 是用户与内核之间的解释器：它解析一行文本，把它变成一组 `fork`/`exec`/`pipe`/`dup2` 系统调用。本项目聚焦前半部分——解析。真正的执行留给练习。
+内核只提供约二十个进程相关的系统调用；shell 是**普通用户态程序**，它把这些调用组合成"命令"这个抽象。`ls -l | grep log > out` 这一行之所以能工作，是因为 shell 自己做了三件事：分词、创建进程、安排描述符。
 
-> **English:** A shell is an interpreter between user and kernel: it turns a line of text into fork/exec/pipe/dup2 calls. Our case study focuses on the parsing half.
+这也解释了一个常见困惑：为什么换个 shell（bash → zsh → fish）系统就"感觉"变了？因为语法、补全、展开规则都在用户态程序里，内核完全不知道 `|` 是什么。
 
-## Quoting and tokenization (引号与分词)
+本章的 016 项目实现的是**解析这一半**——把命令行变成结构化的 `Command` 对象。执行那一半由内核原语负责，下面用四个实验把它讲透。
 
-`shlex.split` 正确处理 `'hello world'` 为单个 token，而朴素的 `str.split()` 会拆成两个。这个差异看起来微小，但它体现了词法分析的核心原则：分隔符在引号内失效。
+> **English:** The kernel offers a couple dozen process calls. The shell is an ordinary user program that composes them into "commands". Change the shell and the grammar changes; the kernel never learns what a pipe is.
 
-> **English:** shlex.split keeps 'hello world' as one token; naive splitting breaks it. This illustrates the core lexical principle: delimiters lose meaning inside quotes.
+## fork 返回两次 / fork returns twice
 
-## Variable expansion (变量展开)
+```c
+pid_t pid = fork();
+if (pid == 0) { /* 子进程 */ }
+else if (pid > 0) { /* 父进程，pid 是子进程号 */ }
+else { /* 失败，errno 有原因 */ }
+```
 
-`$HOME` 在解析阶段展开为环境变量值。展开时机很重要：它在分词之后、执行之前进行，否则含空格的变量值会被错误拆分。
+一次调用，两个返回值，两个进程从同一行继续。这不是语法糖，而是内核复制了调用者的地址空间、文件描述符表与寄存器状态，只把返回值改成不同的值。
 
-> **English:** Variable expansion happens after tokenization but before execution — expanding earlier would incorrectly split values containing spaces.
+实测（本机真实输出）：
 
-### Real measured output (真实运行输出)
+```text
+[fork] parent sees pid=24396, getpid=24395
+[fork] child  sees pid=0, getpid=24396, getppid=24395
+[fork] parent reaped status: exited=1 code=7
+```
+
+三个数字的关系值得记住：父进程的 `getpid` 是 24395，子进程的 `getpid` 是 24396，正好等于父进程拿到的返回值；子进程的 `getppid` 是 24395。**子进程的 PID 是父进程唯一能用来称呼它的东西**——内核里没有"名字"，只有编号。
+
+注意输出的顺序：父进程的行先打印，子进程的行后打印。这**不是保证**，只是调度器的选择。任何依赖"父先子后"的代码都是错的。
+
+## exec 不创建进程 / exec does not create a process
+
+`exec` 系列做的事是：**用一个新的可执行文件替换当前进程的地址空间**，包括代码段、数据段、堆栈，以及参数与环境变量。进程本身（PID、父进程、打开的文件描述符、信号处理设置）保持不变。
+
+实测：
+
+```text
+child-shell-pid=25094
+parent-fork-returned=25094
+exit-code=0
+```
+
+父进程 fork 得到的子进程号是 25094，子进程 exec 成 `/bin/sh` 之后，那个 shell 打印的 `$$` 仍然是 25094。**PID 没变，程序换了。**
+
+由此得到两条实践规则：
+
+1. **成功的 `exec` 不返回。** 它没有"返回值"这个概念——原程序的代码已经不在了。如果 `exec` 返回了，说明它失败了，必须立刻处理（常见写法是 `_exit(127)`，因为此时进程已经处于半死状态）。
+2. **`fork` + `exec` 是两件事。** 想要"运行一个程序"必须先复制一个自己，再让复制品换掉自己。这也解释了 shell 为什么能连续执行多条命令：父进程（shell 本体）留下来继续读下一行。
+
+> **English:** exec replaces the image, not the process. A successful exec has no return value because there is no caller left. That is why "run a program" always costs a fork first — and why the shell survives its children.
+
+## wait 与退出状态 / wait and the exit status
+
+子进程结束后不会立刻消失，它变成一个**僵尸**（zombie）：除了退出状态和资源统计，其他资源都释放了。父进程通过 `wait`/`waitpid` 取走状态，内核才彻底回收。
+
+上面实测里父进程取到的 `code=7`，就是子进程 `_exit(7)` 传出来的值——**只有低 8 位有效**，所以退出码的取值范围是 0–255。这也是为什么 `exit(-1)` 在 shell 里显示为 255。
+
+状态不是单一整数，而是一个打包结构，必须用宏解读：
+
+| 宏 | 含义 |
+|---|---|
+| `WIFEXITED(st)` | 是否正常退出 |
+| `WEXITSTATUS(st)` | 正常退出时的退出码 |
+| `WIFSIGNALED(st)` | 是否被信号杀死 |
+| `WTERMSIG(st)` | 哪个信号 |
+
+直接读 `st` 是常见错误：被信号杀死的进程，其 `st` 的低位并不是退出码。
+
+## 重定向的本质是复制描述符 / Redirection copies descriptors
+
+把 `> file` 实现成"打开文件，然后让标准输出指向它"，靠的是 `dup2(oldfd, newfd)`：关闭 `newfd`，再把 `oldfd` 复制到 `newfd` 的位置。
+
+顺序决定结果。下面两段代码看起来只差一行，行为完全不同：
+
+```c
+/* 错误：先把 stdout 换成文件，再想打印进度 */
+dup2(fd, STDOUT_FILENO);
+printf("正在处理...\n");        /* 进了文件，用户永远看不到 */
+```
+
+```c
+/* 正确：留一份原始 stdout 的副本 */
+int saved = dup(STDOUT_FILENO);
+dup2(fd, STDOUT_FILENO);
+printf("payload\n");            /* 进文件 */
+dup2(saved, STDOUT_FILENO);     /* 恢复 */
+printf("进度可见\n");            /* 回终端 */
+```
+
+实测输出：
+
+```text
+[dup2] child still reached the terminal after redirection
+[dup2] file line 1: child: this line goes to the FILE, not the terminal
+[dup2] file line 2: child: payload in file
+```
+
+文件里两行、终端一行，与代码意图完全对应。注意第一行（错误顺序）产生的那句话本该是诊断信息，结果写进了文件——**这类 bug 的特征是"没有报错，只是信息去了别处"**。
+
+还有一个容易忽略的点：`dup2` 复制的是描述符，**不是**文件偏移量。两个描述符共享同一个打开文件表项，因此共享偏移。重定向后再 `lseek`，读写位置对两者同时生效。
+
+## 管道：三个描述符的舞蹈 / Pipes: the descriptor dance
+
+`pipe(fds)` 返回两个描述符：`fds[0]` 读端、`fds[1]` 写端。管道是**单向**的，要实现 `a | b` 需要：
+
+1. `pipe` 创建一对描述符
+2. `fork` 出两个子进程
+3. 第一个子进程：`dup2(fds[1], STDOUT)`，然后 **close 掉 fds[0] 和 fds[1]**
+4. 第二个子进程：`dup2(fds[0], STDIN)`，同样 close 掉两个原描述符
+5. 父进程：close 掉两端，`wait` 两个孩子
+
+第 3、4 步的 close 不是清理，而是**语义必需**。管道读端只有在**所有**写端都关闭之后才会读到 EOF。如果某个进程还留着一份写端（哪怕是它不用的那份），读端就永远等不到 EOF。
+
+实测（写端行为对读端阻塞时间的影响）：
+
+```text
+[pipe] writer closes: read 2 bytes, blocked 0 ms
+[pipe] writer leaks:  read 2 bytes, blocked 300 ms
+[pipe] leaking the write end costs 300 ms more
+```
+
+两行读到的字节数相同（数据早就到了），差别只在**读到 EOF 的时刻**：写端关闭后立刻 EOF；写端泄漏时会一直等到写进程自己退出（实验里故意让它持有 300 ms）。
+
+这就是"`cat file | head -1` 有时会卡住"这类现象的来源。数据早就传完了，卡的是 EOF。
+
+> **English:** A pipe reader sees EOF only when every write end is closed. The bytes arrive either way; what the leaked descriptor blocks is the end-of-file, not the data.
+
+## 解析为什么也不简单 / Why parsing is not the easy half
+
+016 的实现只有几十行 Python，但它必须解决四个问题，每一个都能单独成为 bug 来源：
+
+**引号内的分隔符失效。** `echo 'hello world'` 是一个参数，不是两个。`str.split()` 会拆错，`shlex.split` 才对。
+
+**引号本身要被剥掉。** 分词之后参数里不应残留 `'`。
+
+**变量展开的时机。** `$HOME` 必须在分词**之后**展开：先展开再分词，含空格的变量值会被拆成多个参数（这正是 shell 里"忘了加引号"的经典事故）。
+
+**管道与重定向要先于分词被识别出来。** 它们既是语法符号又是普通字符——只有出现在引号外才是语法符号。
+
+016 的实测输出：
 
 ```text
 [shell] [Command(['cat', 'input.txt'], ...), Command(['grep', 'hello'], ..., out=out.txt)]
@@ -44,23 +168,62 @@ MIT 6.858 的系统安全实验让学生从最底层理解进程。Shell 是用�
 --- PASS: test_shell
 ```
 
+第一行是重定向 + 管道的组合，第二行的 `'hello world'` 保持为单个参数，第三行说明 `$HOME` 已被展开，第四行是三级管道。
+
 ## Fallacies and Pitfalls (常见误解)
 
 ::: {.callout-warning}
-## Fallacy：管道符可以按字符分割
-引号内的 `|` 不是管道符。教学版简化处理；工业级 shell 必须在词法层区分。
+## Fallacy 1：`fork` 之后父子进程共享内存
+
+`fork` 之后两者是**独立地址空间**（现代内核用写时复制延迟真正的复制）。子进程改一个变量，父进程看不到。共享的是文件描述符表指向的打开文件——所以父子往同一个文件写会互相覆盖偏移，但不共享变量。
+
+> **English:** Copy-on-write shares pages until someone writes; variables are never shared, open files are.
+:::
+
+::: {.callout-warning}
+## Fallacy 2：`exec` 之后原来的代码还会继续跑
+
+成功的 `exec` 不返回。写完 `exec(...)` 之后再写 `printf("done")` 是错的——那行只在失败时执行，而失败时你最该做的是报错并退出。
+
+> **English:** Code after a successful exec is unreachable; code after a failed exec is your error path.
+:::
+
+::: {.callout-warning}
+## Pitfall：忘记 close 管道另一端
+
+只 close 自己不用的一端还不够——`dup2` 之后**原始的那两个描述符也要 close**。留着就是泄漏的写端，读端永远等不到 EOF。症状是"程序不报错，就是卡住"。
+
+> **English:** dup2 duplicates; it does not consume. Close the originals or the reader waits forever.
+:::
+
+::: {.callout-warning}
+## Pitfall：把 `wait` 的返回值当退出码直接读
+
+`status` 是打包结构。必须 `WIFEXITED` 判断是否正常退出，再用 `WEXITSTATUS` 取码。被信号杀死的进程，直接读低位会得到无意义的值。
+
+> **English:** Decode status with the macros; raw bits are not an exit code.
 :::
 
 ## Self-Check (自测题)
 
-1. 为什么 `shlex.split` 优于 `str.split`？
-2. 变量展开应在分词之前还是之后？
+1. 为什么 `fork` 要返回两次？如果只返回子进程号，shell 该怎么区分父与子？
+2. `exec` 成功时为什么不返回？如果它"返回了"，说明什么？
+3. 实现 `ls > out.txt` 时，`dup2(fd, 1)` 应该放在 `exec` 之前还是之后？为什么？
+4. `a | b` 中，如果 `a` 的进程忘记关闭管道的读端，会发生什么？
+5. 一个进程 `exit(300)`，shell 里 `echo $?` 显示什么？
 
 <details><summary>答案</summary>
-1. 它尊重引号与转义，避免把引号内空格当分隔符。
-2. 之后——否则含空格的变量值会被拆成多个参数。
+
+1. 父子需要执行不同代码，而它们从同一条指令继续。返回值是最廉价的区分手段：0 表示"我是复制品"，正数表示"我是原件，这是复制品的编号"。
+2. 因为原程序的代码段已被替换，没有"下一条指令"可返回。它返回只可能是失败（找不到文件、没有执行权限等），此时必须处理错误。
+3. `exec` **之前**。`exec` 之后原程序的代码已经不存在，任何后续调用都不会执行；而且重定向必须作用于即将运行的新程序。
+4. `a` 自己仍持有写端的一份副本，但读端在 `a` 手里没有意义。真正的问题是**任何进程**持有写端未关：`b` 会一直等 EOF，直到 `a` 退出（并关闭它的写端）。若 `a` 是长驻进程，`b` 就永久挂起。
+5. 显示 `44`。退出码只有低 8 位有效：300 = 256 + 44。
+
 </details>
 
 ## Summary (本章小结)
 
-Shell 是解析与进程创建的结合；词法规则决定语义正确性；真实系统需在词法层处理引号内的特殊字符。
+shell 的两半都值得单独理解。进程这一半的核心是三条语义：`fork` 复制并返回两次、`exec` 替换映像且成功不返回、`dup2` 复制描述符因此顺序决定成败。管道把这三条串起来，而它的正确性依赖"关闭所有不用的端"这个容易被当成清理的步骤。解析这一半的核心是作用域：引号让分隔符失效，变量展开必须在分词之后。
+
+> **English:** fork copies and returns twice; exec replaces and never returns; dup2 copies, so order is semantics. Pipes compose all three, and their correctness hinges on closing what you do not use. Parsing is about scope: quotes disable delimiters, expansion comes after tokenization.

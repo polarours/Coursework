@@ -5,9 +5,9 @@ title: "Heuristic Search <span class='zh-inline'>(启发式搜索)</span>"
 ::: {.callout-note}
 ## Purpose (本章目标)
 
-理解 A* 搜索的可采纳性条件；用曼哈顿距离分析 8-Puzzle；通过真实展开节点数理解启发式如何剪枝。
+把 A* 的最优性讲成一个可以检验的条件，而不是一句口号：可采纳为什么不估值就够、一致性为什么比可采纳更强、曼哈顿距离为什么满足它们；再用同一组局面实测"启发式到底省了多少"，看 48390 与 283 的差别从哪里来。
 
-> **English:** Understand A* admissibility; analyze 8-puzzle with Manhattan distance; see heuristics prune the search from measured node counts.
+> **English:** Turn A* optimality into a checkable condition: why never overestimating is enough, why consistency is stronger, why Manhattan satisfies both — then measure what a heuristic actually saves on identical boards.
 :::
 
 ::: {.callout-tip}
@@ -16,51 +16,198 @@ title: "Heuristic Search <span class='zh-inline'>(启发式搜索)</span>"
 [014 Princeton](../universities/princeton.qmd) · [015 Stanford](../universities/stanford.qmd)
 :::
 
-## Admissibility (可采纳性)
+## 搜索问题的三件套 / The three ingredients
 
-A* 保证最优解的前提是启发式不高估剩余代价。曼哈顿距离对 8-Puzzle 是可采纳的：每步只能把一个方块移动一格，而它到目标位置的距离最多减少 1。
+一个搜索问题只需要三样东西：
 
-> **English:** A* guarantees optimality when the heuristic never overestimates. Manhattan distance is admissible because a move reduces a tile's distance by at most one.
+| 要素 | 8-Puzzle 中的样子 |
+|---|---|
+| **状态**（state） | 9 个格子的排列，`(1,2,3,4,5,6,7,8,0)` 表示空格在最后 |
+| **后继**（successors） | 空格与上下左右交换；角上 2 个、边上 3 个、中心 4 个 |
+| **代价**（cost） | 每次移动代价 1 |
 
-## Backtracking and Tries (回溯与 Trie)
+Boggle 是同一个抽象的另一套参数：状态是"当前路径"（格子序列），后继是 8 邻域中未访问过的格子，代价同样是 1，但目标是"路径拼出的字符串在词典里"——**目标不是一个特定状态，而是一族状态**。
 
-Boggle 展示了另一种搜索：在字母网格中穷举路径。Trie 的前缀剪枝让无效前缀在常数时间内被识别，把最坏 O(16·8^L) 的搜索压缩到实际路径数量级。
+这个区别决定了两种搜索的形态：8-Puzzle 找**一条到目标的路径**，Boggle 要**枚举所有命中词典的路径**。前者用 A*，后者用回溯 + 剪枝。
 
-> **English:** Boggle exhausts paths in a letter grid. Trie prefix pruning rejects invalid prefixes in constant time, collapsing the worst case dramatically.
+## 可采纳性：一个不等式，不是一个形容词 / Admissibility is an inequality
 
-## Measured comparison (实测对比)
-
-A* 解一个 h=4 的打乱局面只展开 5 个节点；Boggle 在 2×2 网格中找到全部 6 个可达词，3×3 中对角链 aei 被正确识别。这些数字说明剪枝的有效性。
-
-> **English:** A* expanded only 5 nodes on an h=4 scramble; Boggle found all 6 reachable words in 2×2 and the diagonal chain aei in 3×3.
-
-### Real measured output (真实运行输出)
+设 `h(n)` 是对"从 n 到目标的最小剩余代价"的估计。可采纳（admissible）的定义只有一句：
 
 ```text
-[puzzle] scrambled start h=4: moves=4, expanded=5
-[puzzle] (1,2,3,4,5,6,8,7,0) solvable=False solve -> None
+对所有状态 n：  h(n) ≤ h*(n)
+```
+
+其中 `h*(n)` 是真实的最小剩余代价。**不高估**，仅此而已。
+
+A* 每次从优先队列取出 `f = g + h` 最小的节点。为什么这个简单规则能保证最优？关键在于：
+
+1. 若 `h` 可采纳，则对任意在最优路径上的节点 `n`，有 `f(n) = g(n) + h(n) ≤ g(n) + h*(n) = 最优总代价 C*`。
+2. 目标节点 `t` 出队时，`f(t) = g(t)`。如果 `g(t) > C*`，那么最优路径上必有一个尚未展开的节点 `n'` 满足 `f(n') ≤ C* < g(t)`，它应该比 `t` 先出队——矛盾。
+
+所以**目标第一次出队时的 g 就是最优代价**。整个论证只用到"不高估"这一个性质。
+
+> **English:** If h never overestimates, every node on an optimal path has f ≤ C*, so the goal cannot be popped with a worse cost than the optimum. Optimality follows from one inequality.
+
+## 一致性：比可采纳更强的条件 / Consistency is stronger
+
+一致性（consistency，也叫单调性）要求：
+
+```text
+h(n) ≤ cost(n, n') + h(n')
+```
+
+即"从 n 出发的估计，不能超过走一步再估计"。这是三角不等式在启发式上的形式。
+
+一致性的两个后果：
+
+- **可采纳是它的推论**：沿任意路径累加不等式，得到 `h(n) ≤ 实际路径代价`，取最小即 `h(n) ≤ h*(n)`。所以一致 ⇒ 可采纳，反之不成立。
+- **图搜索不需要重新打开节点**：`f` 沿任何路径单调不减，一个节点一旦以最小的 `g` 被展开，以后不会出现更好的路径。
+
+在后一种情况下，A* 的实现可以简化成"每个状态只展开一次"，不需要 `best[state]` 的比较逻辑。本书的 8-Puzzle 实现仍然保留了那层检查——它不影响正确性，但能防住不一致启发式带来的重复展开。
+
+> **English:** Consistency implies admissibility, not the reverse. Its payoff is that f never decreases along a path, so a graph search can close nodes permanently.
+
+## 曼哈顿距离为什么可采纳 / Why Manhattan is admissible
+
+对每个非空方块，计算它当前位置到目标位置的曼哈顿距离，求和：
+
+```text
+h(n) = Σ 每个方块 |当前行 − 目标行| + |当前列 − 目标列|
+```
+
+论证：一次移动只能把一个方块移动一格，所以**所有方块的总距离之和每次最多减少 1**。要从当前状态到达目标，总距离必须降到 0，因此至少需要 `h(n)` 步。于是 `h(n) ≤ h*(n)`。
+
+注意这个论证依赖"一次只动一个方块"——这正是 8-Puzzle 的规则。换一个允许同时移动多个方块的变体，同一个 `h` 就不再可采纳。
+
+## 实测：同一个局面，三种启发式 / Measured: one board, three heuristics
+
+把三个启发式接到同一个 A* 上，解四个难度递增的局面。**所有数字由本书附带脚本实际运行得出**，同一局面下三种启发式给出的步数完全相同——这本身就是最优性的证据。
+
+| 局面 | 最优步数 | h=0（Dijkstra） | 曼哈顿 | 曼哈顿 + 线性冲突 |
+|---|---:|---:|---:|---:|
+| 距目标 1 步 | 1 | 4 | 2 | 2 |
+| 距目标 2 步 | 2 | 6 | 3 | 3 |
+| 中等打乱 | 5 | 41 | 6 | 6 |
+| 较难打乱 | 20 | **48390** | **283** | **166** |
+
+读这张表要注意三件事：
+
+1. **步数列完全相同**，说明启发式只影响效率，不影响答案。如果某个启发式让步数变少，那它一定不可采纳（高估了，把最优路径剪掉了）。
+2. **h=0 就是 Dijkstra**：它退化成按 `g` 排序的均匀代价搜索，探索半径内的所有状态。20 步的局面展开 48390 个节点，而状态空间一共只有 9!/2 = 181440 个可解状态——它几乎扫了四分之一。
+3. **曼哈顿把 48390 压到 283**（约 171 倍），**线性冲突再压到 166**（再省 41%）。这一步的收益远小于第一步，但仍然是白拿的。
+
+> **English:** Identical solution lengths across all three heuristics are the point: a heuristic changes how much you look, never what you find. 48390 → 283 → 166 on the hard board, same 20 moves.
+
+## 线性冲突：为什么可以再加 2 / Linear conflict, and why +2
+
+曼哈顿距离忽略了一类明显的浪费：两个方块目标在同一行，但当前顺序相反。它们必然要互相绕过对方，而绕行需要额外移动。
+
+```text
+若 a、b 目标同行（或同列），且 a 在 b 左边（或上边）但目标位置相反
+则 至少多付 2 步
+```
+
+每个这样的冲突对给 `h` 加 2，仍然不高估（绕行确实至少 2 步），因此仍然可采纳。上表最后一行就是它的效果：在 20 步的局面上，多花 O(9²) 的时间算这个修正，换来 117 个节点的节省。
+
+这是一个典型的启发式工程权衡：**更强的启发式意味着每次估值更贵**。线性冲突的估值是 O(n²)，曼哈顿是 O(n)。当节点展开成本远高于估值成本时才划算——在 8-Puzzle 上显然划算，在估值本身就要跑一次模拟的场景里就未必。
+
+## 可解性：搜索之前先判定 / Decide solvability before searching
+
+8-Puzzle 的状态空间分成两个互不连通的部分：一半可解，一半不可解。对不可解的局面，A* 会穷尽整个可达分量然后返回失败——上表那种 48390 节点的搜索会白跑一遍。
+
+判定方法只有一行：**把方块按行展开（去掉空格），数逆序对的个数；偶数可解，奇数不可解。**
+
+实测：
+
+```text
+classic textbook state (2, 8, 3, 1, 6, 4, 7, 0, 5): inversions=11, solvable=False
+```
+
+逆序数 11 是奇数，**这个教科书里常见的例子其实无解**。很多教材拿它演示 A* 的搜索过程，却从不提它到不了目标——如果实现里没有可解性判定，得到的结论会是"搜索失败"，而不是"状态本身不可达"。
+
+> **English:** Half the state space is unreachable. Counting inversions costs O(n²) once and saves you from a full exhaustive search that can only fail.
+
+## Boggle：目标是一族状态 / Boggle: the goal is a set
+
+Boggle 的搜索形态完全不同。给定 n×n 的字母网格，要找出所有能由**相邻格子连成的路径**拼出的词典词（同一格不能重复使用）。
+
+朴素回溯的搜索树规模是组合级的：从 16 个起点出发，每步最多 8 个邻居，长度 L 的路径上界是 `16 × 8^(L−1)`。即使限制 L ≤ 8，也是千万量级——而其中绝大多数前缀根本不在任何单词里。
+
+Trie（前缀树）把"这个前缀是否还有希望"变成一次 O(1) 的子树查找：
+
+```text
+沿路径拼出的字符串 s：
+  trie 中 s 的节点不存在  → 这条路径及其所有延长都不可能成词，立即返回
+  trie 中 s 是词尾      → 记录一个答案，但继续搜索（更长的词可能存在）
+  否则                  → 继续扩展邻居
+```
+
+关键在第一条：**剪枝发生在"前缀不是任何词的前缀"的那一刻**，而不是等拼完整个词再去词典里查。这把一个指数级的搜索压到与实际存在的词数成正比。
+
+015 的实测输出：
+
+```text
 [boggle] 2x2 found=['ab', 'abc', 'abcd', 'ba', 'bcd', 'cd']
 [boggle] 3x3 found=['abc', 'adg', 'aeg', 'aei', 'ieg']
---- PASS: test_puzzle / test_boggle
 ```
+
+2×2 网格含对角完全连通，6 个词全部可达；3×3 中 `aei` 沿对角线成立，验证了 8 邻域而不是 4 邻域的扩展。这两个用例同时也是**邻域定义的回归测试**：把 8 邻域错写成 4 邻域，`aei` 立刻消失。
 
 ## Fallacies and Pitfalls (常见误解)
 
 ::: {.callout-warning}
-## Fallacy：经典例子一定可解
-教科书常用的 (2,8,3,1,6,4,7,0,5) 逆序数 11（奇数），实际不可解。搜索前必须做可解性判定。
+## Fallacy 1：启发式越大越好
+
+启发式必须不高估。任何"看起来更聪明"的估计，只要可能超过真实代价，就会让 A* 剪掉最优路径——步数变少不是因为更快，而是因为答错了。判断一个启发式是否可用，先证不等式，再看性能。
+
+> **English:** A bigger heuristic is only better if it is still admissible. Otherwise the shorter answer is a wrong answer.
+:::
+
+::: {.callout-warning}
+## Fallacy 2：可采纳就等于一致
+
+可采纳只保证"目标出队时最优"，一致性保证"f 沿路径单调"。前者允许某些节点被重复展开（更好的路径后来才被发现），后者不允许。写图搜索时若省略了"重新打开"逻辑，就必须确认启发式是一致的。
+
+> **English:** Admissible guarantees an optimal first pop; consistent guarantees f never decreases. Only the latter lets you close nodes for good.
+:::
+
+::: {.callout-warning}
+## Pitfall：忘记先判可解性
+
+对不可解局面，A* 不会报错，它会穷尽可达分量后返回失败。在 8-Puzzle 上这意味着几万个节点的空转。逆序数判定是 O(n²)，应该在搜索之前做。
+
+> **English:** An unsolvable board does not fail fast; it fails after exhausting half the state space.
+:::
+
+::: {.callout-warning}
+## Pitfall：Trie 剪枝写成"完整词匹配"
+
+只在 `is_word(s)` 为真时返回、否则继续，等于没有剪枝。判断必须落在"是否存在以 s 为前缀的词"上，否则无效前缀照样展开到底。
+
+> **English:** Prune on "no word starts with this prefix", not on "this is not a word".
 :::
 
 ## Self-Check (自测题)
 
-1. 为什么曼哈顿距离是可采纳的？
-2. Trie 剪枝为什么有效？
+1. 为什么曼哈顿距离是可采纳的？如果允许一次移动两个方块，它还成立吗？
+2. 上表里 20 步的局面，h=0 展开了 48390 个节点，曼哈顿只展开 283 个。两次搜索得到的路径长度相同，为什么？
+3. 举一个可采纳但不一致的启发式（提示：考虑只在一个特定状态上做手脚）。
+4. 逆序数判定为什么只对"空格在同行移动"的棋盘有效？
+5. Boggle 中，如果只按"当前字符串是否为单词"剪枝而不做前缀判断，搜索规模会怎样变化？
 
 <details><summary>答案</summary>
-1. 每步最多把一个方块到目标的距离减少 1，故不高估。
-2. 无效前缀在 O(长度) 内被识别，避免深入递归。
+
+1. 曼哈顿可采纳是因为"一次移动只让一个方块移动一格，总距离最多减少 1"。若允许一次移动两个方块，总距离一次可能减少 2，`h` 就可能高估——不再可采纳。
+2. 因为两个启发式都可采纳，而 A* 在可采纳启发式下的首个目标出队代价必为最优。启发式只改变**探索多少节点**，不改变**最优代价**。
+3. 例如：`h(n) = h_manhattan(n)`，但在某一个特定状态上减 1（使它更低）。它在任何状态都不高估，因此可采纳；但从它的某个前驱走到它时，`h` 的下降幅度超过了实际步代价，一致性被破坏。
+4. 逆序数判定依赖"每次移动只改变空格位置，方块相对顺序只在空格与方块同行交换时才变化"。如果棋盘允许空格跨行跳（或者方块可以互相穿过），这个不变量就失效。
+5. 搜索规模会退化到接近组合上界：每个路径都要拼到最大长度才判断，`16 × 8^(L−1)` 量级的节点几乎都要访问，而真正成词的路径只占极小比例。
+
 </details>
 
 ## Summary (本章小结)
 
-可采纳启发式保证 A* 最优；Trie 让回溯搜索高效；可解性判定避免搜索无解状态。
+A* 的最优性来自一个不等式：`h ≤ h*`。一致性是它的加强版，换来"节点只需展开一次"。曼哈顿距离可采纳，因为一次移动最多把总距离减少 1；线性冲突在这个基础上再加下界，仍然不高估。可解性判定应该放在搜索之前，否则不可解的局面会让搜索白跑整个可达分量。Boggle 展示了另一种搜索：目标是一族状态，靠 Trie 把"前缀是否还有希望"变成 O(1) 判断，从而把组合爆炸压到实际词表的规模。
+
+> **English:** Optimality is one inequality; consistency buys single expansion; Manhattan is admissible because one move shifts total distance by at most one. Decide solvability first, and prune Boggle on prefixes rather than on complete words.
