@@ -93,6 +93,8 @@ db1 = dS1.sum(axis=0)    # H
 
 > **English:** Numerical gradients know nothing about backprop, so agreement proves the analytic gradient matches the loss surface. Use central differences, h around 1e-5, and a relative tolerance.
 
+![前向四步、反向四步，每步都带着形状](../figures/backprop.svg){#fig-backprop width=100%}
+
 ## 训练曲线：初始 loss 会告诉你初始化对不对 / The first loss value is a diagnostic
 
 真实训练记录（180 个样本、3 个类别）：

@@ -98,6 +98,8 @@ Raft 的解法是**给每个节点的选举超时加随机抖动**（典型 150�
 
 > **English:** A majority copy is not enough: Figure 8 shows an old-term entry that a majority holds and a later leader can still overwrite. Commit only current-term entries, and let the prefix follow.
 
+![任期、leader 与一条会被覆盖的日志](../figures/raft-terms.svg){#fig-raft-terms width=100%}
+
 ## 分区实验：把安全性跑出来 / Partition, measured
 
 一个 5 节点集群，把 leader 隔离到只剩 2 个节点的少数派：

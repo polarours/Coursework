@@ -67,6 +67,7 @@ book:
       chapters:
         - backmatter/summary.qmd
         - backmatter/how-to-use.qmd
+        - backmatter/glossary.qmd
 
 bibliography: references.bib
 

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 250" width="720" height="250" role="img">
+  <style>
+    text { font-family: Helvetica, Arial, sans-serif; fill: #1B2A38; }
+    .lbl { font-size: 12px; }
+    .sm  { font-size: 10.5px; fill: #5B6B73; }
+    .ttl { font-size: 13px; font-weight: 600; }
+    .cell { font-size: 12.5px; font-weight: 600; }
+    .mono { font-family: "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <rect width="720" height="250" fill="#FFFFFF"/>
+  <text x="34" y="34" class="ttl">前向四步，反向四步</text>
+  <text x="34" y="52" class="sm">每个盒子的形状必须能写出来；转置错在反向才会暴露</text>
+  <rect x="34" y="98.0" width="96" height="40" rx="4" fill="#D6F2ED" stroke="#159F8C" stroke-width="1.2"/>
+  <text x="82.0" y="116" class="cell" text-anchor="middle">X</text>
+  <text x="82.0" y="131" class="sm" text-anchor="middle">N×D</text>
+  <line x1="132" y1="118" x2="144" y2="118" stroke="#159F8C" stroke-width="1.6"/>
+  <path d="M 140 114 L 146 118 L 140 122" fill="none" stroke="#159F8C" stroke-width="1.6"/>
+  <rect x="148" y="98.0" width="96" height="40" rx="4" fill="#FFFFFF" stroke="#C9D4DC" stroke-width="1.2"/>
+  <text x="196.0" y="116" class="cell" text-anchor="middle">S1 = X·W1+b1</text>
+  <text x="196.0" y="131" class="sm" text-anchor="middle">N×H</text>
+  <line x1="246" y1="118" x2="258" y2="118" stroke="#159F8C" stroke-width="1.6"/>
+  <path d="M 254 114 L 260 118 L 254 122" fill="none" stroke="#159F8C" stroke-width="1.6"/>
+  <rect x="262" y="98.0" width="96" height="40" rx="4" fill="#FFFFFF" stroke="#C9D4DC" stroke-width="1.2"/>
+  <text x="310.0" y="116" class="cell" text-anchor="middle">A1 = ReLU(S1)</text>
+  <text x="310.0" y="131" class="sm" text-anchor="middle">N×H</text>
+  <line x1="360" y1="118" x2="372" y2="118" stroke="#159F8C" stroke-width="1.6"/>
+  <path d="M 368 114 L 374 118 L 368 122" fill="none" stroke="#159F8C" stroke-width="1.6"/>
+  <rect x="376" y="98.0" width="96" height="40" rx="4" fill="#FFFFFF" stroke="#C9D4DC" stroke-width="1.2"/>
+  <text x="424.0" y="116" class="cell" text-anchor="middle">S2 = A1·W2+b2</text>
+  <text x="424.0" y="131" class="sm" text-anchor="middle">N×C</text>
+  <line x1="474" y1="118" x2="486" y2="118" stroke="#159F8C" stroke-width="1.6"/>
+  <path d="M 482 114 L 488 118 L 482 122" fill="none" stroke="#159F8C" stroke-width="1.6"/>
+  <rect x="490" y="98.0" width="96" height="40" rx="4" fill="#FFFFFF" stroke="#C9D4DC" stroke-width="1.2"/>
+  <text x="538.0" y="116" class="cell" text-anchor="middle">P = softmax</text>
+  <text x="538.0" y="131" class="sm" text-anchor="middle">N×C</text>
+  <line x1="588" y1="118" x2="600" y2="118" stroke="#159F8C" stroke-width="1.6"/>
+  <path d="M 596 114 L 602 118 L 596 122" fill="none" stroke="#159F8C" stroke-width="1.6"/>
+  <rect x="604" y="98.0" width="96" height="40" rx="4" fill="#D6F2ED" stroke="#159F8C" stroke-width="1.2"/>
+  <text x="652.0" y="116" class="cell" text-anchor="middle">L</text>
+  <text x="652.0" y="131" class="sm" text-anchor="middle">标量</text>
+  <text x="34" y="158" class="sm">前向：左 → 右　　反向：右 → 左，每步乘上局部导数</text>
+  <line x1="138" y1="192" x2="690" y2="192" stroke="#C98A22" stroke-width="1.4" stroke-dasharray="5 3"/>
+  <path d="M 132 188 L 124 192 L 132 196" fill="none" stroke="#C98A22" stroke-width="1.4"/>
+  <text x="118" y="184" class="sm" text-anchor="end">dS = P − y 从这里开始</text>
+  <text x="34" y="234" class="sm">softmax 与交叉熵复合后梯度化简为 p − y，因此反向的第一个张量形状与 P 相同</text>
+</svg>

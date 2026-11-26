@@ -128,7 +128,7 @@ def figure_fork_exec():
         f'  <line x1="{x_fork}" y1="{y_parent - 26}" x2="{x_fork}" y2="{y_child + 26}" '
         f'stroke="{LINE}" stroke-width="1" stroke-dasharray="4 3"/>'
     )
-    p.append(f'  <text x="{x_fork}" y="{y_parent - 32}" class="sm" text-anchor="middle">fork()</text>')
+    p.append(f'  <text x="{x_fork}" y="{y_parent - 20}" class="sm" text-anchor="middle">fork()</text>')
 
     # parent return value
     p.append(

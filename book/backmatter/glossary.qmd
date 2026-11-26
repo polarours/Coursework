@@ -1,0 +1,157 @@
+---
+title: "Glossary <span class='zh-inline'>(术语表)</span>"
+---
+
+> 按主题分组，每组内的条目按首次出现的章节顺序排列。每条给出中英对照、一句话定义，以及它展开讨论的章节。
+>
+> Grouped by theme; within a group, entries follow the order in which they first appear. Each entry gives the bilingual term, a one-line definition, and the chapter where it is developed.
+
+## Systems and memory (系统与内存)
+
+**堆与栈 / heap and stack** — 栈由调用约定自动管理、随函数返回回收；堆由 `malloc`/`free` 显式管理，生命周期与作用域无关。见&#160;[第 3 章](../vol1/ch01-foundations.qmd)。
+
+**对齐 / alignment** — 要求对象的地址是其大小的整数倍。未对齐访问在某些架构上直接触发硬件异常，不只是变慢。见&#160;[第 3 章](../vol1/ch01-foundations.qmd)。
+
+**块头 / block header** — 分配器在每个块前写入的元数据（大小、是否空闲）。越界写会先破坏它，症状常延迟到下一次 `free` 才爆发。见&#160;[第 3 章](../vol1/ch01-foundations.qmd)。
+
+**合并 / coalescing** — 释放时把相邻空闲块并成更大的块，避免外部碎片。边界标记让合并是 O(1)。见&#160;[第 3 章](../vol1/ch01-foundations.qmd)。
+
+**tag / index / offset** — 缓存地址的三个字段：index 选组、tag 确认是同一块、offset 取块内字节。见&#160;[第 4 章](../vol1/ch02-memory.qmd)。
+
+**强制缺失 / compulsory miss** — 一个块第一次被访问时必然缺失，无法通过设计消除。见&#160;[第 4 章](../vol1/ch02-memory.qmd)。
+
+**容量缺失 / capacity miss** — 块曾被访问，但缓存装不下整个工作集而被挤出。见&#160;[第 4 章](../vol1/ch02-memory.qmd)。
+
+**冲突缺失 / conflict miss** — 缓存仍有空位，但块被映射到同一组而挤掉；靠提高相联度缓解。见&#160;[第 4 章](../vol1/ch02-memory.qmd)。
+
+**AMAT** — 平均内存访问时间：`命中时间 + 缺失率 × 缺失代价`。判断缓存好坏的唯一标准，命中率只是输入。见&#160;[第 4 章](../vol1/ch02-memory.qmd)。
+
+**写回 / write-back** — 写命中时只改缓存并置脏位，块被淘汰时才写回下一级。见&#160;[第 4 章](../vol1/ch02-memory.qmd)。
+
+**fork** — 复制当前进程，一次调用返回两次：父进程得到子进程 PID，子进程得到 0。见&#160;[第 5 章](../vol1/ch03-processes.qmd)。
+
+**exec** — 用新程序替换当前进程的地址空间，PID 与打开的文件描述符不变；成功时不返回。见&#160;[第 5 章](../vol1/ch03-processes.qmd)。
+
+**僵尸进程 / zombie** — 已退出但父进程尚未 `wait` 的进程，只保留退出状态。见&#160;[第 5 章](../vol1/ch03-processes.qmd)。
+
+**dup2** — 关闭目标描述符后把源描述符复制过去。重定向的实现基础，顺序决定成败。见&#160;[第 5 章](../vol1/ch03-processes.qmd)。
+
+**管道 / pipe** — 单向字节流，一对描述符。读端只有在**所有**写端关闭后才看到 EOF。见&#160;[第 5 章](../vol1/ch03-processes.qmd)。
+
+## Algorithms and data structures (算法与数据结构)
+
+**可采纳 / admissible** — 启发式从不高估真实剩余代价（`h ≤ h*`）。A\* 最优性的唯一前提。见&#160;[第 8 章](../vol2/ch04-search.qmd)。
+
+**一致性 / consistency** — 比可采纳更强：`h(n) ≤ cost(n,n') + h(n')`。保证 `f` 沿路径单调，图搜索可永久关闭节点。见&#160;[第 8 章](../vol2/ch04-search.qmd)。
+
+**线性冲突 / linear conflict** — 两个目标同行的方块顺序相反时，至少多付 2 步。给曼哈顿距离加这个下界仍然可采纳。见&#160;[第 8 章](../vol2/ch04-search.qmd)。
+
+**逆序数 / inversion count** — 8-Puzzle 可解性判据：忽略空格后逆序对为偶数则可解。见&#160;[第 8 章](../vol2/ch04-search.qmd)。
+
+**Trie / 前缀树** — 按字符逐层组织的树。Boggle 用它把"这个前缀是否还有希望"变成 O(1) 判断。见&#160;[第 8 章](../vol2/ch04-search.qmd)。
+
+**切割性质 / cut property** — 对任意切割，最轻的跨越边属于某棵 MST。Kruskal 与 Prim 的正确性都来自它。见&#160;[第 9 章](../vol2/ch05-graphs.qmd)。
+
+**环性质 / cycle property** — 任意环上最重的边不属于某棵 MST。与切割性质互为对偶。见&#160;[第 9 章](../vol2/ch05-graphs.qmd)。
+
+**并查集 / union-find** — 维护连通分量的结构。按秩合并控制树高，路径压缩摊平重复查询。见&#160;[第 9 章](../vol2/ch05-graphs.qmd)。
+
+**反 Ackermann 函数 / α(n)** — 增长极慢的函数，`α(10^80) < 5`。并查集两种优化叠加后的均摊复杂度上界。见&#160;[第 9 章](../vol2/ch05-graphs.qmd)。
+
+**布隆过滤器 / Bloom filter** — 位数组 + k 个哈希。位只置 1 不清零，因此无假阴性、有假阳性。见&#160;[第 10 章](../vol2/ch06-heuristics.qmd)。
+
+**假阳性 / false positive** — 未插入的元素被判为"可能存在"。概率约 `(1−e^(−kn/m))^k`。见&#160;[第 10 章](../vol2/ch06-heuristics.qmd)。
+
+**LRU** — 淘汰最久未使用的项。哈希表定位 + 双向链表维护最近性顺序，两个 O(1) 合成一个 O(1)。见&#160;[第 4 章](../vol1/ch02-memory.qmd)。
+
+## Networks and distributed systems (网络与分布式)
+
+**滑动窗口 / sliding window** — 允许同时未确认的字节区间，由 `send_base`、`next_seq`、`window_end` 三个游标划分。见&#160;[第 12 章](../vol3/ch07-reliable-transport.qmd)。
+
+**累计确认 / cumulative ACK** — `ackno = N` 表示 N 之前的字节全部收到。因此丢失的 ACK 与丢失的数据无法区分。见&#160;[第 12 章](../vol3/ch07-reliable-transport.qmd)。
+
+**RTO / 重传超时** — 等不到 ACK 后等待的时长。指数退避（10→20→40）是正确性的一部分，不是调优。见&#160;[第 12 章](../vol3/ch07-reliable-transport.qmd)。
+
+**序列号回绕 / sequence wraparound** — 32 位序列号从 `2^32−1` 回到 0，所有比较必须用模运算距离。见&#160;[第 12 章](../vol3/ch07-reliable-transport.qmd)。
+
+**任期 / term** — Raft 的逻辑时钟，单调递增。作用是判断消息新旧，挡住分区恢复后的僵尸 leader。见&#160;[第 13 章](../vol3/ch08-consensus.qmd)。
+
+**日志匹配性质 / log matching** — 两个日志在某个 index 上 term 相同，则该 index 之前全部相同。使修日志只需找第一个匹配点。见&#160;[第 13 章](../vol3/ch08-consensus.qmd)。
+
+**提交规则 / commit rule** — 条目可提交当且仅当多数派已复制**且** `term == currentTerm`。缺 term 检查会出现 Figure 8 的丢数据。见&#160;[第 13 章](../vol3/ch08-consensus.qmd)。
+
+**领导者完备性 / leader completeness** — 新 leader 必须拥有所有已提交条目。Raft 全部安全性归结为这一条。见&#160;[第 13 章](../vol3/ch08-consensus.qmd)。
+
+**分裂票 / split vote** — 多个候选者同时竞选、无人过半。靠选举超时的随机抖动打散。见&#160;[第 13 章](../vol3/ch08-consensus.qmd)。
+
+## Intelligent systems (智能系统)
+
+**softmax** — 把 logits 变成和为 1 的概率分布。与交叉熵复合后梯度化简为 `p − y`。见&#160;[第 15 章](../vol4/ch09-learning.qmd)。
+
+**梯度检验 / gradient checking** — 用中心差分数值梯度验证解析梯度，与反向传播公式完全独立。见&#160;[第 15 章](../vol4/ch09-learning.qmd)。
+
+**中心差分 / central difference** — `(f(x+h) − f(x−h)) / 2h`，误差 O(h²)，优于前向差分的 O(h)。见&#160;[第 15 章](../vol4/ch09-learning.qmd)。
+
+**过拟合测试 / overfit test** — 用 10 个样本训练到 loss 接近 0，判断"实现错"还是"泛化难"。见&#160;[第 15 章](../vol4/ch09-learning.qmd)。
+
+**Bellman 方程** — `V(s) = max_a [r + γV(s')]`。把无限长未来压成一步递归。见&#160;[第 16 章](../vol4/ch10-search-and-learning.qmd)。
+
+**折扣因子 / discount factor γ** — 未来收益的衰减率。距离越远，价值按 `γ^d` 衰减。见&#160;[第 16 章](../vol4/ch10-search-and-learning.qmd)。
+
+**值迭代 / value iteration** — 反复应用 Bellman 更新直到收敛。需要完整环境模型。见&#160;[第 16 章](../vol4/ch10-search-and-learning.qmd)。
+
+**Q-learning** — 无模型强化学习：用 `(s, a, r, s')` 交互样本直接估计动作价值。见&#160;[第 16 章](../vol4/ch10-search-and-learning.qmd)。
+
+**探索与利用 / exploration vs exploitation** — 随机动作的比例（ε）决定发现新策略与执行已知策略的平衡。见&#160;[第 16 章](../vol4/ch10-search-and-learning.qmd)。
+
+**Minimax** — 对抗搜索：假设对手总选让我方最差的一步。深度受限时依赖静态评估函数。见&#160;[第 16 章](../vol4/ch10-search-and-learning.qmd)。
+
+**模幂 / modular exponentiation** — 平方-乘算法，`O(log d)` 而非 `O(d)`。RSA 的运算核心。见&#160;[第 17 章](../vol4/ch11-crypto.qmd)。
+
+**欧拉定理 / Euler's theorem** — `m^φ(n) ≡ 1 (mod n)`（`gcd(m,n)=1`）。RSA 正确性的全部依据。见&#160;[第 17 章](../vol4/ch11-crypto.qmd)。
+
+**Miller-Rabin** — 概率性素性测试，每轮把误判概率减半。密钥生成的前提。见&#160;[第 17 章](../vol4/ch11-crypto.qmd)。
+
+**Merkle 树** — 哈希两两向上合并成根，任一叶子的改动都会改变根。验证代价 O(log n)。见&#160;[第 17 章](../vol4/ch11-crypto.qmd)。
+
+**CSPRNG** — 密码学安全的伪随机数生成器。与 `random` 的区别是"知道种子也不可预测"。见&#160;[第 17 章](../vol4/ch11-crypto.qmd)。
+
+**反射器 / reflector** — Enigma 中把信号折回的部件，使加密与解密成为同一个操作——也是它的致命弱点。见&#160;[第 17 章](../vol4/ch11-crypto.qmd)。
+
+## Engineering and verification (工程与验证)
+
+**金标准用例 / golden case** — 从权威规格逐字抄录的输入与期望输出。测试的第一层，回答"是否符合规定"。
+
+**交叉验证 / cross-check** — 用结构不同的第二个实现比对同一个输入的输出。回答"边界组合是否自洽"，但不能替代金标准。
+
+**差分测试 / differential testing** — 与第三方实现（如 gcc 的预处理器）比对，并把每一条不一致都解释清楚。
+
+**边界测试 / boundary test** — 只测中间值无法区分 `>=` 与 `>`；必须构造 8/10/12 这样的三点组合。
+
+**可复现性 / reproducibility** — 固定随机种子、固定输入、固定环境。没有它，任何"性能提升"都不构成证据。
+
+**实测优先 / measured over asserted** — 本书的原则：文档里的数字必须来自真实运行，而不是估计或转述。
+
+**在 PDF 中存在性 / format parity** — 同一个源文件必须能在 HTML 与 PDF 两种后端正确渲染；raw HTML 在 typst 后端会被丢弃。
+
+## Subject index (主题索引)
+
+按主题查找讨论位置。只给章节链接、不给小节号——小节编号会随章节增删变化，链接不会。
+
+| 主题 / Topic | 在哪一章 / Where |
+|---|---|
+| 内存分配器、块头、合并 | [内存与执行](../vol1/ch01-foundations.qmd) |
+| 地址切分、三类缺失、AMAT、写策略 | [存储层次与缓存](../vol1/ch02-memory.qmd) |
+| fork / exec / wait、重定向、管道 | [进程接口与 Shell](../vol1/ch03-processes.qmd) |
+| 断言、测试脚手架、作业工坊 | [作业工坊](../vol1/ch12-workshop.qmd) |
+| A\*、可采纳性、线性冲突、可解性 | [启发式搜索](../vol2/ch04-search.qmd) |
+| MST、切割性质、并查集 | [图算法与贪心](../vol2/ch05-graphs.qmd) |
+| 布隆过滤器、LRU、概率结构 | [概率结构与缓存](../vol2/ch06-heuristics.qmd) |
+| 序列号、滑动窗口、RTO | [可靠传输](../vol3/ch07-reliable-transport.qmd) |
+| 任期、日志复制、提交规则、分区 | [分布式共识](../vol3/ch08-consensus.qmd) |
+| 前向/反向、梯度检验、训练动态 | [神经网络与梯度](../vol4/ch09-learning.qmd) |
+| A\* / Minimax / 值迭代 / Q-learning 对比 | [AI 搜索与强化学习](../vol4/ch10-search-and-learning.qmd) |
+| RSA、模幂、Merkle、Enigma | [密码学构件](../vol4/ch11-crypto.qmd) |
+| 每个真实作业的逐题解析 | [卷五 · 真实作业](../vol5/index.qmd) |
+| 十四所学校的人物与课程 | [高校档案](../universities/index.qmd) |
+| 如何读这本书、术语约定 | [使用指南](how-to-use.qmd) |

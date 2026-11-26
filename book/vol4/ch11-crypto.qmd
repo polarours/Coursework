@@ -148,6 +148,8 @@ Enigma 不是现代意义上的加密，但它的结构值得看：转子（roto
 2. **非字母字符不变**：`'HI, WORLD! 123'` 里只有字母被替换，标点与数字原样保留——这是机械结构的限制，不是设计选择。
 3. **连续两个 `A` 得到 `Q` 和 `X`**：转子每加密一个字符就转动一格，所以同样的明文在不同位置映射到不同的密文。这是 Enigma 唯一的强度来源。
 
+![Enigma：信号穿过转子与反射器，再原路返回](../figures/enigma-path.svg){#fig-enigma-path width=100%}
+
 ## 随机数：可复现与不可预测的冲突 / Reproducible versus unpredictable
 
 开发中真实遇到的 bug：

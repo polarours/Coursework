@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" width="720" height="300" role="img">
+  <style>
+    text { font-family: Helvetica, Arial, sans-serif; fill: #1B2A38; }
+    .lbl { font-size: 12px; }
+    .sm  { font-size: 10.5px; fill: #5B6B73; }
+    .ttl { font-size: 13px; font-weight: 600; }
+    .cell { font-size: 12.5px; font-weight: 600; }
+    .mono { font-family: "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <rect width="720" height="300" fill="#FFFFFF"/>
+  <text x="60" y="34" class="ttl">同一局面、三种启发式：展开节点数（对数刻度）</text>
+  <text x="60" y="52" class="sm">三者的解路径长度都是 20 步——启发式只改变看多少</text>
+  <line x1="100" y1="232" x2="650" y2="232" stroke="#1B2A38" stroke-width="1.2"/>
+  <rect x="110" y="82.0" width="118" height="150.0" fill="#EEF2F5" stroke="#1B2A38" stroke-width="1.2"/>
+  <text x="169.0" y="74.0" class="cell" text-anchor="middle">48,390</text>
+  <text x="169.0" y="250" class="sm" text-anchor="middle">h = 0</text>
+  <text x="169.0" y="264" class="sm" text-anchor="middle">(Dijkstra)</text>
+  <rect x="290" y="153.49687305074198" width="118" height="78.50312694925802" fill="#D6F2ED" stroke="#159F8C" stroke-width="1.2"/>
+  <text x="349.0" y="145.49687305074198" class="cell" text-anchor="middle">283</text>
+  <text x="349.0" y="250" class="sm" text-anchor="middle">曼哈顿</text>
+  <rect x="470" y="160.9149231959048" width="118" height="71.08507680409518" fill="#FBEBD0" stroke="#C98A22" stroke-width="1.2"/>
+  <text x="529.0" y="152.9149231959048" class="cell" text-anchor="middle">166</text>
+  <text x="529.0" y="250" class="sm" text-anchor="middle">曼哈顿 + 线性冲突</text>
+  <text x="259.0" y="104" class="sm" text-anchor="middle">171×</text>
+  <text x="461" y="112" class="sm" text-anchor="middle">1.7×</text>
+  <text x="60" y="284" class="sm">状态空间共 181440 个可解局面；Dijkstra 的 48390 个节点接近四分之一</text>
+</svg>

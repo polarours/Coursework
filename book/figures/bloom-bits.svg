@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 268" width="720" height="268" role="img">
+  <style>
+    text { font-family: Helvetica, Arial, sans-serif; fill: #1B2A38; }
+    .lbl { font-size: 12px; }
+    .sm  { font-size: 10.5px; fill: #5B6B73; }
+    .ttl { font-size: 13px; font-weight: 600; }
+    .cell { font-size: 12.5px; font-weight: 600; }
+    .mono { font-family: "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <rect width="720" height="268" fill="#FFFFFF"/>
+  <text x="60" y="34" class="ttl">布隆过滤器：一个位数组，k 个哈希</text>
+  <text x="60" y="52" class="sm">位只会从 0 变 1，所以不会漏报已插入的元素</text>
+  <text x="70" y="96" class="sm" text-anchor="end">key "alpha"</text>
+  <path d="M 72 92 C 92 68, 189.0 68, 189.0 114" fill="none" stroke="#159F8C" stroke-width="1.2" opacity="0.75"/>
+  <text x="189.0" y="80" class="sm" text-anchor="middle">h1</text>
+  <path d="M 72 92 C 92 68, 379.0 68, 379.0 114" fill="none" stroke="#159F8C" stroke-width="1.2" opacity="0.75"/>
+  <text x="379.0" y="80" class="sm" text-anchor="middle">h2</text>
+  <path d="M 72 92 C 92 68, 569.0 68, 569.0 114" fill="none" stroke="#159F8C" stroke-width="1.2" opacity="0.75"/>
+  <text x="569.0" y="80" class="sm" text-anchor="middle">h3</text>
+  <rect x="96" y="126" width="34" height="34" rx="3" fill="#FFFFFF" stroke="#C9D4DC" stroke-width="1.2"/>
+  <text x="113.0" y="147.0" class="sm" text-anchor="middle" fill="#5B6B73">0</text>
+  <text x="113.0" y="174" class="sm" text-anchor="middle">0</text>
+  <rect x="134" y="126" width="34" height="34" rx="3" fill="#FFFFFF" stroke="#C9D4DC" stroke-width="1.2"/>
+  <text x="151.0" y="147.0" class="sm" text-anchor="middle" fill="#5B6B73">0</text>
+  <rect x="172" y="126" width="34" height="34" rx="3" fill="#159F8C" stroke="#1B2A38" stroke-width="1.2"/>
+  <text x="189.0" y="147.0" class="sm" text-anchor="middle" fill="#FFFFFF">1</text>
+  <rect x="210" y="126" width="34" height="34" rx="3" fill="#FFFFFF" stroke="#C9D4DC" stroke-width="1.2"/>
+  <text x="227.0" y="147.0" class="sm" text-anchor="middle" fill="#5B6B73">0</text>
+  <rect x="248" y="126" width="34" height="34" rx="3" fill="#FFFFFF" stroke="#C9D4DC" stroke-width="1.2"/>
+  <text x="265.0" y="147.0" class="sm" text-anchor="middle" fill="#5B6B73">0</text>
+  <text x="265.0" y="174" class="sm" text-anchor="middle">4</text>
+  <rect x="286" y="126" width="34" height="34" rx="3" fill="#FFFFFF" stroke="#C9D4DC" stroke-width="1.2"/>
+  <text x="303.0" y="147.0" class="sm" text-anchor="middle" fill="#5B6B73">0</text>
+  <rect x="324" y="126" width="34" height="34" rx="3" fill="#FFFFFF" stroke="#C9D4DC" stroke-width="1.2"/>
+  <text x="341.0" y="147.0" class="sm" text-anchor="middle" fill="#5B6B73">0</text>
+  <rect x="362" y="126" width="34" height="34" rx="3" fill="#159F8C" stroke="#1B2A38" stroke-width="1.2"/>
+  <text x="379.0" y="147.0" class="sm" text-anchor="middle" fill="#FFFFFF">1</text>
+  <rect x="400" y="126" width="34" height="34" rx="3" fill="#FFFFFF" stroke="#C9D4DC" stroke-width="1.2"/>
+  <text x="417.0" y="147.0" class="sm" text-anchor="middle" fill="#5B6B73">0</text>
+  <text x="417.0" y="174" class="sm" text-anchor="middle">8</text>
+  <rect x="438" y="126" width="34" height="34" rx="3" fill="#FFFFFF" stroke="#C9D4DC" stroke-width="1.2"/>
+  <text x="455.0" y="147.0" class="sm" text-anchor="middle" fill="#5B6B73">0</text>
+  <rect x="476" y="126" width="34" height="34" rx="3" fill="#FFFFFF" stroke="#C9D4DC" stroke-width="1.2"/>
+  <text x="493.0" y="147.0" class="sm" text-anchor="middle" fill="#5B6B73">0</text>
+  <rect x="514" y="126" width="34" height="34" rx="3" fill="#FFFFFF" stroke="#C9D4DC" stroke-width="1.2"/>
+  <text x="531.0" y="147.0" class="sm" text-anchor="middle" fill="#5B6B73">0</text>
+  <rect x="552" y="126" width="34" height="34" rx="3" fill="#159F8C" stroke="#1B2A38" stroke-width="1.2"/>
+  <text x="569.0" y="147.0" class="sm" text-anchor="middle" fill="#FFFFFF">1</text>
+  <text x="569.0" y="174" class="sm" text-anchor="middle">12</text>
+  <rect x="590" y="126" width="34" height="34" rx="3" fill="#FFFFFF" stroke="#C9D4DC" stroke-width="1.2"/>
+  <text x="607.0" y="147.0" class="sm" text-anchor="middle" fill="#5B6B73">0</text>
+  <rect x="628" y="126" width="34" height="34" rx="3" fill="#FFFFFF" stroke="#C9D4DC" stroke-width="1.2"/>
+  <text x="645.0" y="147.0" class="sm" text-anchor="middle" fill="#5B6B73">0</text>
+  <rect x="666" y="126" width="34" height="34" rx="3" fill="#FFFFFF" stroke="#C9D4DC" stroke-width="1.2"/>
+  <text x="683.0" y="147.0" class="sm" text-anchor="middle" fill="#5B6B73">0</text>
+  <text x="96" y="200" class="sm">查询任意元素：只要有一位是 0 → 一定不存在</text>
+  <text x="96" y="218" class="sm">k 位全为 1 → 可能存在（假阳性来自其他元素恰好置了这些位）</text>
+  <text x="96" y="244" class="sm">删除会清掉共享位 → 制造假阴性，所以标准结构不支持删除</text>
+</svg>

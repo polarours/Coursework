@@ -99,6 +99,8 @@ h(n) = Σ 每个方块 |当前行 − 目标行| + |当前列 − 目标列|
 
 > **English:** Identical solution lengths across all three heuristics are the point: a heuristic changes how much you look, never what you find. 48390 → 283 → 166 on the hard board, same 20 moves.
 
+![同一局面下三种启发式的展开量（对数刻度）](../figures/astar-expansion.svg){#fig-astar-expansion width=100%}
+
 ## 线性冲突：为什么可以再加 2 / Linear conflict, and why +2
 
 曼哈顿距离忽略了一类明显的浪费：两个方块目标在同一行，但当前顺序相反。它们必然要互相绕过对方，而绕行需要额外移动。

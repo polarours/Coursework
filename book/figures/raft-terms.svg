@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 288" width="720" height="288" role="img">
+  <style>
+    text { font-family: Helvetica, Arial, sans-serif; fill: #1B2A38; }
+    .lbl { font-size: 12px; }
+    .sm  { font-size: 10.5px; fill: #5B6B73; }
+    .ttl { font-size: 13px; font-weight: 600; }
+    .cell { font-size: 12.5px; font-weight: 600; }
+    .mono { font-family: "DejaVu Sans Mono", monospace; font-size: 11px; }
+  </style>
+  <rect width="720" height="288" fill="#FFFFFF"/>
+  <text x="60" y="34" class="ttl">任期与日志：多数派复制不等于提交</text>
+  <text x="60" y="52" class="sm">旧任期条目可能被后来的 leader 覆盖（Raft 论文 Figure 8）</text>
+  <line x1="92" y1="78" x2="542" y2="78" stroke="#1B2A38" stroke-width="1.4"/>
+  <line x1="92" y1="72" x2="92" y2="84" stroke="#1B2A38" stroke-width="1.4"/>
+  <text x="167" y="68" class="sm" text-anchor="middle">term 1</text>
+  <line x1="242" y1="72" x2="242" y2="84" stroke="#1B2A38" stroke-width="1.4"/>
+  <text x="317" y="68" class="sm" text-anchor="middle">term 2</text>
+  <line x1="392" y1="72" x2="392" y2="84" stroke="#1B2A38" stroke-width="1.4"/>
+  <text x="467" y="68" class="sm" text-anchor="middle">term 3</text>
+  <text x="620" y="52" class="sm" text-anchor="end">时间 →</text>
+  <rect x="102" y="86" width="130" height="16" rx="3" fill="#D6F2ED" stroke="#159F8C" stroke-width="1"/>
+  <text x="167" y="98" class="sm" text-anchor="middle">leader S1</text>
+  <rect x="252" y="86" width="130" height="16" rx="3" fill="#D6F2ED" stroke="#159F8C" stroke-width="1"/>
+  <text x="317" y="98" class="sm" text-anchor="middle">leader S5</text>
+  <rect x="402" y="86" width="130" height="16" rx="3" fill="#D6F2ED" stroke="#159F8C" stroke-width="1"/>
+  <text x="467" y="98" class="sm" text-anchor="middle">leader S1</text>
+  <text x="60" y="146" class="lbl">S1</text>
+  <rect x="100" y="128" width="82" height="26" rx="3" fill="#FFFFFF" stroke="#C9D4DC" stroke-width="1"/>
+  <text x="141.0" y="140" class="cell" text-anchor="middle">1</text>
+  <text x="141.0" y="151" class="sm" text-anchor="middle">t1</text>
+  <rect x="188" y="128" width="82" height="26" rx="3" fill="#FFFFFF" stroke="#C9D4DC" stroke-width="1"/>
+  <text x="229.0" y="140" class="cell" text-anchor="middle">2</text>
+  <text x="229.0" y="151" class="sm" text-anchor="middle">t2</text>
+  <rect x="276" y="128" width="82" height="26" rx="3" fill="#FFFFFF" stroke="#C9D4DC" stroke-width="1"/>
+  <text x="60" y="184" class="lbl">S2</text>
+  <rect x="100" y="166" width="82" height="26" rx="3" fill="#FFFFFF" stroke="#C9D4DC" stroke-width="1"/>
+  <text x="141.0" y="178" class="cell" text-anchor="middle">1</text>
+  <text x="141.0" y="189" class="sm" text-anchor="middle">t1</text>
+  <rect x="188" y="166" width="82" height="26" rx="3" fill="#FFFFFF" stroke="#C9D4DC" stroke-width="1"/>
+  <text x="229.0" y="178" class="cell" text-anchor="middle">2</text>
+  <text x="229.0" y="189" class="sm" text-anchor="middle">t2</text>
+  <rect x="276" y="166" width="82" height="26" rx="3" fill="#FFFFFF" stroke="#C9D4DC" stroke-width="1"/>
+  <text x="60" y="222" class="lbl">S5</text>
+  <rect x="100" y="204" width="82" height="26" rx="3" fill="#FFFFFF" stroke="#C9D4DC" stroke-width="1"/>
+  <text x="141.0" y="216" class="cell" text-anchor="middle">1</text>
+  <text x="141.0" y="227" class="sm" text-anchor="middle">t1</text>
+  <rect x="188" y="204" width="82" height="26" rx="3" fill="#FBEBD0" stroke="#C98A22" stroke-width="1"/>
+  <text x="229.0" y="216" class="cell" text-anchor="middle">2</text>
+  <text x="229.0" y="227" class="sm" text-anchor="middle">t3</text>
+  <rect x="276" y="204" width="82" height="26" rx="3" fill="#FBEBD0" stroke="#C98A22" stroke-width="1"/>
+  <text x="317.0" y="216" class="cell" text-anchor="middle">3</text>
+  <text x="317.0" y="227" class="sm" text-anchor="middle">t3</text>
+  <text x="100" y="266" class="sm">X（index 2，term 2）只到达 S1、S2 —— 5 个节点里 2 个，未过半</text>
+  <text x="100" y="280" class="sm">S5 在 term 3 当选时日志没有 X，可以合法覆盖 index 2：多数派复制并不构成承诺</text>
+</svg>

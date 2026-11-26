@@ -15,7 +15,7 @@
   <line x1="240" y1="168" x2="610" y2="168" stroke="#1B2A38" stroke-width="1.6"/>
   <path d="M 240 92 C 270 92, 260 168, 296 168" fill="none" stroke="#159F8C" stroke-width="1.8"/>
   <line x1="240" y1="66" x2="240" y2="194" stroke="#C9D4DC" stroke-width="1" stroke-dasharray="4 3"/>
-  <text x="240" y="60" class="sm" text-anchor="middle">fork()</text>
+  <text x="240" y="72" class="sm" text-anchor="middle">fork()</text>
   <text x="246" y="82" class="sm">返回子进程 PID</text>
   <text x="300" y="190" class="sm">返回 0</text>
   <rect x="410" y="138" width="86" height="22" rx="3" fill="#D6F2ED" stroke="#159F8C" stroke-width="1"/>
