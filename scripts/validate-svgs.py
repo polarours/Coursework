@@ -14,6 +14,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 files = sorted(
     set(glob.glob(os.path.join(ROOT, "assets", "*.svg")))
     | set(glob.glob(os.path.join(ROOT, "book", "universities", "logos", "*.svg")))
+    | set(glob.glob(os.path.join(ROOT, "book", "figures", "*.svg")))
 )
 bad = []
 for path in files:

@@ -43,6 +43,8 @@ tag        = block_addr  // num_sets
 | index | 6 位 | bit 9–4 | 选中哪一组 |
 | offset | 4 位 | bit 3–0 | 组内块中的第几个字节 |
 
+![32 位地址切成 tag / index / offset 三段](../figures/addr-split.svg){#fig-addr-split width=100%}
+
 一次访问的硬件动作：用 index 找到组 → 并行比较该组所有路的 tag → 命中则用 offset 取字节。
 
 **为什么块大小必须是 2 的幂？** 因为位切分要求字段宽度是整数位。非 2 的幂需要真正的除法器，在关键路径上不能接受。

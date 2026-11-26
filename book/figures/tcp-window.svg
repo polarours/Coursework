@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 210" width="720" height="210" role="img">
+  <style>
+    text { font-family: Helvetica, Arial, sans-serif; fill: #1B2A38; }
+    .lbl { font-size: 12px; }
+    .sm  { font-size: 10.5px; fill: #5B6B73; }
+    .ttl { font-size: 13px; font-weight: 600; }
+    .cell { font-size: 13px; font-weight: 600; }
+  </style>
+  <rect width="720" height="210" fill="#FFFFFF"/>
+  <text x="60" y="34" class="ttl">发送窗口：三个游标划分序列号空间</text>
+  <text x="60" y="52" class="sm">窗口 = 已发送未确认 + 可发送；ACK 到来后整体右移</text>
+  <rect x="60" y="92" width="170" height="44" fill="#EEF2F5" stroke="#C9D4DC" stroke-width="1"/>
+  <text x="145.0" y="112" class="cell" text-anchor="middle">已确认</text>
+  <text x="145.0" y="127" class="sm" text-anchor="middle">acked</text>
+  <rect x="230" y="92" width="170" height="44" fill="#D6F2ED" stroke="#C9D4DC" stroke-width="1"/>
+  <text x="315.0" y="112" class="cell" text-anchor="middle">已发送未确认</text>
+  <text x="315.0" y="127" class="sm" text-anchor="middle">in flight</text>
+  <rect x="400" y="92" width="170" height="44" fill="#FBEBD0" stroke="#C9D4DC" stroke-width="1"/>
+  <text x="485.0" y="112" class="cell" text-anchor="middle">可发送</text>
+  <text x="485.0" y="127" class="sm" text-anchor="middle">usable</text>
+  <rect x="570" y="92" width="110" height="44" fill="#FFFFFF" stroke="#C9D4DC" stroke-width="1"/>
+  <text x="625.0" y="112" class="cell" text-anchor="middle">窗口外</text>
+  <text x="625.0" y="127" class="sm" text-anchor="middle">not yet</text>
+  <text x="60" y="150" class="sm">序列空间起点</text>
+  <line x1="230" y1="82" x2="230" y2="146" stroke="#159F8C" stroke-width="1.4"/>
+  <circle cx="230" cy="82" r="3" fill="#159F8C"/>
+  <text x="230" y="76" class="sm" text-anchor="middle">send_base</text>
+  <line x1="400" y1="82" x2="400" y2="146" stroke="#159F8C" stroke-width="1.4"/>
+  <circle cx="400" cy="82" r="3" fill="#159F8C"/>
+  <text x="400" y="76" class="sm" text-anchor="middle">next_seq</text>
+  <line x1="570" y1="82" x2="570" y2="146" stroke="#159F8C" stroke-width="1.4"/>
+  <circle cx="570" cy="82" r="3" fill="#159F8C"/>
+  <text x="570" y="76" class="sm" text-anchor="middle">window_end</text>
+  <text x="60" y="168" class="sm">已确认的边界 ← 收到 ACK 就前移，窗口随之滑动</text>
+  <text x="60" y="186" class="sm">实际可发字节数 = min(接收窗口, 拥塞窗口) − 已发送未确认</text>
+</svg>

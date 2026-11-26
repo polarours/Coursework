@@ -47,6 +47,8 @@ else { /* 失败，errno 有原因 */ }
 
 三个数字的关系值得记住：父进程的 `getpid` 是 24395，子进程的 `getpid` 是 24396，正好等于父进程拿到的返回值；子进程的 `getppid` 是 24395。**子进程的 PID 是父进程唯一能用来称呼它的东西**——内核里没有"名字"，只有编号。
 
+![fork 分叉、exec 替换映像、wait 回收状态](../figures/fork-exec.svg){#fig-fork-exec width=100%}
+
 注意输出的顺序：父进程的行先打印，子进程的行后打印。这**不是保证**，只是调度器的选择。任何依赖"父先子后"的代码都是错的。
 
 ## exec 不创建进程 / exec does not create a process

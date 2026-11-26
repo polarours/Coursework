@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 268" width="720" height="268" role="img">
+  <style>
+    text { font-family: Helvetica, Arial, sans-serif; fill: #1B2A38; }
+    .lbl { font-size: 12px; }
+    .sm  { font-size: 10.5px; fill: #5B6B73; }
+    .ttl { font-size: 13px; font-weight: 600; }
+    .cell { font-size: 13px; font-weight: 600; }
+  </style>
+  <rect width="720" height="268" fill="#FFFFFF"/>
+  <text x="60" y="34" class="ttl">fork 复制，exec 替换，wait 回收</text>
+  <text x="60" y="52" class="sm">一次调用返回两次；成功 exec 不再返回</text>
+  <text x="60" y="96" class="lbl">父进程</text>
+  <text x="60" y="172" class="lbl">子进程</text>
+  <line x1="90" y1="92" x2="610" y2="92" stroke="#1B2A38" stroke-width="1.6"/>
+  <line x1="240" y1="168" x2="610" y2="168" stroke="#1B2A38" stroke-width="1.6"/>
+  <path d="M 240 92 C 270 92, 260 168, 296 168" fill="none" stroke="#159F8C" stroke-width="1.8"/>
+  <line x1="240" y1="66" x2="240" y2="194" stroke="#C9D4DC" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="240" y="60" class="sm" text-anchor="middle">fork()</text>
+  <text x="246" y="82" class="sm">返回子进程 PID</text>
+  <text x="300" y="190" class="sm">返回 0</text>
+  <rect x="410" y="138" width="86" height="22" rx="3" fill="#D6F2ED" stroke="#159F8C" stroke-width="1"/>
+  <text x="453" y="153" class="sm" text-anchor="middle">exec：映像替换</text>
+  <line x1="453" y1="160" x2="453" y2="168" stroke="#159F8C" stroke-width="1"/>
+  <text x="453" y="190" class="sm" text-anchor="middle">PID 不变</text>
+  <line x1="540" y1="92" x2="540" y2="168" stroke="#C98A22" stroke-width="1.6" stroke-dasharray="5 3"/>
+  <rect x="514" y="48" width="96" height="22" rx="3" fill="#FBEBD0" stroke="#C98A22" stroke-width="1"/>
+  <text x="562" y="63" class="sm" text-anchor="middle">wait：回收状态</text>
+  <circle cx="610" cy="92" r="3.5" fill="#1B2A38"/>
+  <circle cx="610" cy="168" r="3.5" fill="#1B2A38"/>
+  <text x="618" y="96" class="sm">继续读下一行</text>
+  <text x="618" y="172" class="sm">退出</text>
+  <text x="60" y="250" class="sm">父进程的 fork 返回值正是子进程的 PID；子进程看到 0，因此两者走不同分支</text>
+</svg>
