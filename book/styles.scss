@@ -111,7 +111,7 @@ table tbody tr:nth-child(2n) { background: rgba(15, 95, 99, 0.035); }
 }
 // Only the navigation rail gets a wider column; the margin TOC must never
 // be pushed past the viewport.
-.sidebar.sidebar-navigation { width: 290px; max-width: 290px; }
+.sidebar.sidebar-navigation { width: 250px; max-width: 250px; }
 .sidebar.margin-sidebar { width: auto; max-width: 240px; }
 .sidebar .sidebar-item-text, #TOC .nav-link { word-break: keep-all; overflow-wrap: anywhere; }
 .sidebar .sidebar-item-text { white-space: normal; overflow-wrap: break-word; }

@@ -1,0 +1,52 @@
+/*-- scss:defaults --*/
+
+// Dark companion to styles.scss. Quarto switches to this automatically when
+// the reader's system prefers dark, instead of leaving the browser to invert a
+// light page — forced inversion is what produced the washed-out screenshot.
+$primary: #3ee0c8;
+$secondary: #f5be5c;
+$body-bg: #0b1626;
+$body-color: #d8e2ed;
+$headings-color: #f4f8fc;
+$link-color: #3ee0c8;
+$border-color: #29405a;
+$font-family-sans-serif: "Inter", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+$font-family-monospace: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+
+/*-- scss:rules --*/
+
+:root,
+[data-bs-theme="dark"] {
+  --cw-ink: #f4f8fc;
+  --cw-body: #d8e2ed;
+  --cw-muted: #93a9c4;
+  --cw-paper: #0b1626;
+  --cw-surface: #12233b;
+  --cw-line: #29405a;
+  --cw-teal: #3ee0c8;
+  --cw-amber: #f5be5c;
+}
+
+[data-bs-theme="dark"] {
+  .sidebar .sidebar-item-text.active {
+    background: rgba(62, 224, 200, 0.12);
+  }
+  .sidebar-header { border-bottom-color: var(--cw-line); }
+  #quarto-document-content h2 { border-bottom-color: var(--cw-line); }
+  table {
+    --bs-table-bg: transparent;
+    --bs-table-color: var(--cw-body);
+    --bs-table-border-color: var(--cw-line);
+    --bs-table-striped-bg: rgba(255, 255, 255, 0.03);
+  }
+  .callout {
+    --callout-bg: var(--cw-surface);
+    --callout-border-color: var(--cw-line);
+    --callout-text-color: var(--cw-body);
+  }
+  code { color: var(--cw-amber); }
+  pre {
+    background: var(--cw-surface);
+    border-color: var(--cw-line);
+  }
+}

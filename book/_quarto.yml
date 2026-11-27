@@ -114,7 +114,9 @@ resources:
 
 format:
   html:
-    theme: [cosmo, styles.scss]
+    theme:
+      light: [cosmo, styles.scss]
+      dark: [darkly, styles-dark.scss]
     include-in-header:
       text: |
         <meta property="og:image" content="https://polarours.github.io/Coursework/assets/og-image.png">
