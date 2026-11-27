@@ -1,0 +1,33 @@
+---
+title: "005 · MIT 6.1810 — xv6 核心机制模拟器"
+number-sections: false
+---
+
+| 项目 | 内容 |
+|---|---|
+| 学校 | [MIT](../universities/mit.qmd) |
+| 课程 | MIT 6.1810 Operating Systems Engineering（原 6.828） |
+| 方向 | 操作系统 / Operating systems |
+| 难度 | 硬核 / Advanced |
+| 预计耗时 | 5–10 天 / 5–10 days |
+
+## 为什么收录
+xv6 实验让学生修改教学用 Unix 内核，是理解操作系统最经典的路径。本项目聚焦调度与伙伴分配器两个算法核心，做成自包含的模拟器。
+
+The xv6 labs are the classic path to understanding operating systems. We focus on two algorithmic cores — scheduling and buddy allocation — as a self-contained simulator.
+
+> **English:** Keeping the algorithmic core while dropping QEMU/toolchain baggage makes these OS concepts accessible in a self-contained learning repo.
+
+## 实测结果
+
+- FCFS avg_wait=3.33；RR（q=2）=6.00；MLFQ=5.33（真实输出，见 05）
+- 伙伴分配器：alloc(7)→0, alloc(8)→8, alloc(4)→16；free(8)+free(0) 后合并出 (0,16)
+- 如实记录了 RR 平均等待高于 FCFS 的调度理论原因（非 bug）
+
+## 七章解析
+
+[题目解读](https://github.com/polarours/Coursework/blob/master/problems/005-mit-6.1810-xv6/01-%E9%A2%98%E7%9B%AE%E8%A7%A3%E8%AF%BB.md) · [设计思路](https://github.com/polarours/Coursework/blob/master/problems/005-mit-6.1810-xv6/02-%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF.md) · [逐步实现](https://github.com/polarours/Coursework/blob/master/problems/005-mit-6.1810-xv6/03-%E9%80%90%E6%AD%A5%E5%AE%9E%E7%8E%B0.md) · [正确性与复杂度](https://github.com/polarours/Coursework/blob/master/problems/005-mit-6.1810-xv6/04-%E6%AD%A3%E7%A1%AE%E6%80%A7%E4%B8%8E%E5%A4%8D%E6%9D%82%E5%BA%A6.md) · [调试与测试](https://github.com/polarours/Coursework/blob/master/problems/005-mit-6.1810-xv6/05-%E8%B0%83%E8%AF%95%E4%B8%8E%E6%B5%8B%E8%AF%95.md) · [踩坑清单](https://github.com/polarours/Coursework/blob/master/problems/005-mit-6.1810-xv6/06-%E8%B8%A9%E5%9D%91%E6%B8%85%E5%8D%95.md) · [延伸练习](https://github.com/polarours/Coursework/blob/master/problems/005-mit-6.1810-xv6/07-%E5%BB%B6%E4%BC%B8%E7%BB%83%E4%B9%A0.md)
+
+## 源码与测试
+
+[题目目录](https://github.com/polarours/Coursework/tree/master/problems/005-mit-6.1810-xv6)　·　[参考实现](https://github.com/polarours/Coursework/tree/master/problems/005-mit-6.1810-xv6/solution)　·　[测试](https://github.com/polarours/Coursework/tree/master/problems/005-mit-6.1810-xv6/tests)

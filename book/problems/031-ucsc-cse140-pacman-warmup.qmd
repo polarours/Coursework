@@ -1,0 +1,30 @@
+---
+title: "031 · UCSC CSE140 p0 — CS188 风格 Pacman warmup"
+number-sections: false
+---
+
+| 项目 | 内容 |
+|---|---|
+| 学校 | [UC Santa Cruz](../universities/ucsc.qmd) |
+| 课程 | CSE 140 Artificial Intelligence（作业改编自 Berkeley CS188 Pacman 项目） |
+| 方向 | Python / 基础建模与最优化 |
+| 难度 | 入门 / Introductory |
+| 上游仓库 | [https://github.com/ucsc-cse-140/cse140-assignments-public（课程官方仓库）](https://github.com/ucsc-cse-140/cse140-assignments-public（课程官方仓库）) |
+
+## 为什么收录
+课程官方公开作业仓库，p0 是 Berkeley CS188 classic search 项目的 warmup：`buyLotsOfFruit`（价格表查表计算）与 `shopSmart`（遍历商店选最优价）。starter 标准的 `*** Your Code Here ***` 风格，期望输出写在 docstring 里，可机器验证。仓库还有 p1/p2（DFS 搜索等更深入的 Pacman 项目）留作后续。
+
+The official public assignment repo; p0 is the CS188-style warmup (buyLotsOfFruit + shopSmart) with a standard "Your Code Here" starter and docstring-verified expected output.
+
+## 实测结果
+
+- 7/7 通过：12.25 总价、缺货水果返回 None、两商店择优、两个 main 的 docstring 期望输出
+- 发现一处真实不一致：docstring 写 "best shop is shop1."，而 `shop.py` 的 main 实际打印 "the best shop is shop1."——测试断言以实际代码为准并注释说明
+
+## 七章解析
+
+[题目解读](https://github.com/polarours/Coursework/blob/master/problems/031-ucsc-cse140-pacman-warmup/01-%E9%A2%98%E7%9B%AE%E8%A7%A3%E8%AF%BB.md) · [设计思路](https://github.com/polarours/Coursework/blob/master/problems/031-ucsc-cse140-pacman-warmup/02-%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF.md) · [逐步实现](https://github.com/polarours/Coursework/blob/master/problems/031-ucsc-cse140-pacman-warmup/03-%E9%80%90%E6%AD%A5%E5%AE%9E%E7%8E%B0.md) · [正确性与复杂度](https://github.com/polarours/Coursework/blob/master/problems/031-ucsc-cse140-pacman-warmup/04-%E6%AD%A3%E7%A1%AE%E6%80%A7%E4%B8%8E%E5%A4%8D%E6%9D%82%E5%BA%A6.md) · [调试与测试](https://github.com/polarours/Coursework/blob/master/problems/031-ucsc-cse140-pacman-warmup/05-%E8%B0%83%E8%AF%95%E4%B8%8E%E6%B5%8B%E8%AF%95.md) · [踩坑清单](https://github.com/polarours/Coursework/blob/master/problems/031-ucsc-cse140-pacman-warmup/06-%E8%B8%A9%E5%9D%91%E6%B8%85%E5%8D%95.md) · [延伸练习](https://github.com/polarours/Coursework/blob/master/problems/031-ucsc-cse140-pacman-warmup/07-%E5%BB%B6%E4%BC%B8%E7%BB%83%E4%B9%A0.md)
+
+## 源码与测试
+
+[题目目录](https://github.com/polarours/Coursework/tree/master/problems/031-ucsc-cse140-pacman-warmup)　·　[参考实现](https://github.com/polarours/Coursework/tree/master/problems/031-ucsc-cse140-pacman-warmup/solution)　·　[测试](https://github.com/polarours/Coursework/tree/master/problems/031-ucsc-cse140-pacman-warmup/tests)

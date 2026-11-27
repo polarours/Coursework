@@ -1,0 +1,29 @@
+---
+title: "032 · UCSC CSE140 p1 — Pacman 搜索大作业"
+number-sections: false
+---
+
+| 项目 | 内容 |
+|---|---|
+| 学校 | [UC Santa Cruz](../universities/ucsc.qmd) |
+| 课程 | CSE 140 Artificial Intelligence（题面在 031 upstream 的 `p1/README.md`） |
+| 方向 | Python / DFS、BFS、UCS、A*、Corners、Food、贪心与近似搜索 |
+| 难度 | 进阶 / Intermediate |
+| 上游仓库 | [https://github.com/edulinq/pacai（pin](https://github.com/edulinq/pacai（pin) |
+
+## 为什么收录
+CSE140 p1（改编自 Berkeley CS188）要求实现 `pacai/student/singlesearch.py` 的 8 个函数：DFS/BFS/UCS/A* 四个搜索器、CornersProblem（状态设计 + 启发式）、FoodSearchProblem 启发式、ClosestDot 贪心 agent、AnyMarker 目标判定。框架 pacai v2.1.0 完全开源（MIT），starter 的 8 处 `NotImplementedError` 就是题面。
+
+The full search assignment of CS188-style p1: eight solvers over the open-source pacai framework, with the starter's eight NotImplementedError stubs as the problem statement.
+
+## 实测结果
+
+- | 用例 | 结果 |
+
+## 七章解析
+
+[题目解读](https://github.com/polarours/Coursework/blob/master/problems/032-ucsc-cse140-pacman-search/01-%E9%A2%98%E7%9B%AE%E8%A7%A3%E8%AF%BB.md) · [设计思路](https://github.com/polarours/Coursework/blob/master/problems/032-ucsc-cse140-pacman-search/02-%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF.md) · [逐步实现](https://github.com/polarours/Coursework/blob/master/problems/032-ucsc-cse140-pacman-search/03-%E9%80%90%E6%AD%A5%E5%AE%9E%E7%8E%B0.md) · [正确性与复杂度](https://github.com/polarours/Coursework/blob/master/problems/032-ucsc-cse140-pacman-search/04-%E6%AD%A3%E7%A1%AE%E6%80%A7%E4%B8%8E%E5%A4%8D%E6%9D%82%E5%BA%A6.md) · [调试与测试](https://github.com/polarours/Coursework/blob/master/problems/032-ucsc-cse140-pacman-search/05-%E8%B0%83%E8%AF%95%E4%B8%8E%E6%B5%8B%E8%AF%95.md) · [踩坑清单](https://github.com/polarours/Coursework/blob/master/problems/032-ucsc-cse140-pacman-search/06-%E8%B8%A9%E5%9D%91%E6%B8%85%E5%8D%95.md) · [延伸练习](https://github.com/polarours/Coursework/blob/master/problems/032-ucsc-cse140-pacman-search/07-%E5%BB%B6%E4%BC%B8%E7%BB%83%E4%B9%A0.md)
+
+## 源码与测试
+
+[题目目录](https://github.com/polarours/Coursework/tree/master/problems/032-ucsc-cse140-pacman-search)　·　[参考实现](https://github.com/polarours/Coursework/tree/master/problems/032-ucsc-cse140-pacman-search/solution)　·　[测试](https://github.com/polarours/Coursework/tree/master/problems/032-ucsc-cse140-pacman-search/tests)

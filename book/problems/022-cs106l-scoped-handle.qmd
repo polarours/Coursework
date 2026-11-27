@@ -1,0 +1,21 @@
+---
+title: "022 · Assignment: ScopedHandle（RAII 与移动语义）"
+number-sections: false
+---
+
+| 项目 | 内容 |
+|---|---|
+| 学校 | [Stanford University](../universities/stanford.qmd) |
+| 课程 | Stanford CS106L Standard C++ Programming |
+| 方向 | 现代 C++ / RAII / Move semantics |
+| 语言 | C++20 |
+| 难度 | 进阶 / Intermediate |
+
+## 为什么收录
+标准库的 `std::unique_ptr` 用 RAII 管理动态资源：对象析构时自动释放资源，且只能有一个所有者。本题让你从零实现一个简化版 `ScopedHandle<T>`，理解 RAII、Rule of Five 与移动语义如何配合。
+
+Implement a simplified `ScopedHandle<T>` — a teaching version of `std::unique_ptr` — to learn RAII, the Rule of Five, and move semantics.
+
+## 源码与测试
+
+[题目目录](https://github.com/polarours/Coursework/tree/master/problems/022-cs106l-scoped-handle)　·　[参考实现](https://github.com/polarours/Coursework/tree/master/problems/022-cs106l-scoped-handle/solution)　·　[测试](https://github.com/polarours/Coursework/tree/master/problems/022-cs106l-scoped-handle/tests)

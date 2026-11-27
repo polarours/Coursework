@@ -63,6 +63,44 @@ book:
         - universities/clemson.qmd
         - universities/ucsc.qmd
     # 附录 / Back matter
+    - part: "Problems (题目档案)"
+      chapters:
+        - problems/index.qmd
+        - problems/001-mit-6.824-raft.qmd
+        - problems/002-stanford-cs144-tcp.qmd
+        - problems/003-berkeley-cs188-pacman.qmd
+        - problems/004-berkeley-cs61b-gitlet.qmd
+        - problems/005-mit-6.1810-xv6.qmd
+        - problems/006-cmu-csapp-malloc-lab.qmd
+        - problems/007-stanford-cs143-compiler.qmd
+        - problems/008-cmu-15445-buffer-pool.qmd
+        - problems/009-stanford-cs155-crypto.qmd
+        - problems/010-stanford-cs248-raytracer.qmd
+        - problems/011-stanford-cs231n-neuralnet.qmd
+        - problems/012-ucb-cs61c-cache.qmd
+        - problems/013-ucb-cs61a-scheme.qmd
+        - problems/014-princeton-cos226-8puzzle.qmd
+        - problems/015-stanford-cs106b-boggle.qmd
+        - problems/016-mit-shell.qmd
+        - problems/017-cmu-geometry.qmd
+        - problems/018-mit-6602-lru-cache.qmd
+        - problems/019-gatech-bloom-filter.qmd
+        - problems/020-cornell-enigma.qmd
+        - problems/021-stanford-kruskal.qmd
+        - problems/022-cs106l-scoped-handle.qmd
+        - problems/023-amirkabir-ap1400-hw1.qmd
+        - problems/024-fordham-cisc2200-alist.qmd
+        - problems/025-uci-ecs36c-linkedlist.qmd
+        - problems/026-uci-ics46-bst-avl.qmd
+        - problems/027-ccny-csc212-backtracking.qmd
+        - problems/028-clemson-cpsc2121-liststack-queue.qmd
+        - problems/029-ucb-cs61b-deque61b.qmd
+        - problems/030-umd-cmsc132-submitserver.qmd
+        - problems/031-ucsc-cse140-pacman-warmup.qmd
+        - problems/032-ucsc-cse140-pacman-search.qmd
+        - problems/033-princeton-cos217-decomment.qmd
+        - problems/034-ucb-cs61c-snek.qmd
+
     - part: "Appendices"
       chapters:
         - backmatter/summary.qmd

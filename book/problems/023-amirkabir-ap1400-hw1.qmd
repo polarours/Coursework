@@ -1,0 +1,30 @@
+---
+title: "023 · Amirkabir AP1400-2 HW1"
+number-sections: false
+---
+
+| 项目 | 内容 |
+|---|---|
+| 学校 | [Amirkabir University of Technology](../universities/amirkabir.qmd) |
+| 课程 | AP1400-2 Advanced Programming, Spring 2022 |
+| 方向 | C++ 线性代数库 / Linear algebra library |
+| 难度 | 进阶 / Intermediate |
+| 上游仓库 | [https://github.com/polarours/Coursework（pin](https://github.com/polarours/Coursework（pin) |
+
+## 为什么收录
+一份**真实的大学作业仓库**：原始 handout、starter 骨架、4 张资源图、CMake + Dockerfile、24 个 gtest 测试（原文件中被 `/* */` 注释，学生需激活）。以 git submodule 引用原仓库，不复制其内容。
+
+A genuine university assignment referenced as a git submodule: original handout, skeleton, resources, build system, and 24 gtest cases (commented out in the source repo).
+
+## 实测结果
+
+- 原始 24 个测试全部通过（C++17 编译：本机 gtest 1.18 要求；原作业为 C++14）
+- 实现中修复 4 处真实语义细节：空矩阵行列式=1、`ero_sum` 方向（r1×c 加到 r2）、奇异矩阵抛 `logic_error`、`upper_triangular` 主元为零不用换行
+
+## 七章解析
+
+[题目解读](https://github.com/polarours/Coursework/blob/master/problems/023-amirkabir-ap1400-hw1/01-%E9%A2%98%E7%9B%AE%E8%A7%A3%E8%AF%BB.md) · [设计思路](https://github.com/polarours/Coursework/blob/master/problems/023-amirkabir-ap1400-hw1/02-%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF.md) · [逐步实现](https://github.com/polarours/Coursework/blob/master/problems/023-amirkabir-ap1400-hw1/03-%E9%80%90%E6%AD%A5%E5%AE%9E%E7%8E%B0.md) · [正确性与复杂度](https://github.com/polarours/Coursework/blob/master/problems/023-amirkabir-ap1400-hw1/04-%E6%AD%A3%E7%A1%AE%E6%80%A7%E4%B8%8E%E5%A4%8D%E6%9D%82%E5%BA%A6.md) · [调试与测试](https://github.com/polarours/Coursework/blob/master/problems/023-amirkabir-ap1400-hw1/05-%E8%B0%83%E8%AF%95%E4%B8%8E%E6%B5%8B%E8%AF%95.md) · [踩坑清单](https://github.com/polarours/Coursework/blob/master/problems/023-amirkabir-ap1400-hw1/06-%E8%B8%A9%E5%9D%91%E6%B8%85%E5%8D%95.md) · [延伸练习](https://github.com/polarours/Coursework/blob/master/problems/023-amirkabir-ap1400-hw1/07-%E5%BB%B6%E4%BC%B8%E7%BB%83%E4%B9%A0.md)
+
+## 源码与测试
+
+[题目目录](https://github.com/polarours/Coursework/tree/master/problems/023-amirkabir-ap1400-hw1)　·　[参考实现](https://github.com/polarours/Coursework/tree/master/problems/023-amirkabir-ap1400-hw1/solution)　·　[测试](https://github.com/polarours/Coursework/tree/master/problems/023-amirkabir-ap1400-hw1/tests)

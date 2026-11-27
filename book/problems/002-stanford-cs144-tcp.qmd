@@ -1,0 +1,33 @@
+---
+title: "002 · Stanford CS144 — 手写 TCP / Build a TCP"
+number-sections: false
+---
+
+| 项目 | 内容 |
+|---|---|
+| 学校 | [Stanford University](../universities/stanford.qmd) |
+| 课程 | Stanford CS144 Introduction to Computer Networking |
+| 方向 | 计算机网络 / Networking |
+| 难度 | 进阶 / Intermediate–advanced |
+| 预计耗时 | 4–8 天 / 4–8 days |
+
+## 为什么收录
+从零构建可靠传输：分段、确认、重传、滑动窗口、拥塞控制。每一层都能用真实测试验证，是把网络课理论变成工程能力的经典项目。
+
+Building reliable transport from scratch — segmentation, ACKs, retransmission, sliding window, congestion control. Every layer is testable, making it a classic bridge from networking theory to engineering skill.
+
+> **English:** CS144's lab string is unusually well-scoped: each stage is independently testable, so students get fast feedback on subtle protocol logic.
+
+## 实测结果
+
+- 6 项测试全部通过（重组、回绕、接收端、重传退避、滑动窗口、端到端）/ 6 tests pass
+- 端到端：4 个段完整送达 `the quick brown fox`（19 字节 + SYN/FIN）/ end-to-end delivery verified
+- 详见 [05-调试与测试.md](https://github.com/polarours/Coursework/blob/master/problems/002-stanford-cs144-tcp/05-%E8%B0%83%E8%AF%95%E4%B8%8E%E6%B5%8B%E8%AF%95.md) 中的真实输出与开发中修正的 3 个测试错误
+
+## 七章解析
+
+[题目解读](https://github.com/polarours/Coursework/blob/master/problems/002-stanford-cs144-tcp/01-%E9%A2%98%E7%9B%AE%E8%A7%A3%E8%AF%BB.md) · [设计思路](https://github.com/polarours/Coursework/blob/master/problems/002-stanford-cs144-tcp/02-%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF.md) · [逐步实现](https://github.com/polarours/Coursework/blob/master/problems/002-stanford-cs144-tcp/03-%E9%80%90%E6%AD%A5%E5%AE%9E%E7%8E%B0.md) · [正确性与复杂度](https://github.com/polarours/Coursework/blob/master/problems/002-stanford-cs144-tcp/04-%E6%AD%A3%E7%A1%AE%E6%80%A7%E4%B8%8E%E5%A4%8D%E6%9D%82%E5%BA%A6.md) · [调试与测试](https://github.com/polarours/Coursework/blob/master/problems/002-stanford-cs144-tcp/05-%E8%B0%83%E8%AF%95%E4%B8%8E%E6%B5%8B%E8%AF%95.md) · [踩坑清单](https://github.com/polarours/Coursework/blob/master/problems/002-stanford-cs144-tcp/06-%E8%B8%A9%E5%9D%91%E6%B8%85%E5%8D%95.md) · [延伸练习](https://github.com/polarours/Coursework/blob/master/problems/002-stanford-cs144-tcp/07-%E5%BB%B6%E4%BC%B8%E7%BB%83%E4%B9%A0.md)
+
+## 源码与测试
+
+[题目目录](https://github.com/polarours/Coursework/tree/master/problems/002-stanford-cs144-tcp)　·　[参考实现](https://github.com/polarours/Coursework/tree/master/problems/002-stanford-cs144-tcp/solution)　·　[测试](https://github.com/polarours/Coursework/tree/master/problems/002-stanford-cs144-tcp/tests)

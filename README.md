@@ -22,6 +22,7 @@ Coursework is a study workbook, not an answer dump. Each project is decomposed i
 - **Seven chapters each** — problem reading, design, implementation, correctness, debugging, pitfalls, extensions.
 - **Bilingual** — Chinese exposition with English summaries throughout.
 - **Verified** — implementations run against official or carefully reconstructed tests; numbers come from real runs.
+- **One page per problem** — all 34 assignments are individually addressable in the book, searchable, and linkable, on top of the twelve thematic chapters.
 
 ## The book
 

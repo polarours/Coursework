@@ -1,0 +1,30 @@
+---
+title: "015 · Stanford CS106B — Boggle 回溯求解"
+number-sections: false
+---
+
+| 项目 | 内容 |
+|---|---|
+| 学校 | [Stanford University](../universities/stanford.qmd) |
+| 课程 | Stanford CS106B Programming Abstractions |
+| 方向 | 回溯与搜索 / Backtracking |
+| 难度 | 进阶 / Intermediate |
+| 预计耗时 | 4–8 天 |
+
+## 为什么收录
+Boggle 是经典的回溯法教学题：在字母网格中用 DFS 穷举所有可能路径，配合 Trie 前缀剪枝大幅减少无效搜索。
+
+> **English:** A carefully chosen capstone that builds transferable reasoning skills through hands-on implementation.
+
+## 实测结果
+
+- 2×2 网格含对角时完全连通，6 个词全部可达；3×3 中 `aei` 沿对角链可达，证明 8 邻域正确。
+- 详见 [05-调试与测试.md](https://github.com/polarours/Coursework/blob/master/problems/015-stanford-cs106b-boggle/05-%E8%B0%83%E8%AF%95%E4%B8%8E%E6%B5%8B%E8%AF%95.md)
+
+## 七章解析
+
+[题目解读](https://github.com/polarours/Coursework/blob/master/problems/015-stanford-cs106b-boggle/01-%E9%A2%98%E7%9B%AE%E8%A7%A3%E8%AF%BB.md) · [设计思路](https://github.com/polarours/Coursework/blob/master/problems/015-stanford-cs106b-boggle/02-%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF.md) · [逐步实现](https://github.com/polarours/Coursework/blob/master/problems/015-stanford-cs106b-boggle/03-%E9%80%90%E6%AD%A5%E5%AE%9E%E7%8E%B0.md) · [正确性与复杂度](https://github.com/polarours/Coursework/blob/master/problems/015-stanford-cs106b-boggle/04-%E6%AD%A3%E7%A1%AE%E6%80%A7%E4%B8%8E%E5%A4%8D%E6%9D%82%E5%BA%A6.md) · [调试与测试](https://github.com/polarours/Coursework/blob/master/problems/015-stanford-cs106b-boggle/05-%E8%B0%83%E8%AF%95%E4%B8%8E%E6%B5%8B%E8%AF%95.md) · [踩坑清单](https://github.com/polarours/Coursework/blob/master/problems/015-stanford-cs106b-boggle/06-%E8%B8%A9%E5%9D%91%E6%B8%85%E5%8D%95.md) · [延伸练习](https://github.com/polarours/Coursework/blob/master/problems/015-stanford-cs106b-boggle/07-%E5%BB%B6%E4%BC%B8%E7%BB%83%E4%B9%A0.md)
+
+## 源码与测试
+
+[题目目录](https://github.com/polarours/Coursework/tree/master/problems/015-stanford-cs106b-boggle)　·　[参考实现](https://github.com/polarours/Coursework/tree/master/problems/015-stanford-cs106b-boggle/solution)　·　[测试](https://github.com/polarours/Coursework/tree/master/problems/015-stanford-cs106b-boggle/tests)

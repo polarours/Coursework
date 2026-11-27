@@ -1,0 +1,115 @@
+---
+title: "Problem Index <span class='zh-inline'>(题目索引)</span>"
+---
+
+34 道题，按学校分组。每道题都有独立的页面：元信息、实测结果、七章解析入口。
+
+> 22 道自主解析题（001–022）与 12 道真实课程作业（023–034）。真实作业的原始仓库以 submodule 形式引入，参考实现独立编写并跑通原测试。
+
+标为「入门 / 进阶 / 硬核」的难度，未由课程声明者按随仓库发布的代码规模推定（<200 / 200–600 / >600 行），不是对课程难度的官方评价。
+
+在 PDF 中这些档案页带有章号（第 37 章起）：章号是**排版顺序**，题号 001–034 是**收录序号**，两者无关。网页版关闭了章号，只显示题号。
+
+## Stanford University
+
+| # | 题目 | 语言 | 难度 |
+|---|---|---|---|
+| 002 | [CS144 — 手写 TCP / Build a TCP](002-stanford-cs144-tcp.qmd) | Python | 进阶 |
+| 007 | [CS143 — 迷你编译器](007-stanford-cs143-compiler.qmd) | Python | 硬核 |
+| 009 | [CS155 — 密码学构件](009-stanford-cs155-crypto.qmd) | Python | 进阶 |
+| 010 | [CS248 — 光线追踪器](010-stanford-cs248-raytracer.qmd) | Python | 进阶 |
+| 011 | [CS231n — 两层神经网络](011-stanford-cs231n-neuralnet.qmd) | Python | 进阶 |
+| 015 | [CS106B — Boggle 回溯求解](015-stanford-cs106b-boggle.qmd) | Python | 进阶 |
+| 021 | [算法 — Kruskal 最小生成树](021-stanford-kruskal.qmd) | Python | 进阶 |
+| 022 | [Assignment: ScopedHandle（RAII 与移动语义）](022-cs106l-scoped-handle.qmd) | C++20 | 进阶 |
+
+## UC Berkeley
+
+| # | 题目 | 语言 | 难度 |
+|---|---|---|---|
+| 003 | [Berkeley CS188 — Pacman 项目](003-berkeley-cs188-pacman.qmd) | Python | 进阶 |
+| 004 | [Berkeley CS61B — Gitlet](004-berkeley-cs61b-gitlet.qmd) | Python | 进阶 |
+| 012 | [Berkeley CS61C — Cache 模拟器](012-ucb-cs61c-cache.qmd) | Python | 进阶 |
+| 013 | [Berkeley CS61A — Scheme 解释器](013-ucb-cs61a-scheme.qmd) | Python | 进阶 |
+| 029 | [Berkeley CS61B proj1a+1b — Deque61B 完整大作业](029-ucb-cs61b-deque61b.qmd) | Java | 硬核 |
+| 034 | [Berkeley CS61C Proj1 — Snek](034-ucb-cs61c-snek.qmd) | C | 硬核 |
+
+## MIT
+
+| # | 题目 | 语言 | 难度 |
+|---|---|---|---|
+| 001 | [6.824 / 6.5840 — Raft](001-mit-6.824-raft.qmd) | Go | 硬核 |
+| 005 | [6.1810 — xv6 核心机制模拟器](005-mit-6.1810-xv6.qmd) | Python | 硬核 |
+| 016 | [6.858 — Shell 解析器](016-mit-shell.qmd) | Python | 进阶 |
+| 018 | [6.006 — LRU 缓存](018-mit-6602-lru-cache.qmd) | Python | 进阶 |
+
+## Carnegie Mellon University
+
+| # | 题目 | 语言 | 难度 |
+|---|---|---|---|
+| 006 | [CMU 15-213 — CSAPP Malloc Lab](006-cmu-csapp-malloc-lab.qmd) | C | 硬核 |
+| 008 | [CMU 15-445 — Buffer Pool Manager](008-cmu-15445-buffer-pool.qmd) | Python | 进阶 |
+| 017 | [CMU 15-112 — 计算几何基础](017-cmu-geometry.qmd) | Python | 进阶 |
+
+## Princeton University
+
+| # | 题目 | 语言 | 难度 |
+|---|---|---|---|
+| 014 | [COS226 — 8-Puzzle](014-princeton-cos226-8puzzle.qmd) | Python | 进阶 |
+| 033 | [COS 217 A1 — Decomment](033-princeton-cos217-decomment.qmd) | C | 入门 |
+
+## UC Irvine
+
+| # | 题目 | 语言 | 难度 |
+|---|---|---|---|
+| 025 | [Irvine ECS36C HW1](025-uci-ecs36c-linkedlist.qmd) | C++ | 入门 |
+| 026 | [UCI ICS46 HW6 — BST 与 AVL 树](026-uci-ics46-bst-avl.qmd) | C++ | 进阶 |
+
+## UC Santa Cruz
+
+| # | 题目 | 语言 | 难度 |
+|---|---|---|---|
+| 031 | [UCSC CSE140 p0 — CS188 风格 Pacman warmup](031-ucsc-cse140-pacman-warmup.qmd) | Python | 入门 |
+| 032 | [UCSC CSE140 p1 — Pacman 搜索大作业](032-ucsc-cse140-pacman-search.qmd) | Python | 进阶 |
+
+## Amirkabir University of Technology
+
+| # | 题目 | 语言 | 难度 |
+|---|---|---|---|
+| 023 | [AP1400-2 HW1](023-amirkabir-ap1400-hw1.qmd) | C | 进阶 |
+
+## City College of New York
+
+| # | 题目 | 语言 | 难度 |
+|---|---|---|---|
+| 027 | [CCNY CSC212 Lab 07 — 回溯三题](027-ccny-csc212-backtracking.qmd) | C++ | 进阶 |
+
+## Clemson University
+
+| # | 题目 | 语言 | 难度 |
+|---|---|---|---|
+| 028 | [CPSC2121 Lab 1 — 链表栈与队列](028-clemson-cpsc2121-liststack-queue.qmd) | C | 进阶 |
+
+## Cornell University
+
+| # | 题目 | 语言 | 难度 |
+|---|---|---|---|
+| 020 | [CS3110 — Enigma 密码机](020-cornell-enigma.qmd) | Python | 进阶 |
+
+## Fordham University
+
+| # | 题目 | 语言 | 难度 |
+|---|---|---|---|
+| 024 | [CISC2200 Lab3](024-fordham-cisc2200-alist.qmd) | C | 入门 |
+
+## Georgia Institute of Technology
+
+| # | 题目 | 语言 | 难度 |
+|---|---|---|---|
+| 019 | [Tech — 布隆过滤器](019-gatech-bloom-filter.qmd) | Python | 进阶 |
+
+## University of Maryland
+
+| # | 题目 | 语言 | 难度 |
+|---|---|---|---|
+| 030 | [UMD CMSC132 Project1 — SubmitServer](030-umd-cmsc132-submitserver.qmd) | Java | 硬核 |

@@ -1,0 +1,33 @@
+---
+title: "034 · UC Berkeley CS61C Proj1 — Snek"
+number-sections: false
+---
+
+| 项目 | 内容 |
+|---|---|
+| 学校 | [UC Berkeley](../universities/berkeley.qmd) |
+| 课程 | CS 61C Great Ideas in Computer Architecture |
+| 方向 | C / 结构体、指针、动态内存与游戏循环 |
+| 难度 | 硬核 / Advanced |
+| 上游仓库 | [https://github.com/61c-teach/sp26-proj1-starter](https://github.com/61c-teach/sp26-proj1-starter) |
+
+## 为什么收录
+CS61C 的招牌项目：一个能跑的贪吃蛇引擎，全部用裸 C 写成，没有容器库、没有 GC。它把“结构体 + 指针 + `malloc`/`realloc` + 二维字符数组”这几件事压进一个具体目标里，而 21 组官方输入/参考输出让每一步都可判定。
+
+The flagship CS61C project: a working snake engine in bare C — no containers, no GC. Structs, pointers, `malloc`/`realloc` and a ragged 2-D char board all serve one concrete goal, and 21 official input/reference pairs make every step checkable.
+
+## 实测结果
+
+- 官方集成测试 **21/21 通过**（输入棋盘 → 一步之后的参考棋盘，逐字节比对）
+- 官方 1708 行单元测试**全过**（Task 1–6 的每个函数）
+- 10000 列的棋盘可正常加载与输出（`read_line` 的 `realloc` 路径）
+- 默认棋盘 18 行 × 20 列，首步后 `d>D` 整体右移一格
+- 实现过程中被官方单测纠正一处规格误读：`create_default_game` 必须**自带**那条蛇（`num_snakes = 1`），而不是留给 `initialize_snakes`
+
+## 七章解析
+
+[题目解读](https://github.com/polarours/Coursework/blob/master/problems/034-ucb-cs61c-snek/01-%E9%A2%98%E7%9B%AE%E8%A7%A3%E8%AF%BB.md) · [设计思路](https://github.com/polarours/Coursework/blob/master/problems/034-ucb-cs61c-snek/02-%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF.md) · [逐步实现](https://github.com/polarours/Coursework/blob/master/problems/034-ucb-cs61c-snek/03-%E9%80%90%E6%AD%A5%E5%AE%9E%E7%8E%B0.md) · [正确性与复杂度](https://github.com/polarours/Coursework/blob/master/problems/034-ucb-cs61c-snek/04-%E6%AD%A3%E7%A1%AE%E6%80%A7%E4%B8%8E%E5%A4%8D%E6%9D%82%E5%BA%A6.md) · [调试与测试](https://github.com/polarours/Coursework/blob/master/problems/034-ucb-cs61c-snek/05-%E8%B0%83%E8%AF%95%E4%B8%8E%E6%B5%8B%E8%AF%95.md) · [踩坑清单](https://github.com/polarours/Coursework/blob/master/problems/034-ucb-cs61c-snek/06-%E8%B8%A9%E5%9D%91%E6%B8%85%E5%8D%95.md) · [延伸练习](https://github.com/polarours/Coursework/blob/master/problems/034-ucb-cs61c-snek/07-%E5%BB%B6%E4%BC%B8%E7%BB%83%E4%B9%A0.md)
+
+## 源码与测试
+
+[题目目录](https://github.com/polarours/Coursework/tree/master/problems/034-ucb-cs61c-snek)　·　[参考实现](https://github.com/polarours/Coursework/tree/master/problems/034-ucb-cs61c-snek/solution)　·　[测试](https://github.com/polarours/Coursework/tree/master/problems/034-ucb-cs61c-snek/tests)

@@ -1,0 +1,30 @@
+---
+title: "016 · MIT 6.858 — Shell 解析器"
+number-sections: false
+---
+
+| 项目 | 内容 |
+|---|---|
+| 学校 | [MIT](../universities/mit.qmd) |
+| 课程 | MIT 6.858 Computer Systems Security |
+| 方向 | 系统编程 / Systems |
+| 难度 | 进阶 / Intermediate |
+| 预计耗时 | 4–8 天 |
+
+## 为什么收录
+Shell 是理解进程、文件描述符与解析的经典系统作业。本项目实现词法/解析层：管道、重定向、引号与变量展开。
+
+> **English:** A carefully chosen capstone that builds transferable reasoning skills through hands-on implementation.
+
+## 实测结果
+
+- 三级管道 `wc -l < a.txt | sort | uniq > result.txt` 正确解析为 3 个命令；引号内的空格保持为单个参数。
+- 详见 [05-调试与测试.md](https://github.com/polarours/Coursework/blob/master/problems/016-mit-shell/05-%E8%B0%83%E8%AF%95%E4%B8%8E%E6%B5%8B%E8%AF%95.md)
+
+## 七章解析
+
+[题目解读](https://github.com/polarours/Coursework/blob/master/problems/016-mit-shell/01-%E9%A2%98%E7%9B%AE%E8%A7%A3%E8%AF%BB.md) · [设计思路](https://github.com/polarours/Coursework/blob/master/problems/016-mit-shell/02-%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF.md) · [逐步实现](https://github.com/polarours/Coursework/blob/master/problems/016-mit-shell/03-%E9%80%90%E6%AD%A5%E5%AE%9E%E7%8E%B0.md) · [正确性与复杂度](https://github.com/polarours/Coursework/blob/master/problems/016-mit-shell/04-%E6%AD%A3%E7%A1%AE%E6%80%A7%E4%B8%8E%E5%A4%8D%E6%9D%82%E5%BA%A6.md) · [调试与测试](https://github.com/polarours/Coursework/blob/master/problems/016-mit-shell/05-%E8%B0%83%E8%AF%95%E4%B8%8E%E6%B5%8B%E8%AF%95.md) · [踩坑清单](https://github.com/polarours/Coursework/blob/master/problems/016-mit-shell/06-%E8%B8%A9%E5%9D%91%E6%B8%85%E5%8D%95.md) · [延伸练习](https://github.com/polarours/Coursework/blob/master/problems/016-mit-shell/07-%E5%BB%B6%E4%BC%B8%E7%BB%83%E4%B9%A0.md)
+
+## 源码与测试
+
+[题目目录](https://github.com/polarours/Coursework/tree/master/problems/016-mit-shell)　·　[参考实现](https://github.com/polarours/Coursework/tree/master/problems/016-mit-shell/solution)　·　[测试](https://github.com/polarours/Coursework/tree/master/problems/016-mit-shell/tests)

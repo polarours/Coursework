@@ -1,0 +1,31 @@
+---
+title: "024 · Fordham CISC2200 Lab3"
+number-sections: false
+---
+
+| 项目 | 内容 |
+|---|---|
+| 学校 | [Fordham University](../universities/fordham.qmd) |
+| 课程 | CISC2200 Spring 2024 |
+| 方向 | 动态数组 + 深拷贝 / Dynamic array + deep copy |
+| 难度 | 入门 / Introductory |
+| 上游仓库 | [https://github.com/CISC2200-Fall-24-Fordham/Lab3（pin](https://github.com/CISC2200-Fall-24-Fordham/Lab3（pin) |
+
+## 为什么收录
+真实的 C++ 数据结构实验：实现 AList 的 5 个成员函数（addFirst、getFirst、removeFirst、拷贝构造、赋值运算符），doctest 验证。starter 里有一个真实笔误（`itemType` 大小写错误）——学生必须先修它才能编译。
+
+A genuine DS lab: implement 5 AList members verified by doctest. The starter contains a real typo (`itemType`) students must fix to compile.
+
+## 实测结果
+
+- 官方 doctest 全部用例通过（`make` 后直接运行，零外部依赖）
+- 修掉 starter 自带的 `resize` 参数错误：原文用 `count * RFACTOR`，`count < maxCnt` 时扩容反而可能缩小容量
+- 编译器在编译第一秒就报出 `AList<itemType>` 的大小写错误——这道题的隐藏考点是读懂编译器在说什么
+
+## 七章解析
+
+[题目解读](https://github.com/polarours/Coursework/blob/master/problems/024-fordham-cisc2200-alist/01-%E9%A2%98%E7%9B%AE%E8%A7%A3%E8%AF%BB.md) · [设计思路](https://github.com/polarours/Coursework/blob/master/problems/024-fordham-cisc2200-alist/02-%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF.md) · [逐步实现](https://github.com/polarours/Coursework/blob/master/problems/024-fordham-cisc2200-alist/03-%E9%80%90%E6%AD%A5%E5%AE%9E%E7%8E%B0.md) · [正确性与复杂度](https://github.com/polarours/Coursework/blob/master/problems/024-fordham-cisc2200-alist/04-%E6%AD%A3%E7%A1%AE%E6%80%A7%E4%B8%8E%E5%A4%8D%E6%9D%82%E5%BA%A6.md) · [调试与测试](https://github.com/polarours/Coursework/blob/master/problems/024-fordham-cisc2200-alist/05-%E8%B0%83%E8%AF%95%E4%B8%8E%E6%B5%8B%E8%AF%95.md) · [踩坑清单](https://github.com/polarours/Coursework/blob/master/problems/024-fordham-cisc2200-alist/06-%E8%B8%A9%E5%9D%91%E6%B8%85%E5%8D%95.md) · [延伸练习](https://github.com/polarours/Coursework/blob/master/problems/024-fordham-cisc2200-alist/07-%E5%BB%B6%E4%BC%B8%E7%BB%83%E4%B9%A0.md)
+
+## 源码与测试
+
+[题目目录](https://github.com/polarours/Coursework/tree/master/problems/024-fordham-cisc2200-alist)　·　[参考实现](https://github.com/polarours/Coursework/tree/master/problems/024-fordham-cisc2200-alist/solution)　·　[测试](https://github.com/polarours/Coursework/tree/master/problems/024-fordham-cisc2200-alist/tests)

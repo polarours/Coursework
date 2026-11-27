@@ -25,6 +25,12 @@ A complete lab with official sample tests. The upstream student submission conta
 4. `getFirst/getLast/getAt` 空表/越界崩溃（接口注释要求返回 `T()`）
 5. `removeStart/removeEnd` 空表崩溃
 
+## 实测结果 / Verified results
+
+- 官方 13 个样例全部通过（T1–T22 中带 main 的 13 个）
+- 边界测试 5 组全过：空表 `getFirst/getLast/getAt` 返回 `T()`、空栈 `pop` 与空队列 `dequeue` 返回 `T()`、LIFO/FIFO 语义、List 的增删查
+- upstream 学生实现通过全部 13 个样例但仍有 5 处缺陷（`size()` 缺 return、空容器解引用空指针等），全部落在样例覆盖之外
+
 ## 运行 / Run
 
 ```bash

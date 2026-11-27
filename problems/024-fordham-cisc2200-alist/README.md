@@ -23,6 +23,12 @@ A genuine DS lab: implement 5 AList members verified by doctest. The starter con
 - `solution/AList.h` — 参考实现 / reference implementation
 - `tests/` — doctest 测试（含上游 `doctest.h` 单头文件副本，因网络隔离保留本地）/ doctest tests + local copy of the single-header doctest
 
+## 实测结果 / Verified results
+
+- 官方 doctest 全部用例通过（`make` 后直接运行，零外部依赖）
+- 修掉 starter 自带的 `resize` 参数错误：原文用 `count * RFACTOR`，`count < maxCnt` 时扩容反而可能缩小容量
+- 编译器在编译第一秒就报出 `AList<itemType>` 的大小写错误——这道题的隐藏考点是读懂编译器在说什么
+
 ## 运行 / Run
 
 ```bash

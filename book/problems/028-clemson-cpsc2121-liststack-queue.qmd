@@ -1,0 +1,31 @@
+---
+title: "028 · Clemson CPSC2121 Lab 1 — 链表栈与队列"
+number-sections: false
+---
+
+| 项目 | 内容 |
+|---|---|
+| 学校 | [Clemson University](../universities/clemson.qmd) |
+| 课程 | CPSC 2121 Data Structures and Algorithms |
+| 方向 | C++ / 模板链表、栈与队列 |
+| 难度 | 进阶 / Intermediate |
+| 上游仓库 | [https://github.com/russellocean/CPSC2121（学生作业仓库，含完整实现与](https://github.com/russellocean/CPSC2121（学生作业仓库，含完整实现与) |
+
+## 为什么收录
+带官方样例测试（T1–T22）的完整作业：模板链表 List + 基于它的 ListStack / ListQueue。upstream 是学生提交版，其实现存在**5 处真实缺陷**，我们的 solution 是修复版——学生可对比 upstream 原版找 bug，本身就是练习。
+
+A complete lab with official sample tests. The upstream student submission contains 5 real defects; our solution is the fixed version — diffing the two is itself an exercise.
+
+## 实测结果
+
+- 官方 13 个样例全部通过（T1–T22 中带 main 的 13 个）
+- 边界测试 5 组全过：空表 `getFirst/getLast/getAt` 返回 `T()`、空栈 `pop` 与空队列 `dequeue` 返回 `T()`、LIFO/FIFO 语义、List 的增删查
+- upstream 学生实现通过全部 13 个样例但仍有 5 处缺陷（`size()` 缺 return、空容器解引用空指针等），全部落在样例覆盖之外
+
+## 七章解析
+
+[题目解读](https://github.com/polarours/Coursework/blob/master/problems/028-clemson-cpsc2121-liststack-queue/01-%E9%A2%98%E7%9B%AE%E8%A7%A3%E8%AF%BB.md) · [设计思路](https://github.com/polarours/Coursework/blob/master/problems/028-clemson-cpsc2121-liststack-queue/02-%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF.md) · [逐步实现](https://github.com/polarours/Coursework/blob/master/problems/028-clemson-cpsc2121-liststack-queue/03-%E9%80%90%E6%AD%A5%E5%AE%9E%E7%8E%B0.md) · [正确性与复杂度](https://github.com/polarours/Coursework/blob/master/problems/028-clemson-cpsc2121-liststack-queue/04-%E6%AD%A3%E7%A1%AE%E6%80%A7%E4%B8%8E%E5%A4%8D%E6%9D%82%E5%BA%A6.md) · [调试与测试](https://github.com/polarours/Coursework/blob/master/problems/028-clemson-cpsc2121-liststack-queue/05-%E8%B0%83%E8%AF%95%E4%B8%8E%E6%B5%8B%E8%AF%95.md) · [踩坑清单](https://github.com/polarours/Coursework/blob/master/problems/028-clemson-cpsc2121-liststack-queue/06-%E8%B8%A9%E5%9D%91%E6%B8%85%E5%8D%95.md) · [延伸练习](https://github.com/polarours/Coursework/blob/master/problems/028-clemson-cpsc2121-liststack-queue/07-%E5%BB%B6%E4%BC%B8%E7%BB%83%E4%B9%A0.md)
+
+## 源码与测试
+
+[题目目录](https://github.com/polarours/Coursework/tree/master/problems/028-clemson-cpsc2121-liststack-queue)　·　[参考实现](https://github.com/polarours/Coursework/tree/master/problems/028-clemson-cpsc2121-liststack-queue/solution)　·　[测试](https://github.com/polarours/Coursework/tree/master/problems/028-clemson-cpsc2121-liststack-queue/tests)

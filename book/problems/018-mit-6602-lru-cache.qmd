@@ -1,0 +1,30 @@
+---
+title: "018 · MIT 6.006 — LRU 缓存"
+number-sections: false
+---
+
+| 项目 | 内容 |
+|---|---|
+| 学校 | [MIT](../universities/mit.qmd) |
+| 课程 | MIT 6.006 Introduction to Algorithms |
+| 方向 | 数据结构 / Data structures |
+| 难度 | 进阶 / Intermediate |
+| 预计耗时 | 3–6 天 |
+
+## 为什么收录
+LRU 缓存是哈希表与双向链表结合的经典题：O(1) 完成读写与淘汰，是理解数据结构组合的绝佳案例。
+
+> **English:** A carefully chosen capstone that builds transferable reasoning skills through hands-on implementation.
+
+## 实测结果
+
+- get(1) 后顺序从 [2,1] 变为 [1,2]，证明命中被提升为 MRU；put(3) 淘汰了 LRU 的键 2。
+- 详见 [05-调试与测试.md](https://github.com/polarours/Coursework/blob/master/problems/018-mit-6602-lru-cache/05-%E8%B0%83%E8%AF%95%E4%B8%8E%E6%B5%8B%E8%AF%95.md)
+
+## 七章解析
+
+[题目解读](https://github.com/polarours/Coursework/blob/master/problems/018-mit-6602-lru-cache/01-%E9%A2%98%E7%9B%AE%E8%A7%A3%E8%AF%BB.md) · [设计思路](https://github.com/polarours/Coursework/blob/master/problems/018-mit-6602-lru-cache/02-%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF.md) · [逐步实现](https://github.com/polarours/Coursework/blob/master/problems/018-mit-6602-lru-cache/03-%E9%80%90%E6%AD%A5%E5%AE%9E%E7%8E%B0.md) · [正确性与复杂度](https://github.com/polarours/Coursework/blob/master/problems/018-mit-6602-lru-cache/04-%E6%AD%A3%E7%A1%AE%E6%80%A7%E4%B8%8E%E5%A4%8D%E6%9D%82%E5%BA%A6.md) · [调试与测试](https://github.com/polarours/Coursework/blob/master/problems/018-mit-6602-lru-cache/05-%E8%B0%83%E8%AF%95%E4%B8%8E%E6%B5%8B%E8%AF%95.md) · [踩坑清单](https://github.com/polarours/Coursework/blob/master/problems/018-mit-6602-lru-cache/06-%E8%B8%A9%E5%9D%91%E6%B8%85%E5%8D%95.md) · [延伸练习](https://github.com/polarours/Coursework/blob/master/problems/018-mit-6602-lru-cache/07-%E5%BB%B6%E4%BC%B8%E7%BB%83%E4%B9%A0.md)
+
+## 源码与测试
+
+[题目目录](https://github.com/polarours/Coursework/tree/master/problems/018-mit-6602-lru-cache)　·　[参考实现](https://github.com/polarours/Coursework/tree/master/problems/018-mit-6602-lru-cache/solution)　·　[测试](https://github.com/polarours/Coursework/tree/master/problems/018-mit-6602-lru-cache/tests)

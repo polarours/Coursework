@@ -1,0 +1,30 @@
+---
+title: "020 · Cornell CS3110 — Enigma 密码机"
+number-sections: false
+---
+
+| 项目 | 内容 |
+|---|---|
+| 学校 | [Cornell University](../universities/cornell.qmd) |
+| 课程 | Cornell CS 3110 Functional Programming |
+| 方向 | 密码学 / Cryptography |
+| 难度 | 进阶 / Intermediate |
+| 预计耗时 | 4–8 天 |
+
+## 为什么收录
+Enigma 是 CS3110 的经典作业：用纯函数式思维实现转子密码机，理解状态、映射与对称性。
+
+> **English:** A carefully chosen capstone that builds transferable reasoning skills through hands-on implementation.
+
+## 实测结果
+
+- 加解密对称（HELLO→WSDUQ→HELLO）验证了反射器的数学性质；连续两个 A 得到 Q 和 X，证明转子每次加密后推进。
+- 详见 [05-调试与测试.md](https://github.com/polarours/Coursework/blob/master/problems/020-cornell-enigma/05-%E8%B0%83%E8%AF%95%E4%B8%8E%E6%B5%8B%E8%AF%95.md)
+
+## 七章解析
+
+[题目解读](https://github.com/polarours/Coursework/blob/master/problems/020-cornell-enigma/01-%E9%A2%98%E7%9B%AE%E8%A7%A3%E8%AF%BB.md) · [设计思路](https://github.com/polarours/Coursework/blob/master/problems/020-cornell-enigma/02-%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF.md) · [逐步实现](https://github.com/polarours/Coursework/blob/master/problems/020-cornell-enigma/03-%E9%80%90%E6%AD%A5%E5%AE%9E%E7%8E%B0.md) · [正确性与复杂度](https://github.com/polarours/Coursework/blob/master/problems/020-cornell-enigma/04-%E6%AD%A3%E7%A1%AE%E6%80%A7%E4%B8%8E%E5%A4%8D%E6%9D%82%E5%BA%A6.md) · [调试与测试](https://github.com/polarours/Coursework/blob/master/problems/020-cornell-enigma/05-%E8%B0%83%E8%AF%95%E4%B8%8E%E6%B5%8B%E8%AF%95.md) · [踩坑清单](https://github.com/polarours/Coursework/blob/master/problems/020-cornell-enigma/06-%E8%B8%A9%E5%9D%91%E6%B8%85%E5%8D%95.md) · [延伸练习](https://github.com/polarours/Coursework/blob/master/problems/020-cornell-enigma/07-%E5%BB%B6%E4%BC%B8%E7%BB%83%E4%B9%A0.md)
+
+## 源码与测试
+
+[题目目录](https://github.com/polarours/Coursework/tree/master/problems/020-cornell-enigma)　·　[参考实现](https://github.com/polarours/Coursework/tree/master/problems/020-cornell-enigma/solution)　·　[测试](https://github.com/polarours/Coursework/tree/master/problems/020-cornell-enigma/tests)

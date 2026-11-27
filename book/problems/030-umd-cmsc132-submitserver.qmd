@@ -1,0 +1,30 @@
+---
+title: "030 · UMD CMSC132 Project1 — SubmitServer"
+number-sections: false
+---
+
+| 项目 | 内容 |
+|---|---|
+| 学校 | [University of Maryland](../universities/umd.qmd) |
+| 课程 | CMSC 132 Object-Oriented Programming II |
+| 方向 | Java / 链表、类设计 |
+| 难度 | 硬核 / Advanced |
+| 上游仓库 | [https://github.com/a-blender/cmsc132（学生提交仓库，含](https://github.com/a-blender/cmsc132（学生提交仓库，含) |
+
+## 为什么收录
+UMD 官方以**测试即规格**著称：PublicTests.java 就是需求文档（统计提交数、best 分数、satisfactory 判定等 7 个方法语义全在测试里）。upstream 学生实现（Anna Blendermann）经我们实测通过全部官方测试，可直接作为参考对照。
+
+UMD's official "tests as spec" style: PublicTests.java defines the required semantics. The upstream student implementation passes all 15 official tests (verified here).
+
+## 实测结果
+
+- 官方 PublicTests 15/15 通过；边界补充 4/4 通过
+- 边界语义实测记录（官方测试未覆盖的分支）：`numSubmissions(null)` 返回 -1、非法分数（101/-1）静默忽略、`bestSubmissionNumber` 1-based
+
+## 七章解析
+
+[题目解读](https://github.com/polarours/Coursework/blob/master/problems/030-umd-cmsc132-submitserver/01-%E9%A2%98%E7%9B%AE%E8%A7%A3%E8%AF%BB.md) · [设计思路](https://github.com/polarours/Coursework/blob/master/problems/030-umd-cmsc132-submitserver/02-%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF.md) · [逐步实现](https://github.com/polarours/Coursework/blob/master/problems/030-umd-cmsc132-submitserver/03-%E9%80%90%E6%AD%A5%E5%AE%9E%E7%8E%B0.md) · [正确性与复杂度](https://github.com/polarours/Coursework/blob/master/problems/030-umd-cmsc132-submitserver/04-%E6%AD%A3%E7%A1%AE%E6%80%A7%E4%B8%8E%E5%A4%8D%E6%9D%82%E5%BA%A6.md) · [调试与测试](https://github.com/polarours/Coursework/blob/master/problems/030-umd-cmsc132-submitserver/05-%E8%B0%83%E8%AF%95%E4%B8%8E%E6%B5%8B%E8%AF%95.md) · [踩坑清单](https://github.com/polarours/Coursework/blob/master/problems/030-umd-cmsc132-submitserver/06-%E8%B8%A9%E5%9D%91%E6%B8%85%E5%8D%95.md) · [延伸练习](https://github.com/polarours/Coursework/blob/master/problems/030-umd-cmsc132-submitserver/07-%E5%BB%B6%E4%BC%B8%E7%BB%83%E4%B9%A0.md)
+
+## 源码与测试
+
+[题目目录](https://github.com/polarours/Coursework/tree/master/problems/030-umd-cmsc132-submitserver)　·　[参考实现](https://github.com/polarours/Coursework/tree/master/problems/030-umd-cmsc132-submitserver/solution)　·　[测试](https://github.com/polarours/Coursework/tree/master/problems/030-umd-cmsc132-submitserver/tests)

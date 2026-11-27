@@ -1,0 +1,31 @@
+---
+title: "027 · CCNY CSC212 Lab 07 — 回溯三题"
+number-sections: false
+---
+
+| 项目 | 内容 |
+|---|---|
+| 学校 | [City College of New York](../universities/ccny.qmd) |
+| 课程 | CSC 212 Data Structures |
+| 方向 | C++ / 递归回溯 |
+| 难度 | 进阶 / Intermediate |
+| 上游仓库 | [https://github.com/uricsc/212-Deliverables（教师课程仓库，本题为其中](https://github.com/uricsc/212-Deliverables（教师课程仓库，本题为其中) |
+
+## 为什么收录
+教师仓库（uricsc）中的回溯实验：N-Queens、Sudoku、Sujiko 三个经典问题，scaffolding 给出类接口与数据文件，`solve` 留空由学生实现。三题覆盖回溯的三个难度梯度。
+
+The instructor's course repo: three classic backtracking problems (N-Queens, Sudoku, Sujiko) with class scaffolding and data files; the solve functions are left empty.
+
+## 实测结果
+
+- 8-Queens 求解成功；4-Queens 有解、2/3-Queens 正确判无解
+- Sudoku easy/medium/hard 三档谜题全部解出
+- Sujiko 谜题解出（含剪枝：填满的宫校验目标和）
+
+## 七章解析
+
+[题目解读](https://github.com/polarours/Coursework/blob/master/problems/027-ccny-csc212-backtracking/01-%E9%A2%98%E7%9B%AE%E8%A7%A3%E8%AF%BB.md) · [设计思路](https://github.com/polarours/Coursework/blob/master/problems/027-ccny-csc212-backtracking/02-%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF.md) · [逐步实现](https://github.com/polarours/Coursework/blob/master/problems/027-ccny-csc212-backtracking/03-%E9%80%90%E6%AD%A5%E5%AE%9E%E7%8E%B0.md) · [正确性与复杂度](https://github.com/polarours/Coursework/blob/master/problems/027-ccny-csc212-backtracking/04-%E6%AD%A3%E7%A1%AE%E6%80%A7%E4%B8%8E%E5%A4%8D%E6%9D%82%E5%BA%A6.md) · [调试与测试](https://github.com/polarours/Coursework/blob/master/problems/027-ccny-csc212-backtracking/05-%E8%B0%83%E8%AF%95%E4%B8%8E%E6%B5%8B%E8%AF%95.md) · [踩坑清单](https://github.com/polarours/Coursework/blob/master/problems/027-ccny-csc212-backtracking/06-%E8%B8%A9%E5%9D%91%E6%B8%85%E5%8D%95.md) · [延伸练习](https://github.com/polarours/Coursework/blob/master/problems/027-ccny-csc212-backtracking/07-%E5%BB%B6%E4%BC%B8%E7%BB%83%E4%B9%A0.md)
+
+## 源码与测试
+
+[题目目录](https://github.com/polarours/Coursework/tree/master/problems/027-ccny-csc212-backtracking)　·　[参考实现](https://github.com/polarours/Coursework/tree/master/problems/027-ccny-csc212-backtracking/solution)　·　[测试](https://github.com/polarours/Coursework/tree/master/problems/027-ccny-csc212-backtracking/tests)

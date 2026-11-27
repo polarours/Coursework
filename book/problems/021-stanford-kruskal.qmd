@@ -1,0 +1,30 @@
+---
+title: "021 · Stanford 算法 — Kruskal 最小生成树"
+number-sections: false
+---
+
+| 项目 | 内容 |
+|---|---|
+| 学校 | [Stanford University](../universities/stanford.qmd) |
+| 课程 | Stanford CS161 Design and Analysis of Algorithms |
+| 方向 | 图算法 / Graph algorithms |
+| 难度 | 进阶 / Intermediate |
+| 预计耗时 | 3–6 天 |
+
+## 为什么收录
+Kruskal 是贪心算法的典范：并查集让「选边不成环」高效实现，是理解贪心正确性与数据结构配合的绝佳题目。
+
+> **English:** A carefully chosen capstone that builds transferable reasoning skills through hands-on implementation.
+
+## 实测结果
+
+- 经典图 MST 权重 37 与教科书答案一致；不连通图只得到 2 条边（少于 n-1），正确处理了非连通情况。
+- 详见 [05-调试与测试.md](https://github.com/polarours/Coursework/blob/master/problems/021-stanford-kruskal/05-%E8%B0%83%E8%AF%95%E4%B8%8E%E6%B5%8B%E8%AF%95.md)
+
+## 七章解析
+
+[题目解读](https://github.com/polarours/Coursework/blob/master/problems/021-stanford-kruskal/01-%E9%A2%98%E7%9B%AE%E8%A7%A3%E8%AF%BB.md) · [设计思路](https://github.com/polarours/Coursework/blob/master/problems/021-stanford-kruskal/02-%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF.md) · [逐步实现](https://github.com/polarours/Coursework/blob/master/problems/021-stanford-kruskal/03-%E9%80%90%E6%AD%A5%E5%AE%9E%E7%8E%B0.md) · [正确性与复杂度](https://github.com/polarours/Coursework/blob/master/problems/021-stanford-kruskal/04-%E6%AD%A3%E7%A1%AE%E6%80%A7%E4%B8%8E%E5%A4%8D%E6%9D%82%E5%BA%A6.md) · [调试与测试](https://github.com/polarours/Coursework/blob/master/problems/021-stanford-kruskal/05-%E8%B0%83%E8%AF%95%E4%B8%8E%E6%B5%8B%E8%AF%95.md) · [踩坑清单](https://github.com/polarours/Coursework/blob/master/problems/021-stanford-kruskal/06-%E8%B8%A9%E5%9D%91%E6%B8%85%E5%8D%95.md) · [延伸练习](https://github.com/polarours/Coursework/blob/master/problems/021-stanford-kruskal/07-%E5%BB%B6%E4%BC%B8%E7%BB%83%E4%B9%A0.md)
+
+## 源码与测试
+
+[题目目录](https://github.com/polarours/Coursework/tree/master/problems/021-stanford-kruskal)　·　[参考实现](https://github.com/polarours/Coursework/tree/master/problems/021-stanford-kruskal/solution)　·　[测试](https://github.com/polarours/Coursework/tree/master/problems/021-stanford-kruskal/tests)

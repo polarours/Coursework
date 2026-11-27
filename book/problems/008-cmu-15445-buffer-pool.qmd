@@ -1,0 +1,30 @@
+---
+title: "008 · CMU 15-445 — Buffer Pool Manager"
+number-sections: false
+---
+
+| 项目 | 内容 |
+|---|---|
+| 学校 | [Carnegie Mellon University](../universities/cmu.qmd) |
+| 课程 | CMU 15-445/645 Database Systems |
+| 方向 | 数据库 / Database systems |
+| 难度 | 进阶 / Intermediate |
+| 预计耗时 | 4–8 天 / 4–8 days |
+
+## 为什么收录
+LRU 淘汰、pin/unpin、脏页写回——数据库存储引擎的核心；真实踩过动态属性补丁的坑。
+
+> **English:** A carefully chosen capstone that builds transferable reasoning skills through hands-on implementation.
+
+## 实测结果
+
+- 3 页框 LRU 淘汰正确；pin 住的页经历 6 次分配仍存活；flush 后磁盘数据一致。
+- 详见 [05-调试与测试.md](https://github.com/polarours/Coursework/blob/master/problems/008-cmu-15445-buffer-pool/05-%E8%B0%83%E8%AF%95%E4%B8%8E%E6%B5%8B%E8%AF%95.md) 的真实输出
+
+## 七章解析
+
+[题目解读](https://github.com/polarours/Coursework/blob/master/problems/008-cmu-15445-buffer-pool/01-%E9%A2%98%E7%9B%AE%E8%A7%A3%E8%AF%BB.md) · [设计思路](https://github.com/polarours/Coursework/blob/master/problems/008-cmu-15445-buffer-pool/02-%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF.md) · [逐步实现](https://github.com/polarours/Coursework/blob/master/problems/008-cmu-15445-buffer-pool/03-%E9%80%90%E6%AD%A5%E5%AE%9E%E7%8E%B0.md) · [正确性与复杂度](https://github.com/polarours/Coursework/blob/master/problems/008-cmu-15445-buffer-pool/04-%E6%AD%A3%E7%A1%AE%E6%80%A7%E4%B8%8E%E5%A4%8D%E6%9D%82%E5%BA%A6.md) · [调试与测试](https://github.com/polarours/Coursework/blob/master/problems/008-cmu-15445-buffer-pool/05-%E8%B0%83%E8%AF%95%E4%B8%8E%E6%B5%8B%E8%AF%95.md) · [踩坑清单](https://github.com/polarours/Coursework/blob/master/problems/008-cmu-15445-buffer-pool/06-%E8%B8%A9%E5%9D%91%E6%B8%85%E5%8D%95.md) · [延伸练习](https://github.com/polarours/Coursework/blob/master/problems/008-cmu-15445-buffer-pool/07-%E5%BB%B6%E4%BC%B8%E7%BB%83%E4%B9%A0.md)
+
+## 源码与测试
+
+[题目目录](https://github.com/polarours/Coursework/tree/master/problems/008-cmu-15445-buffer-pool)　·　[参考实现](https://github.com/polarours/Coursework/tree/master/problems/008-cmu-15445-buffer-pool/solution)　·　[测试](https://github.com/polarours/Coursework/tree/master/problems/008-cmu-15445-buffer-pool/tests)

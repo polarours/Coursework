@@ -1,0 +1,31 @@
+---
+title: "026 · UCI ICS46 HW6 — BST 与 AVL 树"
+number-sections: false
+---
+
+| 项目 | 内容 |
+|---|---|
+| 学校 | [UC Irvine](../universities/uci.qmd) |
+| 课程 | ICS 46 Data Structures |
+| 方向 | C++ / 二叉搜索树与自平衡树 |
+| 难度 | 进阶 / Intermediate |
+| 上游仓库 | [https://github.com/klefstad-teaching/ICS-46-HW6](https://github.com/klefstad-teaching/ICS-46-HW6) |
+
+## 为什么收录
+官方教学仓库：实现 BSTree 与 AVLTree（继承抽象基类 BST），starter 的三个 `.cpp` 全空、接口完整。官方本地 gtest 只有占位用例（真实评测在 Gradescope），因此本项目按 `bst.h` 接口语义自写测试，README 如实注明。
+
+The official teaching repo: implement BSTree and AVLTree over an abstract BST base. The local gtest is a placeholder (real grading on Gradescope), so our tests are self-written against the bst.h interface.
+
+## 实测结果
+
+- BST 顺序插入 1024 键退化成链（高度=1024）；同样数据 AVL 高度=11 —— 教科书级对比
+- 官方 demo 真实输出：sorted.txt 下 **BSTree 高度 26 vs AVLTree 高度 5**
+- 开发中修复两个真实错误：`Node` 是全局类型不能写成 `BSTree::Node`；static 成员函数不能访问非静态 `count`（计数移到公共接口维护）
+
+## 七章解析
+
+[题目解读](https://github.com/polarours/Coursework/blob/master/problems/026-uci-ics46-bst-avl/01-%E9%A2%98%E7%9B%AE%E8%A7%A3%E8%AF%BB.md) · [设计思路](https://github.com/polarours/Coursework/blob/master/problems/026-uci-ics46-bst-avl/02-%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF.md) · [逐步实现](https://github.com/polarours/Coursework/blob/master/problems/026-uci-ics46-bst-avl/03-%E9%80%90%E6%AD%A5%E5%AE%9E%E7%8E%B0.md) · [正确性与复杂度](https://github.com/polarours/Coursework/blob/master/problems/026-uci-ics46-bst-avl/04-%E6%AD%A3%E7%A1%AE%E6%80%A7%E4%B8%8E%E5%A4%8D%E6%9D%82%E5%BA%A6.md) · [调试与测试](https://github.com/polarours/Coursework/blob/master/problems/026-uci-ics46-bst-avl/05-%E8%B0%83%E8%AF%95%E4%B8%8E%E6%B5%8B%E8%AF%95.md) · [踩坑清单](https://github.com/polarours/Coursework/blob/master/problems/026-uci-ics46-bst-avl/06-%E8%B8%A9%E5%9D%91%E6%B8%85%E5%8D%95.md) · [延伸练习](https://github.com/polarours/Coursework/blob/master/problems/026-uci-ics46-bst-avl/07-%E5%BB%B6%E4%BC%B8%E7%BB%83%E4%B9%A0.md)
+
+## 源码与测试
+
+[题目目录](https://github.com/polarours/Coursework/tree/master/problems/026-uci-ics46-bst-avl)　·　[参考实现](https://github.com/polarours/Coursework/tree/master/problems/026-uci-ics46-bst-avl/solution)　·　[测试](https://github.com/polarours/Coursework/tree/master/problems/026-uci-ics46-bst-avl/tests)

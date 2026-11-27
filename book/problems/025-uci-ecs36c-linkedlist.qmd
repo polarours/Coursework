@@ -1,0 +1,31 @@
+---
+title: "025 · UC Irvine ECS36C HW1"
+number-sections: false
+---
+
+| 项目 | 内容 |
+|---|---|
+| 学校 | [UC Irvine](../universities/uci.qmd) |
+| 课程 | ECS36C Fall 2023 — Templates, Linked Lists, Stacks, Queues |
+| 方向 | 模板 + 链表/栈/队列 / Templates + LinkedList/Stack/Queue |
+| 难度 | 入门 / Introductory |
+| 上游仓库 | [https://github.com/ecs36c-fq2023/hw1（pin](https://github.com/ecs36c-fq2023/hw1（pin) |
+
+## 为什么收录
+真实的模板库作业：先实现 `LinkedList`，再用它实现 `Stack` 和 `Queue`（明确禁止用 `std::vector`）。上游评分用隐藏测试，仓库里公开了 4 个官方 LinkedList 用例；Stack/Queue 的官方测试是注释状态的 TODO。我们启用了官方示例并按接口语义补全了测试。
+
+A genuine template-library assignment: implement `LinkedList` first, then build `Stack` and `Queue` on it (vectors explicitly disallowed). Grading uses hidden tests; we enabled the official examples and added semantic tests.
+
+## 实测结果
+
+- upstream 官方 LinkedList 测试 4/4 通过（用原文件，未修改）
+- Stack/Queue 测试 5/5 通过（官方注释示例启用 + 语义补全）
+- 实现细节：Stack 的 vector 构造"末尾为栈顶"需要逆序建链；析构经 `clear()` 释放节点
+
+## 七章解析
+
+[题目解读](https://github.com/polarours/Coursework/blob/master/problems/025-uci-ecs36c-linkedlist/01-%E9%A2%98%E7%9B%AE%E8%A7%A3%E8%AF%BB.md) · [设计思路](https://github.com/polarours/Coursework/blob/master/problems/025-uci-ecs36c-linkedlist/02-%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF.md) · [逐步实现](https://github.com/polarours/Coursework/blob/master/problems/025-uci-ecs36c-linkedlist/03-%E9%80%90%E6%AD%A5%E5%AE%9E%E7%8E%B0.md) · [正确性与复杂度](https://github.com/polarours/Coursework/blob/master/problems/025-uci-ecs36c-linkedlist/04-%E6%AD%A3%E7%A1%AE%E6%80%A7%E4%B8%8E%E5%A4%8D%E6%9D%82%E5%BA%A6.md) · [调试与测试](https://github.com/polarours/Coursework/blob/master/problems/025-uci-ecs36c-linkedlist/05-%E8%B0%83%E8%AF%95%E4%B8%8E%E6%B5%8B%E8%AF%95.md) · [踩坑清单](https://github.com/polarours/Coursework/blob/master/problems/025-uci-ecs36c-linkedlist/06-%E8%B8%A9%E5%9D%91%E6%B8%85%E5%8D%95.md) · [延伸练习](https://github.com/polarours/Coursework/blob/master/problems/025-uci-ecs36c-linkedlist/07-%E5%BB%B6%E4%BC%B8%E7%BB%83%E4%B9%A0.md)
+
+## 源码与测试
+
+[题目目录](https://github.com/polarours/Coursework/tree/master/problems/025-uci-ecs36c-linkedlist)　·　[参考实现](https://github.com/polarours/Coursework/tree/master/problems/025-uci-ecs36c-linkedlist/solution)　·　[测试](https://github.com/polarours/Coursework/tree/master/problems/025-uci-ecs36c-linkedlist/tests)

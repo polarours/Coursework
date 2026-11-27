@@ -8,6 +8,10 @@ title: "Volume V · Real Assignments <span class='zh-inline'>(卷五 · 真实�
 前四卷是我们对经典大作业的自主解析；本卷转向**真实高校作业仓库本身**——原样引用、本地验证、独立精解。每道题都满足三条底线：官方 starter（非学生答案集）、本地可跑的原始或自写测试、submodule 引用保留原貌。
 
 > **English:** Volumes I–IV are our own walkthroughs of classic projects; this volume integrates real course repos as-is — official starters, locally verified tests, submodules preserving the originals.
+
+每一道题（001–034）在书站上都有独立页面：元信息、实测结果、七章入口。见[题目索引](../problems/index.qmd)。
+
+> **English:** Every assignment, original or integrated, has its own page in the book — see the [problem index](../problems/index.qmd).
 :::
 
 ## Methodology (5.0.1 方法论)
