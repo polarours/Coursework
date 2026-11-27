@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0.7" y2="1">
+    <stop offset="0" stop-color="#0B1626"/>
+    <stop offset="1" stop-color="#12233B"/>
+  </linearGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<g stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="1">
+  <line x1="0" y1="70" x2="1200" y2="70"/>
+  <line x1="0" y1="114" x2="1200" y2="114"/>
+  <line x1="0" y1="158" x2="1200" y2="158"/>
+  <line x1="0" y1="202" x2="1200" y2="202"/>
+  <line x1="0" y1="246" x2="1200" y2="246"/>
+  <line x1="0" y1="290" x2="1200" y2="290"/>
+  <line x1="0" y1="334" x2="1200" y2="334"/>
+  <line x1="0" y1="378" x2="1200" y2="378"/>
+  <line x1="0" y1="422" x2="1200" y2="422"/>
+  <line x1="0" y1="466" x2="1200" y2="466"/>
+  <line x1="0" y1="510" x2="1200" y2="510"/>
+  <line x1="0" y1="554" x2="1200" y2="554"/>
+  <line x1="0" y1="598" x2="1200" y2="598"/>
+</g>
+<rect x="80" y="96" width="4" height="188" fill="#3EE0C8"/>
+<text x="108" y="160" font-family="Noto Serif, Georgia, serif" font-size="72" font-weight="600" fill="#F4F8FC">Coursework</text>
+<text x="110" y="216" font-family="Noto Serif, Georgia, serif" font-size="34" fill="#3EE0C8">A Capstone Atlas</text>
+<text x="110" y="262" font-family="Noto Sans, Helvetica, sans-serif" font-size="20" fill="#93A9C4">Learning systems thinking through capstone assignments, solved and measured</text>
+<text x="110" y="292" font-family="Noto Sans CJK SC, Noto Sans, sans-serif" font-size="20" fill="#93A9C4">三十四道大作业，每一道都跑过、量过、写下来</text>
+<text x="110" y="432" font-family="Noto Serif, Georgia, serif" font-size="62" font-weight="600" fill="#F4F8FC">34</text>
+<text x="112" y="462" font-family="Noto Sans, Helvetica, sans-serif" font-size="18" letter-spacing="1.6" fill="#F5BE5C">ASSIGNMENTS</text>
+<text x="360" y="432" font-family="Noto Serif, Georgia, serif" font-size="62" font-weight="600" fill="#F4F8FC">14</text>
+<text x="362" y="462" font-family="Noto Sans, Helvetica, sans-serif" font-size="18" letter-spacing="1.6" fill="#F5BE5C">UNIVERSITIES</text>
+<text x="610" y="432" font-family="Noto Serif, Georgia, serif" font-size="62" font-weight="600" fill="#F4F8FC">229</text>
+<text x="612" y="462" font-family="Noto Sans, Helvetica, sans-serif" font-size="18" letter-spacing="1.6" fill="#F5BE5C">PAGES</text>
+<line x1="80" y1="520" x2="1120" y2="520" stroke="#F4F8FC" stroke-opacity="0.16"/>
+<text x="80" y="562" font-family="Noto Sans, Helvetica, sans-serif" font-size="20" fill="#93A9C4">Bilingual · Chinese and English · every number from a real run</text>
+<text x="1120" y="562" text-anchor="end" font-family="Noto Sans, Helvetica, sans-serif" font-size="20" fill="#3EE0C8">polarours.github.io/Coursework</text>
+</svg>

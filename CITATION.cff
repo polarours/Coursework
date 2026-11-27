@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this atlas or its walkthroughs in teaching or research, please cite it as below."
+type: book
+title: "Coursework · A Capstone Atlas"
+subtitle: "Learning Systems Thinking through Capstone Projects"
+abstract: >-
+  A bilingual (Chinese/English) atlas of 34 computer-science capstone
+  assignments drawn from 14 universities. Twenty-two are original walkthroughs
+  written for this project; twelve are real course repositories kept as git
+  submodules, each paired with an independent reference implementation that
+  passes the original tests. Every number quoted in the book comes from a real
+  run, and the code that produced it is in the repository.
+authors:
+  - name: "polarours"
+    website: "https://github.com/polarours"
+repository-code: "https://github.com/polarours/Coursework"
+url: "https://polarours.github.io/Coursework/"
+license: CC-BY-NC-SA-4.0
+version: "1.0.0"
+date-released: "2026-11-27"
+keywords:
+  - computer science education
+  - capstone projects
+  - systems programming
+  - distributed systems
+  - algorithms and data structures
+  - bilingual textbook
+  - reproducible coursework

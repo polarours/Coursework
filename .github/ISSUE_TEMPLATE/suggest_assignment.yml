@@ -1,0 +1,53 @@
+name: Suggest an assignment
+description: Propose a capstone-level assignment worth a seven-chapter walkthrough.
+title: "[assignment] "
+labels: ["assignment"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The bar for inclusion is deliberately high: the assignment must be
+        capstone-scale, its starter must be officially published, and it must
+        be verifiable offline with tests we can run. Single-file exercises and
+        repositories of student answers do not qualify.
+  - type: input
+    id: course
+    attributes:
+      label: Course and university
+      placeholder: "e.g. CMU 15-445 Database Systems"
+    validations:
+      required: true
+  - type: input
+    id: repo
+    attributes:
+      label: Official starter repository
+      description: The course's own repo, not a student's solution.
+      placeholder: "https://github.com/..."
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it belongs in the atlas
+      description: What concept does it teach that the existing 34 do not?
+      placeholder: "It is the only assignment here that forces ..."
+    validations:
+      required: true
+  - type: textarea
+    id: verify
+    attributes:
+      label: How it can be verified offline
+      description: Test command, expected runtime, and any toolchain requirements.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: The starter is publicly available from the course itself.
+          required: true
+        - label: The project is capstone-scale, not a single exercise.
+          required: true
+        - label: I am not proposing a repository of someone else's solutions.
+          required: true

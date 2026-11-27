@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="73" height="20" role="img" aria-label="pages: 229">
+  <title>pages: 229</title>
+  <rect width="73" height="20" rx="3" fill="#0B1626"/>
+  <rect x="43" width="30" height="20" rx="3" fill="#93A9C4"/>
+  <rect x="43" width="3" height="20" fill="#93A9C4"/>
+  <g font-family="Noto Sans, Helvetica, Arial, sans-serif" font-size="11" fill="#F4F8FC">
+    <text x="21.4" y="14" text-anchor="middle">pages</text>
+  </g>
+  <g font-family="Noto Sans, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#0B1626">
+    <text x="58.0" y="14" text-anchor="middle">229</text>
+  </g>
+</svg>

@@ -10,6 +10,14 @@
 
 <p align="center"><img src="assets/rule.svg" alt="" width="100%"></p>
 
+<p align="center">
+  <a href="https://github.com/polarours/Coursework/actions/workflows/pages.yml"><img src="https://github.com/polarours/Coursework/actions/workflows/pages.yml/badge.svg?branch=master" alt="Book build"></a>
+  <img src="assets/badges/problems.svg" alt="34 problems">
+  <img src="assets/badges/universities.svg" alt="14 universities">
+  <img src="assets/badges/pages.svg" alt="229 pages">
+  <img src="assets/badges/license.svg" alt="License: CC BY-NC-SA 4.0">
+</p>
+
 ---
 
 ## About
@@ -91,6 +99,22 @@ Each entry keeps the upstream repository as a git submodule and preserves the or
 2. **Attempt it yourself first** — even a rough design is enough.
 3. Read chapters `01` → `07` and compare with your own reasoning.
 4. Run the reference implementation and tests, then solve the extension exercises.
+
+## How each problem is verified
+
+Three layers, each more independent than the last:
+
+1. **The course's own tests**, run unmodified against our implementation. If the
+   starter ships tests, they are the specification, and we do not edit them.
+2. **Boundary tests we add** for what the official suite never exercises — empty
+   containers, null pointers, off-by-one indices, out-of-range arguments.
+3. **A second implementation**, written differently on purpose, compared output
+   by output. Disagreements are either a bug in one of them or a boundary the
+   spec leaves open, and both are worth knowing about.
+
+Every number quoted in the book comes from one of these runs. When a result is
+an estimate rather than a measurement, the text says so. When we could not
+reproduce something, it is reported as unresolved rather than smoothed over.
 
 ## Layout
 

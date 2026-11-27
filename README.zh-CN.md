@@ -10,6 +10,14 @@
 
 <p align="center"><img src="assets/rule.svg" alt="" width="100%"></p>
 
+<p align="center">
+  <a href="https://github.com/polarours/Coursework/actions/workflows/pages.yml"><img src="https://github.com/polarours/Coursework/actions/workflows/pages.yml/badge.svg?branch=master" alt="Book build"></a>
+  <img src="assets/badges/problems.svg" alt="34 problems">
+  <img src="assets/badges/universities.svg" alt="14 universities">
+  <img src="assets/badges/pages.svg" alt="229 pages">
+  <img src="assets/badges/license.svg" alt="License: CC BY-NC-SA 4.0">
+</p>
+
 ---
 
 ## 关于
@@ -90,6 +98,16 @@ bash scripts/build-book.sh all
 2. **先自己做一遍**——哪怕只画出大致设计。
 3. 按 `01 → 07` 顺序读精解，对照自己的思路。
 4. 跑通参考实现和测试，再挑战延伸练习。
+
+## 每道题怎么验证
+
+三层，一层比一层独立：
+
+1. **课程自带的测试**，原样跑在我们的实现上。starter 若带测试，它就是这样规格，我们不改它。
+2. **我们补的边界测试**，专挑官方用例没覆盖到的地方——空容器、空指针、差一位的下标、越界参数。
+3. **第二个实现**，故意写得不一样，逐条比对输出。不一致要么是其中一版的 bug，要么是规格留白，两边都值得知道。
+
+书里引用的每个数字都来自上述某一次运行。是估算而不是实测的，正文会写明；没能复现的，如实写"未解决"，不含糊过去。
 
 ## 目录结构
 

@@ -1,0 +1,42 @@
+name: Report a broken problem
+description: A test fails, a number does not reproduce, or a link is dead.
+title: "[problem] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The book claims every number comes from a real run. If one does not
+        reproduce on your machine, that is a bug in the book, not in you.
+  - type: input
+    id: problem
+    attributes:
+      label: Which problem or chapter
+      description: Number and slug, e.g. `034-ucb-cs61c-snek`, or a book chapter.
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: The exact command you ran
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: What it printed
+      description: Paste the real output, including the failure line.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What the book says should happen
+      description: Quote the sentence or table row, with a link if you can.
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      placeholder: "e.g. Ubuntu 24.04, gcc 13.2, Python 3.12"

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Read the book first
+    url: https://polarours.github.io/Coursework/
+    about: The atlas covers 12 thematic chapters and all 34 assignments; the answer may already be there.
+  - name: How the work is verified
+    url: https://github.com/polarours/Coursework#how-each-problem-is-verified
+    about: Every number comes from a real run — this section explains what that means in practice.
