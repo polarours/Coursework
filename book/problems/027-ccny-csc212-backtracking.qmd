@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [City College of New York](../universities/ccny.qmd) |
 | 课程 | CSC 212 Data Structures |
 | 方向 | C++ / 递归回溯 |
+| 语言 | C++ |
 | 难度 | 进阶 / Intermediate |
 | 上游仓库 | [https://github.com/uricsc/212-Deliverables（教师课程仓库，本题为其中](https://github.com/uricsc/212-Deliverables（教师课程仓库，本题为其中) |
 

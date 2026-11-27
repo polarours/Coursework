@@ -1,0 +1,72 @@
+---
+title: "Online Practice <span class='zh-inline'>(在线练习)</span>"
+number-sections: false
+---
+
+::: {.callout-note}
+## What this is (这是什么)
+
+Write Python in the browser and run it against the repository's own reference answers. No account, no server: the Python runtime is Pyodide in a WebAssembly sandbox, the expected values in `problems.json` were produced by executing the checked-in solutions, and your code is saved in this browser's `localStorage`.
+
+> 在浏览器里写 Python，直接拿仓库里参考实现的真实输出来判题。不需要账号、没有后端：Python 跑在 Pyodide 的 WebAssembly 沙箱里，期望值由 `scripts/gen-oj-problems.py` 执行真实 solution 生成，代码保存在本机浏览器。用「导出进度」可以把代码搬到另一台机器。
+
+**Works offline after the first load?** No — Pyodide is fetched from a CDN once (~10 MB) and then cached by the browser. Everything else is served from this site.
+:::
+
+```{=html}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.65.16/lib/codemirror.min.css">
+<link rel="stylesheet" href="oj.css">
+<script src="https://cdn.jsdelivr.net/npm/codemirror@5.65.16/lib/codemirror.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/codemirror@5.65.16/mode/python/python.min.js"></script>
+<script src="oj.js"></script>
+
+<div class="oj-app">
+  <div class="oj-head">
+    <h2 id="oj-title">载入中…</h2>
+    <p id="oj-meta"></p>
+    <span class="oj-status" id="oj-status">初始化…</span>
+  </div>
+
+  <div class="oj-grid">
+    <aside class="oj-problems" id="oj-problems"></aside>
+
+    <section class="oj-editor">
+      <div class="oj-bar">
+        <button id="oj-run" disabled>运行评测</button>
+        <button id="oj-reset" class="oj-secondary">恢复起始代码</button>
+        <span class="oj-score" id="oj-score"></span>
+      </div>
+      <textarea id="oj-code" spellcheck="false" aria-label="Python code editor"></textarea>
+    </section>
+
+    <aside class="oj-results">
+      <div id="oj-results"><p class="oj-hint">点「运行评测」查看每个用例的结果。</p></div>
+    </aside>
+  </div>
+
+  <div class="oj-foot">
+    <button id="oj-export">导出进度</button>
+    <label for="oj-import">导入进度</label>
+    <input type="file" id="oj-import" accept="application/json,.json">
+    <span>代码自动保存在本机浏览器</span>
+    <span id="oj-saved"></span>
+  </div>
+</div>
+```
+
+## 判题规则 / How grading works (0.1)
+
+每题给起始代码和 6 个用例。评测时你的代码在一个干净的命名空间里执行，每个用例独立运行——一个用例里的异常不会影响下一个。
+
+对每个用例，平台比较 `repr(你的返回值)` 与 `repr(参考实现的返回值)`。这不是字符串近似匹配：类型、顺序、元组与列表的差别都会被算作失败。失败时显示期望值、实际值和 Python 抛出的异常。
+
+> Six cases per problem. Each runs in a fresh namespace, so an exception in one cannot contaminate the next. The comparison is on `repr()` — type and order matter. A failed case shows what was expected, what came back, and the traceback.
+
+## 边界与诚实 / Limits (0.2)
+
+- **只有 Python。** 21 道题的参考实现是 Python；其余 13 道（C / C++ / Java / Go）需要编译器，浏览器内执行不现实。它们仍可在书站查看完整解析。
+- **不能跨设备自动同步。** `localStorage` 属于当前浏览器。导出 JSON 再导入是现阶段的同步方式；要做账号系统必须有后端，而 GitHub Pages 只能托管静态文件。
+- **没有真正的超时保护。** 死循环会卡住当前标签页，关掉页面重开即可——你的代码只能伤到自己这个标签。
+- **期望值不是教授给的。** 它们来自我们自己的参考实现（详见各题的七章解析），所以对规格的理解如果有偏差，这里也会一样偏差。
+
+> Only Python; no automatic cross-device sync; an infinite loop freezes only your own tab; expected values come from our reference solutions, not from the course.

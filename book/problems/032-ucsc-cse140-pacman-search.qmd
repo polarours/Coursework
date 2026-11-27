@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [UC Santa Cruz](../universities/ucsc.qmd) |
 | 课程 | CSE 140 Artificial Intelligence（题面在 031 upstream 的 `p1/README.md`） |
 | 方向 | Python / DFS、BFS、UCS、A*、Corners、Food、贪心与近似搜索 |
+| 语言 | Python |
 | 难度 | 进阶 / Intermediate |
 | 上游仓库 | [https://github.com/edulinq/pacai（pin](https://github.com/edulinq/pacai（pin) |
 

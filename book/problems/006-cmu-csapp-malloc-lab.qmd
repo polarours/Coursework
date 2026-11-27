@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [Carnegie Mellon University](../universities/cmu.qmd) |
 | 课程 | CMU 15-213 Introduction to Computer Systems (CSAPP) |
 | 方向 | 系统 / Systems |
+| 语言 | C |
 | 难度 | 硬核 / Advanced |
 | 预计耗时 | 5–12 天 / 5–12 days |
 

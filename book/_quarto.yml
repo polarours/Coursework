@@ -63,6 +63,10 @@ book:
         - universities/clemson.qmd
         - universities/ucsc.qmd
     # 附录 / Back matter
+    - part: "Practice (在线练习)"
+      chapters:
+        - exercises/index.qmd
+
     - part: "Problems (题目档案)"
       chapters:
         - problems/index.qmd
@@ -111,6 +115,9 @@ bibliography: references.bib
 
 resources:
   - assets/og-image.png
+  - exercises/oj.js
+  - exercises/oj.css
+  - exercises/problems.json
 
 format:
   html:

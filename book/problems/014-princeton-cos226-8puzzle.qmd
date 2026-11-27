@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [Princeton University](../universities/princeton.qmd) |
 | 课程 | Princeton COS 226 Algorithms and Data Structures |
 | 方向 | 算法 / Algorithms |
+| 语言 | Python |
 | 难度 | 进阶 / Intermediate |
 | 预计耗时 | 3–6 天 / 3–6 days |
 

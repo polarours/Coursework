@@ -197,8 +197,9 @@ def render(p):
         rows.append(("课程", p["course"]))
     if p["area"]:
         rows.append(("方向", p["area"]))
-    if p["language"]:
-        rows.append(("语言", p["language"]))
+    language = p["language"] or p.get("lang_inferred", "")
+    if language:
+        rows.append(("语言", language))
     if p["difficulty"]:
         rows.append(("难度", p["difficulty"]))
     if p["effort"]:

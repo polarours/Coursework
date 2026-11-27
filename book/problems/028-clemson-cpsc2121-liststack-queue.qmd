@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [Clemson University](../universities/clemson.qmd) |
 | 课程 | CPSC 2121 Data Structures and Algorithms |
 | 方向 | C++ / 模板链表、栈与队列 |
+| 语言 | C |
 | 难度 | 进阶 / Intermediate |
 | 上游仓库 | [https://github.com/russellocean/CPSC2121（学生作业仓库，含完整实现与](https://github.com/russellocean/CPSC2121（学生作业仓库，含完整实现与) |
 

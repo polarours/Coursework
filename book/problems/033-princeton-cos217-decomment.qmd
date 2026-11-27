@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [Princeton University](../universities/princeton.qmd) |
 | 课程 | COS 217 Introduction to Programming Systems |
 | 方向 | C / 有限状态机与词法边界 |
+| 语言 | C |
 | 难度 | 入门 / Introductory |
 | 上游仓库 | [https://github.com/COS217/Decomment](https://github.com/COS217/Decomment) |
 

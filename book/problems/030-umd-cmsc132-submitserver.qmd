@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [University of Maryland](../universities/umd.qmd) |
 | 课程 | CMSC 132 Object-Oriented Programming II |
 | 方向 | Java / 链表、类设计 |
+| 语言 | Java |
 | 难度 | 硬核 / Advanced |
 | 上游仓库 | [https://github.com/a-blender/cmsc132（学生提交仓库，含](https://github.com/a-blender/cmsc132（学生提交仓库，含) |
 

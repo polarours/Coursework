@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [Carnegie Mellon University](../universities/cmu.qmd) |
 | 课程 | CMU 15-445/645 Database Systems |
 | 方向 | 数据库 / Database systems |
+| 语言 | Python |
 | 难度 | 进阶 / Intermediate |
 | 预计耗时 | 4–8 天 / 4–8 days |
 

@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [Georgia Institute of Technology](../universities/gatech.qmd) |
 | 课程 | Georgia Tech CS 8803 Database Systems |
 | 方向 | 概率数据结构 / Probabilistic DS |
+| 语言 | Python |
 | 难度 | 进阶 / Intermediate |
 | 预计耗时 | 3–6 天 |
 

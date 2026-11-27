@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [MIT](../universities/mit.qmd) |
 | 课程 | MIT 6.1810 Operating Systems Engineering（原 6.828） |
 | 方向 | 操作系统 / Operating systems |
+| 语言 | Python |
 | 难度 | 硬核 / Advanced |
 | 预计耗时 | 5–10 天 / 5–10 days |
 

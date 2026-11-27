@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [UC Berkeley](../universities/berkeley.qmd) |
 | 课程 | UC Berkeley CS61A Structure and Interpretation of Computer Programs |
 | 方向 | 编程语言 / Programming languages |
+| 语言 | Python |
 | 难度 | 进阶 / Intermediate |
 | 预计耗时 | 5–10 天 / 5–10 days |
 

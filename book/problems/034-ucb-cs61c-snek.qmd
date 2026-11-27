@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [UC Berkeley](../universities/berkeley.qmd) |
 | 课程 | CS 61C Great Ideas in Computer Architecture |
 | 方向 | C / 结构体、指针、动态内存与游戏循环 |
+| 语言 | C |
 | 难度 | 硬核 / Advanced |
 | 上游仓库 | [https://github.com/61c-teach/sp26-proj1-starter](https://github.com/61c-teach/sp26-proj1-starter) |
 

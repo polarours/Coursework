@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [MIT](../universities/mit.qmd) |
 | 课程 | MIT 6.824 / 6.5840 Distributed Systems |
 | 方向 | 分布式系统 / Distributed systems |
+| 语言 | Go |
 | 难度 | 硬核 / Advanced |
 | 预计耗时 | 5–10 天 / 5–10 days |
 

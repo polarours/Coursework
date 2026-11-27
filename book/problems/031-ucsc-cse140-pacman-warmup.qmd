@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [UC Santa Cruz](../universities/ucsc.qmd) |
 | 课程 | CSE 140 Artificial Intelligence（作业改编自 Berkeley CS188 Pacman 项目） |
 | 方向 | Python / 基础建模与最优化 |
+| 语言 | Python |
 | 难度 | 入门 / Introductory |
 | 上游仓库 | [https://github.com/ucsc-cse-140/cse140-assignments-public（课程官方仓库）](https://github.com/ucsc-cse-140/cse140-assignments-public（课程官方仓库）) |
 

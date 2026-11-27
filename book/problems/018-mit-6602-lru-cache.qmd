@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [MIT](../universities/mit.qmd) |
 | 课程 | MIT 6.006 Introduction to Algorithms |
 | 方向 | 数据结构 / Data structures |
+| 语言 | Python |
 | 难度 | 进阶 / Intermediate |
 | 预计耗时 | 3–6 天 |
 

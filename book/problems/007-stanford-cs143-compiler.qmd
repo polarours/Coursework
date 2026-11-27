@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [Stanford University](../universities/stanford.qmd) |
 | 课程 | Stanford CS143 Compilers |
 | 方向 | 编译器 / Compilers |
+| 语言 | Python |
 | 难度 | 硬核 / Advanced |
 | 预计耗时 | 6–12 天 / 6–12 days |
 

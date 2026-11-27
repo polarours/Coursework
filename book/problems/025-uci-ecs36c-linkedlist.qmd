@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [UC Irvine](../universities/uci.qmd) |
 | 课程 | ECS36C Fall 2023 — Templates, Linked Lists, Stacks, Queues |
 | 方向 | 模板 + 链表/栈/队列 / Templates + LinkedList/Stack/Queue |
+| 语言 | C++ |
 | 难度 | 入门 / Introductory |
 | 上游仓库 | [https://github.com/ecs36c-fq2023/hw1（pin](https://github.com/ecs36c-fq2023/hw1（pin) |
 

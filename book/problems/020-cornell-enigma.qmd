@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [Cornell University](../universities/cornell.qmd) |
 | 课程 | Cornell CS 3110 Functional Programming |
 | 方向 | 密码学 / Cryptography |
+| 语言 | Python |
 | 难度 | 进阶 / Intermediate |
 | 预计耗时 | 4–8 天 |
 

@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [UC Berkeley](../universities/berkeley.qmd) |
 | 课程 | UC Berkeley CS61C Machine Structures |
 | 方向 | 计算机组成 / Computer architecture |
+| 语言 | Python |
 | 难度 | 进阶 / Intermediate |
 | 预计耗时 | 3–6 天 / 3–6 days |
 

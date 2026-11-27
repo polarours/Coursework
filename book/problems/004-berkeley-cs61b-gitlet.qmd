@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [UC Berkeley](../universities/berkeley.qmd) |
 | 课程 | UC Berkeley CS61B Data Structures |
 | 方向 | 数据结构 / Data structures |
+| 语言 | Python |
 | 难度 | 进阶 / Intermediate–advanced |
 | 预计耗时 | 5–10 天 / 5–10 days |
 

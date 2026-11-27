@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [UC Berkeley](../universities/berkeley.qmd) |
 | 课程 | UC Berkeley CS188 Artificial Intelligence |
 | 方向 | 人工智能 / Artificial intelligence |
+| 语言 | Python |
 | 难度 | 进阶 / Intermediate–advanced |
 | 预计耗时 | 4–8 天 / 4–8 days |
 

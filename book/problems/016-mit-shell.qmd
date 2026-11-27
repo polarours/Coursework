@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [MIT](../universities/mit.qmd) |
 | 课程 | MIT 6.858 Computer Systems Security |
 | 方向 | 系统编程 / Systems |
+| 语言 | Python |
 | 难度 | 进阶 / Intermediate |
 | 预计耗时 | 4–8 天 |
 

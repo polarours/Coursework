@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [UC Berkeley](../universities/berkeley.qmd) |
 | 课程 | CS 61B Data Structures (sp25, Josh Hug) |
 | 方向 | Java / 泛型链表与环形数组、Comparator、迭代器、Karplus-Strong 音频仿真 |
+| 语言 | Java |
 | 难度 | 硬核 / Advanced |
 | 上游仓库 | [https://github.com/Berkeley-CS61B/skeleton-sp25（官方教学组织）](https://github.com/Berkeley-CS61B/skeleton-sp25（官方教学组织）) |
 

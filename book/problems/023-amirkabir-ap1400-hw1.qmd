@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [Amirkabir University of Technology](../universities/amirkabir.qmd) |
 | 课程 | AP1400-2 Advanced Programming, Spring 2022 |
 | 方向 | C++ 线性代数库 / Linear algebra library |
+| 语言 | C |
 | 难度 | 进阶 / Intermediate |
 | 上游仓库 | [https://github.com/polarours/Coursework（pin](https://github.com/polarours/Coursework（pin) |
 

@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [Stanford University](../universities/stanford.qmd) |
 | 课程 | Stanford CS231n Convolutional Neural Networks |
 | 方向 | 机器学习 / Machine learning |
+| 语言 | Python |
 | 难度 | 进阶 / Intermediate |
 | 预计耗时 | 4–8 天 / 4–8 days |
 

@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [UC Irvine](../universities/uci.qmd) |
 | 课程 | ICS 46 Data Structures |
 | 方向 | C++ / 二叉搜索树与自平衡树 |
+| 语言 | C++ |
 | 难度 | 进阶 / Intermediate |
 | 上游仓库 | [https://github.com/klefstad-teaching/ICS-46-HW6](https://github.com/klefstad-teaching/ICS-46-HW6) |
 

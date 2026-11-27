@@ -8,6 +8,7 @@ number-sections: false
 | 学校 | [Fordham University](../universities/fordham.qmd) |
 | 课程 | CISC2200 Spring 2024 |
 | 方向 | 动态数组 + 深拷贝 / Dynamic array + deep copy |
+| 语言 | C |
 | 难度 | 入门 / Introductory |
 | 上游仓库 | [https://github.com/CISC2200-Fall-24-Fordham/Lab3（pin](https://github.com/CISC2200-Fall-24-Fordham/Lab3（pin) |
 
